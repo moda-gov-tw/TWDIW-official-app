@@ -1,6 +1,6 @@
 # 貢獻指南
 
-感謝您對 QR Code 反向驗證系統的興趣！我們非常歡迎各種形式的貢獻，包括但不限於：
+感謝您對數位憑證皮夾的興趣！我們非常歡迎各種形式的貢獻，包括但不限於：
 
 - 回報問題
 - 提出新功能建議
@@ -18,7 +18,7 @@
 - 重現步驟
 - 預期行為
 - 實際行為
-- 環境資訊（作業系統、Java 版本等）
+- 環境資訊（作業系統、Flutter 版本、Dart 版本、Android/iOS SDK 等）
 - 相關的錯誤訊息或日誌
 
 ### 提出新功能建議
@@ -38,12 +38,14 @@
 4. 推送到您的分支：`git push origin feature/your-feature-name`
 5. 建立 Pull Request
 
+> 首次送出 PR 時，請依 `CLA.md` 指示於 commit message 或 PR 留言中加入「I have read and agree to the Contributor License Agreement.」並附 Signed-off-by 資訊。
+
 ### 分支說明
 main：穩定的主要分支，僅合併已驗證可用的功能或修正。
 
 ### 程式碼風格
 
-- 遵循 Java 程式碼規範
+- 遵循 Dart / Flutter 官方程式碼規範（建議搭配 `flutter format`、`flutter analyze`）
 - 使用有意義的變數名稱
 - 加入適當的註解
 - 確保所有測試都能通過
@@ -62,4 +64,4 @@ main：穩定的主要分支，僅合併已驗證可用的功能或修正。
 
 ## 授權
 
-所有貢獻都將採用與專案相同的 MIT 授權條款。請參考 [LICENSE](LICENSE) 檔案了解詳細資訊。 
+所有貢獻都將採用與專案相同的 MIT 授權條款。請參考 [LICENSE.txt](LICENSE.txt) 檔案了解詳細資訊。 
