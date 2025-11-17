@@ -6,7 +6,8 @@
 
 #### Android
 ```bash
-flutter build aar --output={did_sdk_module path}/output/android
+# 於 APPSDK 目錄下執行
+flutter build aar --output=./output/android
 ```
 #### iOS
 ```bash
