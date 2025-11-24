@@ -1,0 +1,8 @@
+property_key;property_value
+oidvp.endpoint-schema;modadigitalwallet://authorize
+url.frontend.generate-did;https://frontend-uat.wallet.gov.tw/api/did/generate
+url.frontend.register-did;https://frontend-uat.wallet.gov.tw/api/did/register
+url.frontend.review-did;https://frontend-uat.wallet.gov.tw/api/did/review
+url.frontend.create-did;https://frontend-uat.wallet.gov.tw/api/did/create
+access_token.frontend.register_did;""
+verifier.did;""

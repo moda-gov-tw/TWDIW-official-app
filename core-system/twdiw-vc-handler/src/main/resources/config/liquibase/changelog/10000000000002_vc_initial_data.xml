@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="10000000000002-modify-setting-delete-data" author="jhipster">
+        <delete tableName="setting">
+            <where>prop_name = 'data.delete.n_days_ago'</where>
+        </delete>
+
+        <loadUpdateData
+            file="config/liquibase/data/setting_250916.csv"
+            separator=";"
+            tableName="setting"
+            usePreparedStatements="true"
+            primaryKey="prop_name">
+            <column name="prop_name" header="prop_name"/>
+            <column name="prop_value" header="prop_value"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000002-modify-setting-add-proxy" author="jhipster">
+        <!-- 如果已經有 proxy 設定的值，就跳過這個 changeSet -->
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <sqlCheck expectedResult="1">
+                    SELECT COUNT(*) FROM setting WHERE prop_name = 'http.proxy.enable'
+                </sqlCheck>
+            </not>
+        </preConditions>
+
+        <!-- 如果沒有 proxy 設定，就插入下列資料 -->
+        <insert tableName="setting">
+            <column name="prop_name" value="http.proxy.url"/>
+            <column name="prop_value" value="xxx.xxx.xxx.xxx"/>
+        </insert>
+
+        <insert tableName="setting">
+            <column name="prop_name" value="http.proxy.port"/>
+            <column name="prop_value" value="8080"/>
+        </insert>
+
+        <insert tableName="setting">
+            <column name="prop_name" value="http.proxy.protocol"/>
+            <column name="prop_value" value="http"/>
+        </insert>
+
+        <insert tableName="setting">
+            <column name="prop_name" value="http.proxy.enable"/>
+            <column name="prop_value" value="false"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

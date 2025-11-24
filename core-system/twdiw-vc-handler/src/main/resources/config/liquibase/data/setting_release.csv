@@ -1,0 +1,32 @@
+prop_name;prop_value
+http.enable_log;true
+http.max_retry_times;"2"
+issuer.enable_self_verify;true
+issuer.name;Ministry of Digital Affairs
+sd.activate;true
+sd.sdjwt.enable_decoy;false
+schedule.cron.status_list_renew;"0 0 0 * * ?"
+log.backup.single_query_size;"100"
+schedule.cron.log_backup;"0 0 2 * * ?"
+log.backup.n_days_ago;"7"
+issuer.org.info;""
+url.push.notify_status_change;""
+http.max_connect_timeout;"15000"
+status.list.key;{"kty":"EC","crv":"P-256","kid":"<REPLACE_WITH_KID>","x":"<REPLACE_WITH_BASE64URL_X>","y":"<REPLACE_WITH_BASE64URL_Y>","d":"<REPLACE_WITH_BASE64URL_PRIVATE_D>"}
+schedule.cron.delete_data;"0 0 1 * * ?"
+data.delete.n_days_ago;"5"
+status.list.max_retry_times;"5"
+status.list.delay;"200"
+url.frontend.generate_did;https://frontend.wallet.gov.tw/api/did/generate
+url.frontend.register_did;https://frontend.wallet.gov.tw/api/did/register
+url.frontend.review_did;https://frontend.wallet.gov.tw/api/did/review
+url.frontend.get_issuer_info_did;https://frontend.wallet.gov.tw/api/did/
+url.frontend.create_did;https://frontend.wallet.gov.tw/api/did/create
+url.get_token;""
+url.vc.base_path;""
+url.demo.get_holder_data;""
+url.vp_validation;""
+url.oidvci_qrcode;""
+access_token.frontend.register_did;""
+issuer.key;""
+issuer.did;""

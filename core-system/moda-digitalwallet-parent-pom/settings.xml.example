@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Maven Settings 範本檔案
+
+  使用說明：
+  1. 複製此檔案為 settings.xml：cp settings.xml.example settings.xml
+  2. 修改 <username> 和 <password> 為您的 Nexus 帳號密碼
+  3. 或使用環境變數：${env.NEXUS_USERNAME} 和 ${env.NEXUS_PASSWORD}
+
+  注意：settings.xml 已加入 .gitignore，不會被提交到版本控制
+-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>cht-repo</id>
+            <!-- 方式一：直接填入帳號密碼（不建議，僅供本地開發使用） -->
+            <username>YOUR_NEXUS_USERNAME</username>
+            <password>YOUR_NEXUS_PASSWORD</password>
+
+            <!-- 方式二：使用環境變數（建議，較安全）
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+            -->
+        </server>
+    </servers>
+
+    <!--
+    若需要設定本地儲存庫位置，可取消註解以下設定：
+    <localRepository>/path/to/your/local/repository</localRepository>
+    -->
+
+</settings>

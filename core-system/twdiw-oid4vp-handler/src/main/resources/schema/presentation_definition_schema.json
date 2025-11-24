@@ -1,0 +1,384 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Presentation Definition",
+  "definitions": {
+    "format": {
+      "type": "object",
+      "patternProperties": {
+        "^jwt$|^jwt_vc$|^jwt_vc_json$|^jwt_vp$|^jwt_vp_json$": {
+          "type": "object",
+          "properties": {
+            "alg": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "alg"
+          ],
+          "additionalProperties": false
+        },
+        "^ldp_vc$|^ldp_vp$|^ldp$": {
+          "type": "object",
+          "properties": {
+            "proof_type": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "proof_type"
+          ],
+          "additionalProperties": false
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    },
+    "status_directive": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "directive": {
+          "type": "string",
+          "enum": [
+            "required",
+            "allowed",
+            "disallowed"
+          ]
+        },
+        "type": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "field": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "optional": {
+              "type": "boolean"
+            },
+            "path": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "intent_to_retain": {
+              "type": "boolean"
+            },
+            "filter": {
+              "$ref": "http://json-schema.org/draft-07/schema#"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "optional": {
+              "type": "boolean"
+            },
+            "path": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "intent_to_retain": {
+              "type": "boolean"
+            },
+            "filter": {
+              "$ref": "http://json-schema.org/draft-07/schema#"
+            },
+            "name": {
+              "type": "string"
+            },
+            "predicate": {
+              "type": "string",
+              "enum": [
+                "required",
+                "preferred"
+              ]
+            }
+          },
+          "required": [
+            "path",
+            "filter",
+            "predicate"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "input_descriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/definitions/format"
+        },
+        "group": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "limit_disclosure": {
+              "type": "string",
+              "enum": [
+                "required",
+                "preferred"
+              ]
+            },
+            "statuses": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "active": {
+                  "$ref": "#/definitions/status_directive"
+                },
+                "suspended": {
+                  "$ref": "#/definitions/status_directive"
+                },
+                "revoked": {
+                  "$ref": "#/definitions/status_directive"
+                }
+              }
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/field"
+              }
+            },
+            "subject_is_issuer": {
+              "type": "string",
+              "enum": [
+                "required",
+                "preferred"
+              ]
+            },
+            "is_holder": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "field_id": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "directive": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "preferred"
+                    ]
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "directive"
+                ]
+              }
+            },
+            "same_subject": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "field_id": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "directive": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "preferred"
+                    ]
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "directive"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "constraints"
+      ]
+    },
+    "submission_requirement": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "rule": {
+              "type": "string",
+              "enum": [
+                "all",
+                "pick"
+              ]
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "from": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "rule",
+            "from"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "rule": {
+              "type": "string",
+              "enum": [
+                "all",
+                "pick"
+              ]
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "from_nested": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/submission_requirement"
+              }
+            }
+          },
+          "required": [
+            "rule",
+            "from_nested"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "format": {
+      "$ref": "#/definitions/format"
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "submission_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/submission_requirement"
+      }
+    },
+    "input_descriptors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/input_descriptor"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "input_descriptors"
+  ],
+  "additionalProperties": false
+}

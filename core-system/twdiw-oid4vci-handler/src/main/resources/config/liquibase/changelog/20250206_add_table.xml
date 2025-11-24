@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="0000000000010" author="mars">
+        <createTable tableName="oidvci_setting">
+            <column name="setting_name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="setting_value" type="varchar"/>
+        </createTable>
+
+        <loadData
+            file="config/liquibase/data/oidc_setting.csv"
+            separator=";"
+            tableName="oidvci_setting"
+            usePreparedStatements="true">
+            <column name="setting_name" header="setting_name"/>
+            <column name="setting_value" header="setting_value"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
