@@ -1,0 +1,258 @@
+variables:
+  - group: WhiteSourceSettings
+  - name: projectToken
+    value: 99a14df9a0f242da939991b2bc35a6859c6a21e367cc456b95a6aeca53892cf8
+
+parameters:
+  - name: downloadReportOnly
+    displayName: "Download Report Only"
+    type: boolean
+    default: false
+    values:
+    - true
+    - false
+
+trigger:
+  - none
+
+jobs:
+  - job: mend_scan
+    displayName: Perform Mend Scanning 
+    timeoutInMinutes: 180
+    pool:
+      vmImage: ubuntu-latest
+
+    steps:        
+      - task: Bash@3
+        displayName: "Download the latest Unified Agent"
+        inputs:
+          targetType: inline
+          script: |
+            curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
+          workingDirectory: $(Agent.BuildDirectory)/s
+        condition: succeeded()
+      - task: Bash@3
+        displayName: "Create starter unified agent config file"
+        inputs:
+          targetType: inline
+          script: |
+            cat <<EOF > $(System.DefaultWorkingDirectory)/wss-unified-agent.config
+            wss.url=https://saas.whitesourcesoftware.com/agent
+            checkPolicies=false
+            forceCheckAllDependencies=false
+            forceUpdate=false
+            forceUpdate.failBuildOnPolicyViolation=false
+            offline=false
+            offline.zip=false
+            offline.prettyJson=true
+            case.sensitive.glob=false
+            followSymbolicLinks=false
+            showProgressBar=true
+            maven.resolveDependencies=true
+            html.resolveDependencies=true
+            npm.runPreStep=true
+            npm.resolveDependencies=true
+            npm.includeDevDependencies=false
+            ruby.resolveDependencies=true
+            ruby.runBundleInstall=true
+            gradle.resolveDependencies=true
+            python.resolveDependencies=true
+            cocoapods.resolveDependencies=true
+            cocoapods.ignoreSourceFiles=false
+            cocoapods.runPreStep=false
+            excludes=**/*sources.jar **/*javadoc.jar
+            includes=**/*.jar **/*.war **/*.ear **/*.aar **/*.dll **/*.exe **/*.msi **/*.nupkg **/*.egg **/*.whl **/*.gem **/*.deb **/*.udeb **/*.dmg **/*.drpm **/*.pkg.tar.xz **/*.apk **/*.swf **/*.swc **/*.air **/*.apk **/*.tar.bz2 **/*.tgz  **/*.os **/*.bsl **/*.abap **/*.as **/*.ads **/*.ada **/*.adb **/*.agda **/*.asc **/*.ash **/*.als **/*.mod **/*.ampl **/*.g4 **/*.cls **/*.apl **/*.dyalog **/*.scpt **/*.applescript **/*.arc **/*.ino **/*.ascx **/*.asp **/*.ashx **/*.aspx **/*.asmx **/*.axd **/*.asax **/*.aj **/*.sats **/*.hats **/*.dats **/*.aug **/*.ahk **/*.ahkl **/*.au3 **/*.mawk **/*.auk **/*.gawk **/*.awk **/*.nawk **/*.cmd **/*.bat **/*.befunge **/*.bison **/*.bb **/*.bb **/*.decls **/*.bmx **/*.bsv **/*.boo **/*.bf **/*.b **/*.brs **/*.bro **/*.w **/*.idc **/*.cats **/*.h **/*.c **/*.cs **/*.cshtml **/*.csx **/*.cake **/*.cc **/*.c++ **/*.tpp **/*.cxx **/*.inc **/*.hh **/*.cp **/*.cpp **/*.ipp **/*.hpp **/*.h **/*.h++ **/*.tcc **/*.re **/*.inl **/*.hxx **/*.chs **/*.capnp **/*.mss **/*.ceylon **/*.chpl **/*.ch **/*.ck **/*.cirru **/*.clw **/*.dcl **/*.icl **/*.click **/*.clp **/*.cljs **/*.boot **/*.cl2 **/*.cljx **/*.hic **/*.clj **/*.cljscm **/*.cljc **/*.cljs.hl **/*.ccp **/*.cpy **/*.cob **/*.cbl **/*.cobol **/*.iced **/*.cjsx **/*.cake **/*._coffee **/*.coffee **/*.cfm **/*.cfml **/*.cfc **/*.lsp **/*.podsl **/*.asd **/*.l **/*.cl **/*.sexp **/*.lisp **/*.ny **/*.cps **/*.cp **/*.cl **/*.coq **/*.v **/*.cr **/*.udo **/*.orc **/*.csd **/*.sco **/*.cu **/*.cuh **/*.cy **/*.pxi **/*.pxd **/*.pyx **/*.d **/*.di **/*.dart **/*.com **/*.dm **/*.djs **/*.d **/*.dylan **/*.intr **/*.dyl **/*.lid **/*.E **/*.ec **/*.eh **/*.ecl **/*.eclxml **/*.ecl **/*.e **/*.ex **/*.exs **/*.elm **/*.emacs **/*.emacs.desktop **/*.el **/*.em **/*.emberscript **/*.eq **/*.erl **/*.escript **/*.hrl **/*.xrl **/*.es **/*.app.src **/*.yrl **/*.fsx **/*.fs **/*.fsi **/*.factor **/*.fancypack **/*.fy **/*.fan **/*.f **/*.fs **/*.flux **/*.fx **/*.fr **/*.forth **/*.f **/*.for **/*.fs **/*.fth **/*.frt **/*.4th **/*.for **/*.f77 **/*.f95 **/*.f **/*.f08 **/*.f90 **/*.fpp **/*.f03 **/*.ftl **/*.fr **/*.gml **/*.gms **/*.tst **/*.g **/*.gap **/*.gd **/*.gi **/*.md **/*.gdbinit **/*.gdb **/*.gd **/*.gs **/*.kid **/*.feature **/*.fp **/*.vshader **/*.fs **/*.frg **/*.glslv **/*.shader **/*.glsl **/*.vrx **/*.frag **/*.vsh **/*.geom **/*.vert **/*.fshader **/*.fsh **/*.geo **/*.gshader **/*.glf **/*.gnuplot **/*.plot **/*.plt **/*.gnu **/*.gp **/*.go **/*.golo **/*.gsx **/*.vark **/*.gs **/*.gst **/*.grace **/*.gf **/*.groovy **/*.grt **/*.gvy **/*.gtpl **/*.gsp **/*.hh **/*.php **/*.hb **/*.hsc **/*.hs **/*.hx **/*.hxsl **/*.hcl **/*.tf **/*.fxh **/*.fx **/*.hlsl **/*.hlsli **/*.hy **/*.bf **/*.dlm **/*.pro **/*.idr **/*.lidr **/*.ipf **/*.ni **/*.i7x **/*.iss **/*.io **/*.ik **/*.thy **/*.ijs **/*.j **/*.java **/*.jsp **/*.gs **/*.es **/*.jsb **/*.jake **/*.sjs **/*.jsm **/*.frag **/*.bones **/*.njs **/*._js **/*.xsjslib **/*.jss **/*.pac **/*.xsjs **/*.ssjs **/*.jsfl **/*.js **/*.jscad **/*.es6 **/*.jflex **/*.flex **/*.jison **/*.jisonlex **/*.jq **/*.jsx **/*.jl **/*.brd **/*.sch **/*.kicad_pcb **/*.kt **/*.kts **/*.ktm **/*.krl **/*.lvproj **/*.lasso8 **/*.lasso **/*.lasso9 **/*.ldml **/*.las **/*.lean **/*.hlean **/*.l **/*.lex **/*.lfe **/*.ily **/*.ly **/*.b **/*.m **/*.lagda **/*.litcoffee **/*.lhs **/*._ls **/*.ls **/*.ll **/*.xi **/*.x **/*.xm **/*.logtalk **/*.lgt **/*.lol **/*.view.lkml **/*.model.lkml **/*.lookml **/*.ls **/*.lsl **/*.lslp **/*.fcgi **/*.nse **/*.rbxs **/*.lua **/*.wlua **/*.pd_lua **/*.m **/*.mumps **/*.m4 **/*.m4 **/*.mkfile **/*.make **/*.d **/*.mak **/*.mk **/*.mako **/*.mao **/*.m **/*.wlt **/*.wl **/*.mathematica **/*.cdf **/*.ma **/*.nb **/*.nbp **/*.mt **/*.matlab **/*.m **/*.maxproj **/*.maxpat **/*.pat **/*.mxt **/*.maxhelp **/*.ms **/*.mcr **/*.moo **/*.m **/*.metal **/*.minid **/*.mir **/*.duby **/*.mirah **/*.druby **/*.mo **/*.mod **/*.mmk **/*.mms **/*.monkey **/*.moo **/*.moon **/*.mq4 **/*.mqh **/*.mqh **/*.mq5 **/*.muf **/*.m **/*.mu **/*.myt **/*.ncl **/*.n **/*.nc **/*.axi **/*.axs **/*.axi.erb **/*.axs.erb **/*.nlogo **/*.lsp **/*.nl **/*.lisp **/*.nim **/*.nimrod **/*.nit **/*.nix **/*.nsh **/*.nsi **/*.nu **/*.numpy **/*.numpyw **/*.numsc **/*.m **/*.h **/*.mm **/*.sj **/*.j **/*.eliom **/*.ml **/*.mll **/*.mli **/*.mly **/*.ml4 **/*.eliomi **/*.omgrofl **/*.ooc **/*.opa **/*.opal **/*.cl **/*.opencl **/*.cls **/*.p **/*.scad **/*.oxh **/*.oxo **/*.ox **/*.oxygene **/*.oz **/*.p4 **/*.pan **/*.psc **/*.parrot **/*.pasm **/*.pir **/*.pascal **/*.dfm **/*.lpr **/*.dpr **/*.pp **/*.pas **/*.inc **/*.pwn **/*.inc **/*.pl **/*.cgi **/*.perl **/*.t **/*.fcgi **/*.pod **/*.plx **/*.psgi **/*.pm **/*.al **/*.ph **/*.nqp **/*.p6 **/*.t **/*.pl **/*.pl6 **/*.p6m **/*.p6l **/*.pm6 **/*.pm **/*.6pm **/*.6pl **/*.fcgi **/*.php3 **/*.php4 **/*.php5 **/*.phps **/*.phpt **/*.inc **/*.aw **/*.php **/*.ctp **/*.l **/*.pig **/*.pmod **/*.pike **/*.sql **/*.plb **/*.pks **/*.sql **/*.pck **/*.pls **/*.plsql **/*.pkb **/*.pogo **/*.pony **/*.pov **/*.inc **/*.sra **/*.sru **/*.srw **/*.pbt **/*.psd1 **/*.psm1 **/*.ps1 **/*.pde **/*.yap **/*.pl **/*.prolog **/*.pro **/*.spin **/*.pd **/*.pbi **/*.pb **/*.purs **/*.gypi **/*.bzl **/*.lmi **/*.tac **/*.py **/*.xpy **/*.wsgi **/*.spec **/*.pyt **/*.gyp **/*.fcgi **/*.pyde **/*.cgi **/*.pyw **/*.pyp **/*.py3 **/*.rpy **/*.pri **/*.pro **/*.qml **/*.qbs **/*.rsx **/*.r **/*.rd **/*.rktd **/*.rktl **/*.scrbl **/*.rkt **/*.rl **/*.rsc **/*.rbuistate **/*.rbfrm **/*.rbres **/*.rbbas **/*.rbmnu **/*.rbtbar **/*.re **/*.rei **/*.reb **/*.rebol **/*.r2 **/*.r **/*.r3 **/*.red **/*.reds **/*.cw **/*.rpy **/*.rs **/*.rsh **/*.pprx **/*.rexx **/*.rex **/*.rg **/*.mspec **/*.builder **/*.watchr **/*.rabl **/*.pluginspec **/*.irbrc **/*.gemspec **/*.ruby **/*.ru **/*.fcgi **/*.thor **/*.podspec **/*.god **/*.rake **/*.rbuild **/*.spec **/*.rbx **/*.rb **/*.rbw **/*.eye **/*.jbuilder **/*.rs.in **/*.rs **/*.sagews **/*.sage **/*.sls **/*.sas **/*.sc **/*.sbt **/*.scala **/*.sld **/*.scm **/*.sps **/*.ss **/*.sls **/*.tst **/*.sce **/*.sci **/*.self **/*.sh **/*.sh.in **/*.zsh **/*.bats **/*.ksh **/*.tmux **/*.tool **/*.fcgi **/*.bash **/*.cgi **/*.command **/*.sh-session **/*.shen **/*.sl **/*.smali **/*.st **/*.cs **/*.tpl **/*.smt2 **/*.smt **/*.inc **/*.sma **/*.sp **/*.hqf **/*.sqf **/*.db2 **/*.sql **/*.nut **/*.stan **/*.fun **/*.sig **/*.sml **/*.ML **/*.ado **/*.mata **/*.matah **/*.sthlp **/*.ihlp **/*.do **/*.doh **/*.scd **/*.sc **/*.swift **/*.sv **/*.vh **/*.svh **/*.tm **/*.tcl **/*.adp **/*.t **/*.thrift **/*.8xp **/*.8xp.txt **/*.8xk **/*.8xk.txt **/*.tla **/*.t **/*.tu **/*.txl **/*.tsx **/*.ts **/*.upc **/*.uno **/*.uc **/*.ur **/*.urs **/*.vala **/*.vapi **/*.vcl **/*.v **/*.veo **/*.vhi **/*.vhw **/*.vhdl **/*.vhd **/*.vhf **/*.vht **/*.vhs **/*.vho **/*.vim **/*.frx **/*.vbhtml **/*.vba **/*.cls **/*.vb **/*.bas **/*.vbs **/*.frm **/*.volt **/*.webidl **/*.wisp **/*.x10 **/*.prg **/*.ch **/*.prw **/*.xc **/*.xojo_toolbar **/*.xojo_script **/*.xojo_menu **/*.xojo_window **/*.xojo_code **/*.xojo_report **/*.xsp-config **/*.xsp.metadata **/*.xproc **/*.xpl **/*.xql **/*.xqm **/*.xq **/*.xquery **/*.xqy **/*.xs **/*.xslt **/*.xsl **/*.xtend **/*.y **/*.yy **/*.yacc **/*.zep **/*.zpl **/*.zimpl **/*.zmpl **/*.html **/*.htm                      
+            EOF
+          workingDirectory: $(Agent.BuildDirectory)/s
+        condition: and(succeeded(), eq('${{ parameters.downloadReportOnly }}', false))
+
+      - task: Bash@3
+        displayName: "Run Unified Agent Scan"
+        inputs:
+          targetType: inline
+          script: |
+            echo "Generating wss-generated-file.config"
+            java -jar wss-unified-agent.jar -detect -d $(System.DefaultWorkingDirectory)
+            
+            echo "Updating config file with new extensions"
+            includes=$(grep '^includes' wss-generated-file.config)
+            sed -i -E 's|^includes=.*$|'"$includes"'|g' wss-unified-agent.config
+            
+            echo "Running unified agent scan"
+            java -jar wss-unified-agent.jar -c wss-unified-agent.config -apiKey $(whitesourceApiKey) -product $(productName) -project $(Build.Repository.Name)
+          workingDirectory: $(Agent.BuildDirectory)/s
+        condition: and(succeeded(), eq('${{ parameters.downloadReportOnly }}', false))
+
+      - task: Bash@3
+        displayName: "Download Whitesource Project Vulnerability Report"
+        inputs:
+          targetType: inline
+          script: |
+            curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+            -H "Content-Type: application/json" \
+            -d '{
+              "requestType" : "getProjectVulnerabilityReport",
+              "userKey": "$(userKey)",
+              "projectToken" : "$(projectToken)",
+              "excludeExtraData": false
+            }' -o moda-digitalwallet_wsscan-$(Build.Repository.Name)-vulnerability-report.xlsx
+
+            curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+            -H "Content-Type: application/json" \
+            -d '{
+              "requestType" : "getProjectDueDiligenceReport",
+              "userKey": "$(userKey)",
+              "projectToken" : "$(projectToken)"
+            }' -o moda-digitalwallet_wsscan-$(Build.Repository.Name)-due-diligence-report.xlsx            
+          workingDirectory: $(Agent.BuildDirectory)/s
+        condition: always()
+
+      - task: Bash@3
+        displayName: 'Generate Project Report'
+        inputs:
+          targetType: 'inline'
+          script: |
+            response=$(curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+              -H "Content-Type: application/json" \
+              -d '{
+                "requestType" : "generateProjectReportAsync",
+                "userKey": "$(userKey)",
+                "projectToken": "$(projectToken)",
+                "reportType":"ProjectSBOMReport",
+                "standard":"spdx",
+                "version":"2.3",
+                "format":"json"
+            }')
+        
+            uuid=$(echo "$response" | jq -r '.asyncProcessStatus.uuid')
+            echo "##vso[task.setvariable variable=reportUuid]$uuid"
+
+            response=$(curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+              -H "Content-Type: application/json" \
+              -d '{
+                "requestType" : "generateProjectReportAsync",
+                "userKey": "$(userKey)",
+                "projectToken": "$(projectToken)",
+                "reportType":"ProjectSBOMReport",
+                "standard":"spdx",
+                "version":"2.3",
+                "format":"xlsx"
+            }')
+        
+            uuid=$(echo "$response" | jq -r '.asyncProcessStatus.uuid')
+            echo "##vso[task.setvariable variable=reportUuid2]$uuid"
+        condition: succeeded()
+            
+      - task: Bash@3
+        displayName: 'Check SPDX report Async Process Status'
+        inputs:
+          targetType: 'inline'
+          script: |
+            uuid=$(reportUuid)
+            maxRetries=10
+            retryCount=0
+            status="PENDING"
+
+            while [[ "$status" == "PENDING" || "$status" == "RUNNING" ]] && [[ $retryCount -lt $maxRetries ]]; do
+              sleep "$(sleepDuration)"  # 使用變數化的等待時間
+
+             # 查詢作業狀態
+              response=$(curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+                -H "Content-Type: application/json" \
+                -d '{
+                  "requestType" : "getAsyncProcessStatus",
+                  "orgToken" : "$(orgToken)",
+                  "userKey": "$(userKey)",
+                  "uuid": "'"$uuid"'"
+              }')
+
+              status=$(echo "$response" | jq -r '.asyncProcessStatus.status')
+              echo "Current status: $status"
+              retryCount=$((retryCount + 1))
+            done
+
+            if [[ "$status" == "SUCCESS" ]]; then
+              echo "Process completed successfully!"
+              # 在這裡可以放置後續操作
+            else
+              echo "Process failed or timed out after $maxRetries retries."
+              exit 1
+            fi
+
+            uuid=$(reportUuid2)
+            maxRetries=10
+            retryCount=0
+            status="PENDING"
+
+            while [[ "$status" == "PENDING" || "$status" == "RUNNING" ]] && [[ $retryCount -lt $maxRetries ]]; do
+              sleep "$(sleepDuration)"  # 使用變數化的等待時間
+
+             # 查詢作業狀態
+              response=$(curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+                -H "Content-Type: application/json" \
+                -d '{
+                  "requestType" : "getAsyncProcessStatus",
+                  "orgToken" : "$(orgToken)",
+                  "userKey": "$(userKey)",
+                  "uuid": "'"$uuid"'"
+              }')
+
+              status=$(echo "$response" | jq -r '.asyncProcessStatus.status')
+              echo "Current status: $status"
+              retryCount=$((retryCount + 1))
+            done
+
+            if [[ "$status" == "SUCCESS" ]]; then
+              echo "Process completed successfully!"
+              # 在這裡可以放置後續操作
+            else
+              echo "Process failed or timed out after $maxRetries retries."
+              exit 1
+            fi
+        condition: succeeded()
+
+      - task: Bash@3
+        displayName: 'Download Report'
+        inputs:
+          targetType: 'inline'
+          script: |
+            uuid=$(reportUuid)
+            curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+              -H "Content-Type: application/json" \
+              -d '{
+                  "requestType" : "downloadAsyncReport",
+                  "orgToken" : "$(orgToken)",
+                  "userKey" : "$(userKey)",
+                  "reportStatusUUID" : "'"$uuid"'"
+              }' -o moda-digitalwallet_wsscan-$(Build.Repository.Name)-SPDX-json-report.zip
+            echo "Report downloaded successfully as moda-digitalwallet_wsscan-$(Build.Repository.Name)-SPDX-json-report.zip"
+
+            uuid=$(reportUuid2)
+            curl -X POST https://saas.whitesourcesoftware.com/api/v1.4 \
+              -H "Content-Type: application/json" \
+              -d '{
+                  "requestType" : "downloadAsyncReport",
+                  "orgToken" : "$(orgToken)",
+                  "userKey" : "$(userKey)",
+                  "reportStatusUUID" : "'"$uuid"'"
+              }' -o moda-digitalwallet_wsscan-$(Build.Repository.Name)-SPDX-xlsx-report.zip
+            echo "Report downloaded successfully as moda-digitalwallet_wsscan-$(Build.Repository.Name)-SPDX-xlsx-report.zip"            
+        condition: succeeded()
+
+      - task: CopyFiles@2
+        displayName: 取出報告
+        inputs:
+          Contents: |
+            moda-digitalwallet_wsscan-$(Build.Repository.Name)-vulnerability-report.xlsx
+            moda-digitalwallet_wsscan-$(Build.Repository.Name)-due-diligence-report.xlsx
+            moda-digitalwallet_wsscan-$(Build.Repository.Name)-SPDX-json-report.zip
+            moda-digitalwallet_wsscan-$(Build.Repository.Name)-SPDX-xlsx-report.zip
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        condition: succeeded()
+
+      - task: PublishBuildArtifacts@1
+        displayName: 封存報告
+        inputs:
+          pathToPublish: $(Build.ArtifactStagingDirectory)
+          artifactName: Mend-Scan-Report
+        condition: succeeded()

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <property name="HOST_NAME" value="${VERIFIER_HOST_NAME}"/>
+    <property name="VP_INT_URL" value="${VP_INTERNAL_URL}"/>
+
+    <changeSet id="20000000000001" author="jhipster" runOnChange="true">
+        <sql>
+            DROP TABLE IF EXISTS session;
+        </sql>
+        <createTable tableName="session" ifNotExists="true">
+            <column name="transaction_id" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="client_id" type="varchar(500)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nonce" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rm" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rt" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="timestamp with time zone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expired_time" type="timestamp with time zone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ref" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="presentation_definition" type="json">
+                <constraints nullable="false"/>
+            </column>
+            <column name="validated" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="callback" type="varchar(500)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createIndex tableName="session" indexName="idx_session_state">
+            <column name="state"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="20000000000002" author="jhipster" runOnChange="true">
+        <sql>
+            DROP TABLE IF EXISTS verify_result;
+        </sql>
+        <createTable tableName="verify_result" ifNotExists="true">
+            <column name="transaction_id" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="response_code" type="varchar(36)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="request_time" type="timestamp with time zone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="response_time" type="timestamp with time zone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="verify_result" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="result_description" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="error_code" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="holder_did" type="varchar(500)"/>
+            <column name="vc_claim" type="json"/>
+        </createTable>
+        <createIndex tableName="verify_result" indexName="idx_result_code">
+            <column name="response_code"/>
+        </createIndex>
+
+        <createTable tableName="oidvp_config" ifNotExists="true">
+            <column name="property_key" type="varchar(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="property_value" type="text">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20000000000003" author="jhipster" runOnChange="true">
+        <sql>
+            DROP TABLE IF EXISTS presentation_definition;
+        </sql>
+        <createTable tableName="presentation_definition" ifNotExists="true">
+            <column name="serial_no" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="business_id" type="varchar(10)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="presentation_definition" type="json">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="presentation_definition" indexName="idx_pd_serial_no">
+            <column name="serial_no"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="20000000000004" author="jhipster">
+        <createTable tableName="metadata" ifNotExists="true">
+            <column name="field_name" type="varchar(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="field_value" type="text">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20000000000005" author="jhipster" runOnChange="true" context="test">
+        <loadUpdateData
+            file="config/liquibase/data/oidvp_config_test.csv"
+            separator=";"
+            tableName="oidvp_config"
+            usePreparedStatements="true"  primaryKey="property_key">
+            <column name="property_key" type="string"/>
+            <column name="property_value" type="string"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="20000000000006" author="jhipster" runOnChange="true" context="release">
+        <loadUpdateData
+            file="config/liquibase/data/oidvp_config_release.csv"
+            separator=";"
+            tableName="oidvp_config"
+            usePreparedStatements="true"  primaryKey="property_key">
+            <column name="property_key" type="string"/>
+            <column name="property_value" type="string"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="20000000000007" author="jhipster">
+        <insert tableName="oidvp_config">
+            <column name="property_key" value="oidvp.domain-uri"/>
+            <column name="property_value" value="https://${HOST_NAME}/oid4vp"/>
+        </insert>
+        <insert tableName="oidvp_config">
+            <column name="property_key" value="url.vp.presentation-validation"/>
+            <column name="property_value" value="${VP_INT_URL}/api/presentation/validation"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

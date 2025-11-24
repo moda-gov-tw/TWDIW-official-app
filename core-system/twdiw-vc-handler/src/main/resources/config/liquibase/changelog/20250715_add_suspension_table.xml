@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    
+    <changeSet id="00000000000018" author="chriskyVC">
+    	<preConditions onFail="MARK_RAN">
+	        <not>
+	        	<and>
+	        		<tableExists tableName="credential_suspension"/>
+	        		<primaryKeyExists tableName="credential_suspension" primaryKeyName="credential_suspension_pkey"/>
+	        		<indexExists tableName="credential_suspension" indexName="idx_cs_expected_recovery_time"/>
+	        	</and>
+	        </not>
+	    </preConditions>
+    	<createTable tableName="credential_suspension">
+            <column name="cid" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credential_type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suspension_begin_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suspension_duration" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suspension_duration_unit" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expected_recovery_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey
+            tableName="credential_suspension"
+            columnNames="cid"
+            constraintName="credential_suspension_pkey"/>
+        <createIndex indexName="idx_cs_expected_recovery_time" tableName="credential_suspension">
+            <column name="expected_recovery_time"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

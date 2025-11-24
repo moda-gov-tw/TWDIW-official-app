@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="10000000000001" author="jhipster" runOnChange="true">
+        <!--    <dropTable tableName="setting"/>-->
+        <createTable tableName="setting" ifNotExists="true">
+            <column name="prop_name" type="varchar(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="prop_value" type="varchar(300)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000002" author="jhipster" context="test">
+        <loadUpdateData
+            file="config/liquibase/data/vp_setting_test.csv"
+            separator=";"
+            tableName="setting"
+            usePreparedStatements="true"
+            primaryKey="prop_name">
+            <column name="prop_name" header="prop_name"/>
+            <column name="prop_value" header="prop_value"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000003" author="jhipster" context="release">
+        <loadUpdateData
+            file="config/liquibase/data/vp_setting_release.csv"
+            separator=";"
+            tableName="setting"
+            usePreparedStatements="true"
+            primaryKey="prop_name">
+            <column name="prop_name" header="prop_name"/>
+            <column name="prop_value" header="prop_value"/>
+        </loadUpdateData>
+    </changeSet>
+</databaseChangeLog>

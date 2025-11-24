@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="00000000000006" author="mars">
+        <modifyDataType tableName="credential_issuer_config" columnName="credential_offer" newDataType="varchar"/>
+        <modifyDataType tableName="credential_issuer_config" columnName="credential_issuer_meta" newDataType="varchar"/>
+    </changeSet>
+
+    <changeSet id="00000000000007" author="mars" runOnChange="true">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="credential_issuer_config" schemaName="vc"/>
+            </not>
+        </preConditions>
+        <loadData
+            file="config/liquibase/data/credential_issuer_config_2.csv"
+            separator=";"
+            tableName="credential_issuer_config"
+            usePreparedStatements="true">
+            <column name="vc_id" header="vc_id"/>
+            <column name="credential_offer" header="credential_offer"/>
+            <column name="credential_issuer_meta" header="credential_issuer_meta"/>
+            <column name="credential_issuer_identifier" header="credential_issuer_identifier"/>
+            <column name="credential_offer_uri_path" header="credential_offer_uri_path"/>
+            <column name="db_secret" header="db_secret"/>
+            <column name="db_iv" header="db_iv"/>
+            <column name="app_url_scheme" header="app_url_scheme"/>
+            <column name="credential_url" header="credential_url"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

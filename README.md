@@ -10,10 +10,14 @@
 |------|----------|----------|----------------|
 | 1 | 數位憑證皮夾 Android App | 原生 Android 應用程式，整合 APPSDK 與模組化服務。 | 即將公開 |
 | 2 | 數位憑證皮夾 iOS App | 原生 iOS 應用程式，對應 iOS 端整合與部署流程。 | 即將公開 |
-| 3 | 行動端 App SDK (Flutter) | 已釋出的 APPSDK，可產出 Android AAR / iOS Framework。 | `APPSDK/README.md` |
-| 4 | 發行端模組 | 供憑證發行單位部署的服務程式。 | 即將公開 |
-| 5 | 驗證端模組 | 供驗證單位進行憑證驗證的服務程式。 | 即將公開 |
-| 6 | 共用服務與工具 | 共用函式庫、範例資料與文件。 | 依子目錄說明，例如 `Docs/`、`doctemplate/`、`SampleCode/` |
+| 3 | 行動端 App SDK (Flutter) | 已釋出的 APPSDK，可產出 Android AAR / iOS Framework。 | `APP/APPSDK/README.md` |
+| 4 | 數位憑證皮夾核心系統 Parent POM | 提供所有核心模組共用的 Maven Parent 設定、版本治理與品質規則。 | `core-system/moda-digitalwallet-parent-pom/README.md` |
+| 5 | 數位憑證皮夾共用函式庫 | 提供 Actuator 建置資訊輸出與日誌記錄的共用 Spring Boot 套件。 | `core-system/moda-digitalwallet-common/README.md` |
+| 6 | 發行端 OID4VCI 服務 | 部署於發行機關，處理 OID4VCI 發卡與驗證流程。 | `core-system/twdiw-oid4vci-handler/README.md` |
+| 7 | 驗證端 OID4VP 服務 | 部署於驗證機關，支援 OID4VP 流程與 Presentation 驗證。 | `core-system/twdiw-oid4vp-handler/README.md` |
+| 8 | 發證機關 VC 服務 | 提供 VC 簽發、狀態清冊、DID 管理等功能。 | `core-system/twdiw-vc-handler/README.md` |
+| 9 | 驗證端 VP 服務 | 驗證 VP/VC 與 SD-JWT，支援選擇性揭露。 | `core-system/twdiw-vp-handler/README.md` |
+| 10 | 共用服務與工具 | 共用函式庫、範例資料與文件。 | 依子目錄說明，例如 `Docs/`、`doctemplate/`、`SampleCode/` |
 
 > 各子專案的詳細使用方式請直接閱讀對應目錄下的 `README.md`。本檔案僅保留高層級資訊與合規指引。
 
@@ -33,9 +37,17 @@
 
 ```
 .
-├── APPSDK/            # Flutter SDK 主體與編譯指引（詳見子目錄 README）
+├── APP/               # 行動端資源
+│   └── APPSDK/        # Flutter SDK 主體與編譯指引（詳見子目錄 README）
 ├── Docs/              # 技術文件與架構說明
 ├── SampleCode/        # 對應文件所引用的程式範例
+├── core-system/       # 核心系統模組（Parent POM、共用函式庫與各服務）
+│   ├── moda-digitalwallet-parent-pom/  # Maven Parent POM 設定
+│   ├── moda-digitalwallet-common/      # Spring Boot 共用函式庫
+│   ├── twdiw-oid4vci-handler/          # 發行端 OID4VCI 服務
+│   ├── twdiw-oid4vp-handler/           # 驗證端 OID4VP 服務
+│   ├── twdiw-vc-handler/               # 發證機關 VC 服務
+│   └── twdiw-vp-handler/               # 驗證端 VP 服務
 ├── .github/           # GitHub Issue / PR 模板（自動套用）
 ├── images/            # 參考示意圖與素材
 ├── CONTRIBUTING.md    # 貢獻流程
@@ -49,7 +61,7 @@
 ## 快速開始
 
 1. 使用 `git clone` 取得儲存庫程式碼。
-2. 依需求進入對應子目錄，閱讀該資料夾下的 `README.md`，以取得詳細安裝、編譯與部署步驟。
+2. 依需求進入對應子目錄（例如 `core-system/*`、`APP/APPSDK/`），閱讀該資料夾下的 `README.md`，以取得詳細安裝、編譯與部署步驟。
 3. 執行測試或驗證時，請遵循各子專案提供的測試指令；若有額外測試策略，可於 PR 中一併提出。
 
 ## 開源合規與貢獻守則

@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Presentation Submission",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "definition_id": {
+      "type": "string"
+    },
+    "descriptor_map": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/descriptor"
+      }
+    }
+  },
+  "definitions": {
+    "descriptor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "path_nested": {
+          "type": "object",
+          "$ref": "#/definitions/descriptor"
+        },
+        "format": {
+          "$ref": "#/definitions/format"
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "format"
+      ],
+      "additionalProperties": false
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "jwt",
+        "jwt_vc",
+        "jwt_vc_json",
+        "jwt_vp",
+        "jwt_vp_json",
+        "ldp",
+        "ldp_vc",
+        "ldp_vp"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "definition_id",
+    "descriptor_map"
+  ],
+  "additionalProperties": false
+}

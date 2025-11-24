@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="HOST_NAME" value="${ISSUER_HOST_NAME}"/>
+    <property name="ISSUER_INT_URL" value="${ISSUER_INTERNAL_URL}"/>
+    <property name="OID4VCI_INT_URL" value="${OID4VCI_INTERNAL_URL}"/>
+    <property name="VP_INT_URL" value="${VP_INTERNAL_URL}"/>
+
+    <changeSet id="10000000000001" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <and>
+                    <tableExists tableName="credential"/>
+                    <primaryKeyExists tableName="credential" primaryKeyName="credential_pkey"/>
+                    <indexExists tableName="credential" indexName="idx_last_update_time"/>
+                    <indexExists tableName="credential" indexName="idx_serial_number"/>
+                </and>
+            </not>
+        </preConditions>
+        <createTable tableName="credential">
+            <column name="cid" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credential_type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credential_subject_id" type="varchar(300)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="issuance_date" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expiration_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ticket_number" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_update_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credential_status" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nonce" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey
+            tableName="credential"
+            columnNames="cid"
+            constraintName="credential_pkey"/>
+        <createIndex indexName="idx_last_update_time" tableName="credential">
+            <column name="last_update_time"/>
+        </createIndex>
+        <createIndex indexName="idx_serial_number" tableName="credential">
+            <column name="ticket_number"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="10000000000002" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <and>
+                    <tableExists tableName="setting"/>
+                    <primaryKeyExists tableName="setting" primaryKeyName="setting_pk"/>
+                </and>
+            </not>
+        </preConditions>
+        <createTable tableName="setting">
+            <column name="prop_name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="prop_value" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey
+            tableName="setting"
+            columnNames="prop_name"
+            constraintName="setting_pk"/>
+    </changeSet>
+
+    <changeSet id="10000000000003" author="jhipster" context="test">
+        <loadUpdateData
+            file="config/liquibase/data/setting_test.csv"
+            separator=";"
+            tableName="setting"
+            usePreparedStatements="true"
+            primaryKey="prop_name">
+            <column name="prop_name" header="prop_name"/>
+            <column name="prop_value" header="prop_value"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000004" author="jhipster" context="release">
+        <loadUpdateData
+            file="config/liquibase/data/setting_release.csv"
+            separator=";"
+            tableName="setting"
+            usePreparedStatements="true"
+            primaryKey="prop_name">
+            <column name="prop_name" header="prop_name"/>
+            <column name="prop_value" header="prop_value"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000005" author="jhipster">
+        <update tableName="setting">
+            <column name="prop_value" value="https://${HOST_NAME}/vc"/>
+            <where>prop_name = 'url.vc.base_path'</where>
+        </update>
+        <update tableName="setting">
+            <column name="prop_value" value="${ISSUER_INT_URL}/api/getdata"/>
+            <where>prop_name = 'url.demo.get_holder_data'</where>
+        </update>
+        <update tableName="setting">
+            <column name="prop_value" value="${VP_INT_URL}/api/presentation/validation"/>
+            <where>prop_name = 'url.vp_validation'</where>
+        </update>
+        <update tableName="setting">
+            <column name="prop_value" value="${OID4VCI_INT_URL}/api/issuer/"/>
+            <where>prop_name = 'url.oidvci_qrcode'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="10000000000006" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <and>
+                    <tableExists tableName="status_list"/>
+                    <primaryKeyExists tableName="status_list" primaryKeyName="status_list_pk"/>
+                    <indexExists tableName="status_list" indexName="idx_gid"/>
+                    <indexExists tableName="status_list" indexName="idx_issuance_date"/>
+                </and>
+            </not>
+        </preConditions>
+        <createTable tableName="status_list">
+            <column name="sid" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gid" type="int4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status_list_type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="issuance_date" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expiration_date" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credential_type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey
+            tableName="status_list"
+            columnNames="sid"
+            constraintName="status_list_pk"/>
+        <createIndex indexName="idx_gid" tableName="status_list">
+            <column name="gid"/>
+        </createIndex>
+        <createIndex indexName="idx_issuance_date" tableName="status_list">
+            <column name="issuance_date"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="10000000000007" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="ticket"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE TABLE ticket (
+                                    id bigserial NOT NULL,
+                                    credential_type varchar(50) NOT NULL,
+                                    ticket_number int8 NOT NULL,
+                                    created_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                                    CONSTRAINT ticket_pk PRIMARY KEY (id),
+                                    CONSTRAINT ticket_unique_1 UNIQUE (credential_type, ticket_number)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="10000000000008" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <sequenceExists sequenceName="seq_1"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE SEQUENCE seq_1
+                INCREMENT BY 1
+                MINVALUE 1
+                MAXVALUE 9223372036854775807
+                START 1
+				CACHE 1
+				NO CYCLE;
+        </sql>
+    </changeSet>
+
+    <changeSet id="10000000000009" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <and>
+                    <tableExists tableName="credential_data"/>
+                    <indexExists tableName="credential_data" indexName="idx_transaction_id_credential_type"/>
+                </and>
+            </not>
+        </preConditions>
+        <createTable tableName="credential_data">
+            <column name="transaction_id" type="varchar(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="credential_type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expired_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="options" type="text">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createIndex indexName="idx_transaction_id_credential_type" tableName="credential_data">
+            <column name="transaction_id"/>
+            <column name="credential_type"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="10000000000010" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <and>
+                    <tableExists tableName="credential_policy"/>
+                    <indexExists tableName="credential_policy" indexName="idx_credential_type"/>
+                </and>
+            </not>
+        </preConditions>
+        <createTable tableName="credential_policy">
+            <column name="pid" type="varchar(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="credential_type" type="varchar(50)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="effective_duration_time_unit" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="effective_duration_time_value" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="signature_alg" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="seq_name" type="varchar(60)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="schema_id" type="varchar(300)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vc_schema" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="func_switch" type="text">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createIndex indexName="idx_credential_type" tableName="credential_policy">
+            <column name="credential_type"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="10000000000011" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <tableIsEmpty tableName="credential_policy"/>
+        </preConditions>
+        <loadUpdateData
+            file="config/liquibase/data/credential_policy.csv"
+            separator=";"
+            tableName="credential_policy"
+            primaryKey="pid"
+            usePreparedStatements="true">
+            <column name="pid" header="pid"/>
+            <column name="credential_type" header="credential_type"/>
+            <column name="effective_duration_time_unit" header="effective_duration_time_unit"/>
+            <column name="effective_duration_time_value" header="effective_duration_time_value"/>
+            <column name="signature_alg" header="signature_alg"/>
+            <column name="created_time" header="created_time"/>
+            <column name="seq_name" header="seq_name"/>
+            <column name="schema_id" header="schema_id"/>
+            <column name="vc_schema" header="vc_schema"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000012" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <and>
+                    <tableExists tableName="credential_transfer"/>
+                    <indexExists tableName="credential_transfer" indexName="idx_ct_transaction_id_credential_type"/>
+                </and>
+            </not>
+        </preConditions>
+        <createTable tableName="credential_transfer">
+            <column name="transaction_id" type="varchar(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="credential_type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expired_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="old_cid" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex indexName="idx_ct_transaction_id_credential_type" tableName="credential_transfer">
+            <column name="transaction_id"/>
+            <column name="credential_type"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

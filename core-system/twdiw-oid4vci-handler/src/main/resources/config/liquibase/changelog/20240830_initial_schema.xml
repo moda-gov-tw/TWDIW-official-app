@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+    <changeSet id="00000000000003" author="mars" runOnChange="true">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="credential_issuer_config" schemaName="vc"/>
+            </not>
+        </preConditions>
+    	<createTable tableName="credential_issuer_config">
+            <column name="vc_id" type="varchar(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="credential_offer" type="varchar(512)"/>
+            <column name="credential_issuer_meta" type="varchar(4000)"/>
+            <column name="credential_issuer_identifier" type="varchar(128)"/>
+            <column name="credential_offer_uri_path" type="varchar(128)"/>
+            <column name="db_secret" type="varchar(128)"/>
+            <column name="db_iv" type="varchar(128)"/>
+            <column name="app_url_scheme" type="varchar(128)"/>
+            <column name="credential_url" type="varchar(128)"/>
+        </createTable>
+
+        <createTable tableName="pre_auth_code">
+            <column name="user_id" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nonce" type="varchar(96)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="client_id" type="varchar(32)"/>
+            <column name="create_time" type="timestamp with timezone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expire_time" type="timestamp with timezone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code_status" type="varchar(20)"/>
+            <column name="credential_configuration_id" type="varchar(128)"/>
+            <column name="pre_code" type="varchar(128)"/>
+        </createTable>
+        <addPrimaryKey columnNames="user_id, nonce" tableName="pre_auth_code"/>
+        <createIndex indexName="idx_pre_auth_code_client_id_pre_code" tableName="pre_auth_code">
+            <column name="client_id"/>
+            <column name="pre_code"/>
+        </createIndex>
+
+        <loadData
+                  file="config/liquibase/data/credential_issuer_config.csv"
+                  separator=";"
+                  tableName="credential_issuer_config"
+                  usePreparedStatements="true">
+                  <column name="vc_id" header="vc_id"/>
+                  <column name="credential_offer" header="credential_offer"/>
+                  <column name="credential_issuer_meta" header="credential_issuer_meta"/>
+                  <column name="credential_issuer_identifier" header="credential_issuer_identifier"/>
+                  <column name="credential_offer_uri_path" header="credential_offer_uri_path"/>
+                  <column name="db_secret" header="db_secret"/>
+                  <column name="db_iv" header="db_iv"/>
+                  <column name="app_url_scheme" header="app_url_scheme"/>
+                  <column name="credential_url" header="credential_url"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

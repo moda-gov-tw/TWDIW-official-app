@@ -1,0 +1,3 @@
+prop_name;prop_value
+schedule.cron.delete_data;"0 0/10 * * * ?"
+data.delete.n_minutes_ago;"10"
