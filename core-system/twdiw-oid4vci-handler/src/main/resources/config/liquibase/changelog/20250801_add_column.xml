@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="0000000000015" author="mars">
+        <!-- 新增欄位到現有表 pre_auth_code -->
+        <addColumn tableName="pre_auth_code">
+            <column name="cid" type="varchar">
+                <constraints nullable="true"/> <!-- 可根據需求設定 nullable -->
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
