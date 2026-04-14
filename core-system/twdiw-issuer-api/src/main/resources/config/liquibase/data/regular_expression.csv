@@ -1,0 +1,23 @@
+"id";"type";"name";"regular_expression";"description";"error_msg";"rule_type"
+1;require;避免json出錯;"^[^""]*$";不允許輸入雙引號;不允許輸入雙引號或系統禁用文字或特殊符號;allow
+2;require;XSS防堵;<.*?(script|img|iframe|object|embed|style|base|link|meta).*?>|javascript:|data:text;針對XSS攻擊，檢測帶有危險的HTML及Javascript關鍵字;不允許輸入雙引號或系統禁用文字或特殊符號;deny
+3;require;SQLInjection防堵;"('|\-\-|;|\/\*|\*\/|xp_|drop|select|insert|delete|update|union|exec|execute|alter|create|shutdown)";針對SQLInjection攻擊，針對特定字串防堵;不允許輸入雙引號或系統禁用文字或特殊符號;deny
+4;specified;只允許輸入英文;^[a-zA-Z]+$;只允許輸入大寫或小寫英文;只允許輸入大寫或小寫英文;allow
+5;specified;只允許輸入英數;^[a-zA-Z0-9]+$;允許大寫字母、小寫字母以及數字;允許大寫字母、小寫字母以及數字;allow
+6;specified;電子郵件格式檢查;^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$;電子郵件格式檢查;電子郵件格式檢查;allow
+7;specified;臺灣行動電話號碼規則;^09\d{8}$;臺灣行動電話號碼規則，須以09開頭，後接8碼數字;臺灣行動電話號碼規則，須以09開頭，後接8碼數字;allow
+8;specified;不允許輸入~!@#$%^&*()_-+*/;^[^~!@#$%^&*()_\-+\*/]+$;不允許輸入~!@#$%^&*()_-+*/;不允許輸入~!@#$%^&*()_-+*/;allow
+9;specified;只能輸入中英文數字和_;^[\u4E00-\u9FFF\u3400-\u4DBFa-zA-Z0-9_]+$;只能輸入中英文數字和_;只能輸入中英文數字和_;allow
+10;specified;只能輸入英文數字和_;^[a-zA-Z0-9_]+$;只能輸入英文數字和_;只能輸入英文數字和_;allow
+11;specified;身分證字號;^[A-Z][1289]\d{8}$;身分證字號;不符合身分證字號檢核規則;allow
+12;specified;民國出生年月日(0991231);^\d{7}$;只允許輸入數字且長度為7碼;只允許輸入數字且長度為7碼,年度不足三位數須補零(例.1131202 或 0990101);allow
+14;specified;居留證統一證號;^[A-Z]{2}\d{8}$;居留證統一證號;不符合居留證統一證號檢核規則;allow
+15;specified;外來人口統一證號;^[A-Z][89]\d{8}$;外來人口統一證號;不符合外來人口統一證號檢核規則;allow
+16;specified;性別格式檢查;^[12]$;"1:男性 2:女性";只能輸入數字;allow
+17;specified;國籍格式檢查;^[01]$;"0:本國 1:外國";只能輸入數字;allow
+18;specified;西元出生日期;^\d{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$;只允許輸入數字且長度為8碼，日期格式 YYYYMMDD;日期只能輸入 YYYYMMDD 格式;allow
+19;specified;郵遞區號;^[1-9][0-9][0-9]$;只允許輸入數字且長度為3碼;只能輸入數字;allow
+20;specified;護照號碼;^[3DFG][0-9]{8}$;護照號碼;不符合護照號碼檢核規則;allow
+21;default;只允許輸入英文數字和空格;^[a-zA-Z0-9 ]+$;只允許大寫字母、小寫字母、數字及空格;只允許大寫字母、小寫字母、數字及空格;allow
+22;specified;只能輸入中文;^[\u4E00-\u9FFF\u3400-\u4DBF]+$;只能輸入中文;只能輸入中文;allow
+101;specified;網址格式檢查;"^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-\.~:\/?#\[\]@!$&'()*+,;=%]*)?$";網址格式檢查;請輸入正確的網址格式;allow

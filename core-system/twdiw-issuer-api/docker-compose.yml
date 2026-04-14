@@ -1,0 +1,69 @@
+# ===================================================================
+# 數位錢包發行端管理服務 - Docker Compose 配置檔
+# ===================================================================
+# 用途：提供開發環境所需的 PostgreSQL 資料庫服務
+# 使用方式：
+#   啟動服務：docker-compose up -d
+#   停止服務：docker-compose down
+#   查看日誌：docker-compose logs -f postgres
+# ===================================================================
+
+version: '3.8'
+
+services:
+  # PostgreSQL 資料庫服務
+  postgres:
+    # 使用 PostgreSQL 16 官方映像檔
+    image: postgres:16-alpine
+    # 容器名稱
+    container_name: twdiw-issuer-postgres
+    # 容器重啟策略：除非手動停止，否則總是重啟
+    restart: unless-stopped
+    # 環境變數設定
+    environment:
+      # PostgreSQL 超級使用者名稱
+      POSTGRES_USER: postgres
+      # PostgreSQL 超級使用者密碼
+      # ⚠️ 安全警告：此為開發環境預設密碼，正式環境請務必更換！
+      # 建議透過 .env 檔案或環境變數設定：POSTGRES_PASSWORD=your_secure_password
+      POSTGRES_PASSWORD: postgres
+      # 預設建立的資料庫名稱
+      POSTGRES_DB: twdiw_issuer
+      # 設定時區為台北時間
+      TZ: Asia/Taipei
+      # PostgreSQL 設定：字元編碼
+      POSTGRES_INITDB_ARGS: --encoding=UTF-8 --lc-collate=zh_TW.UTF-8 --lc-ctype=zh_TW.UTF-8
+    # 連接埠映射：主機埠:容器埠
+    ports:
+      - "5432:5432"
+    # 資料持久化：將資料庫資料掛載到本地磁碟
+    volumes:
+      # PostgreSQL 資料目錄
+      - postgres_data:/var/lib/postgresql/data
+      # 初始化腳本目錄（可選）
+      # - ./docker/postgres/init:/docker-entrypoint-initdb.d
+    # 健康檢查設定
+    healthcheck:
+      # 檢查指令：使用 pg_isready 確認資料庫是否就緒
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      # 檢查間隔時間
+      interval: 10s
+      # 檢查超時時間
+      timeout: 5s
+      # 重試次數
+      retries: 5
+    # 網路設定
+    networks:
+      - twdiw-network
+
+# 定義資料卷（用於資料持久化）
+volumes:
+  # PostgreSQL 資料卷
+  postgres_data:
+    driver: local
+
+# 定義網路
+networks:
+  # 應用程式網路
+  twdiw-network:
+    driver: bridge

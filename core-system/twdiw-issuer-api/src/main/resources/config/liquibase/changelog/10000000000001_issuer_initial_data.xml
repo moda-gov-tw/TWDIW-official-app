@@ -1,0 +1,2147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="10000000000001" author="jhipster">
+        <createSequence sequenceName="sequence_generator" startValue="1050" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="10000000000002" author="jhipster">
+        <createTable tableName="jhi_user">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="login" type="varchar(50)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_user_login"/>
+            </column>
+            <column name="password_hash" type="varchar(256)">
+            	<constraints nullable="false" />
+            </column>
+            <column name="first_name" type="varchar(50)"/>
+            <column name="last_name" type="varchar(50)"/>
+            <column name="email" type="varchar(191)">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_email"/>
+            </column>
+            <column name="image_url" type="varchar(256)"/>
+            <column name="activated" type="boolean" valueBoolean="false">
+                <constraints nullable="false" />
+            </column>
+            <column name="lang_key" type="varchar(10)"/>
+            <column name="activation_key" type="varchar(20)"/>
+            <column name="reset_key" type="varchar(20)"/>
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp"/>
+            <column name="reset_date" type="timestamp">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </createTable>
+
+        <createTable tableName="jhi_authority">
+            <column name="name" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+
+        <addForeignKeyConstraint baseColumnNames="authority_name"
+                                 baseTableName="jhi_user_authority"
+                                 constraintName="fk_authority_name"
+                                 referencedColumnNames="name"
+                                 referencedTableName="jhi_authority"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="jhi_user_authority"
+                                 constraintName="fk_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addNotNullConstraint   columnName="password_hash"
+                                columnDataType="varchar(256)"
+                                tableName="jhi_user"/>
+        <loadUpdateData
+                  file="config/liquibase/data/authority.csv"
+                  separator=";"
+                  tableName="jhi_authority"
+                  primaryKey="name"
+                  usePreparedStatements="true">
+            <column name="name" type="string"/>
+        </loadUpdateData>
+        <loadUpdateData
+                  file="config/liquibase/data/user.csv"
+                  separator=";"
+                  tableName="jhi_user"
+                  primaryKey="id"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="activated" type="boolean"/>
+            <column name="created_date" type="timestamp"/>
+        </loadUpdateData>
+        <loadUpdateData
+                  file="config/liquibase/data/user_authority.csv"
+                  separator=";"
+                  tableName="jhi_user_authority"
+                  primaryKey="user_id,authority_name"
+                  usePreparedStatements="true">
+            <column name="user_id" type="numeric"/>
+        </loadUpdateData>
+        <dropDefaultValue tableName="jhi_user" columnName="created_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000003" author="jhipster">
+        <update tableName="jhi_user">
+            <column name="created_date" valueComputed="NOW()" />
+            <where>id = '1'</where>
+        </update>
+        <update tableName="jhi_user">
+            <column name="created_date" valueComputed="NOW()" />
+            <where>login = 'modadwap@localhost' AND created_date IS NULL</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="10000000000004" author="jhipster">
+        <createTable tableName="access_token">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="access_token" type="varchar(140)">
+                <constraints nullable="false" />
+            </column>
+            <column name="access_token_name" type="varchar(140)">
+                <constraints nullable="false" />
+            </column>
+            <column name="owner" type="varchar(140)">
+                <constraints nullable="true" />
+            </column>
+            <column name="owner_name" type="varchar(140)">
+                <constraints nullable="true" />
+            </column>
+            <column name="org_id" type="varchar(140)">
+                <constraints nullable="false" />
+            </column>
+            <column name="org_name" type="varchar(140)">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+            <column name="actype" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+            <column name="data_role_1" type="varchar(140)">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(140)">
+                <constraints nullable="true" />
+            </column>
+            <column name="secu_layer" type="varchar(140)">
+                <constraints nullable="true" />
+            </column>
+            <column name="expiration_time" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="access_token" columnName="expiration_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="access_token" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000005" author="jhipster">
+        <loadUpdateData
+            tableName="access_token"
+            primaryKey="id"
+            file="config/liquibase/data/access_token.csv"
+            separator=";"/>
+    </changeSet>
+
+    <changeSet id="10000000000006" author="jhipster">
+        <createTable tableName="api_track">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="varchar(255)" remarks="唯一識別碼">
+                <constraints nullable="false" />
+            </column>
+            <column name="timestamp" type="${datetimeType}" remarks="時間戳">
+                <constraints nullable="true" />
+            </column>
+            <column name="source" type="varchar(255)" remarks="來源位置">
+                <constraints nullable="true" />
+            </column>
+            <column name="service_id" type="varchar(255)" remarks="服務類型">
+                <constraints nullable="true" />
+            </column>
+            <column name="uri" type="varchar(600)" remarks="統一資源識別碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="url" type="varchar(600)" remarks="統一資源定位符">
+                <constraints nullable="true" />
+            </column>
+            <column name="status_code" type="varchar(255)" remarks="狀態碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="rtt" type="varchar(255)" remarks="執行耗時(毫秒)">
+                <constraints nullable="true" />
+            </column>
+            <column name="request_header" type="${clobType}" remarks="請求標頭">
+                <constraints nullable="true" />
+            </column>
+            <column name="request_param" type="${clobType}" remarks="請求參數">
+                <constraints nullable="true" />
+            </column>
+            <column name="request_body" type="${clobType}" remarks="請求內容">
+                <constraints nullable="true" />
+            </column>
+            <column name="request_method" type="varchar(255)" remarks="請求方法">
+                <constraints nullable="true" />
+            </column>
+            <column name="response_header" type="${clobType}" remarks="回應標頭">
+                <constraints nullable="true" />
+            </column>
+            <column name="response_body" type="${clobType}" remarks="回應內容">
+                <constraints nullable="true" />
+            </column>
+            <column name="access_token_1" type="varchar(255)" remarks="存取憑證1">
+                <constraints nullable="true" />
+            </column>
+            <column name="access_token_2" type="varchar(255)" remarks="存取憑證2">
+                <constraints nullable="true" />
+            </column>
+            <column name="jhi_from" type="varchar(255)" remarks="使用者">
+                <constraints nullable="true" />
+            </column>
+            <column name="jhi_to" type="varchar(255)" remarks="服務端">
+                <constraints nullable="true" />
+            </column>
+            <column name="cost" type="varchar(255)" remarks="花費">
+                <constraints nullable="true" />
+            </column>
+            <column name="charged" type="varchar(10)" remarks="是否已完結">
+                <constraints nullable="true" />
+            </column>
+            <column name="synced" type="varchar(10)" remarks="是否已同步">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="api_track" columnName="timestamp" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000007" author="jhipster">
+        <createTable tableName="bwd_history" remarks="BwdHistory 密碼歷史">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="varchar(320)" remarks="帳號">
+                <constraints nullable="false" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="bwd_hash" type="varchar(255)" remarks="密碼Hash">
+                <constraints nullable="false" />
+            </column>
+            <column name="bwd_code" type="varchar(500)" remarks="密碼Code">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="bwd_history" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000008" author="jhipster">
+        <createTable tableName="bwd_param" remarks="BwdParam 密碼規則">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="bwd_profile_id" type="varchar(40)" remarks="密碼設定檔">
+                <constraints nullable="false" />
+            </column>
+            <column name="rule_id" type="varchar(40)" remarks="規則ID">
+                <constraints nullable="false" />
+            </column>
+            <column name="rule_name" type="varchar(100)" remarks="規則名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(500)" remarks="規則描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="boolean" remarks="狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="str_regular" type="varchar(200)">
+                <constraints nullable="true" />
+            </column>
+            <column name="param_value" type="varchar(500)" remarks="參數值">
+                <constraints nullable="true" />
+            </column>
+            <column name="action_type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="error_message" type="varchar(500)" remarks="錯誤訊息">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="update_time" type="${datetimeType}" remarks="更新時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="bwd_param" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="bwd_param" columnName="update_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000009" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/bwd_param.csv"
+            separator=";"
+            tableName="bwd_param"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="bwd_profile_id" type="string"/>
+            <column name="rule_id" type="string"/>
+            <column name="rule_name" type="string"/>
+            <column name="description" type="string"/>
+            <column name="state" type="boolean"/>
+            <column name="str_regular" type="string"/>
+            <column name="param_value" type="string"/>
+            <column name="action_type" type="string"/>
+            <column name="check_type" type="string"/>
+            <column name="error_message" type="string"/>
+            <column name="create_time" type="date"/>
+            <column name="update_time" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000010" author="jhipster">
+        <createTable tableName="category" remarks="Category 類別">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="description" type="varchar(50)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_id" type="integer" remarks="排序">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000011" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/category.csv"
+            separator=";"
+            tableName="category"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="description" type="string"/>
+            <column name="order_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000012" author="jhipster">
+        <createTable tableName="cookies_msg">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cid" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="msg" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000013" author="jhipster">
+        <createTable tableName="extended_user" remarks="ExtendedUser">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="org_id" type="varchar(255)" remarks="組織">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="varchar(320)" remarks="帳號">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_name" type="varchar(128)" remarks="姓名">
+                <constraints nullable="false" />
+            </column>
+            <column name="email" type="varchar(320)" remarks="email">
+                <constraints nullable="true" />
+            </column>
+            <column name="phone" type="varchar(20)" remarks="手機">
+                <constraints nullable="true" />
+            </column>
+            <column name="tel" type="varchar(20)" remarks="市話">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_id" type="varchar(20)" remarks="員工編號">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_type_id" type="varchar(10)" remarks="員工類型">
+                <constraints nullable="true" />
+            </column>
+            <column name="left_date" type="${datetimeType}" remarks="離職日">
+                <constraints nullable="true" />
+            </column>
+            <column name="onboard_date" type="${datetimeType}" remarks="到職日">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_type_id" type="varchar(10)" remarks="帳號類型">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="資料角色1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="資料角色2">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立日">
+                <constraints nullable="false" />
+            </column>
+            <column name="auth_change_time" type="${datetimeType}" remarks="上次變更授權角色時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="pwd_reset_time" type="${datetimeType}" remarks="上次重置密碼時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="extended_user" columnName="left_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user" columnName="onboard_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user" columnName="auth_change_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user" columnName="pwd_reset_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000014" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/extended_user.csv"
+            separator=";"
+            tableName="extended_user"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="org_id" type="string"/>
+            <column name="user_id" type="string"/>
+            <column name="user_name" type="string"/>
+            <column name="email" type="string"/>
+            <column name="phone" type="string"/>
+            <column name="tel" type="string"/>
+            <column name="employee_id" type="string"/>
+            <column name="employee_type_id" type="string"/>
+            <column name="left_date" type="date"/>
+            <column name="onboard_date" type="date"/>
+            <column name="user_type_id" type="string"/>
+            <column name="data_role_1" type="string"/>
+            <column name="data_role_2" type="string"/>
+            <column name="state" type="string"/>
+            <column name="create_time" type="date"/>
+            <column name="auth_change_time" type="date"/>
+            <column name="pwd_reset_time" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000015" author="jhipster">
+        <createTable tableName="extended_user_log">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="actor" type="varchar(140)" remarks="異動人">
+                <constraints nullable="false" />
+            </column>
+            <column name="log_type" type="varchar(20)" remarks="異動類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="log_time" type="${datetimeType}" remarks="Log建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="org_id" type="varchar(255)" remarks="組織">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="varchar(320)" remarks="帳號">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_name" type="varchar(128)" remarks="姓名">
+                <constraints nullable="true" />
+            </column>
+            <column name="email" type="varchar(320)" remarks="email">
+                <constraints nullable="true" />
+            </column>
+            <column name="phone" type="varchar(20)" remarks="手機">
+                <constraints nullable="true" />
+            </column>
+            <column name="tel" type="varchar(20)" remarks="市話">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_id" type="varchar(20)" remarks="員工編號">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_type_id" type="varchar(10)" remarks="員工類型">
+                <constraints nullable="true" />
+            </column>
+            <column name="left_date" type="${datetimeType}" remarks="離職日">
+                <constraints nullable="true" />
+            </column>
+            <column name="onboard_date" type="${datetimeType}" remarks="到職日">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_type_id" type="varchar(10)" remarks="帳號類型">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="預留欄位1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="預留欄位2">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="狀態">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="帳號建立時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="auth_change_time" type="${datetimeType}" remarks="上次變更授權角色時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="pwd_reset_time" type="${datetimeType}" remarks="上次重置密碼時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="extended_user_log" columnName="log_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user_log" columnName="left_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user_log" columnName="onboard_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user_log" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user_log" columnName="auth_change_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="extended_user_log" columnName="pwd_reset_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000016" author="jhipster">
+        <createTable tableName="field">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cname" type="varchar(50)" remarks="欄位對外名稱(中/英)">
+                <constraints nullable="false" />
+            </column>
+            <column name="ename" type="varchar(50)" remarks="欄位名稱(英)">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)" remarks="欄位類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="visible" type="boolean" remarks="是否顯示">
+                <constraints nullable="false" />
+            </column>
+            <column name="business_id" type="varchar(255)" remarks="單位">
+                <constraints nullable="false" />
+            </column>
+            <column name="regular_expression_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000017" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/field.csv"
+            separator=";"
+            tableName="field"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="cname" type="string"/>
+            <column name="ename" type="string"/>
+            <column name="type" type="string"/>
+            <column name="visible" type="boolean"/>
+            <column name="business_id" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000018" author="jhipster">
+        <createTable tableName="img_verify_code">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="verify_code" type="varchar(255)" remarks="圖形驗證碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="verify_uni_id" type="varchar(255)" remarks="圖形驗證碼唯一碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="創建時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="expire_time" type="${datetimeType}" remarks="過期時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="img_verify_code" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="img_verify_code" columnName="expire_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000019" author="jhipster">
+        <createTable tableName="login_count" remarks="LoginCount 登入失敗次數">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="varchar(320)" remarks="帳號">
+                <constraints nullable="false" />
+            </column>
+            <column name="fail_count" type="integer" remarks="登入失敗次數(-1:強制重置密碼、n:失敗次數)">
+                <constraints nullable="false" />
+            </column>
+            <column name="update_time" type="${datetimeType}" remarks="修改時間">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="login_count" columnName="update_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000020" author="jhipster">
+        <addUniqueConstraint
+            tableName="login_count"
+            columnNames="user_id"
+            constraintName="ux_login_count_user_id"/>
+    </changeSet>
+
+    <changeSet id="10000000000021" author="jhipster">
+        <createTable tableName="mail_template">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="mail_type" type="varchar(255)" remarks="信件類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(255)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="recipient_role" type="varchar(255)"
+                    remarks="收件者角色">
+                <constraints nullable="false" />
+            </column>
+            <column name="subject" type="varchar(255)" remarks="信件標題">
+                <constraints nullable="true" />
+            </column>
+            <column name="message" type="${clobType}" remarks="信件內容">
+                <constraints nullable="true" />
+            </column>
+            <column name="html_state" type="varchar(10)" remarks="信件格式">
+                <constraints nullable="false" />
+            </column>
+            <column name="activated" type="varchar(10)" remarks="啟用狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="create_time" type="${datetimeType}"
+                    remarks="建立日期">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns
+                here -->
+        </createTable>
+        <dropDefaultValue tableName="mail_template"
+                          columnName="create_time" columnDataType="${datetimeType}" />
+    </changeSet>
+
+    <changeSet id="10000000000022" author="jhipster">
+        <insert tableName="mail_template">
+            <column name="id" valueNumeric="1" />
+            <column name="mail_type" value="A01" />
+            <column name="description"
+                    value="帳號管理[建立帳號]_帳號建立完成後，由後台發送至使用者信箱。" />
+            <column name="recipient_role" value="user" />
+            <column name="subject" value="【數位憑證皮夾】發行端模組_帳號啟用通知" />
+            <column name="message">
+                <![CDATA[
+                    <!DOCTYPE html>
+                    <html lang="zh-Hant-TW">
+                      <head>
+                        <meta charset="UTF-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <style>
+                          body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                            padding: 0;
+                          }
+
+                          .email-container {
+                            max-width: 600px;
+                            margin: 20px auto;
+                            background-color: #ffffff;
+                            border: 1px solid #dddddd;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                          }
+
+                          .header {
+                            background-color: #4e61a7;
+                            color: #ffffff;
+                            text-align: center;
+                            padding: 20px;
+                          }
+
+                          .header h1 {
+                            margin: 0;
+                            font-size: 24px;
+                          }
+
+                          .content {
+                            font-size: 16px;
+                            padding: 0px 20px;
+                            text-align: left;
+                          }
+
+                          .highlight {
+                            color: #d9534f;
+                            font-weight: bold;
+                            font-size: 18px;
+                          }
+
+                          .button {
+                            display: inline-block;
+                            margin-top: 10px;
+                            padding: 12px 20px;
+                            background: #d33e5f;
+                            font-size: 16px;
+                            color: #ffffff !important;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            font-weight: bold;
+                            text-align: center;
+                          }
+
+                          .button:hover {
+                            background: #b8314e;
+                          }
+
+                          .access-token-container {
+                            background: #f8f9fa;
+                            padding: 5px 15px;
+                            margin-top: 15px;
+                            border-radius: 5px;
+                            text-align: center;
+                          }
+
+                          .access-token-title {
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: #007bff;
+                            border-radius: 5px;
+                            display: inline-block;
+                            margin-bottom: 10px;
+                          }
+
+                          .access-token {
+                            font-size: 15px;
+                            font-weight: bold;
+                            color: #333;
+                            background: #eee;
+                            padding: 5px;
+                            border-radius: 5px;
+                            word-break: break-all;
+                            display: inline-block;
+                          }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="email-container">
+                          <div class="header">
+                            <h1>【數位憑證皮夾】發行端模組_帳號啟用通知</h1>
+                          </div>
+                          <div class="content">
+                            <p>親愛的 @userName 您好</p>
+                            <p>
+                              您的帳號已完成申請，請於
+                              <span class="highlight">@expiryTime前</span>
+                              點擊下面的連結設置新密碼完成啟用，超過時間連結將會失效，需重新申請帳號。
+                            </p>
+                            <p style="text-align: left">
+                              <a
+                                href="@baseURL/account/modadw311w/activatePage?key1=@activation&amp;key2=@rest"
+                                class="button"
+                                >前往設定新密碼</a
+                              >
+                            </p>
+                          </div>
+                          <div class="access-token-container" style="text-align: left">
+                            <div class="access-token-title" style="color: #4e61a7">
+                              Access Token:
+                            </div>
+                            <p class="access-token">@accessToken</p>
+                            <p style="font-size: 14px; margin-top: 5px">
+                              模組支援透過 API 進行介接，可將此 Access Token 填寫至 API
+                              串接中的授權碼。
+                            </p>
+                            <p style="font-size: 14px; margin-top: 5px">
+                              請注意發行端、驗證端有各自不同的 Access Token 資訊。
+                            </p>
+                          </div>
+                          <div class="content">
+                            <p style="margin-bottom: 10px">祝您使用愉快！</p>
+                          </div>
+                          <hr />
+                          <div style="text-align: center">
+                            <div
+                              style="display: inline-block; text-align: center; margin: 10px 40px"
+                            >
+                              <a href="@appleStoreAppUrl" target="_blank" rel="noopener noreferrer">
+                                <img src="cid:appleStoreImgPath" width="150" alt="Apple Store" />
+                              </a>
+                              <div style="font-size: 12px; color: #666">支援 iOS 15.0 以上(含)</div>
+                            </div>
+                            <div
+                              style="display: inline-block; text-align: center; margin: 10px 40px"
+                            >
+                              <a href="@googlePlayAppUrl" target="_blank" rel="noopener noreferrer">
+                                <img src="cid:googlePlayImgPath" width="150" alt="Google Play" />
+                              </a>
+                              <div style="font-size: 12px; color: #666">
+                                支援 Android 10 以上(含)
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </body>
+                    </html>
+                ]]>
+            </column>
+            <column name="html_state" valueNumeric="1" />
+            <column name="activated" valueNumeric="1" />
+            <column name="create_time" valueDate="2025-03-06 00:00:00.000" />
+        </insert>
+
+        <insert tableName="mail_template">
+            <column name="id" valueNumeric="2" />
+            <column name="mail_type" value="A02" />
+            <column name="description"
+                    value="帳號管理[重置密碼]_帳號密碼重置後，由後台發送至使用者信箱。" />
+            <column name="recipient_role" value="user" />
+            <column name="subject" value="【數位憑證皮夾】發行端模組_密碼重設通知" />
+            <column name="message">
+                <![CDATA[
+                    <!DOCTYPE html>
+                    <html lang="zh-Hant-TW">
+                      <head>
+                        <meta charset="UTF-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <style>
+                          body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                            padding: 0;
+                          }
+
+                          .email-container {
+                            max-width: 600px;
+                            margin: 20px auto;
+                            background-color: #ffffff;
+                            border: 1px solid #dddddd;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                          }
+
+                          .header {
+                            background-color: #4e61a7;
+                            color: #ffffff;
+                            text-align: center;
+                            padding: 20px;
+                          }
+
+                          .header h1 {
+                            margin: 0;
+                            font-size: 24px;
+                          }
+
+                          .content {
+                            font-size: 16px;
+                            padding: 0px 20px;
+                            text-align: left;
+                          }
+
+                          .button {
+                            display: inline-block;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            padding: 12px 20px;
+                            background: #d33e5f;
+                            font-size: 16px;
+                            color: #ffffff !important;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            font-weight: bold;
+                            text-align: center;
+                          }
+
+                          .button:hover {
+                            background: #b8314e;
+                          }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="email-container">
+                          <div class="header">
+                            <h1>【數位憑證皮夾】發行端模組_密碼重設通知</h1>
+                          </div>
+                          <div class="content">
+                            <p>親愛的 @userName 您好</p>
+                            <p>請點擊下面的連結重新設定密碼。</p>
+                            <p style="text-align: left">
+                              <a
+                                href="@baseURL/account/modadw302w/resetFinish?key=@rest"
+                                class="button"
+                                >前往設定新密碼</a
+                              >
+                            </p>
+                          </div>
+                          <div class="content">
+                            <p style="margin-bottom: 10px">祝您使用愉快！</p>
+                          </div>
+                        </div>
+                      </body>
+                    </html>
+                ]]>
+            </column>
+            <column name="html_state" valueNumeric="1" />
+            <column name="activated" valueNumeric="1" />
+            <column name="create_time" valueDate="2025-03-06 00:00:00.000" />
+        </insert>
+
+        <insert tableName="mail_template">
+            <column name="id" valueNumeric="3" />
+            <column name="mail_type" value="B01" />
+            <column name="description"
+                    value="登入頁面-忘記密碼[重置密碼]_帳號密碼重置後，由後台發送至使用者信箱。" />
+            <column name="recipient_role" value="user" />
+            <column name="subject" value="【數位憑證皮夾】發行端模組_密碼重設通知" />
+            <column name="message">
+                <![CDATA[
+                    <!DOCTYPE html>
+                    <html lang="zh-Hant-TW">
+                      <head>
+                        <meta charset="UTF-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <style>
+                          body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                            padding: 0;
+                          }
+
+                          .email-container {
+                            max-width: 600px;
+                            margin: 20px auto;
+                            background-color: #ffffff;
+                            border: 1px solid #dddddd;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                          }
+
+                          .header {
+                            background-color: #4e61a7;
+                            color: #ffffff;
+                            text-align: center;
+                            padding: 20px;
+                          }
+
+                          .header h1 {
+                            margin: 0;
+                            font-size: 24px;
+                          }
+
+                          .content {
+                            font-size: 16px;
+                            padding: 0px 20px;
+                            text-align: left;
+                          }
+
+                          .button {
+                            display: inline-block;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            padding: 12px 20px;
+                            background: #d33e5f;
+                            font-size: 16px;
+                            color: #ffffff !important;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            font-weight: bold;
+                            text-align: center;
+                          }
+
+                          .button:hover {
+                            background: #b8314e;
+                          }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="email-container">
+                          <div class="header">
+                            <h1>【數位憑證皮夾】發行端模組_密碼重設通知</h1>
+                          </div>
+                          <div class="content">
+                            <p>親愛的 @userName 您好</p>
+                            <p>請點擊下面的連結重新設定密碼。</p>
+                            <p style="text-align: left">
+                              <a
+                                href="@baseURL/account/modadw302w/resetFinish?key=@rest"
+                                class="button"
+                                >前往設定新密碼</a
+                              >
+                            </p>
+                          </div>
+                          <div class="content">
+                            <p style="margin-bottom: 10px">祝您使用愉快！</p>
+                          </div>
+                        </div>
+                      </body>
+                    </html>
+                ]]>
+            </column>
+            <column name="html_state" valueNumeric="1" />
+            <column name="activated" valueNumeric="1" />
+            <column name="create_time" valueDate="2025-03-06 00:00:00.000" />
+        </insert>
+
+        <insert tableName="mail_template">
+            <column name="id" valueNumeric="4" />
+            <column name="mail_type" value="D01" />
+            <column name="description"
+                    value="帳號管理[刪除未激活帳號(帳號未於激活時間內完成激活)]_由後台發送至使用者信箱。" />
+            <column name="recipient_role" value="user" />
+            <column name="subject" value="【數位憑證皮夾】發行端模組_帳號未啟用已刪除" />
+            <column name="message">
+                <![CDATA[
+                    <!DOCTYPE html>
+                    <html lang="zh-Hant-TW">
+                      <head>
+                        <meta charset="UTF-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <style>
+                          body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                            padding: 0;
+                          }
+
+                          .email-container {
+                            max-width: 600px;
+                            margin: 20px auto;
+                            background-color: #ffffff;
+                            border: 1px solid #dddddd;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                          }
+
+                          .header {
+                            background-color: #4e61a7;
+                            color: #ffffff;
+                            text-align: center;
+                            padding: 20px;
+                          }
+
+                          .header h1 {
+                            margin: 0;
+                            font-size: 24px;
+                          }
+
+                          .content {
+                            font-size: 16px;
+                            padding: 0px 20px;
+                            text-align: left;
+                          }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="email-container">
+                          <div class="header">
+                            <h1>【數位憑證皮夾】發行端模組_帳號未啟用已刪除</h1>
+                          </div>
+                          <div class="content">
+                            <p>親愛的 @userName 您好</p>
+                            <p>
+                              您的帳號未於 3
+                              天內設置新密碼完成啟用，請重新於帳號權限/帳號管理/+新增帳號，新增模組使用者，新增完成需收信完成帳號啟用。
+                            </p>
+                          </div>
+                          <div class="content">
+                            <p style="margin-bottom: 10px">祝您使用愉快！</p>
+                          </div>
+                        </div>
+                      </body>
+                    </html>
+                ]]>
+            </column>
+            <column name="html_state" valueNumeric="1" />
+            <column name="activated" valueNumeric="1" />
+            <column name="create_time" valueDate="2025-03-06 00:00:00.000" />
+        </insert>
+
+        <insert tableName="mail_template">
+            <column name="id" valueNumeric="5" />
+            <column name="mail_type" value="R01" />
+            <column name="description"
+                    value="個人資料[換發 Access Token]_換發 Access Token完成後，由後台發送至使用者信箱。" />
+            <column name="recipient_role" value="user" />
+            <column name="subject" value="【數位憑證皮夾】發行端模組_換發 Access Token" />
+            <column name="message">
+                <![CDATA[
+                    <!DOCTYPE html>
+                    <html lang="zh-Hant-TW">
+                      <head>
+                        <meta charset="UTF-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <style>
+                          body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                            padding: 0;
+                          }
+
+                          .email-container {
+                            max-width: 600px;
+                            margin: 20px auto;
+                            background-color: #ffffff;
+                            border: 1px solid #dddddd;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                          }
+
+                          .header {
+                            background-color: #4e61a7;
+                            color: #ffffff;
+                            text-align: center;
+                            padding: 20px;
+                          }
+
+                          .header h1 {
+                            margin: 0;
+                            font-size: 24px;
+                          }
+
+                          .content {
+                            font-size: 16px;
+                            padding: 0px 20px;
+                            text-align: left;
+                          }
+
+                          .access-token-container {
+                            background: #f8f9fa;
+                            padding: 5px 15px;
+                            margin-top: 15px;
+                            border-radius: 5px;
+                            text-align: center;
+                          }
+
+                          .access-token-title {
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: #007bff;
+                            border-radius: 5px;
+                            display: inline-block;
+                            margin-bottom: 10px;
+                          }
+
+                          .access-token {
+                            font-size: 15px;
+                            font-weight: bold;
+                            color: #333;
+                            background: #eee;
+                            padding: 5px;
+                            border-radius: 5px;
+                            word-break: break-all;
+                            display: inline-block;
+                          }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="email-container">
+                          <div class="header">
+                            <h1>【數位憑證皮夾】發行端模組_換發 Access Token</h1>
+                          </div>
+                          <div class="content">
+                            <p>親愛的 @userName 您好</p>
+                            <p>您剛剛申請了換發 Access Token，請妥善保管，切勿分享給他人。</p>
+                          </div>
+                          <div class="access-token-container" style="text-align: left">
+                            <div class="access-token-title" style="color: #4e61a7">
+                              Access Token:
+                            </div>
+                            <p class="access-token">@accessToken</p>
+                            <p style="font-size: 14px; margin-top: 5px">
+                              模組支援透過 API 進行介接，可將此 Access Token
+                              填寫至API串接中的授權碼。
+                            </p>
+                            <p style="font-size: 14px; margin-top: 5px">
+                              請注意發行端、驗證端有各自不同的 Access Token 資訊。
+                            </p>
+                          </div>
+                          <div class="content">
+                            <p style="margin-bottom: 10px">祝您使用愉快！</p>
+                          </div>
+                        </div>
+                      </body>
+                    </html>
+                ]]>
+            </column>
+            <column name="html_state" valueNumeric="1" />
+            <column name="activated" valueNumeric="1" />
+            <column name="create_time"
+                    valueDate="2025-03-31 15:50:00.000" />
+        </insert>
+
+        <insert tableName="mail_template">
+            <column name="id" valueNumeric="6" />
+            <column name="mail_type" value="O01" />
+            <column name="description"
+                value="登入頁面[電子郵件驗證]_點擊驗證後，由後台發送至使用者信箱。" />
+            <column name="recipient_role" value="user" />
+            <column name="subject" value="【數位憑證皮夾】發行端模組_電子郵件驗證" />
+            <column name="message">
+                <![CDATA[
+                    <!DOCTYPE html>
+                    <html lang="zh-Hant-TW">
+                      <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <style>
+                          body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                            padding: 0;
+                          }
+                          .email-container {
+                            max-width: 600px;
+                            margin: 20px auto;
+                            background-color: #ffffff;
+                            border: 1px solid #dddddd;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                          }
+                          .header {
+                            background-color: #4E61A7;
+                            color: #ffffff;
+                            text-align: center;
+                            padding: 20px;
+                          }
+                          .header h1 {
+                            margin: 0;
+                            font-size: 24px;
+                          }
+                          .content {
+                            font-size: 16px;
+                            padding: 20px;
+                            text-align: center;
+                          }
+                          .otp-code {
+                            display: inline-block;
+                            font-size: 28px;
+                            color: #D33E5F;
+                            font-weight: bold;
+                            letter-spacing: 4px;
+                            margin: 20px 0;
+                            padding: 10px 20px;
+                            border: 1px dashed #D33E5F;
+                            border-radius: 5px;
+                            background-color: #fff8f8;
+                          }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="email-container">
+                          <!-- Header Section -->
+                          <div class="header">
+                            <h1>【數位憑證皮夾】發行端模組_電子郵件驗證</h1>
+                          </div>
+                          <!-- Content Section -->
+                          <div class="content">
+                            <p>親愛的 @email 您好，</p>
+                            <p>我們收到您驗證電子郵件的請求。請使用以下 OTP 驗證碼完成流程：</p>
+                            <div class="otp-code">@otpCode</div>
+                              <p>此驗證碼在<strong>@otpTime 分鐘內有效</strong>。請勿將此驗證碼告訴他人。</p>
+                              <p>如果您並未發出此請求，請忽略此封郵件或聯繫我們團隊。</p>
+                          </div>
+                        </div>
+                      </body>
+                    </html>
+                ]]>
+            </column>
+            <column name="html_state" valueNumeric="1" />
+            <column name="activated" valueNumeric="1" />
+            <column name="create_time"
+                valueDate="2025-09-17 00:00:00.000" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="10000000000023" author="jhipster">
+        <createTable tableName="nonce">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="s_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nonce_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="captcha_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000024" author="jhipster">
+        <createTable tableName="org">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="org_id" type="varchar(255)" remarks="組織代碼">
+                <constraints nullable="false" />
+            </column>
+            <column name="org_tw_name" type="varchar(100)" remarks="組織中文名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="org_en_name" type="varchar(100)" remarks="組織英文名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="metadata" type="${clobType}" remarks="資料">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立日期">
+                <constraints nullable="true" />
+            </column>
+            <column name="update_time" type="${datetimeType}" remarks="更新日期">
+                <constraints nullable="true" />
+            </column>
+            <column name="vc_data_source" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="logo_square" type="${clobType}"
+                remarks="組織 Logo (正方形 base64)">
+                <constraints nullable="true" />
+            </column>
+            <column name="logo_rectangle" type="${clobType}"
+                remarks="組織 Logo (長方形 base64)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="org" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="org" columnName="update_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000025" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/org.csv"
+            separator=";"
+            tableName="org"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="org_id" type="string"/>
+            <column name="org_tw_name" type="string"/>
+            <column name="org_en_name" type="string"/>
+            <column name="metadata" type="clob"/>
+            <column name="create_time" type="date"/>
+            <column name="update_time" type="date"/>
+            <column name="vc_data_source" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000026" author="jhipster">
+        <createTable tableName="rel">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="left_tbl" type="varchar(20)" remarks="左值table(Table 代碼) UK">
+                <constraints nullable="false" />
+            </column>
+            <column name="left_id" type="bigint" remarks="左值id(Table 的id) UK">
+                <constraints nullable="false" />
+            </column>
+            <column name="right_tbl" type="varchar(20)" remarks="右值table(Table 代碼) UK">
+                <constraints nullable="false" />
+            </column>
+            <column name="right_id" type="bigint" remarks="右值id(Table 的id) UK">
+                <constraints nullable="false" />
+            </column>
+            <column name="left_code" type="varchar(320)" remarks="左值代碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="right_code" type="varchar(50)" remarks="右值代碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="預留欄位1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="預留欄位2">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_auth" type="varchar(64)" remarks="受控項">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立日">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="rel" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000027" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/rel.csv"
+            separator=";"
+            tableName="rel"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="left_tbl" type="string"/>
+            <column name="left_id" type="numeric"/>
+            <column name="right_tbl" type="string"/>
+            <column name="right_id" type="numeric"/>
+            <column name="left_code" type="string"/>
+            <column name="right_code" type="string"/>
+            <column name="state" type="string"/>
+            <column name="data_role_1" type="string"/>
+            <column name="data_role_2" type="string"/>
+            <column name="data_auth" type="string"/>
+            <column name="create_time" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000028" author="jhipster">
+        <createTable tableName="res">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="type_id" type="varchar(20)" remarks="功能類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="res_id" type="varchar(20)" remarks="功能代碼">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_res__res_id" />
+            </column>
+            <column name="res_grp" type="varchar(20)" remarks="功能群組">
+                <constraints nullable="false" />
+            </column>
+            <column name="res_name" type="varchar(50)" remarks="功能名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(255)" remarks="功能描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="是否啟用">
+                <constraints nullable="false" />
+            </column>
+            <column name="api_uri" type="varchar(2048)" remarks="URI">
+                <constraints nullable="false" />
+            </column>
+            <column name="web_url" type="varchar(2048)" remarks="URL">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="預留欄位1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="預留欄位2">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立日">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="res" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000029" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/res.csv"
+            separator=";"
+            tableName="res"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="type_id" type="string"/>
+            <column name="res_id" type="string"/>
+            <column name="res_grp" type="string"/>
+            <column name="res_name" type="string"/>
+            <column name="description" type="string"/>
+            <column name="state" type="string"/>
+            <column name="api_uri" type="string"/>
+            <column name="web_url" type="string"/>
+            <column name="data_role_1" type="string"/>
+            <column name="data_role_2" type="string"/>
+            <column name="create_time" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000030" author="jhipster">
+        <createTable tableName="res_layer">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="parent_id" type="bigint" remarks="父id">
+                <constraints nullable="true" />
+            </column>
+            <column name="child_id" type="bigint" remarks="子id">
+                <constraints nullable="false" />
+            </column>
+            <column name="parent_code" type="varchar(50)" remarks="父代碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="child_code" type="varchar(50)" remarks="子代碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立日期時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="orderval" type="varchar(10)" remarks="排序">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="res_layer" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000031" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/res_layer.csv"
+            separator=";"
+            tableName="res_layer"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="parent_id" type="numeric"/>
+            <column name="child_id" type="numeric"/>
+            <column name="parent_code" type="string"/>
+            <column name="child_code" type="string"/>
+            <column name="create_time" type="date"/>
+            <column name="orderval" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000032" author="jhipster">
+        <createTable tableName="res_log">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="actor" type="varchar(140)" remarks="異動人">
+                <constraints nullable="false" />
+            </column>
+            <column name="log_type" type="varchar(20)" remarks="異動類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="log_time" type="${datetimeType}" remarks="Log建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="type_id" type="varchar(20)" remarks="功能類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="res_id" type="varchar(20)" remarks="功能代碼">
+                <constraints nullable="false" />
+            </column>
+            <column name="res_grp" type="varchar(20)" remarks="功能群組">
+                <constraints nullable="false" />
+            </column>
+            <column name="res_name" type="varchar(50)" remarks="功能名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(255)" remarks="功能描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="是否啟用">
+                <constraints nullable="false" />
+            </column>
+            <column name="api_uri" type="varchar(2048)" remarks="URI">
+                <constraints nullable="false" />
+            </column>
+            <column name="web_url" type="varchar(2048)" remarks="URL">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="預留欄位1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="預留欄位2">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="功能建立時間">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="res_log" columnName="log_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="res_log" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000033" author="jhipster">
+        <createTable tableName="role">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="role_id" type="varchar(20)" remarks="角色代碼">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_role__role_id" />
+            </column>
+            <column name="role_name" type="varchar(50)" remarks="角色名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(255)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="預留欄位1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="預留欄位2">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立日">
+                <constraints nullable="false" />
+            </column>
+            <column name="auth_change_time" type="${datetimeType}" remarks="上次變更授權功能時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="role" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="role" columnName="auth_change_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000034" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/role.csv"
+            separator=";"
+            tableName="role"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="role_id" type="string"/>
+            <column name="role_name" type="string"/>
+            <column name="description" type="string"/>
+            <column name="state" type="string"/>
+            <column name="data_role_1" type="string"/>
+            <column name="data_role_2" type="string"/>
+            <column name="create_time" type="date"/>
+            <column name="auth_change_time" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000035" author="jhipster">
+        <createTable tableName="schedule" remarks="Schedule 排程列表">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="type" type="varchar(20)" remarks="類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="time" type="varchar(5)" remarks="時間(時:分)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date" type="varchar(2)" remarks="日(幾號)">
+                <constraints nullable="true" />
+            </column>
+            <column name="month" type="varchar(20)" remarks="月(哪幾月)">
+                <constraints nullable="true" />
+            </column>
+            <column name="week" type="varchar(1)" remarks="週(星期幾)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_run_datetime" type="${datetimeType}" remarks="最近一次執行時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="cr_datetime" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="cr_user" type="bigint" remarks="建立者">
+                <constraints nullable="true" />
+            </column>
+            <column name="timezone" type="varchar(30)" remarks="時區">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_id" type="varchar(255)" remarks="單位">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="schedule" columnName="last_run_datetime" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="schedule" columnName="cr_datetime" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000036" author="jhipster">
+        <createTable tableName="vc_item" remarks="VCItem VC列表">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="serial_no" type="varchar(50)" remarks="VC編號">
+                <constraints nullable="false" />
+            </column>
+            <column name="name" type="varchar(50)" remarks="VC名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="cr_user" type="bigint" remarks="建立者">
+                <constraints nullable="false" />
+            </column>
+            <column name="cr_datetime" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="category_id" type="bigint" remarks="類別Id">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_id" type="varchar(255)" remarks="單位">
+                <constraints nullable="false" />
+            </column>
+            <column name="schema_id" type="varchar(255)" remarks="上鏈 schema id">
+                <constraints nullable="true" />
+            </column>
+            <column name="schema" type="${clobType}" remarks="上鏈 schema">
+                <constraints nullable="true" />
+            </column>
+            <column name="tx_hash" type="${clobType}" remarks="上鏈 txhash">
+                <constraints nullable="true" />
+            </column>
+            <column name="metadata" type="${clobType}" remarks="上鏈 metadata">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit_type_expire" type="varchar(10)" remarks="過期時間單位類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="length_expire" type="integer" remarks="過期時間單位長度">
+                <constraints nullable="false" />
+            </column>
+            <column name="used" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="card_cover" type="${clobType}" remarks="卡面圖片(base64)">
+                <constraints nullable="true" />
+            </column>
+            <column name="card_cover_url" type="${clobType}" remarks="卡面 url">
+                <constraints nullable="true" />
+            </column>
+            <column name="api_type" type="varchar(20)" remarks="對應的vc模版選用的資料介接類型(501i|901i)">
+                <constraints nullable="true" />
+            </column>
+            <column name="headers" type="${clobType}" remarks="若為 901i 呼叫時 header 要帶的內容">
+                <constraints nullable="true" />
+            </column>
+            <column name="url" type="${clobType}" remarks="若為 901i 呼叫的 url">
+                <constraints nullable="true" />
+            </column>
+            <column name="http_method" type="varchar(10)" remarks="901i用的httpMethod">
+                <constraints nullable="true" />
+            </column>
+            <column name="expose" type="boolean" remarks="是否公開">
+                <constraints nullable="true" />
+            </column>
+            <column name="ial" type="varchar(1)" remarks="IAL 等級標記">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_verify" type="boolean" remarks="是否需要驗證碼模式" defaultValue="false">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_temp" type="boolean" remarks="是否為暫存狀態" defaultValue="false">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(1)" remarks="開啟網頁方式(1: 外開網頁、2: webview)">
+                <constraints nullable="true" />
+            </column>
+            <column name="issuer_service_url" type="${clobType}"
+                remarks="發證端 KYC 與輸入資料的 url">
+                <constraints nullable="true" />
+            </column>
+            <column name="activated" type="boolean" remarks="是否啟用" defaultValue="true">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="vc_item" columnName="cr_datetime" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000037" author="jhipster">
+        <createTable tableName="vc_item_data" remarks="VCItemData VC個人內容">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="content" type="${clobType}" remarks="內容">
+                <constraints nullable="true" />
+            </column>
+            <column name="pure_content" type="${clobType}" remarks="搜尋用內容">
+                <constraints nullable="true" />
+            </column>
+            <column name="cr_user" type="bigint" remarks="建立者">
+                <constraints nullable="false" />
+            </column>
+            <column name="cr_datetime" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="valid" type="integer" remarks="狀態">
+                <constraints nullable="true" />
+            </column>
+            <column name="clear_schedule_id" type="bigint" remarks="清除資料的排程ID">
+                <constraints nullable="true" />
+            </column>
+            <column name="clear_schedule_datetime" type="${datetimeType}" remarks="清除資料的排程時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="vc_cid" type="varchar(100)" remarks="VC 憑證編號">
+                <constraints nullable="true" />
+            </column>
+            <column name="transaction_id" type="varchar(50)" remarks="交易序號">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_id" type="varchar(255)" remarks="單位">
+                <constraints nullable="true" />
+            </column>
+            <column name="vc_item_name" type="varchar(50)" remarks="VC名稱">
+                <constraints nullable="true" />
+            </column>
+            <column name="qr_code" type="${clobType}" remarks="二維碼">
+                <constraints nullable="true" />
+            </column>
+            <column name="expired" type="${datetimeType}" remarks="過期時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="schedule_revoke_message" type="varchar(2048)" remarks="撤銷失敗訊息">
+                <constraints nullable="true" />
+            </column>
+            <column name="vc_item_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_tag" type="varchar(255)" remarks="標記實際資料對應至VC卡片的資料標註">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="vc_item_data" columnName="cr_datetime" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="vc_item_data" columnName="clear_schedule_datetime" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="vc_item_data" columnName="expired" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000038" author="jhipster">
+        <createTable tableName="vc_item_field" remarks="VCItemField VC欄位">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vc_item_id" type="bigint" remarks="VC id 外鍵">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)" remarks="欄位類別(BASIC NORMAL NORMAL)">
+                <constraints nullable="false" />
+            </column>
+            <column name="cname" type="varchar(50)" remarks="欄位對外名稱(中/英)">
+                <constraints nullable="false" />
+            </column>
+            <column name="ename" type="varchar(50)" remarks="欄位名稱(英)">
+                <constraints nullable="false" />
+            </column>
+            <column name="card_cover_data" type="integer" remarks="卡面資料">
+                <constraints nullable="true" />
+            </column>
+            <column name="regular_expression_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_required" type="boolean" remarks="是否必填" defaultValue="true">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000039" author="jhipster">
+        <createTable tableName="regular_expression">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="type" type="varchar(50)" remarks="正規表達式執行類型(Require所有欄位都要檢查|Specified指定欄位檢查)">
+                <constraints nullable="false" />
+            </column>
+            <column name="name" type="varchar(40)" remarks="正規表達式名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="regular_expression" type="varchar(200)" remarks="正規表達式">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(200)" remarks="描述">
+                <constraints nullable="false" />
+            </column>
+            <column name="error_msg" type="varchar(200)" remarks="返回給使用者用的錯誤訊息">
+                <constraints nullable="false" />
+            </column>
+            <column name="rule_type" type="varchar(10)" remarks="正面表列或反面表列">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10000000000040" author="jhipster">
+        <loadUpdateData
+            file="config/liquibase/data/regular_expression.csv"
+            separator=";"
+            tableName="regular_expression"
+            primaryKey="id"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="name" type="string"/>
+            <column name="regular_expression" type="string"/>
+            <column name="description" type="string"/>
+            <column name="error_msg" type="string"/>
+            <column name="rule_type" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet id="10000000000041" author="jhipster">
+        <createTable tableName="vc_data_status_log" remarks="VCDataStatusLog VC 資料狀態紀錄">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vc_cid" type="varchar(100)" remarks="VC 憑證編號">
+                <constraints nullable="false" />
+            </column>
+            <column name="vc_item_id" type="bigint" remarks="vc_Item_Id">
+                <constraints nullable="false" />
+            </column>
+            <column name="transaction_id" type="varchar(50)" remarks="交易序號">
+                <constraints nullable="false" />
+            </column>
+            <column name="valid" type="integer" remarks="狀態 [0: ACTIVE(有效)、1: SUSPENDED(停用)、2: REVOKED(撤銷)、301: INACTIVE(沒掃 QR Code)]">
+                <constraints nullable="false" />
+            </column>
+            <column name="cr_user" type="bigint" remarks="建立者">
+                <constraints nullable="false" />
+            </column>
+            <column name="cr_datetime" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_update_time" type="${datetimeType}" remarks="最後更新時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="vc_data_status_log" columnName="cr_datetime" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000042" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="role_log"/>
+            </not>
+        </preConditions>        
+        <createTable tableName="role_log">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="actor" type="varchar(140)" remarks="異動人">
+                <constraints nullable="false" />
+            </column>
+            <column name="log_type" type="varchar(20)" remarks="異動類型">
+                <constraints nullable="false" />
+            </column>
+            <column name="log_time" type="${datetimeType}" remarks="Log建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="role_id" type="varchar(20)" remarks="角色代碼">
+                <constraints nullable="false" />
+            </column>
+            <column name="role_name" type="varchar(50)" remarks="角色名稱">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(255)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="state" type="varchar(10)" remarks="狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="data_role_1" type="varchar(255)" remarks="預留欄位1">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_role_2" type="varchar(255)" remarks="預留欄位2">
+                <constraints nullable="true" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="角色建立時間">
+                <constraints nullable="false" />
+            </column>
+            <column name="auth_change_time" type="${datetimeType}" remarks="上次變更授權功能時間">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="role_log" columnName="log_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="role_log" columnName="create_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="role_log" columnName="auth_change_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000043" author="jhipster">
+        <createTable tableName="otp_verify">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar(320)" remarks="電字郵件">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="otp_token" type="varchar(20)" remarks="OTP 驗證碼">
+                <constraints nullable="false" />
+            </column>
+            <column name="otp_token_expired" type="${datetimeType}" remarks="OTP 到期時間">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_pass" type="boolean" remarks="驗證狀態">
+                <constraints nullable="false" />
+            </column>
+            <column name="create_time" type="${datetimeType}" remarks="建立時間">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="otp_verify" columnName="otp_token_expired" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="otp_verify" columnName="create_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="10000000000044" author="jhipster">
+        <createView
+            replaceIfExists="true"
+            viewName="login_view">
+            <!--Create or Replace View LoginView (user_id, fail_count, last_login, bwd_hash, bwd_date, bwd_profile_id, user_state) AS-->
+            select u.id as id,
+                   u.user_id,
+                   l.fail_count,
+                   l.update_time as last_login,
+                   h.bwd_hash as bwd_hash,
+                   h.create_time as bwd_date,
+                   u.state as login_id_state
+            from extended_user u
+                     join login_count l on u.user_id = l.user_id
+                     join bwd_history h on u.user_id = h.user_id
+                and h.create_time = (
+                    select max(t.create_time)
+                    from bwd_history t
+                    where t.user_id = u.user_id
+                )
+        </createView>
+    </changeSet>
+
+    <changeSet id="10000000000045" author="jhipster">
+        <createView
+            replaceIfExists="true"
+            viewName="auth_obj">
+            <!--            使用 <![CDATA[]]> 包裹 SQL 語句：確保在 XML 中的 SQL 語句不會因特殊字符而引起解析錯誤。-->
+            <![CDATA[
+            SELECT
+                ur.left_id::varchar || '_' || s.res_id::varchar AS id,
+                ur.left_id AS user_id,
+                s.res_id AS res_code,
+                u.login,
+                rs.right_id AS role_id,
+                r.role_id AS role_code,
+                r.role_name
+            FROM
+                rel ur
+                    JOIN
+                jhi_user u ON ur.left_tbl = 'User' AND ur.left_id = u.id
+                    JOIN
+                role r ON ur.right_tbl = 'Role' AND ur.right_id = r.id AND r.state = '1'
+                    JOIN
+                rel rs ON rs.left_tbl = 'Role' AND ur.right_id = rs.left_id AND rs.state = '1'
+                    JOIN
+                res s ON rs.right_tbl = 'Res' AND rs.right_id = s.id AND s.state = '1'
+            ]]>
+        </createView>
+    </changeSet>
+
+    <changeSet id="10000000000046" author="jhipster">
+        <addForeignKeyConstraint baseColumnNames="regular_expression_id"
+                                 baseTableName="field"
+                                 constraintName="fk_field__regular_expression_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regular_expression"
+        />
+    </changeSet>
+
+    <changeSet id="10000000000047" author="jhipster">
+        <addForeignKeyConstraint baseColumnNames="vc_item_id"
+                                 baseTableName="vc_item_data"
+                                 constraintName="fk_vc_item_data__vc_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vc_item"
+        />
+    </changeSet>
+
+    <changeSet id="10000000000048" author="jhipster">
+        <addForeignKeyConstraint baseColumnNames="regular_expression_id"
+                                 baseTableName="vc_item_field"
+                                 constraintName="fk_vc_item_field__regular_expression_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regular_expression"
+        />
+    </changeSet>
+</databaseChangeLog>

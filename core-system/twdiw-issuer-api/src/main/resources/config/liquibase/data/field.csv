@@ -1,0 +1,14 @@
+"id";"cname";"ename";"type";"visible";"business_id";"regular_expression_id"
+1;國民身分證統一編號;id_number;BASIC;TRUE;default;11
+2;民國出生年月日;roc_birthday;BASIC;TRUE;default;12
+3;姓名;name;BASIC;TRUE;default;9
+4;戶籍地址;registered_address;BASIC;TRUE;default;9
+5;護照號碼;passport_no;BASIC;TRUE;default;5
+6;居留證統一證號;residential_certificate_no;BASIC;TRUE;default;14
+7;外來人口統一證號;UI_no;BASIC;TRUE;default;15
+8;性別;gender;BASIC;TRUE;default;16
+9;國籍;nationality;BASIC;TRUE;default;17
+10;西元出生日期;ad_birthday;BASIC;TRUE;default;18
+11;汽(機)駕戶籍地址;driver_registered_address;BASIC;TRUE;default;9
+12;汽(機)駕戶籍區號;driver_zip_no;BASIC;TRUE;default;19
+13;汽(機)有效日;driver_effect_date;BASIC;TRUE;default;18
