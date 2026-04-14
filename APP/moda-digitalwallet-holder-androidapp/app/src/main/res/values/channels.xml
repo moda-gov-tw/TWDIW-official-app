@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="channel_normal_id">NORMAL_CHANNEL</string>
+    <string name="channel_normal">一般訊息</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  dwverifier-oidvp  -->
+    <string name="sdk_error_2001">authorization response回傳錯誤</string>
+    <string name="sdk_error_2002">無效的vp</string>
+    <string name="sdk_error_2003">vp/vc數量錯誤</string>
+    <string name="sdk_error_2004">驗證vp失敗</string>
+    <string name="sdk_error_2005">client_id/nonce錯誤</string>
+    <string name="sdk_error_2006">vc不符合驗證需求</string>
+    <string name="sdk_error_2007">presentation_submission不符合presentation_definition</string>
+    <string name="sdk_error_2008">vc欄位不符合驗證條件</string>
+    <string name="sdk_error_2009">vc缺少必要欄位</string>
+    <string name="sdk_error_2010">input_descriptors重複id</string>
+    <string name="sdk_error_2011">無效的presentation_definition</string>
+    <string name="sdk_error_2012">無效的presentation_submission</string>
+    <string name="sdk_error_2013">vc不符合presentation_submission</string>
+    <string name="sdk_error_2014">無效的submission requirement</string>
+    <string name="sdk_error_3000">無效的oidvp參數</string>
+    <string name="sdk_error_4001">輸入參數錯誤</string>
+    <string name="sdk_error_4012">提醒您，您將提供資料的單位尚未列入【信任清單】，建議再次確認是否要『送出資料』</string>
+    <string name="sdk_error_5000">系統錯誤</string>
+    <string name="sdk_error_5001">DB異常</string>
+    <string name="sdk_error_5002">JWT簽章異常</string>
+    <string name="sdk_error_5003">QRCode編碼異常</string>
+    <string name="sdk_error_5005">非預期的驗證錯誤</string>
+
+    <!--  dwissuer-oidvci  -->
+    <string name="sdk_error_11001">缺少參數或參數不合法</string>
+    <string name="sdk_error_11002">使用者未經過身分認證</string>
+    <string name="sdk_error_11003">ID_token格式不正確</string>
+    <string name="sdk_error_11005">nonce已重複</string>
+    <string name="sdk_error_11007">QRCODE已失效，請重新產生後再掃描使用。</string>
+    <string name="sdk_error_11008">QRCODE已失效，請重新產生後再掃描使用。</string>
+    <string name="sdk_error_11009">QRCODE已失效，請重新產生後再掃描使用。</string>
+    <string name="sdk_error_11010">不支援此種grant_type</string>
+    <string name="sdk_error_11011">不支援此VC種類</string>
+    <string name="sdk_error_11012">authorization_details不合法</string>
+    <string name="sdk_error_11013">產製access_token時發生錯誤</string>
+    <string name="sdk_error_11014">Authorization header不存在或不合法</string>
+    <string name="sdk_error_11015">缺少access_token</string>
+    <string name="sdk_error_11016">proofs jwt不合法</string>
+    <string name="sdk_error_11017">access_token不存在</string>
+    <string name="sdk_error_11018">access_token已逾期或已被使用</string>
+    <string name="sdk_error_11019">credential_identifier不合法</string>
+    <string name="sdk_error_11020">VC產製發生錯誤</string>
+    <string name="sdk_error_11021">VC伺服器內部錯誤</string>
+    <string name="sdk_error_11022">連線至VC伺服器時發生錯誤</string>
+    <string name="sdk_error_11023">QRCODE已失效，請重新產生後再掃描使用。</string>
+    <string name="sdk_error_11032">驗證碼錯誤，請重新開啟『顯示驗證碼』後，按下『確認』，並重新於網站中輸入確認後的2位驗證碼，再次掃描QRCODE完成流程。</string>
+    <string name="sdk_error_11901">business id錯誤</string>
+    <string name="sdk_error_12000">credential_offer不存在</string>
+    <string name="sdk_error_12003">db_secret不存在</string>
+    <string name="sdk_error_12006">credential_issuer_meta不存在</string>
+    <string name="sdk_error_12007">credential_offer(txcode)不存在</string>
+    <string name="sdk_error_12009">credential_url不存在</string>
+    <string name="sdk_error_11500">伺服器內部錯誤</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="8dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="12dp"
+        android:textColor="@color/primary_08"
+        android:maxLength="14"
+        tools:text="有效身分證明"/>
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textColor="@color/gray_06"
+        tools:text="中華民國汽車駕駛執照：身分證字號 身分證字號、出生日期\n健康保險卡：身分證字號、出生日期"/>
+
+
+</LinearLayout>

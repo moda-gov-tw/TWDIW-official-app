@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="4dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lay_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_r24_white_background"
+                android:backgroundTint="@color/primary_01"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp">
+
+                <ImageView
+                    android:id="@+id/img_status"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_record_authorization" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/primary_06"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:text="授權卡片" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_datetime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/gray_06"
+                android:textSize="14dp"
+                tools:text="2025/01/14" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:minHeight="32dp"
+                android:textColor="@color/gray_08"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:text="某某百貨兌換小禮紀錄" />
+
+            <ImageView
+                android:id="@+id/img_toggle_expand"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/selector_button_arrow2_up_down" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_02" />
+
+        <LinearLayout
+            android:id="@+id/lay_authorized_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_authorized_unit_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bullet_authorized_unit"
+                android:textColor="@color/gray_08"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_authorized_unit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/gray_06"
+                android:textSize="14dp"
+                tools:text="某某百貨公司" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_authorized_purpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_authorized_purpose_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bullet_authorized_purpose"
+                android:textColor="@color/gray_08"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_authorized_purpose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/gray_06"
+                android:textSize="14dp"
+                tools:text="以下驗證資訊僅用於以眷屬身份申請企業方案，進行身分驗證使用。" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_authorized_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_authorized_field_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bullet_authorized_field"
+                android:textColor="@color/gray_08"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_authorized_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/gray_06"
+                android:textSize="14dp"
+                tools:text="姓名、出生日期、會員號碼" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

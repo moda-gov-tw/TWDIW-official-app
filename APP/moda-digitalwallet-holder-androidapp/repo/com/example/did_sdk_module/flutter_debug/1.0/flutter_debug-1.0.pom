@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example.did_sdk_module</groupId>
+  <artifactId>flutter_debug</artifactId>
+  <version>1.0</version>
+  <packaging>aar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>io.flutter</groupId>
+      <artifactId>flutter_embedding_debug</artifactId>
+      <version>1.0.0-36335019a8eab588c3c2ea783c618d90505be233</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.flutter</groupId>
+      <artifactId>armeabi_v7a_debug</artifactId>
+      <version>1.0.0-36335019a8eab588c3c2ea783c618d90505be233</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.flutter</groupId>
+      <artifactId>arm64_v8a_debug</artifactId>
+      <version>1.0.0-36335019a8eab588c3c2ea783c618d90505be233</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.flutter</groupId>
+      <artifactId>x86_64_debug</artifactId>
+      <version>1.0.0-36335019a8eab588c3c2ea783c618d90505be233</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.flutter</groupId>
+      <artifactId>x86_debug</artifactId>
+      <version>1.0.0-36335019a8eab588c3c2ea783c618d90505be233</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>

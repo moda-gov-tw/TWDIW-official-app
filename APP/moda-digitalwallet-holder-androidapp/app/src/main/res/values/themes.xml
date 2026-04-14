@@ -1,0 +1,84 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Digitalwallet" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Digitalwallet" parent="Base.Theme.Digitalwallet">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:buttonStyle">@style/Theme.Digitalwallet.Button.Primary</item>
+        <item name="android:checkboxStyle">@style/Theme.Digitalwallet.Checkbox</item>
+        <item name="editTextStyle">@style/Theme.Digitalwallet.EditText</item>
+        <item name="bottomSheetStyle">@style/Theme.Digitalwallet.BottomSheetDialog</item>
+    </style>
+
+    <!-- Dialog -->
+    <style name="CustomDialog.New" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <!-- Button -->
+    <style name="Theme.Digitalwallet.Button.Primary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/selector_button_primary_background</item>
+        <item name="android:textColor">@drawable/selector_button_primary_text</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Button -->
+    <style name="Theme.Digitalwallet.Button.Secondary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/selector_button_secondary_background</item>
+        <item name="android:textColor">@drawable/selector_button_secondary_text</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Checkbox -->
+    <style name="Theme.Digitalwallet.Checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_checkbox</item>
+        <item name="android:textColor">@color/gray_06</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:checked">false</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
+    <!-- Loading -->
+    <style name="Theme.Digitalwallet.Loading" parent="Theme.Digitalwallet">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- EditText -->
+    <style name="Theme.Digitalwallet.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:height">48dp</item>
+        <item name="android:background">@drawable/selector_edittext</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/gray_06</item>
+        <item name="android:textColorHint">@color/gray_06</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+    </style>
+
+    <!-- BottomSheetDialog -->
+    <style name="Theme.Digitalwallet.BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

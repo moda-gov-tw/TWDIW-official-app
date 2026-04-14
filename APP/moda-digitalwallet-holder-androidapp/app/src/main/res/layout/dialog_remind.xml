@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="300dp"
+            android:minHeight="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="34dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/primary_08"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:text="撤銷 VC" />
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray_02" />
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/sv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:maxHeight="300dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="@color/gray_06"
+                        android:textSize="16dp"
+                        tools:text="撤銷 VC : 99c43fc1-a1ec-411b-9e38-4c667f25b5a8" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:nestedScrollingEnabled="true"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_remind_credential" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_sub_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/shape_remind_sub_group"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+
+                        <TextView
+                            android:id="@+id/tv_sub_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:textColor="@color/gray_06"
+                            android:textSize="16dp"
+                            tools:text="憑證僅限今日有效，請於今日內使用。" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_sub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="true"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_remind_credential" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <FrameLayout
+                android:id="@+id/view_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_confirm"
+                    style="@style/Theme.Digitalwallet.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="top"
+                    android:layout_weight="1"
+                    android:text="@string/confirm" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gray_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar" />
+
+    <View
+        android:id="@+id/view_bottom_sheet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-16dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_agree_send" />
+
+
+    <FrameLayout
+        android:id="@+id/lay_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_top">
+
+        <include layout="@layout/include_toolbar" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_sheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_verification_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="@string/provider_of_information"
+                android:textColor="@color/primary_08"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_verification_list_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/provide_of_information"
+                    android:textColor="@color/primary_08"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_eye"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_eye_on" />
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_require_verifiable_credential_group" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                android:visibility="visible"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_custom_input" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_agree_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/click_send_data_agree_provider_data"
+        android:textColor="@color/gray_06"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/lay_view_contract"
+        app:layout_constraintEnd_toEndOf="@id/btn_confirm"
+        app:layout_constraintStart_toStartOf="@id/btn_confirm" />
+
+    <FrameLayout
+        android:id="@+id/lay_view_contract"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_confirm"
+        app:layout_constraintEnd_toEndOf="@id/btn_confirm"
+        app:layout_constraintStart_toStartOf="@+id/btn_confirm">
+
+        <TextView
+            android:id="@+id/tv_contract_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_arrow_right_2"
+            android:gravity="end|center_vertical"
+            android:minHeight="32dp"
+            android:textColor="@color/primary_06"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            tools:text="驗證單位驗證單位驗證單位驗證單位知情同意書" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/img_contract_arrow"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_arrow_right_2"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/lay_view_contract"
+        app:layout_constraintTop_toTopOf="@id/lay_view_contract" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:enabled="false"
+        android:text="@string/start_verify"
+        app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        style="@style/Theme.Digitalwallet.Button.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:background="@drawable/shape_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

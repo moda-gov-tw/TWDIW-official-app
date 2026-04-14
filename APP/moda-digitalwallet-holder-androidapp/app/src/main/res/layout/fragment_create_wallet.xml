@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/lay_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_top">
+
+        <include layout="@layout/include_toolbar" />
+    </FrameLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/btn_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/create_wallet"
+                android:textColor="@color/primary_08"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_caption_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="@string/msg_create_wallet_hint"
+                android:textColor="@color/gray_06"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_caption" />
+
+            <TextView
+                android:id="@+id/tv_nickname_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="@string/set_wallet_nickname"
+                android:textColor="@color/gray_08"
+                android:textFontWeight="800"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@id/tv_caption_hint"
+                app:layout_constraintTop_toBottomOf="@id/tv_caption_hint" />
+
+            <EditText
+                android:id="@+id/et_nickname"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:hint="@string/please_input_wallet_nickname"
+                android:imeOptions="actionNext"
+                android:maxLength="10"
+                android:nextFocusDown="@id/et_pincode_1"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_nickname_title" />
+
+            <TextView
+                android:id="@+id/tv_nickname_hint_or_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:textColor="@color/gray_14"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="@id/et_nickname"
+                app:layout_constraintStart_toStartOf="@id/et_nickname"
+                app:layout_constraintTop_toBottomOf="@id/et_nickname"
+                tools:text="@string/msg_nickname_rule_hint" />
+
+            <TextView
+                android:id="@+id/tv_pincode_1_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/setting_login_password"
+                android:textColor="@color/gray_08"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_nickname_hint_or_error" />
+
+
+            <EditText
+                android:id="@+id/et_pincode_1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                android:hint="@string/input_password_please"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword|textNoSuggestions"
+                android:maxLength="12"
+                android:nextFocusDown="@id/et_pincode_2"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_pincode_1_title" />
+
+            <ImageView
+                android:id="@+id/img_pincode_1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_eye_off"
+                app:layout_constraintBottom_toBottomOf="@id/et_pincode_1"
+                app:layout_constraintEnd_toEndOf="@id/et_pincode_1"
+                app:layout_constraintTop_toTopOf="@id/et_pincode_1" />
+
+            <TextView
+                android:id="@+id/tv_pincode_1_hint_or_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:text="@string/msg_pincode_input_rule"
+                android:textColor="@color/gray_14"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="@id/et_pincode_1"
+                app:layout_constraintStart_toStartOf="@id/et_pincode_1"
+                app:layout_constraintTop_toBottomOf="@id/et_pincode_1" />
+
+
+            <TextView
+                android:id="@+id/tv_pincode_2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/setting_login_password_again"
+                android:textColor="@color/gray_08"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_pincode_1_hint_or_error" />
+
+            <EditText
+                android:id="@+id/et_pincode_2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                android:hint="@string/input_password_please"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword|textNoSuggestions"
+                android:maxLength="12"
+                android:nextFocusDown="@id/btn_confirm"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_pincode_2_title"
+                tools:text="" />
+
+
+            <ImageView
+                android:id="@+id/img_pincode_2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_eye_off"
+                app:layout_constraintBottom_toBottomOf="@id/et_pincode_2"
+                app:layout_constraintEnd_toEndOf="@id/et_pincode_2"
+                app:layout_constraintTop_toTopOf="@id/et_pincode_2" />
+
+            <TextView
+                android:id="@+id/tv_pincode_2_hint_or_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:text="@string/msg_pincode_input_rule"
+                android:textColor="@color/gray_14"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/et_pincode_2"
+                app:layout_constraintStart_toStartOf="@id/et_pincode_2"
+                app:layout_constraintTop_toBottomOf="@id/et_pincode_2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/btn_confirm"
+        style="@style/Theme.Digitalwallet.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="12dp"
+        android:enabled="false"
+        android:text="@string/create_wallet"
+        app:layout_constraintBottom_toTopOf="@id/tv_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/cancel"
+        android:textColor="@color/primary_06"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom"
+        app:layout_constraintEnd_toEndOf="@id/btn_confirm"
+        app:layout_constraintStart_toStartOf="@id/btn_confirm" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:background="@drawable/shape_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

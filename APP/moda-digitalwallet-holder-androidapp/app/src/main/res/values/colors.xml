@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <!--  App顏色  -->
+    <color name="text_grey_1">#838391</color>
+    <color name="text_grey_2">#4D6D7D</color>
+    <color name="text_grey_3">#A7A7A7</color>
+    <color name="text_orange_1">#EA6120</color>
+    <color name="background_input">#E5E4E9</color>
+    <color name="background_button_1">#5F97CF</color>
+    <color name="background_button_2">#F4B979</color>
+    <color name="background_button_3">#C9C9C9</color>
+    <color name="background_infomation_1">#F3F3F3</color>
+    <color name="background_infomation_2">#F3F6FD</color>
+    <color name="background_infomation_3">#D8EDF9</color>
+    <color name="text_green_1">#17484C</color>
+
+    <!-- 新版App色碼 -->
+    <color name="mask">#B3000000</color>
+    <color name="mask_popup">#4D000000</color>
+    <color name="shadow">#29A8A8A8</color>
+    <color name="shadow_card">#40868686</color>
+    <color name="red_01">#FF4040</color>
+    <color name="red_02">#E51313</color>
+    <color name="primary_01">#F6F7FA</color>
+    <color name="primary_02">#D4D9E9</color>
+    <color name="primary_03">#B2BBD9</color>
+    <color name="primary_04">#919DC8</color>
+    <color name="primary_05">#6F7FB7</color>
+    <color name="primary_06">#4E61A7</color>
+    <color name="primary_07">#3E4D85</color>
+    <color name="primary_08">#2E3A64</color>
+    <color name="primary_09">#1F2642</color>
+    <color name="primary_10">#0F1321</color>
+    <color name="secondary_01">#FCF6F7</color>
+    <color name="secondary_02">#F2D4DC</color>
+    <color name="secondary_03">#E7B2C1</color>
+    <color name="secondary_04">#DD90A6</color>
+    <color name="secondary_05">#D36E8B</color>
+    <color name="secondary_06">#C94D70</color>
+    <color name="secondary_07">#A03D59</color>
+    <color name="secondary_08">#782E43</color>
+    <color name="secondary_09">#501E2C</color>
+    <color name="secondary_10">#280F16</color>
+    <color name="third_01">#FEFBF6</color>
+    <color name="third_02">#FCECD8</color>
+    <color name="third_03">#F9DDB9</color>
+    <color name="third_04">#F7CE9A</color>
+    <color name="third_05">#F5BF7B</color>
+    <color name="third_06">#F3B15D</color>
+    <color name="third_07">#C28D4A</color>
+    <color name="third_08">#9B794C</color>
+    <color name="third_09">#614625</color>
+    <color name="third_10">#302312</color>
+    <color name="gray_01">#F4F4F4</color>
+    <color name="gray_02">#DEDEDE</color>
+    <color name="gray_03">#C4C4C4</color>
+    <color name="gray_04">#AAAAAA</color>
+    <color name="gray_05">#909090</color>
+    <color name="gray_06">#767676</color>
+    <color name="gray_07">#5E5E5E</color>
+    <color name="gray_08">#464646</color>
+    <color name="gray_09">#2F2F2F</color>
+    <color name="gray_10">#171717</color>
+    <color name="gray_11">#676262</color>
+    <color name="gray_12">#1D1B20</color>
+    <color name="gray_13">#49454F</color>
+    <color name="gray_14">#62676D</color>
+    <color name="gray_15">#5E5D5D</color>
+    <color name="gray_16">#D6D6D6</color>
+    <color name="gray_17">#2E2E2E</color>
+    <color name="gray_18">#AFAFAF</color>
+    <color name="gray_19">#0E0E0E</color>
+    <color name="orange_01">#FEF7EF</color>
+    <color name="orange_06">#D07744</color>
+    <color name="green_01">#25A75B</color>
+</resources>

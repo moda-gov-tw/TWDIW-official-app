@@ -1,0 +1,59 @@
+[versions]
+agp = "8.6.1"
+kotlin = "1.9.23"
+coreKtx = "1.13.1"
+androidKtx = "1.9.2"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.2"
+constraintlayout = "2.2.1"
+hilt = "2.52"
+lifecycleLivedataKtx = "2.8.6"
+lifecycleViewmodelKtx = "2.8.6"
+fragmentKtx = "1.8.4"
+security-crypto = "1.1.0-alpha06"
+swiperefreshlayout = "1.1.0"
+zxing-android-embedded = "4.3.0"
+zxing-core = "3.5.3"
+gson = "2.11.0"
+biometric = "1.1.0"
+room = "2.6.1"
+sqlcipher = "4.9.0"
+sqlite = "2.1.0"
+playServicesBasement = "18.5.0"
+playServicesBase = "18.5.0"
+mlkit-barcode-scanning = "17.3.0"
+lottie = "6.6.6"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidKtx" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "security-crypto" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+zxing-android-embedded = { group = "com.journeyapps", name = "zxing-android-embedded", version.ref = "zxing-android-embedded" }
+zxing-core = { group = "com.google.zxing", name = "core", version.ref = "zxing-core" }
+biometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+sqlcipher = { group = "net.zetetic", name = "sqlcipher-android", version.ref = "sqlcipher" }
+sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "sqlite" }
+play-services-basement = { group = "com.google.android.gms", name = "play-services-basement", version.ref = "playServicesBasement" }
+play-services-base = { group = "com.google.android.gms", name = "play-services-base", version.ref = "playServicesBase" }
+mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "mlkit-barcode-scanning" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hiltAndroidGradle = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }

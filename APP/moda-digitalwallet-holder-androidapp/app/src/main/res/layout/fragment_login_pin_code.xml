@@ -1,0 +1,332 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_01">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/lay_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_01"
+        android:minHeight="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_top">
+
+        <include layout="@layout/include_toolbar" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_login_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:src="@drawable/ic_logo_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/shape_r28_top_radius"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_login_wallet_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/input_passwrod"
+                android:textColor="@color/primary_08"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_pincode"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="@string/input_password_please"
+                android:maxLength="8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_login_wallet_title" />
+
+            <ImageView
+                android:id="@+id/img_pin_hidden"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_eye_on"
+                app:layout_constraintBottom_toBottomOf="@id/et_pincode"
+                app:layout_constraintEnd_toEndOf="@id/et_pincode"
+                app:layout_constraintTop_toTopOf="@id/et_pincode" />
+
+            <TextView
+                android:id="@+id/tv_password_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/incorrect_wallet_password"
+                android:textColor="@color/red_02"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/et_pincode"
+                app:layout_constraintTop_toBottomOf="@+id/et_pincode" />
+
+
+            <TextView
+                android:id="@+id/tv_pin_1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_pin_4"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_2"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/et_pincode"
+                app:layout_constraintTop_toBottomOf="@id/et_pincode" />
+
+
+            <TextView
+                android:id="@+id/tv_pin_2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_3"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_1"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_1" />
+
+
+            <TextView
+                android:id="@+id/tv_pin_3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="21dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/et_pincode"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_2"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_1" />
+
+            <TextView
+                android:id="@+id/tv_pin_4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_pin_7"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/tv_pin_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_pin_1" />
+
+            <TextView
+                android:id="@+id/tv_pin_5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_6"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_4"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_4" />
+
+            <TextView
+                android:id="@+id/tv_pin_6"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tv_pin_3"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_5"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_4" />
+
+            <TextView
+                android:id="@+id/tv_pin_7"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_pin_space"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_8"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/tv_pin_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_pin_4" />
+
+            <TextView
+                android:id="@+id/tv_pin_8"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_9"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_7"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_7" />
+
+            <TextView
+                android:id="@+id/tv_pin_9"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tv_pin_3"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_8"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_7" />
+
+            <View
+                android:id="@+id/tv_pin_space"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="65dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/btn_confirm"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_0"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/tv_pin_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_pin_7" />
+
+            <TextView
+                android:id="@+id/tv_pin_0"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/primary_06"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_pin_space"
+                app:layout_constraintEnd_toStartOf="@id/tv_pin_back"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_space"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_space" />
+
+            <ImageView
+                android:id="@+id/tv_pin_back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circle_pin_code_background"
+                android:gravity="center"
+                android:padding="16dp"
+                android:src="@drawable/ic_keyborad_back"
+                app:layout_constraintBottom_toBottomOf="@id/tv_pin_space"
+                app:layout_constraintEnd_toEndOf="@id/tv_pin_3"
+                app:layout_constraintStart_toEndOf="@id/tv_pin_0"
+                app:layout_constraintTop_toTopOf="@id/tv_pin_space" />
+
+
+            <TextView
+                android:id="@+id/btn_confirm"
+                style="@style/Theme.Digitalwallet.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="12dp"
+                android:enabled="false"
+                android:text="@string/login"
+                app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                style="@style/Theme.Digitalwallet.Button.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="22dp"
+                android:background="@null"
+                android:text="@string/cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bottom_sheet_dialog">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/primary_08"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:text="@string/select_personal_data_you_want_to_provide" />
+
+        <ImageButton
+            android:id="@+id/close_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="@color/zxing_transparent"
+            app:srcCompat="@drawable/ic_delete_default_fill" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/primary_06"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="@string/select_identity_card" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+
+        android:textColor="@color/gray_06"
+        android:textSize="16dp"
+        android:text="@string/please_check_the_selected_card" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_select_personal_data"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="52dp"
+            android:paddingEnd="52dp"
+            style="@style/Theme.Digitalwallet.Button.Secondary"
+            android:textSize="16dp"
+            android:textColor="@color/primary_06"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/cancel" />
+        <Space
+            android:layout_width="21dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/confirm_button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="52dp"
+            android:paddingEnd="52dp"
+            android:enabled="false"
+            style="@style/Theme.Digitalwallet.Button.Primary"
+            android:text="@string/confirm" />
+    </LinearLayout>
+
+
+</LinearLayout>

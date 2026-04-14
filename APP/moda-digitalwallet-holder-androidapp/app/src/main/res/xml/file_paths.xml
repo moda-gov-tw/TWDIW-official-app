@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 分享 app 專屬儲存目錄 -->
+    <files-path
+        name="private_files"
+        path="." />
+    <cache-path
+        name="cache_files"
+        path="."/>
+</paths>
