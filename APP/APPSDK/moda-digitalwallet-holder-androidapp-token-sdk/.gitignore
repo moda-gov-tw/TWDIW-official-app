@@ -1,0 +1,50 @@
+# Gradle 建置檔案
+*.iml
+.gradle/
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Local configuration file (SDK path, etc)
+/local.properties
+local.properties
+
+# IntelliJ IDEA
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+*.ipr
+*.iws
+
+# Mac OS
+.DS_Store
+
+# Android 簽章檔案 - 絕對不可提交
+*.jks
+*.keystore
+*.p12
+*.pfx
+
+# 環境變數檔案 - 絕對不可提交
+.env
+.env.local
+secrets.properties
+
+# Backup 檔案
+*~
+*.swp
+*.bak
+
+# Log 檔案
+*.log
+
+# Thumbnails
+Thumbs.db
+
+# Android 效能分析檔案
+*.trace
+*.hprof
