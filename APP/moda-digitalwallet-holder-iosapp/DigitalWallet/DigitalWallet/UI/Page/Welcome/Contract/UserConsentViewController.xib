@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Medium.ttf">
+            <string>NotoSansTC-Medium</string>
+        </array>
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContractViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="agreeLicenseButton" destination="1fD-9r-ZP7" id="hK3-JX-YQt"/>
+                <outlet property="agreeLicenseLabel" destination="K0f-FL-fCb" id="PIo-c4-ncQ"/>
+                <outlet property="agreePrivacyButton" destination="tCc-pG-omr" id="f1M-eW-wFN"/>
+                <outlet property="agreePrivacyLabel" destination="GUB-ch-2Zy" id="1Fe-Q1-Qr6"/>
+                <outlet property="checkoutLicenseLabel" destination="Vgb-mL-Lyw" id="yjI-Fk-C4a"/>
+                <outlet property="checkoutLicenseView" destination="Y7Z-Lp-NiP" id="B5L-YT-PAM"/>
+                <outlet property="checkoutPrivacyLabel" destination="WVb-Se-0vE" id="hJd-er-JLJ"/>
+                <outlet property="checkoutPrivacyView" destination="6gp-Vd-ojg" id="mdS-yw-11D"/>
+                <outlet property="confirmButton" destination="O7d-CF-7ZT" id="u83-pM-iiz"/>
+                <outlet property="imageView" destination="AaU-bM-t6d" id="027-KG-tgo"/>
+                <outlet property="titleLabel" destination="76T-FM-1L9" id="mYZ-f8-PiA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="251" image="Contract" translatesAutoresizingMaskIntoConstraints="NO" id="AaU-bM-t6d">
+                    <rect key="frame" x="0.0" y="50.000000000000014" width="375" height="252.33333333333337"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="AaU-bM-t6d" secondAttribute="height" multiplier="376:253" id="Gkw-up-Ycp"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="開始使用前，看看數位憑證皮夾相關規約" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76T-FM-1L9">
+                    <rect key="frame" x="20" y="332.33333333333331" width="335" height="58"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="20"/>
+                    <color key="textColor" name="2E3A64"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fD-9r-ZP7">
+                    <rect key="frame" x="20" y="410.33333333333331" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="66T-kY-6dP"/>
+                        <constraint firstAttribute="height" constant="20" id="yMa-ec-Iv4"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="Uncheck"/>
+                    <state key="selected" image="Check"/>
+                    <connections>
+                        <action selector="onClickCheck:" destination="-1" eventType="touchUpInside" id="HiS-XN-Eli"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="我同意軟體使用規章的條款與條例" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0f-FL-fCb">
+                    <rect key="frame" x="48" y="408.66666666666669" width="240" height="23.333333333333314"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                    <color key="textColor" name="767676"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Z-Lp-NiP">
+                    <rect key="frame" x="48" y="436" width="164" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="數位憑證皮夾使用規章" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgb-mL-Lyw">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="20"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="14"/>
+                            <color key="textColor" name="4E61A7"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow2" translatesAutoresizingMaskIntoConstraints="NO" id="aed-as-II7">
+                            <rect key="frame" x="144" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="UmY-1O-29U"/>
+                                <constraint firstAttribute="width" constant="20" id="eUK-4B-Ti5"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCc-pG-omr">
+                    <rect key="frame" x="20" y="474.33333333333331" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="FbO-MZ-TRO"/>
+                        <constraint firstAttribute="width" constant="20" id="hEh-Wl-9Cw"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="Uncheck"/>
+                    <state key="selected" image="Check"/>
+                    <connections>
+                        <action selector="onClickCheck:" destination="-1" eventType="touchUpInside" id="YyP-px-lHl"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="我接受個人資料的隱私政策" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-ch-2Zy">
+                    <rect key="frame" x="48" y="472.66666666666669" width="192" height="23.333333333333314"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                    <color key="textColor" name="767676"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6gp-Vd-ojg">
+                    <rect key="frame" x="48" y="500" width="150" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" text="個人資料的隱私政策" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVb-Se-0vE">
+                            <rect key="frame" x="0.0" y="0.0" width="126" height="20"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="14"/>
+                            <color key="textColor" name="4E61A7"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow2" translatesAutoresizingMaskIntoConstraints="NO" id="m4T-KJ-qhE">
+                            <rect key="frame" x="130" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="86Y-fc-5HM"/>
+                                <constraint firstAttribute="width" constant="20" id="xLU-rt-mI1"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yV5-7x-tfw">
+                    <rect key="frame" x="20" y="728" width="335" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="rlf-oD-bPh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" name="4E61A7"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickCancel:" destination="-1" eventType="touchUpInside" id="mAw-fm-SdC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-CF-7ZT">
+                    <rect key="frame" x="20" y="666" width="335" height="48"/>
+                    <color key="backgroundColor" name="DEDEDE"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="b4h-Z3-CrD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="確認">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" name="AAAAAA"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickConfirm:" destination="-1" eventType="touchUpInside" id="hRI-vv-dVh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="tCc-pG-omr" firstAttribute="leading" secondItem="1fD-9r-ZP7" secondAttribute="leading" id="87v-aE-lHA"/>
+                <constraint firstItem="AaU-bM-t6d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CER-qE-Wbg"/>
+                <constraint firstItem="76T-FM-1L9" firstAttribute="top" secondItem="AaU-bM-t6d" secondAttribute="bottom" constant="30" id="CF3-eL-L1s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AaU-bM-t6d" secondAttribute="trailing" id="FBr-We-JV9"/>
+                <constraint firstItem="Y7Z-Lp-NiP" firstAttribute="top" secondItem="K0f-FL-fCb" secondAttribute="bottom" constant="4" id="G55-tN-vBr"/>
+                <constraint firstItem="K0f-FL-fCb" firstAttribute="centerY" secondItem="1fD-9r-ZP7" secondAttribute="centerY" id="HjI-9a-1b5"/>
+                <constraint firstItem="1fD-9r-ZP7" firstAttribute="leading" secondItem="76T-FM-1L9" secondAttribute="leading" id="KHz-pc-aWg"/>
+                <constraint firstItem="GUB-ch-2Zy" firstAttribute="centerY" secondItem="tCc-pG-omr" secondAttribute="centerY" id="MGb-nX-9op"/>
+                <constraint firstAttribute="trailing" secondItem="76T-FM-1L9" secondAttribute="trailing" constant="20" id="NaL-bI-nyl"/>
+                <constraint firstItem="Y7Z-Lp-NiP" firstAttribute="leading" secondItem="K0f-FL-fCb" secondAttribute="leading" id="T9y-wn-Fz7"/>
+                <constraint firstItem="76T-FM-1L9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YKQ-na-Rvw"/>
+                <constraint firstItem="yV5-7x-tfw" firstAttribute="leading" secondItem="O7d-CF-7ZT" secondAttribute="leading" id="b6y-cH-9CM"/>
+                <constraint firstItem="yV5-7x-tfw" firstAttribute="top" secondItem="O7d-CF-7ZT" secondAttribute="bottom" constant="14" id="ceY-ZJ-Iwi"/>
+                <constraint firstItem="GUB-ch-2Zy" firstAttribute="leading" secondItem="tCc-pG-omr" secondAttribute="trailing" constant="8" id="hgf-T1-Y8t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yV5-7x-tfw" secondAttribute="bottom" constant="22" id="i1L-kS-5as"/>
+                <constraint firstItem="AaU-bM-t6d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kLu-cI-WTm"/>
+                <constraint firstItem="6gp-Vd-ojg" firstAttribute="top" secondItem="GUB-ch-2Zy" secondAttribute="bottom" constant="4" id="kOf-OO-uBo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O7d-CF-7ZT" secondAttribute="trailing" constant="20" id="lLi-Jh-6fg"/>
+                <constraint firstItem="yV5-7x-tfw" firstAttribute="trailing" secondItem="O7d-CF-7ZT" secondAttribute="trailing" id="qUJ-du-hpM"/>
+                <constraint firstItem="O7d-CF-7ZT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6gp-Vd-ojg" secondAttribute="bottom" constant="8" id="r9C-1l-jGy"/>
+                <constraint firstItem="O7d-CF-7ZT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sqk-cE-bWD"/>
+                <constraint firstItem="1fD-9r-ZP7" firstAttribute="top" secondItem="76T-FM-1L9" secondAttribute="bottom" constant="20" id="vpG-fK-Pz3"/>
+                <constraint firstItem="6gp-Vd-ojg" firstAttribute="leading" secondItem="GUB-ch-2Zy" secondAttribute="leading" id="w9a-qQ-NDG"/>
+                <constraint firstItem="K0f-FL-fCb" firstAttribute="leading" secondItem="1fD-9r-ZP7" secondAttribute="trailing" constant="8" id="y0a-4F-9XP"/>
+                <constraint firstItem="tCc-pG-omr" firstAttribute="top" secondItem="1fD-9r-ZP7" secondAttribute="bottom" constant="44" id="zfM-A6-Vxd"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Check" width="24" height="24"/>
+        <image name="Contract" width="375" height="252"/>
+        <image name="RightArrow2" width="24" height="24"/>
+        <image name="Uncheck" width="24" height="24"/>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AAAAAA">
+            <color red="0.66699999570846558" green="0.66699999570846558" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DEDEDE">
+            <color red="0.87099999189376831" green="0.87099999189376831" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

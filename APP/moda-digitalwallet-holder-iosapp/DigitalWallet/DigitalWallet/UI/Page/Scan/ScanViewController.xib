@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraView" destination="jjw-4U-WJi" id="cT7-ih-WCM"/>
+                <outlet property="maskView" destination="alq-vI-pO6" id="9U7-qK-FJk"/>
+                <outlet property="scannerImageView" destination="A7W-Up-26a" id="wVh-D7-h0i"/>
+                <outlet property="titleLabel" destination="AK7-i5-1ro" id="vYl-J0-9Ld"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjw-4U-WJi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alq-vI-pO6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scanner" translatesAutoresizingMaskIntoConstraints="NO" id="A7W-Up-26a">
+                    <rect key="frame" x="42.5" y="219.5" width="290" height="290"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="A7W-Up-26a" secondAttribute="height" multiplier="1:1" id="Pi6-vH-xdJ"/>
+                        <constraint firstAttribute="height" constant="290" id="SV1-nA-ujk"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請對準有效QR-Code，將自動進行掃描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AK7-i5-1ro">
+                    <rect key="frame" x="20" y="175.5" width="335" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="3nW-XJ-etV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wS4-DA-yPt">
+                    <rect key="frame" x="157.5" y="673" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wS4-DA-yPt" secondAttribute="height" multiplier="1:1" id="7AL-hn-KWN"/>
+                        <constraint firstAttribute="width" constant="60" id="WW1-3I-vpf"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="ScanCancel"/>
+                    <connections>
+                        <action selector="dismissScan:" destination="-1" eventType="touchUpInside" id="vZW-3r-uPr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="F4F4F4"/>
+            <constraints>
+                <constraint firstItem="wS4-DA-yPt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="56S-If-vwk"/>
+                <constraint firstItem="A7W-Up-26a" firstAttribute="top" secondItem="AK7-i5-1ro" secondAttribute="bottom" constant="20" id="5cv-QP-nnR"/>
+                <constraint firstAttribute="bottom" secondItem="alq-vI-pO6" secondAttribute="bottom" id="9lu-JL-Bqv"/>
+                <constraint firstItem="alq-vI-pO6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Lff-8z-jZu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AK7-i5-1ro" secondAttribute="trailing" constant="20" id="NzY-FH-jV5"/>
+                <constraint firstItem="jjw-4U-WJi" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Qoa-uY-cb3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="alq-vI-pO6" secondAttribute="trailing" id="RDL-oz-xxK"/>
+                <constraint firstItem="AK7-i5-1ro" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="187.5:406" id="RqD-6M-yoy"/>
+                <constraint firstItem="wS4-DA-yPt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="703:406" id="Srq-99-QT9"/>
+                <constraint firstItem="jjw-4U-WJi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dgG-9N-rlx"/>
+                <constraint firstItem="A7W-Up-26a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fja-Ew-byQ"/>
+                <constraint firstItem="AK7-i5-1ro" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iwY-DB-QRl"/>
+                <constraint firstItem="alq-vI-pO6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jMI-Xo-4sq"/>
+                <constraint firstItem="jjw-4U-WJi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tGV-Qb-yx8"/>
+                <constraint firstItem="jjw-4U-WJi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wcP-eb-oXh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-239" y="32"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ScanCancel" width="60.5" height="60.5"/>
+        <image name="Scanner" width="292.5" height="292.5"/>
+        <namedColor name="F4F4F4">
+            <color red="0.9570000171661377" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

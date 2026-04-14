@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImageView" destination="AaX-0L-0Mo" id="HBE-QW-mdc"/>
+                <outlet property="loadingIconView" destination="sM2-dh-SGC" id="xI7-lr-FlH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="AaX-0L-0Mo">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM2-dh-SGC">
+                    <rect key="frame" x="0.0" y="298.33333333333331" width="393" height="255.33333333333331"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AaX-0L-0Mo" secondAttribute="trailing" id="9kE-Wu-4h4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sM2-dh-SGC" secondAttribute="trailing" id="NUY-Ba-F6e"/>
+                <constraint firstItem="sM2-dh-SGC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NVX-ab-rZx"/>
+                <constraint firstItem="sM2-dh-SGC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="O2W-a1-2aR"/>
+                <constraint firstItem="AaX-0L-0Mo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WFs-sc-IMg"/>
+                <constraint firstAttribute="bottom" secondItem="AaX-0L-0Mo" secondAttribute="bottom" id="aJ7-it-SY0"/>
+                <constraint firstItem="sM2-dh-SGC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b2m-RP-Id4"/>
+                <constraint firstItem="AaX-0L-0Mo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="usL-6h-dMV"/>
+            </constraints>
+            <point key="canvasLocation" x="46.564885496183201" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LaunchScreenBackground" width="375" height="812"/>
+    </resources>
+</document>

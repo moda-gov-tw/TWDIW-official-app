@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+        <array key="NotoSansTC-SemiBold.ttf">
+            <string>NotoSansTC-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifySelectView" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="checkBoxButton" destination="ghU-XM-MUk" id="Dh1-y9-Bss"/>
+                <outlet property="contentLabel" destination="W9h-Mh-HCf" id="PJi-Bz-ZKU"/>
+                <outlet property="titleLabel" destination="aIi-st-CwE" id="fh0-mm-9uZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="423" height="183"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zhy-6G-z40">
+                    <rect key="frame" x="0.0" y="0.0" width="423" height="183"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-XM-MUk">
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ghU-XM-MUk" secondAttribute="height" id="77L-xV-pQ3"/>
+                                <constraint firstAttribute="height" constant="24" id="gzL-CY-GQs"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="Uncheck"/>
+                            <state key="disabled" image="disableCheck"/>
+                            <state key="selected" image="Check"/>
+                            <connections>
+                                <action selector="onClickCheckBox:" destination="-1" eventType="touchUpInside" id="y5o-EP-n5u"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wuK-ll-e1D">
+                            <rect key="frame" x="32" y="0.0" width="391" height="20.333333333333332"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIi-st-CwE">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.66666666666667" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="NotoSansTC-SemiBold" family="Noto Sans TC" pointSize="14"/>
+                                    <color key="textColor" name="464646"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9h-Mh-HCf">
+                                    <rect key="frame" x="135.66666666666663" y="0.0" width="255.33333333333337" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="14"/>
+                                    <color key="textColor" name="767676"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="W9h-Mh-HCf" firstAttribute="width" secondItem="aIi-st-CwE" secondAttribute="width" multiplier="2" id="8b3-AG-aVm"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zhy-6G-z40" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RyL-w3-QOI"/>
+                <constraint firstItem="zhy-6G-z40" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="k54-gI-N8U"/>
+                <constraint firstAttribute="trailing" secondItem="zhy-6G-z40" secondAttribute="trailing" id="rnd-RS-Jgt"/>
+                <constraint firstAttribute="bottom" secondItem="zhy-6G-z40" secondAttribute="bottom" id="ws4-ED-XdE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="162.59541984732823" y="-232.04225352112678"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Check" width="24" height="24"/>
+        <image name="Uncheck" width="24" height="24"/>
+        <image name="disableCheck" width="20.333333969116211" height="20.333333969116211"/>
+        <namedColor name="464646">
+            <color red="0.27500000596046448" green="0.27500000596046448" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

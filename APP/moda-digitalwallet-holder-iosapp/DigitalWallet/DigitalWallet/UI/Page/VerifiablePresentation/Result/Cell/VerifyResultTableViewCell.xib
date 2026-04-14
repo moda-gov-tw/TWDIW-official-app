@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Medium.ttf">
+            <string>NotoSansTC-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="KGk-i7-Jjw" customClass="VerifyResultTableViewCell" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="122"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="319" height="122"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="j7Y-ny-uTc">
+                        <rect key="frame" x="12" y="12" width="295" height="98"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-rQ-fbA">
+                                <rect key="frame" x="0.0" y="0.0" width="295" height="17.666666666666668"/>
+                                <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="12"/>
+                                <color key="textColor" name="2E3A64"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="StC-GC-f5K">
+                                <rect key="frame" x="0.0" y="21.666666666666664" width="295" height="76.333333333333343"/>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="F4F4F4"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="j7Y-ny-uTc" secondAttribute="trailing" constant="12" id="B8i-xF-izs"/>
+                    <constraint firstItem="j7Y-ny-uTc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bgt-1P-EPD"/>
+                    <constraint firstAttribute="bottom" secondItem="j7Y-ny-uTc" secondAttribute="bottom" constant="12" id="qae-Qg-Tyx"/>
+                    <constraint firstItem="j7Y-ny-uTc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="rnh-iU-RD1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cardsStackView" destination="StC-GC-f5K" id="BX0-YT-AJG"/>
+                <outlet property="groupNameLabel" destination="uSX-rQ-fbA" id="auh-oW-nER"/>
+            </connections>
+            <point key="canvasLocation" x="-89.312977099236633" y="33.802816901408455"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="F4F4F4">
+            <color red="0.9570000171661377" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Bold.ttf">
+            <string>NotoSansTC-Bold</string>
+        </array>
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+        <array key="NotoSansTC-SemiBold.ttf">
+            <string>NotoSansTC-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="243" id="KGk-i7-Jjw" customClass="VerifyCardChangeTableViewCell" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="243"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="243"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKK-3u-CEf">
+                        <rect key="frame" x="20" y="8" width="380" height="227"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BbS-P9-5ds">
+                                <rect key="frame" x="12" y="14" width="69.666666666666671" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioButtonEnableFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifa-ri-18B">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ifa-ri-18B" secondAttribute="height" id="B9j-gP-AIr"/>
+                                            <constraint firstAttribute="width" constant="24" id="K73-3p-1Uk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzH-A7-Q0B">
+                                        <rect key="frame" x="31.999999999999996" y="0.0" width="37.666666666666657" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="NotoSansTC-SemiBold" family="Noto Sans TC" pointSize="14"/>
+                                        <color key="textColor" name="464646"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F7-4j-WHY">
+                                <rect key="frame" x="7" y="9" width="34" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="onClickSelectCardButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PJE-CK-ldg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-2d-C9L">
+                                <rect key="frame" x="293.66666666666669" y="10.666666666666668" width="86.333333333333314" height="31.000000000000004"/>
+                                <fontDescription key="fontDescription" name="NotoSansTC-Bold" family="Noto Sans TC" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <inset key="titleEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="開開開開" image="DownArrow">
+                                    <color key="titleColor" name="4E61A7"/>
+                                </state>
+                                <state key="selected" image="ArrowUp20"/>
+                                <connections>
+                                    <action selector="onClickExpandButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6qW-ug-lim"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-FC-UIu">
+                                <rect key="frame" x="44" y="38" width="324" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="14"/>
+                                <color key="textColor" name="767676"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="plN-bL-jGl">
+                                <rect key="frame" x="12" y="70.333333333333329" width="356" height="144.66666666666669"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="plN-bL-jGl" firstAttribute="top" secondItem="D7h-FC-UIu" secondAttribute="bottom" constant="12" id="0eW-gv-97V"/>
+                            <constraint firstAttribute="trailing" secondItem="EkT-2d-C9L" secondAttribute="trailing" id="45U-Fa-T5c"/>
+                            <constraint firstItem="BbS-P9-5ds" firstAttribute="top" secondItem="gKK-3u-CEf" secondAttribute="top" constant="14" id="7DI-u5-33S"/>
+                            <constraint firstItem="4F7-4j-WHY" firstAttribute="bottom" secondItem="Ifa-ri-18B" secondAttribute="bottom" constant="5" id="EsM-kS-jgb"/>
+                            <constraint firstItem="EkT-2d-C9L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BbS-P9-5ds" secondAttribute="trailing" id="GKv-Y4-pJl"/>
+                            <constraint firstItem="BbS-P9-5ds" firstAttribute="leading" secondItem="gKK-3u-CEf" secondAttribute="leading" constant="12" id="I11-LA-Mv5"/>
+                            <constraint firstItem="4F7-4j-WHY" firstAttribute="leading" secondItem="Ifa-ri-18B" secondAttribute="leading" constant="-5" id="KAM-2K-BDR"/>
+                            <constraint firstItem="D7h-FC-UIu" firstAttribute="top" secondItem="BbS-P9-5ds" secondAttribute="bottom" id="etb-rq-Um9"/>
+                            <constraint firstItem="4F7-4j-WHY" firstAttribute="trailing" secondItem="Ifa-ri-18B" secondAttribute="trailing" constant="5" id="fVp-Gb-qh8"/>
+                            <constraint firstItem="4F7-4j-WHY" firstAttribute="top" secondItem="Ifa-ri-18B" secondAttribute="top" constant="-5" id="lCg-f0-46I"/>
+                            <constraint firstAttribute="trailing" secondItem="plN-bL-jGl" secondAttribute="trailing" constant="12" id="lXY-KZ-3ui"/>
+                            <constraint firstItem="D7h-FC-UIu" firstAttribute="leading" secondItem="gKK-3u-CEf" secondAttribute="leading" constant="44" id="lhR-CR-xRZ"/>
+                            <constraint firstItem="EkT-2d-C9L" firstAttribute="centerY" secondItem="BbS-P9-5ds" secondAttribute="centerY" id="mBY-Qy-L38"/>
+                            <constraint firstAttribute="trailing" secondItem="D7h-FC-UIu" secondAttribute="trailing" constant="12" id="nKl-Eh-2rn"/>
+                            <constraint firstAttribute="bottom" secondItem="plN-bL-jGl" secondAttribute="bottom" constant="12" id="umJ-AR-ymV"/>
+                            <constraint firstItem="plN-bL-jGl" firstAttribute="leading" secondItem="gKK-3u-CEf" secondAttribute="leading" constant="12" id="uwB-4Y-RKc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gKK-3u-CEf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1LB-nB-5uy"/>
+                    <constraint firstItem="gKK-3u-CEf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="AEa-7G-G7M"/>
+                    <constraint firstAttribute="bottom" secondItem="gKK-3u-CEf" secondAttribute="bottom" constant="8" id="KbL-T2-vNt"/>
+                    <constraint firstAttribute="trailing" secondItem="gKK-3u-CEf" secondAttribute="trailing" constant="20" id="mXm-EU-mgL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="backGroundView" destination="gKK-3u-CEf" id="C3e-Ca-fyK"/>
+                <outlet property="cardNameLabel" destination="mzH-A7-Q0B" id="PFU-Uv-eCw"/>
+                <outlet property="cardsStackView" destination="plN-bL-jGl" id="JWr-VG-lxa"/>
+                <outlet property="expandButton" destination="EkT-2d-C9L" id="gIc-hF-xFh"/>
+                <outlet property="orgNameLabel" destination="D7h-FC-UIu" id="vgq-es-Juf"/>
+                <outlet property="radioButtonImageView" destination="Ifa-ri-18B" id="LY7-xa-zjT"/>
+                <outlet property="selectCardButton" destination="4F7-4j-WHY" id="XYH-Zd-Bfv"/>
+            </connections>
+            <point key="canvasLocation" x="100.76335877862596" y="90.492957746478879"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ArrowUp20" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="DownArrow" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="RadioButtonEnableFill" width="24.333333969116211" height="24"/>
+        <namedColor name="464646">
+            <color red="0.27500000596046448" green="0.27500000596046448" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

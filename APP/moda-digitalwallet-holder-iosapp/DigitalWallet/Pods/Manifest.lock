@@ -1,0 +1,40 @@
+PODS:
+  - IQKeyboardManager (6.5.19)
+  - lottie-ios (4.5.2)
+  - SQLCipher (4.9.0):
+    - SQLCipher/standard (= 4.9.0)
+  - SQLCipher/common (4.9.0)
+  - SQLCipher/standard (4.9.0):
+    - SQLCipher/common
+  - SQLite.swift/SQLCipher (0.15.3):
+    - SQLCipher (>= 4.0.0)
+  - Swinject (2.9.1)
+  - ZIPFoundation (0.9.19)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - lottie-ios
+  - SQLite.swift/SQLCipher (~> 0.15.3)
+  - Swinject
+  - ZIPFoundation (~> 0.9)
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - lottie-ios
+    - SQLCipher
+    - SQLite.swift
+    - Swinject
+    - ZIPFoundation
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  lottie-ios: 96784afc26ea031d3e2b6cae342a4b8915072489
+  SQLCipher: 31878d8ebd27e5c96db0b7cb695c96e9f8ad77da
+  SQLite.swift: 8d054987f02728cc912b0eb5a9659650573a65a2
+  Swinject: a827d508c6270da03ec74e558e728917a888fa9b
+  ZIPFoundation: b8c29ea7ae353b309bc810586181fd073cb3312c
+
+PODFILE CHECKSUM: fc536377e789150f25d39aac452757fd5259d68b
+
+COCOAPODS: 1.16.2

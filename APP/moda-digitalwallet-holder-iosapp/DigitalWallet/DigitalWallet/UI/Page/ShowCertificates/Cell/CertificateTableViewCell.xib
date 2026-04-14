@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="CertificateTableViewCell" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-sL-IYK">
+                        <rect key="frame" x="20" y="12" width="295" height="56"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIl-6B-XXp">
+                                <rect key="frame" x="12" y="8" width="271" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="統一超商領貨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6F-M4-9jh">
+                                        <rect key="frame" x="0.0" y="0.0" width="231" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="464646"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyq-kR-Ao8">
+                                        <rect key="frame" x="239" y="4" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kyq-kR-Ao8" secondAttribute="height" multiplier="1:1" id="IEP-o5-821"/>
+                                            <constraint firstAttribute="width" constant="32" id="dOg-W6-NZB"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="FavoriteStar32"/>
+                                        <connections>
+                                            <action selector="clickStar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cwn-7Z-NKk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="I6F-M4-9jh" firstAttribute="top" secondItem="MIl-6B-XXp" secondAttribute="top" id="02W-rb-6uZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="I6F-M4-9jh" secondAttribute="bottom" id="1cI-er-Bp4"/>
+                                    <constraint firstItem="I6F-M4-9jh" firstAttribute="leading" secondItem="MIl-6B-XXp" secondAttribute="leading" id="Ies-hO-fnn"/>
+                                    <constraint firstAttribute="trailing" secondItem="kyq-kR-Ao8" secondAttribute="trailing" id="dvt-4A-3At"/>
+                                    <constraint firstItem="kyq-kR-Ao8" firstAttribute="leading" secondItem="I6F-M4-9jh" secondAttribute="trailing" constant="8" id="gI1-bu-epl"/>
+                                    <constraint firstItem="kyq-kR-Ao8" firstAttribute="centerY" secondItem="MIl-6B-XXp" secondAttribute="centerY" id="s8t-9L-dYV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MIl-6B-XXp" secondAttribute="trailing" constant="12" id="6BF-W6-jRf"/>
+                            <constraint firstItem="MIl-6B-XXp" firstAttribute="top" secondItem="uh9-sL-IYK" secondAttribute="top" constant="8" id="Bus-O7-Vmy"/>
+                            <constraint firstAttribute="bottom" secondItem="MIl-6B-XXp" secondAttribute="bottom" constant="8" id="RVt-nh-VH6"/>
+                            <constraint firstAttribute="height" constant="56" id="ggr-CW-o0Q"/>
+                            <constraint firstItem="MIl-6B-XXp" firstAttribute="leading" secondItem="uh9-sL-IYK" secondAttribute="leading" constant="12" id="wcg-Wr-5tg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="uh9-sL-IYK" secondAttribute="trailing" constant="20" id="2Gr-aw-VRP"/>
+                    <constraint firstItem="uh9-sL-IYK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="XCr-Cv-MXq"/>
+                    <constraint firstAttribute="bottom" secondItem="uh9-sL-IYK" secondAttribute="bottom" id="geE-qB-ct6"/>
+                    <constraint firstItem="uh9-sL-IYK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="nAR-do-NWB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="certificateLabel" destination="I6F-M4-9jh" id="V3K-Yp-0ns"/>
+                <outlet property="contentBackgroundView" destination="uh9-sL-IYK" id="Yac-72-vly"/>
+                <outlet property="favoriteStarButton" destination="kyq-kR-Ao8" id="xrY-cC-sKp"/>
+            </connections>
+            <point key="canvasLocation" x="139.69465648854961" y="84.154929577464799"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="FavoriteStar32" width="32" height="32"/>
+        <namedColor name="464646">
+            <color red="0.27500000596046448" green="0.27500000596046448" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Bold.ttf">
+            <string>NotoSansTC-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="agreeButton" destination="lDi-Pf-smR" id="rCQ-f7-SPP"/>
+                <outlet property="buttonsStackView" destination="cgy-rV-byh" id="zUw-Ga-5KW"/>
+                <outlet property="termsWebView" destination="Ggq-uK-ScG" id="BE7-82-rhF"/>
+                <outlet property="titleLabel" destination="apu-wf-OWF" id="CJb-sq-Jrl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-XS-inu">
+                    <rect key="frame" x="20" y="132" width="353" height="666"/>
+                    <subviews>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggq-uK-ScG">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="524"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="cgy-rV-byh">
+                            <rect key="frame" x="0.0" y="556" width="353" height="110"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDi-Pf-smR">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="48"/>
+                                    <color key="backgroundColor" name="4E61A7"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="VzP-PT-5ym"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="我同意">
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="NotoSansTC-Medium"/>
+                                                    <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="onClickAgree:" destination="-1" eventType="touchUpInside" id="6aG-eP-fZz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nId-9K-4VV">
+                                    <rect key="frame" x="0.0" y="62" width="353" height="48"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="我不同意">
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="NotoSansTC-Medium"/>
+                                                    <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="baseForegroundColor" name="4E61A7"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="onClickDisagree:" destination="-1" eventType="touchUpInside" id="WjA-Ei-Dcc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cgy-rV-byh" secondAttribute="trailing" id="1VM-Ue-384"/>
+                        <constraint firstItem="cgy-rV-byh" firstAttribute="leading" secondItem="zWJ-XS-inu" secondAttribute="leading" id="Slp-bO-Mpg"/>
+                        <constraint firstItem="Ggq-uK-ScG" firstAttribute="leading" secondItem="zWJ-XS-inu" secondAttribute="leading" id="wfU-Tl-2gj"/>
+                        <constraint firstAttribute="trailing" secondItem="Ggq-uK-ScG" secondAttribute="trailing" id="z35-CV-taM"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="軟體使用規章的條款與條例" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apu-wf-OWF">
+                    <rect key="frame" x="20" y="83" width="353" height="29"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Bold" family="Noto Sans TC" pointSize="20"/>
+                    <color key="textColor" name="2E3A64"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zWJ-XS-inu" firstAttribute="top" secondItem="apu-wf-OWF" secondAttribute="bottom" constant="20" id="6P9-wd-qiA"/>
+                <constraint firstItem="zWJ-XS-inu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Gra-N9-Ae0"/>
+                <constraint firstItem="apu-wf-OWF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NwW-bE-gyp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zWJ-XS-inu" secondAttribute="bottom" constant="20" id="SZ9-8S-k0f"/>
+                <constraint firstItem="apu-wf-OWF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="UXs-Oy-7Ma"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zWJ-XS-inu" secondAttribute="trailing" constant="20" id="c0D-eW-PCp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="apu-wf-OWF" secondAttribute="trailing" constant="20" id="zsq-jV-5ZR"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

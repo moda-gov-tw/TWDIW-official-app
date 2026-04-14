@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemindAlertViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="mainStackView" destination="P1i-Gh-cwk" id="r6z-si-U1D"/>
+                <outlet property="pageControl" destination="dOB-pc-tQh" id="chb-BX-gph"/>
+                <outlet property="remindAlertView" destination="XZa-tG-MXN" id="o2O-Zh-MXq"/>
+                <outlet property="scrollView" destination="uk9-6G-Ipc" id="rnb-WL-Lpm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0A-K4-5YG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uk9-6G-Ipc">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P1i-Gh-cwk">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZa-tG-MXN" customClass="RemindAlertView" customModule="DigitalWallet_PROD" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="P1i-Gh-cwk" firstAttribute="trailing" secondItem="JCV-1d-KU4" secondAttribute="trailing" id="IBx-id-Udo"/>
+                        <constraint firstItem="XZa-tG-MXN" firstAttribute="height" secondItem="7vV-yF-SWJ" secondAttribute="height" id="SiM-ud-ygh"/>
+                        <constraint firstItem="P1i-Gh-cwk" firstAttribute="top" secondItem="JCV-1d-KU4" secondAttribute="top" id="fR7-c9-zwH"/>
+                        <constraint firstItem="P1i-Gh-cwk" firstAttribute="leading" secondItem="JCV-1d-KU4" secondAttribute="leading" id="fgB-pN-hsN"/>
+                        <constraint firstItem="P1i-Gh-cwk" firstAttribute="bottom" secondItem="JCV-1d-KU4" secondAttribute="bottom" id="lBT-Go-Nfb"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="JCV-1d-KU4"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="7vV-yF-SWJ"/>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dOB-pc-tQh">
+                    <rect key="frame" x="20" y="552" width="335" height="25.666666666666629"/>
+                </pageControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="s0A-K4-5YG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3kd-ny-R5b"/>
+                <constraint firstItem="s0A-K4-5YG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="71S-l8-pH5"/>
+                <constraint firstItem="uk9-6G-Ipc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9NE-I3-wuX"/>
+                <constraint firstAttribute="bottom" secondItem="s0A-K4-5YG" secondAttribute="bottom" id="9mR-yc-Xg1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dOB-pc-tQh" secondAttribute="trailing" constant="20" id="Es0-eB-ZDS"/>
+                <constraint firstItem="uk9-6G-Ipc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.66" id="GOn-DF-S93"/>
+                <constraint firstItem="uk9-6G-Ipc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vyn-ie-guF"/>
+                <constraint firstItem="dOB-pc-tQh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WzL-St-s0F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s0A-K4-5YG" secondAttribute="trailing" id="a5B-NJ-sev"/>
+                <constraint firstItem="uk9-6G-Ipc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aEi-6z-2Xh"/>
+                <constraint firstItem="XZa-tG-MXN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="eMI-qM-t7j"/>
+                <constraint firstItem="dOB-pc-tQh" firstAttribute="top" secondItem="uk9-6G-Ipc" secondAttribute="bottom" constant="16" id="or1-8z-k88"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+</document>

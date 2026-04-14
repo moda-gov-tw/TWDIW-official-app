@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutoLogoutSettingViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="2cd-zR-J3d" id="OWn-5k-X5k"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pil-0r-p2L">
+                    <rect key="frame" x="0.0" y="32" width="375" height="250"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定皮夾自動登出時間以保護您的帳號安全。" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG6-AJ-DyE">
+                            <rect key="frame" x="20" y="12" width="335" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="ENj-Rx-jor"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                            <color key="textColor" name="767676"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用者需重新登入，以確保皮夾由本人操作。" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-dl-HPA">
+                            <rect key="frame" x="20" y="36" width="335" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Ol5-Uh-2aY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                            <color key="textColor" name="767676"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2cd-zR-J3d">
+                            <rect key="frame" x="20" y="72" width="335" height="178"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="2hc-Tr-FT7"/>
+                                <outlet property="delegate" destination="-1" id="CRC-Wf-1OM"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="u1v-dl-HPA" firstAttribute="top" secondItem="NG6-AJ-DyE" secondAttribute="bottom" id="B0C-wM-bO3"/>
+                        <constraint firstAttribute="trailing" secondItem="2cd-zR-J3d" secondAttribute="trailing" constant="20" symbolic="YES" id="D4M-uO-Kk7"/>
+                        <constraint firstItem="2cd-zR-J3d" firstAttribute="top" secondItem="u1v-dl-HPA" secondAttribute="bottom" constant="12" id="Eyq-LO-Q7M"/>
+                        <constraint firstAttribute="height" constant="250" id="FSf-6i-9sr"/>
+                        <constraint firstItem="2cd-zR-J3d" firstAttribute="leading" secondItem="Pil-0r-p2L" secondAttribute="leading" constant="20" symbolic="YES" id="JFh-ik-JRb"/>
+                        <constraint firstItem="NG6-AJ-DyE" firstAttribute="top" secondItem="Pil-0r-p2L" secondAttribute="top" constant="12" id="Q74-VT-JOV"/>
+                        <constraint firstAttribute="trailing" secondItem="u1v-dl-HPA" secondAttribute="trailing" constant="20" symbolic="YES" id="RqC-p7-4Gz"/>
+                        <constraint firstItem="u1v-dl-HPA" firstAttribute="leading" secondItem="Pil-0r-p2L" secondAttribute="leading" constant="20" symbolic="YES" id="dAk-wp-pLX"/>
+                        <constraint firstItem="NG6-AJ-DyE" firstAttribute="leading" secondItem="Pil-0r-p2L" secondAttribute="leading" constant="20" symbolic="YES" id="rzV-ci-0Lf"/>
+                        <constraint firstAttribute="bottom" secondItem="2cd-zR-J3d" secondAttribute="bottom" id="vLw-2S-tgt"/>
+                        <constraint firstAttribute="trailing" secondItem="NG6-AJ-DyE" secondAttribute="trailing" constant="20" symbolic="YES" id="zqS-Fo-x2S"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="F4F4F4"/>
+            <constraints>
+                <constraint firstItem="Pil-0r-p2L" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UnO-Rn-44g"/>
+                <constraint firstItem="Pil-0r-p2L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u3P-ij-INg"/>
+                <constraint firstItem="Pil-0r-p2L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="vb8-Bv-sK6"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="19.340329835082461"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="F4F4F4">
+            <color red="0.9570000171661377" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

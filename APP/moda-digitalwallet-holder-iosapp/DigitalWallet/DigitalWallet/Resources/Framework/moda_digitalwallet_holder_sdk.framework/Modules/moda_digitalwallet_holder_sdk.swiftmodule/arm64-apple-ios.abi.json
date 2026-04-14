@@ -1,0 +1,3911 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "moda_digitalwallet_holder_sdk",
+    "printedName": "moda_digitalwallet_holder_sdk",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PrintPro",
+        "printedName": "PrintPro",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isEnabled",
+            "printedName": "isEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvpZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvpZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvgZ",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvgZ",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvsZ",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvsZ",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvMZ",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk8PrintProV9isEnabledSbvMZ",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "print",
+            "printedName": "print(_:separator:terminator:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk8PrintProV5print_9separator10terminatoryypd_S2StFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk8PrintProV5print_9separator10terminatoryypd_S2StFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:29moda_digitalwallet_holder_sdk8PrintProV",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk8PrintProV",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ModaDigitalWalletHolderSDK",
+        "printedName": "ModaDigitalWalletHolderSDK",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ModaDigitalWalletHolderSDK",
+                "printedName": "moda_digitalwallet_holder_sdk.ModaDigitalWalletHolderSDK",
+                "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKCACycfc",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKCACycfc",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC7versionSSvpZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC7versionSSvpZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC7versionSSvgZ",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC7versionSSvgZ",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "build",
+            "printedName": "build",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC5buildSSvpZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC5buildSSvpZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC5buildSSvgZ",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC5buildSSvgZ",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fullVersion",
+            "printedName": "fullVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC11fullVersionSSvpZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC11fullVersionSSvpZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC11fullVersionSSvgZ",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC11fullVersionSSvgZ",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk26ModaDigitalWalletHolderSDKC",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TokenSDKManager",
+        "printedName": "TokenSDKManager",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(messenager:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TokenSDKManager",
+                "printedName": "moda_digitalwallet_holder_sdk.TokenSDKManager",
+                "usr": "s:29moda_digitalwallet_holder_sdk15TokenSDKManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterEngine",
+                "printedName": "Flutter.FlutterEngine",
+                "usr": "c:objc(cs)FlutterEngine"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:29moda_digitalwallet_holder_sdk15TokenSDKManagerC10messenagerACSo13FlutterEngineC_tcfc",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk15TokenSDKManagerC10messenagerACSo13FlutterEngineC_tcfc",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:29moda_digitalwallet_holder_sdk15TokenSDKManagerC",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk15TokenSDKManagerC",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreFoundation",
+        "printedName": "CoreFoundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SourceType",
+        "printedName": "SourceType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "platform",
+            "printedName": "platform",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(moda_digitalwallet_holder_sdk.SourceType.Type) -> moda_digitalwallet_holder_sdk.SourceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SourceType",
+                    "printedName": "moda_digitalwallet_holder_sdk.SourceType",
+                    "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "moda_digitalwallet_holder_sdk.SourceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SourceType",
+                        "printedName": "moda_digitalwallet_holder_sdk.SourceType",
+                        "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO8platformyA2CmF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10SourceTypeO8platformyA2CmF",
+            "moduleName": "moda_digitalwallet_holder_sdk"
+          },
+          {
+            "kind": "Var",
+            "name": "kx701",
+            "printedName": "kx701",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(moda_digitalwallet_holder_sdk.SourceType.Type) -> moda_digitalwallet_holder_sdk.SourceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SourceType",
+                    "printedName": "moda_digitalwallet_holder_sdk.SourceType",
+                    "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "moda_digitalwallet_holder_sdk.SourceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SourceType",
+                        "printedName": "moda_digitalwallet_holder_sdk.SourceType",
+                        "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO5kx701yA2CmF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10SourceTypeO5kx701yA2CmF",
+            "moduleName": "moda_digitalwallet_holder_sdk"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "moda_digitalwallet_holder_sdk.SourceType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SourceType",
+                    "printedName": "moda_digitalwallet_holder_sdk.SourceType",
+                    "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10SourceTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO8rawValueSSvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10SourceTypeO8rawValueSSvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO8rawValueSSvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk10SourceTypeO8rawValueSSvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk10SourceTypeO",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ModaDidKey",
+        "printedName": "ModaDidKey",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(keyTag:type:pin:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ModaDidKey",
+                "printedName": "moda_digitalwallet_holder_sdk.ModaDidKey",
+                "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SourceType",
+                "printedName": "moda_digitalwallet_holder_sdk.SourceType",
+                "usr": "s:29moda_digitalwallet_holder_sdk10SourceTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC6keyTag4type3pinACSS_AA10SourceTypeO10Foundation4DataVtcfc",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10ModaDidKeyC6keyTag4type3pinACSS_AA10SourceTypeO10Foundation4DataVtcfc",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "getP256Key",
+            "printedName": "getP256Key()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.String?, moda_digitalwallet_holder_sdk.Error?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC07getP256G0SSSg_AA5ErrorOSgtyF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10ModaDidKeyC07getP256G0SSSg_AA5ErrorOSgtyF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sign",
+            "printedName": "sign(header:payload:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.String?, moda_digitalwallet_holder_sdk.Error?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC4sign6header7payloadSSSg_AA5ErrorOSgtSS_SStF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10ModaDidKeyC4sign6header7payloadSSSg_AA5ErrorOSgtSS_SStF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "delete",
+            "printedName": "delete()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Bool, moda_digitalwallet_holder_sdk.Error?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC6deleteSb_AA5ErrorOSgtyF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10ModaDidKeyC6deleteSb_AA5ErrorOSgtyF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "verifyUser",
+            "printedName": "verifyUser(publicKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Bool, moda_digitalwallet_holder_sdk.Error?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC10verifyUser06publicG0Sb_AA5ErrorOSgtSS_tF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk10ModaDidKeyC10verifyUser06publicG0Sb_AA5ErrorOSgtSS_tF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:29moda_digitalwallet_holder_sdk10ModaDidKeyC",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk10ModaDidKeyC",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreFoundation",
+        "printedName": "CoreFoundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "moda_digitalwallet_holder_sdk"
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_LICENSE_ASN1_ERROR",
+        "printedName": "SOFTWARE_LICENSE_ASN1_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk27SOFTWARE_LICENSE_ASN1_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk27SOFTWARE_LICENSE_ASN1_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk27SOFTWARE_LICENSE_ASN1_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk27SOFTWARE_LICENSE_ASN1_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_LICENSE_CREATE_KEY_ERROR",
+        "printedName": "SOFTWARE_LICENSE_CREATE_KEY_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk33SOFTWARE_LICENSE_CREATE_KEY_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk33SOFTWARE_LICENSE_CREATE_KEY_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk33SOFTWARE_LICENSE_CREATE_KEY_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk33SOFTWARE_LICENSE_CREATE_KEY_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_STRING_TO_DATA_ERROR",
+        "printedName": "SOFTWARE_STRING_TO_DATA_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk29SOFTWARE_STRING_TO_DATA_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk29SOFTWARE_STRING_TO_DATA_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk29SOFTWARE_STRING_TO_DATA_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk29SOFTWARE_STRING_TO_DATA_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_BASE64_TO_DATA_ERROR",
+        "printedName": "SOFTWARE_BASE64_TO_DATA_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk29SOFTWARE_BASE64_TO_DATA_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk29SOFTWARE_BASE64_TO_DATA_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk29SOFTWARE_BASE64_TO_DATA_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk29SOFTWARE_BASE64_TO_DATA_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_HEX_TO_BASE64_ERROR",
+        "printedName": "SOFTWARE_HEX_TO_BASE64_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk28SOFTWARE_HEX_TO_BASE64_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk28SOFTWARE_HEX_TO_BASE64_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk28SOFTWARE_HEX_TO_BASE64_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk28SOFTWARE_HEX_TO_BASE64_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_INVALID_PARAMETER_ERROR",
+        "printedName": "SOFTWARE_INVALID_PARAMETER_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_PARAMETER_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_PARAMETER_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_PARAMETER_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_PARAMETER_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_VERIFY_SIGNATURE_ERROR",
+        "printedName": "SOFTWARE_VERIFY_SIGNATURE_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk31SOFTWARE_VERIFY_SIGNATURE_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk31SOFTWARE_VERIFY_SIGNATURE_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk31SOFTWARE_VERIFY_SIGNATURE_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk31SOFTWARE_VERIFY_SIGNATURE_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_LOAD_FRAMEWORK_ERROR",
+        "printedName": "SOFTWARE_LOAD_FRAMEWORK_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk29SOFTWARE_LOAD_FRAMEWORK_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk29SOFTWARE_LOAD_FRAMEWORK_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk29SOFTWARE_LOAD_FRAMEWORK_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk29SOFTWARE_LOAD_FRAMEWORK_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_GET_SYMBOL_ERROR",
+        "printedName": "SOFTWARE_GET_SYMBOL_ERROR",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk25SOFTWARE_GET_SYMBOL_ERRORSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk25SOFTWARE_GET_SYMBOL_ERRORSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk25SOFTWARE_GET_SYMBOL_ERRORSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk25SOFTWARE_GET_SYMBOL_ERRORSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_KEY_GENERATION_FAILED",
+        "printedName": "SOFTWARE_KEY_GENERATION_FAILED",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk30SOFTWARE_KEY_GENERATION_FAILEDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk30SOFTWARE_KEY_GENERATION_FAILEDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk30SOFTWARE_KEY_GENERATION_FAILEDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk30SOFTWARE_KEY_GENERATION_FAILEDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_KEY_NOT_FOUND",
+        "printedName": "SOFTWARE_KEY_NOT_FOUND",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk22SOFTWARE_KEY_NOT_FOUNDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk22SOFTWARE_KEY_NOT_FOUNDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk22SOFTWARE_KEY_NOT_FOUNDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk22SOFTWARE_KEY_NOT_FOUNDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_SIGNING_FAILED",
+        "printedName": "SOFTWARE_SIGNING_FAILED",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk23SOFTWARE_SIGNING_FAILEDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk23SOFTWARE_SIGNING_FAILEDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk23SOFTWARE_SIGNING_FAILEDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk23SOFTWARE_SIGNING_FAILEDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_VERIFICATION_FAILED",
+        "printedName": "SOFTWARE_VERIFICATION_FAILED",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk28SOFTWARE_VERIFICATION_FAILEDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk28SOFTWARE_VERIFICATION_FAILEDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk28SOFTWARE_VERIFICATION_FAILEDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk28SOFTWARE_VERIFICATION_FAILEDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILED",
+        "printedName": "SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILED",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk37SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILEDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk37SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILEDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk37SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILEDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk37SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILEDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_ENCODING_FAILED",
+        "printedName": "SOFTWARE_ENCODING_FAILED",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk24SOFTWARE_ENCODING_FAILEDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk24SOFTWARE_ENCODING_FAILEDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk24SOFTWARE_ENCODING_FAILEDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk24SOFTWARE_ENCODING_FAILEDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_INVALID_KEY",
+        "printedName": "SOFTWARE_INVALID_KEY",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk20SOFTWARE_INVALID_KEYSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk20SOFTWARE_INVALID_KEYSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk20SOFTWARE_INVALID_KEYSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk20SOFTWARE_INVALID_KEYSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVE",
+        "printedName": "SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVE",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk38SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVESuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk38SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVESuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk38SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVESuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk38SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVESuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_INVALID_COORDINATE_DATA",
+        "printedName": "SOFTWARE_INVALID_COORDINATE_DATA",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_COORDINATE_DATASuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_COORDINATE_DATASuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_COORDINATE_DATASuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk32SOFTWARE_INVALID_COORDINATE_DATASuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_DER_TO_RAW_CONVERSION_FAILED",
+        "printedName": "SOFTWARE_DER_TO_RAW_CONVERSION_FAILED",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk37SOFTWARE_DER_TO_RAW_CONVERSION_FAILEDSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk37SOFTWARE_DER_TO_RAW_CONVERSION_FAILEDSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk37SOFTWARE_DER_TO_RAW_CONVERSION_FAILEDSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk37SOFTWARE_DER_TO_RAW_CONVERSION_FAILEDSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_INVALID_SIGNATURE_DATA",
+        "printedName": "SOFTWARE_INVALID_SIGNATURE_DATA",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk31SOFTWARE_INVALID_SIGNATURE_DATASuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk31SOFTWARE_INVALID_SIGNATURE_DATASuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk31SOFTWARE_INVALID_SIGNATURE_DATASuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk31SOFTWARE_INVALID_SIGNATURE_DATASuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "SOFTWARE_INVALID_JWK_FORMAT",
+        "printedName": "SOFTWARE_INVALID_JWK_FORMAT",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "UInt",
+            "printedName": "Swift.UInt",
+            "usr": "s:Su"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:29moda_digitalwallet_holder_sdk27SOFTWARE_INVALID_JWK_FORMATSuvp",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk27SOFTWARE_INVALID_JWK_FORMATSuvp",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:29moda_digitalwallet_holder_sdk27SOFTWARE_INVALID_JWK_FORMATSuvg",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk27SOFTWARE_INVALID_JWK_FORMATSuvg",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Error",
+        "printedName": "Error",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "pkcs11",
+            "printedName": "pkcs11",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(moda_digitalwallet_holder_sdk.Error.Type) -> (Swift.UInt, Swift.String) -> moda_digitalwallet_holder_sdk.Error",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.UInt, Swift.String) -> moda_digitalwallet_holder_sdk.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(code: Swift.UInt, method: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt",
+                            "printedName": "Swift.UInt",
+                            "usr": "s:Su"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO6pkcs11yACSu_SStcACmF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO6pkcs11yACSu_SStcACmF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "general",
+            "printedName": "general",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(moda_digitalwallet_holder_sdk.Error.Type) -> (Swift.UInt) -> moda_digitalwallet_holder_sdk.Error",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.UInt) -> moda_digitalwallet_holder_sdk.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(code: Swift.UInt)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt",
+                            "printedName": "Swift.UInt",
+                            "usr": "s:Su"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO7generalyACSu_tcACmF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO7generalyACSu_tcACmF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "security",
+            "printedName": "security",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(moda_digitalwallet_holder_sdk.Error.Type) -> (Swift.Int32, Swift.String?) -> moda_digitalwallet_holder_sdk.Error",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int32, Swift.String?) -> moda_digitalwallet_holder_sdk.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(status: Swift.Int32, method: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int32",
+                            "printedName": "Swift.Int32",
+                            "usr": "s:s5Int32V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO8securityyACs5Int32V_SSSgtcACmF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO8securityyACs5Int32V_SSSgtcACmF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cfError",
+            "printedName": "cfError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(moda_digitalwallet_holder_sdk.Error.Type) -> (CoreFoundation.CFError, Swift.String?) -> moda_digitalwallet_holder_sdk.Error",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(CoreFoundation.CFError, Swift.String?) -> moda_digitalwallet_holder_sdk.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(error: CoreFoundation.CFError, method: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CFError",
+                            "printedName": "CoreFoundation.CFError",
+                            "usr": "c:@T@CFErrorRef"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "moda_digitalwallet_holder_sdk.Error",
+                        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO02cfE0yACSo10CFErrorRefa_SSSgtcACmF",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO02cfE0yACSo10CFErrorRefa_SSSgtcACmF",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "from",
+            "printedName": "from(_:method:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "moda_digitalwallet_holder_sdk.Error?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "moda_digitalwallet_holder_sdk.Error",
+                    "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO4from_6methodACSgSu_SStFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO4from_6methodACSgSu_SStFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromGeneral",
+            "printedName": "fromGeneral(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "moda_digitalwallet_holder_sdk.Error",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO11fromGeneralyACSuFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO11fromGeneralyACSuFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromOSStatus",
+            "printedName": "fromOSStatus(_:method:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "moda_digitalwallet_holder_sdk.Error",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO12fromOSStatus_6methodACs5Int32V_SSSgtFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO12fromOSStatus_6methodACs5Int32V_SSSgtFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromCFError",
+            "printedName": "fromCFError(_:method:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "moda_digitalwallet_holder_sdk.Error",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Unmanaged",
+                "printedName": "Swift.Unmanaged<CoreFoundation.CFError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CFError",
+                    "printedName": "CoreFoundation.CFError",
+                    "usr": "c:@T@CFErrorRef"
+                  }
+                ],
+                "usr": "s:s9UnmanagedV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO11fromCFError_6methodACs9UnmanagedVySo0G3RefaG_SSSgtFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO11fromCFError_6methodACs9UnmanagedVySo0G3RefaG_SSSgtFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "code",
+            "printedName": "code",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO4codeSivp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO4codeSivp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO4codeSivg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO4codeSivg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "originalStatus",
+            "printedName": "originalStatus",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO14originalStatuss5Int32VSgvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO14originalStatuss5Int32VSgvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO14originalStatuss5Int32VSgvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO14originalStatuss5Int32VSgvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "method",
+            "printedName": "method",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO6methodSSSgvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO6methodSSSgvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO6methodSSSgvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO6methodSSSgvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO16errorDescriptionSSSgvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO16errorDescriptionSSSgvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO16debugDescriptionSSvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO16debugDescriptionSSvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO16debugDescriptionSSvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO16debugDescriptionSSvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "moda_digitalwallet_holder_sdk.Error",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "moda_digitalwallet_holder_sdk.Error",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hexErrorCode",
+            "printedName": "hexErrorCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO03hexE4CodeSSvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO03hexE4CodeSSvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO03hexE4CodeSSvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO03hexE4CodeSSvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isVendorDefined",
+            "printedName": "isVendorDefined",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO15isVendorDefinedSbvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO15isVendorDefinedSbvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO15isVendorDefinedSbvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO15isVendorDefinedSbvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "createError",
+            "printedName": "createError(domain:code:description:recoverySuggestion:failureReason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "moda_digitalwallet_holder_sdk.Error",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO06createE06domain4code11description18recoverySuggestion13failureReasonACSS_SuS2SSgAJtFZ",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO06createE06domain4code11description18recoverySuggestion13failureReasonACSS_SuS2SSgAJtFZ",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "domain",
+            "printedName": "domain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO6domainSSvp",
+            "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO6domainSSvp",
+            "moduleName": "moda_digitalwallet_holder_sdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO6domainSSvg",
+                "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO6domainSSvg",
+                "moduleName": "moda_digitalwallet_holder_sdk",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:29moda_digitalwallet_holder_sdk5ErrorO",
+        "mangledName": "$s29moda_digitalwallet_holder_sdk5ErrorO",
+        "moduleName": "moda_digitalwallet_holder_sdk",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PrintPro.swift",
+      "kind": "BooleanLiteral",
+      "offset": 84,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PrintPro.swift",
+      "kind": "StringLiteral",
+      "offset": 161,
+      "length": 3,
+      "value": "\" \""
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PrintPro.swift",
+      "kind": "StringLiteral",
+      "offset": 187,
+      "length": 4,
+      "value": "\"\n\""
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/Data_Extension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 165,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/Data_Extension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 170,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/Data_Extension.swift",
+      "kind": "Array",
+      "offset": 240,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ModaDidKey.swift",
+      "kind": "StringLiteral",
+      "offset": 362,
+      "length": 10,
+      "value": "\"platform\""
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ModaDidKey.swift",
+      "kind": "StringLiteral",
+      "offset": 390,
+      "length": 7,
+      "value": "\"kx701\""
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/JWSCreator.swift",
+      "kind": "StringLiteral",
+      "offset": 625,
+      "length": 7,
+      "value": "\"ES256\""
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 103,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 108,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 140,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 145,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 192,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 217,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 247,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 281,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 313,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 379,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 406,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 447,
+      "length": 1,
+      "value": "9"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 475,
+      "length": 3,
+      "value": "0xa"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 515,
+      "length": 4,
+      "value": "0x10"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 556,
+      "length": 4,
+      "value": "0x11"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 600,
+      "length": 4,
+      "value": "0x12"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 645,
+      "length": 4,
+      "value": "0x13"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 684,
+      "length": 4,
+      "value": "0x1B"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 718,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 754,
+      "length": 4,
+      "value": "0x21"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 788,
+      "length": 4,
+      "value": "0x30"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 823,
+      "length": 4,
+      "value": "0x31"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 859,
+      "length": 4,
+      "value": "0x32"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 903,
+      "length": 4,
+      "value": "0x40"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 949,
+      "length": 4,
+      "value": "0x41"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 988,
+      "length": 4,
+      "value": "0x50"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1031,
+      "length": 4,
+      "value": "0x51"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1075,
+      "length": 4,
+      "value": "0x54"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1115,
+      "length": 4,
+      "value": "0x60"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1151,
+      "length": 4,
+      "value": "0x62"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1194,
+      "length": 4,
+      "value": "0x63"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1230,
+      "length": 4,
+      "value": "0x64"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1263,
+      "length": 4,
+      "value": "0x65"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1295,
+      "length": 4,
+      "value": "0x66"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1333,
+      "length": 4,
+      "value": "0x67"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1381,
+      "length": 4,
+      "value": "0x68"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1420,
+      "length": 4,
+      "value": "0x69"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1459,
+      "length": 4,
+      "value": "0x6a"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1498,
+      "length": 4,
+      "value": "0x70"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1543,
+      "length": 4,
+      "value": "0x71"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1586,
+      "length": 4,
+      "value": "0x82"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1624,
+      "length": 4,
+      "value": "0x90"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1671,
+      "length": 4,
+      "value": "0x91"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1706,
+      "length": 4,
+      "value": "0xa0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1739,
+      "length": 4,
+      "value": "0xa1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1774,
+      "length": 4,
+      "value": "0xa2"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1807,
+      "length": 4,
+      "value": "0xa3"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1839,
+      "length": 4,
+      "value": "0xa4"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1875,
+      "length": 4,
+      "value": "0xb0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1910,
+      "length": 4,
+      "value": "0xb1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1954,
+      "length": 4,
+      "value": "0xb3"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2006,
+      "length": 4,
+      "value": "0xb4"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2045,
+      "length": 4,
+      "value": "0xb5"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2081,
+      "length": 4,
+      "value": "0xb6"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2127,
+      "length": 4,
+      "value": "0xb7"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2177,
+      "length": 4,
+      "value": "0xb8"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2216,
+      "length": 4,
+      "value": "0xc0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2257,
+      "length": 4,
+      "value": "0xc1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2298,
+      "length": 4,
+      "value": "0xd0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2341,
+      "length": 4,
+      "value": "0xd1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2380,
+      "length": 4,
+      "value": "0xe0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2422,
+      "length": 4,
+      "value": "0xe1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2465,
+      "length": 4,
+      "value": "0xe2"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2516,
+      "length": 4,
+      "value": "0xf0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2563,
+      "length": 4,
+      "value": "0xf1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2617,
+      "length": 4,
+      "value": "0xf2"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2661,
+      "length": 5,
+      "value": "0x100"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2702,
+      "length": 5,
+      "value": "0x101"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2749,
+      "length": 5,
+      "value": "0x102"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2789,
+      "length": 5,
+      "value": "0x103"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2842,
+      "length": 5,
+      "value": "0x104"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2884,
+      "length": 5,
+      "value": "0x105"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2926,
+      "length": 5,
+      "value": "0x110"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2970,
+      "length": 5,
+      "value": "0x112"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3020,
+      "length": 5,
+      "value": "0x113"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3066,
+      "length": 5,
+      "value": "0x114"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3119,
+      "length": 5,
+      "value": "0x115"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3167,
+      "length": 5,
+      "value": "0x120"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3203,
+      "length": 5,
+      "value": "0x121"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3247,
+      "length": 5,
+      "value": "0x130"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3289,
+      "length": 5,
+      "value": "0x140"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3328,
+      "length": 5,
+      "value": "0x150"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3370,
+      "length": 5,
+      "value": "0x160"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3414,
+      "length": 5,
+      "value": "0x170"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3453,
+      "length": 5,
+      "value": "0x180"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3500,
+      "length": 5,
+      "value": "0x190"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3551,
+      "length": 5,
+      "value": "0x191"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3583,
+      "length": 5,
+      "value": "0x1a0"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3622,
+      "length": 5,
+      "value": "0x1a1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3662,
+      "length": 5,
+      "value": "0x200"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3699,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/PKCS11ErrorMessages.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3704,
+      "length": 2,
+      "value": "31"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 129,
+      "length": 3,
+      "value": "700"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 195,
+      "length": 3,
+      "value": "701"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 257,
+      "length": 3,
+      "value": "702"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 319,
+      "length": 3,
+      "value": "703"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 380,
+      "length": 3,
+      "value": "704"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 445,
+      "length": 3,
+      "value": "705"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 509,
+      "length": 3,
+      "value": "706"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 571,
+      "length": 3,
+      "value": "710"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 629,
+      "length": 3,
+      "value": "711"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 693,
+      "length": 3,
+      "value": "800"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 748,
+      "length": 3,
+      "value": "801"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 804,
+      "length": 3,
+      "value": "802"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 865,
+      "length": 3,
+      "value": "803"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 935,
+      "length": 3,
+      "value": "804"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 992,
+      "length": 3,
+      "value": "805"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1045,
+      "length": 3,
+      "value": "806"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1116,
+      "length": 3,
+      "value": "807"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1181,
+      "length": 3,
+      "value": "808"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1251,
+      "length": 3,
+      "value": "809"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1315,
+      "length": 3,
+      "value": "810"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1375,
+      "length": 3,
+      "value": "811"
+    },
+    {
+      "filePath": "\/Users\/hanpo\/Documents\/Gitlab\/Xcode 16\/moda-digitalwallet-holder-iosapp-token-sdk為了上架移除PKCSNFCKit\/moda-digitalwallet-holder-sdk\/ErrorManager.swift",
+      "kind": "Dictionary",
+      "offset": 9760,
+      "length": 3,
+      "value": "[]"
+    }
+  ]
+}

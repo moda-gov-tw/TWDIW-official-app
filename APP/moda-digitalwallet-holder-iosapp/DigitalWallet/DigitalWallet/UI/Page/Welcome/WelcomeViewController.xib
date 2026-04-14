@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="4"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Bold.ttf">
+            <string>NotoSansTC-Bold</string>
+        </array>
+        <array key="NotoSansTC-Medium.ttf">
+            <string>NotoSansTC-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="startButton" destination="gOo-HM-8aD" id="1cx-hM-31X"/>
+                <outlet property="subtitleLabel" destination="zX3-ud-cQ8" id="7Im-Wx-HMf"/>
+                <outlet property="titleLabel" destination="sMz-yM-grq" id="I4H-2Y-mkE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="c6D-Fv-XMa">
+                    <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-HM-8aD">
+                    <rect key="frame" x="20" y="762" width="390" height="48"/>
+                    <color key="backgroundColor" name="4E61A7"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="VTQ-VH-cCo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="開始使用數位憑證皮夾">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickStart:" destination="-1" eventType="touchUpInside" id="ZiG-cN-40q"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在就開始體驗！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zX3-ud-cQ8">
+                    <rect key="frame" x="20" y="706" width="128" height="24"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="16"/>
+                    <color key="textColor" name="767676"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-yM-grq">
+                    <rect key="frame" x="20" y="638" width="240" height="58"/>
+                    <string key="text">歡迎使用 數位憑證皮夾
+讓生活變得更加安全、便利</string>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Bold" family="Noto Sans TC" pointSize="20"/>
+                    <color key="textColor" name="676262"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="W0n-Kh-4LN"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gOo-HM-8aD" firstAttribute="top" secondItem="zX3-ud-cQ8" secondAttribute="bottom" constant="32" id="41f-yF-oLw"/>
+                <constraint firstItem="W0n-Kh-4LN" firstAttribute="trailing" secondItem="gOo-HM-8aD" secondAttribute="trailing" constant="20" id="P3f-n2-fd7"/>
+                <constraint firstItem="sMz-yM-grq" firstAttribute="leading" secondItem="W0n-Kh-4LN" secondAttribute="leading" constant="20" id="SDN-Pj-dQa"/>
+                <constraint firstItem="zX3-ud-cQ8" firstAttribute="leading" secondItem="W0n-Kh-4LN" secondAttribute="leading" constant="20" id="Xnf-vy-zvf"/>
+                <constraint firstItem="c6D-Fv-XMa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b96-cP-1fy"/>
+                <constraint firstItem="gOo-HM-8aD" firstAttribute="leading" secondItem="W0n-Kh-4LN" secondAttribute="leading" constant="20" id="eex-Ko-5j2"/>
+                <constraint firstItem="zX3-ud-cQ8" firstAttribute="top" secondItem="sMz-yM-grq" secondAttribute="bottom" constant="10" id="eo8-eC-ZSD"/>
+                <constraint firstItem="c6D-Fv-XMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fXw-cz-ba1"/>
+                <constraint firstAttribute="trailing" secondItem="c6D-Fv-XMa" secondAttribute="trailing" id="mha-IA-3s6"/>
+                <constraint firstAttribute="bottom" secondItem="c6D-Fv-XMa" secondAttribute="bottom" id="nZY-zk-6RZ"/>
+                <constraint firstItem="W0n-Kh-4LN" firstAttribute="bottom" secondItem="gOo-HM-8aD" secondAttribute="bottom" constant="88" id="rcp-zM-RzI"/>
+            </constraints>
+            <point key="canvasLocation" x="136.80000000000001" y="20.689655172413794"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="WelcomeBackground" width="375" height="812"/>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="676262">
+            <color red="0.40400001406669617" green="0.38400000333786011" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

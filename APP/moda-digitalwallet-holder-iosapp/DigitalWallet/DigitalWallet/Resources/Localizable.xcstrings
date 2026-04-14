@@ -1,0 +1,4834 @@
+{
+  "sourceLanguage" : "zh-Hant",
+  "strings" : {
+    "AboutDigitalWallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關於數位憑證皮夾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關於數位憑證皮夾"
+          }
+        }
+      }
+    },
+    "AddCardWith" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入「%@」"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入「%@」"
+          }
+        }
+      }
+    },
+    "AddCertificate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入憑證"
+          }
+        }
+      }
+    },
+    "addCertificateOpenWebTitle" : {
+      "comment" : "%@線上申請",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@線上申請"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@線上申請"
+          }
+        }
+      }
+    },
+    "AddFirstCardNow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "馬上加入第一張憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "馬上加入第一張憑證"
+          }
+        }
+      }
+    },
+    "AgreeLicense" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我同意軟體使用規章的條款與條例"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我同意軟體使用規章的條款與條例"
+          }
+        }
+      }
+    },
+    "AgreePrivacy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我接受個人資料的隱私政策"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我接受個人資料的隱私政策"
+          }
+        }
+      }
+    },
+    "AllCertificates" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部憑證"
+          }
+        }
+      }
+    },
+    "Allowed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "允許"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "允許"
+          }
+        }
+      }
+    },
+    "AppError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統未知錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統未知錯誤"
+          }
+        }
+      }
+    },
+    "ApplyCertificateList" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證申請列表"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證申請列表"
+          }
+        }
+      }
+    },
+    "applyInfosTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．資料"
+          }
+        }
+      }
+    },
+    "AskToDeleteWallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認是否要刪除該皮夾，皮夾中全部的卡片會移除，且日後若需使用，需重新申請卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認是否要刪除該皮夾，皮夾中全部的卡片會移除，且日後若需使用，需重新申請卡片。"
+          }
+        }
+      }
+    },
+    "AskToTurnOffAutoUpdates" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要關閉自動更新卡片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要關閉自動更新卡片"
+          }
+        }
+      }
+    },
+    "Attention" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請注意"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請注意"
+          }
+        }
+      }
+    },
+    "AuthorizationCredentials" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．授權憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．授權憑證"
+          }
+        }
+      }
+    },
+    "AuthorizedCardListHint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以下為可授權的憑證清單，部分憑證可透過『加入憑證』前往申請憑證。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以下為可授權的憑證清單，部分憑證可透過『加入憑證』前往申請憑證。"
+          }
+        }
+      }
+    },
+    "AuthorizedCredentialsTitle" : {
+      "comment" : "可授權的憑證清單",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可授權的憑證清單"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可授權的憑證清單"
+          }
+        }
+      }
+    },
+    "AuthorizingCardListTitle" : {
+      "comment" : "提供的資料",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供的資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供的資料"
+          }
+        }
+      }
+    },
+    "AuthorizingInfoTitle" : {
+      "comment" : "提供資料的對象：",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供資料的對象："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供資料的對象："
+          }
+        }
+      }
+    },
+    "AutoLogoutTime" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動登出時間"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動登出時間"
+          }
+        }
+      }
+    },
+    "AutoRefreshCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動更新卡片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動更新卡片"
+          }
+        }
+      }
+    },
+    "BeforeUseWallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始使用前，看看數位憑證皮夾相關規約"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始使用前，看看數位憑證皮夾相關規約"
+          }
+        }
+      }
+    },
+    "BiometricMessage" : {
+      "comment" : "您確認要關閉生物辨識嗎?關閉後只能使用手機密碼或皮夾密碼登入。點選「確認」後將前往裝置設定頁面進行調整。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您確認要關閉生物辨識嗎?關閉後只能使用手機密碼或皮夾密碼登入。點選「確認」後將前往裝置設定頁面進行調整。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您確認要關閉生物辨識嗎?關閉後只能使用手機密碼或皮夾密碼登入。點選「確認」後將前往裝置設定頁面進行調整。"
+          }
+        }
+      }
+    },
+    "BiometricOpenMessage" : {
+      "comment" : "點選「確認」後將前往裝置設定頁面進行調整。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點選「確認」後將前往裝置設定頁面進行調整。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點選「確認」後將前往裝置設定頁面進行調整。"
+          }
+        }
+      }
+    },
+    "BiometricSettings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生物辨識設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生物辨識設定"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "canUseInCardOverView" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已成功加入，可於管理憑證中查看與使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已成功加入，可於管理憑證中查看與使用"
+          }
+        }
+      }
+    },
+    "CardHasExpired" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片已過期"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片已過期"
+          }
+        }
+      }
+    },
+    "CardInfoPage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證資料"
+          }
+        }
+      }
+    },
+    "CardInvalid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片失效-"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片失效-"
+          }
+        }
+      }
+    },
+    "CardIssuingWebsite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片發行網站"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片發行網站"
+          }
+        }
+      }
+    },
+    "CardRecord" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證紀錄"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證紀錄"
+          }
+        }
+      }
+    },
+    "CardRecordUpdateDate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新時間：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新時間：%@"
+          }
+        }
+      }
+    },
+    "CardUpdateExpirationRemind" : {
+      "comment" : "憑證更新未完成 %@ 張",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新未完成 %@ 張"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新未完成 %@ 張"
+          }
+        }
+      }
+    },
+    "CardUpdateExpirationRemindCheck" : {
+      "comment" : "查看",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看"
+          }
+        }
+      }
+    },
+    "CardUpdateFinish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新完成    %@/%@張"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新完成    %@/%@張"
+          }
+        }
+      }
+    },
+    "CardUpdateInterruption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片更新中斷，請檢查網路連線狀態"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片更新中斷，請檢查網路連線狀態"
+          }
+        }
+      }
+    },
+    "CardUpdating" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新中...    %@/%@張"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新中...    %@/%@張"
+          }
+        }
+      }
+    },
+    "CertificateExpired" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證已失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證已失效"
+          }
+        }
+      }
+    },
+    "CertificateExpiredContent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下列憑證已失效，如還需要使用，請聯繫原申請機關重新申請憑證。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下列憑證已失效，如還需要使用，請聯繫原申請機關重新申請憑證。"
+          }
+        }
+      }
+    },
+    "CertificateExpiring" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證即將失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證即將失效"
+          }
+        }
+      }
+    },
+    "CertificateExpiringContent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以下憑證將於 7 日內到期，如還需要使用，請洽原申請機關更新憑證。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以下憑證將於 7 日內到期，如還需要使用，請洽原申請機關更新憑證。"
+          }
+        }
+      }
+    },
+    "CertificateLog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證紀錄"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證紀錄"
+          }
+        }
+      }
+    },
+    "CertificateUpdateError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新失敗"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證更新失敗"
+          }
+        }
+      }
+    },
+    "CertificateUpdateErrorContent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下列憑證更新失敗，可能是網路異常，請稍後再嘗試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下列憑證更新失敗，可能是網路異常，請稍後再嘗試。"
+          }
+        }
+      }
+    },
+    "CertificateUpdateNetworkError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證無法更新，請檢查裝置網路連線狀態。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證無法更新，請檢查裝置網路連線狀態。"
+          }
+        }
+      }
+    },
+    "ChangePinCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改密碼"
+          }
+        }
+      }
+    },
+    "ChangeVerifyCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改憑證"
+          }
+        }
+      }
+    },
+    "ChangeWalletName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修改皮夾名稱"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修改皮夾名稱"
+          }
+        }
+      }
+    },
+    "ChangeWalletPinCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定皮夾密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定皮夾密碼"
+          }
+        }
+      }
+    },
+    "clientTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．單位"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．單位"
+          }
+        }
+      }
+    },
+    "Confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認"
+          }
+        }
+      }
+    },
+    "ConfirmDelete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認刪除"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認刪除"
+          }
+        }
+      }
+    },
+    "ConnectionFailedContent" : {
+      "comment" : "原因可能是目前使用裝置或該機關網路異常,請注意裝置連線情況，稍後再嘗試使用。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原因可能是目前使用裝置或該機關網路異常,請注意裝置連線情況，稍後再嘗試使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原因可能是目前使用裝置或該機關網路異常,請注意裝置連線情況，稍後再嘗試使用。"
+          }
+        }
+      }
+    },
+    "ConnectionFailedTitle" : {
+      "comment" : "連線失敗",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連線失敗"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連線失敗"
+          }
+        }
+      }
+    },
+    "ContactCustomerService" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "聯絡客服"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "聯絡客服"
+          }
+        }
+      }
+    },
+    "CountDownSecond" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "  %02d：%02d  "
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "  %02d：%02d  "
+          }
+        }
+      }
+    },
+    "createWalletFail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "建立皮夾失敗"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "建立皮夾失敗"
+          }
+        }
+      }
+    },
+    "CreateWalletMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "因您沒有設定裝置密碼，無法使用生物辨識與裝置密碼進行登入，需要設定皮夾密碼，才可登入皮夾，請妥善保管您的皮夾密碼，不要洩漏給其他人知道。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "因您沒有設定裝置密碼，無法使用生物辨識與裝置密碼進行登入，需要設定皮夾密碼，才可登入皮夾，請妥善保管您的皮夾密碼，不要洩漏給其他人知道。"
+          }
+        }
+      }
+    },
+    "CustomerEmailTitle" : {
+      "comment" : "客服信箱",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客服信箱："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客服信箱："
+          }
+        }
+      }
+    },
+    "CustomerPhoneContent" : {
+      "comment" : "(02) 8978-6158",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(02) 8978-6158"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(02) 8978-6158"
+          }
+        }
+      }
+    },
+    "CustomerPhoneTitle" : {
+      "comment" : "客服專線：",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客服專線："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客服專線："
+          }
+        }
+      }
+    },
+    "CustomerTimeContent" : {
+      "comment" : "上班日 09:00 - 12:30｜13:30 - 18:00",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上班日 09:00 - 12:30｜13:30 - 18:00"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上班日 09:00 - 12:30｜13:30 - 18:00"
+          }
+        }
+      }
+    },
+    "CustomerTimeTitle" : {
+      "comment" : "客服時間：",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客服時間："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客服時間："
+          }
+        }
+      }
+    },
+    "DefaultWalletName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的第%@個皮夾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的第%@個皮夾"
+          }
+        }
+      }
+    },
+    "DeleteCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移除憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移除憑證"
+          }
+        }
+      }
+    },
+    "DeleteCardAlertContent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要將「%@」從數位憑證皮夾中移除？確認後此動作不可恢復。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要將「%@」從數位憑證皮夾中移除？確認後此動作不可恢復。"
+          }
+        }
+      }
+    },
+    "DeleteWallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除皮夾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除皮夾"
+          }
+        }
+      }
+    },
+    "DeleteWalletSuccess" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成功刪除 %@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成功刪除 %@"
+          }
+        }
+      }
+    },
+    "DigitalIdentityCardOverview" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位身分識別卡總覽"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位身分識別卡總覽"
+          }
+        }
+      }
+    },
+    "DigitalIdentityWallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾 digital Identity Wallet"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾 digital Identity Wallet"
+          }
+        }
+      }
+    },
+    "DigitalIdentityWalletContract" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾相關規約"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾相關規約"
+          }
+        }
+      }
+    },
+    "DigitalIdentityWalletLicense" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾APP使用同意書"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾APP使用同意書"
+          }
+        }
+      }
+    },
+    "DigitalWalletOfficialWebsiteTitle" : {
+      "comment" : "數位憑證皮夾官網",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾官網"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾官網"
+          }
+        }
+      }
+    },
+    "DigitalWeb" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾網站"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾網站"
+          }
+        }
+      }
+    },
+    "EnlargeQRCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點擊下圖QR-Code可以放大"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點擊下圖QR-Code可以放大"
+          }
+        }
+      }
+    },
+    "ExpDate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "到期日 : %@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "到期日 : %@"
+          }
+        }
+      }
+    },
+    "FinishAdd" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已成功加入憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已成功加入憑證"
+          }
+        }
+      }
+    },
+    "FinishScan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成掃描"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成掃描"
+          }
+        }
+      }
+    },
+    "FrequentlyAskedQuestions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常見問題"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常見問題"
+          }
+        }
+      }
+    },
+    "GovernmentUnit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "政府單位"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "政府單位"
+          }
+        }
+      }
+    },
+    "HasMissingCardsContent" : {
+      "comment" : "缺少必要授權內容，請前往申請可授權憑證後再次嘗試。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少必要授權內容，請前往申請可授權憑證後再次嘗試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少必要授權內容，請前往申請可授權憑證後再次嘗試。"
+          }
+        }
+      }
+    },
+    "HasMissingCardsTitle" : {
+      "comment" : "無法送出資料",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法送出資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法送出資料"
+          }
+        }
+      }
+    },
+    "HideAll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隱藏全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隱藏全部"
+          }
+        }
+      }
+    },
+    "HintClickStar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快點擊列表中的星形，將常用情境加入我的最愛吧！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快點擊列表中的星形，將常用情境加入我的最愛吧！"
+          }
+        }
+      }
+    },
+    "HolderDidInconsistent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "holder did不一致"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "holder did不一致"
+          }
+        }
+      }
+    },
+    "IAL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "身分保證等級(IAL)："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "身分保證等級(IAL)："
+          }
+        }
+      }
+    },
+    "IncompleteInformationContent" : {
+      "comment" : "若無提供完整資料內容，可能會造成驗證失敗，需洽授權單位。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "若無提供完整資料內容，可能會造成驗證失敗，需洽授權單位。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "若無提供完整資料內容，可能會造成驗證失敗，需洽授權單位。"
+          }
+        }
+      }
+    },
+    "IncompleteInformationTitle" : {
+      "comment" : "提供資料確認",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供資料確認"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供資料確認"
+          }
+        }
+      }
+    },
+    "InputKeyWord" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋"
+          }
+        }
+      }
+    },
+    "invalidation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已失效"
+          }
+        }
+      }
+    },
+    "InvalidationWith" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已失效「%@」"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已失效「%@」"
+          }
+        }
+      }
+    },
+    "IssuerSignatureInvalid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "issuer簽章失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "issuer簽章失效"
+          }
+        }
+      }
+    },
+    "IsWantToLogout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確定登出我的皮夾？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確定登出我的皮夾？"
+          }
+        }
+      }
+    },
+    "IXGuardMessage" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已偵測到您的裝置進行異常操作，\\n這可能會導致您資料安全受到威脅，\\n為保障安全APP暫時無法提供服務。\\n(%@)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已偵測到您的裝置進行異常操作，\\n這可能會導致您資料安全受到威脅，\\n為保障安全APP暫時無法提供服務。\\n(%@)"
+          }
+        }
+      }
+    },
+    "KeepLogin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繼續使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繼續使用"
+          }
+        }
+      }
+    },
+    "KeepLoginTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要繼續使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要繼續使用"
+          }
+        }
+      }
+    },
+    "LanguageSetting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "語言設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "語言設定"
+          }
+        }
+      }
+    },
+    "LanguageTW" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繁體中文"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繁體中文"
+          }
+        }
+      }
+    },
+    "LaterExpired" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後失效"
+          }
+        }
+      }
+    },
+    "LicenseTermsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "軟體使用規章的條款與條例"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "軟體使用規章的條款與條例"
+          }
+        }
+      }
+    },
+    "Loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
+    "LoginSetting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登入設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登入設定"
+          }
+        }
+      }
+    },
+    "Logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登出"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登出"
+          }
+        }
+      }
+    },
+    "LogoutConfirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要登出此皮夾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否要登出此皮夾"
+          }
+        }
+      }
+    },
+    "LogoutTimeUp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已閒置超過設定時間，為了確保資料安全，系統將自動登出。請選擇是否繼續使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已閒置超過設定時間，為了確保資料安全，系統將自動登出。請選擇是否繼續使用。"
+          }
+        }
+      }
+    },
+    "LogoutWallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登出皮夾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登出皮夾"
+          }
+        }
+      }
+    },
+    "MessageTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錯誤訊息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錯誤訊息"
+          }
+        }
+      }
+    },
+    "Minute3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3分鐘"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3分鐘"
+          }
+        }
+      }
+    },
+    "Minute5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5分鐘"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5分鐘"
+          }
+        }
+      }
+    },
+    "Minute10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10分鐘"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10分鐘"
+          }
+        }
+      }
+    },
+    "Minute15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "15分鐘"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "15分鐘"
+          }
+        }
+      }
+    },
+    "MyFavorite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的最愛"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的最愛"
+          }
+        }
+      }
+    },
+    "NetworkError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[%@] : 不明錯誤原因，請先確認網路狀態，或稍後再試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[%@] : 不明錯誤原因，請先確認網路狀態，或稍後再試。"
+          }
+        }
+      }
+    },
+    "NewToOld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由新到舊"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由新到舊"
+          }
+        }
+      }
+    },
+    "NewWalletPWConfirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新皮夾密碼確認"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新皮夾密碼確認"
+          }
+        }
+      }
+    },
+    "NoCameraPermission" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "很抱歉，由於掃描功能需要獲得您授與權限，否則無法執行該功能。是否要轉到『設定』進行授與？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "很抱歉，由於掃描功能需要獲得您授與權限，否則無法執行該功能。是否要轉到『設定』進行授與？"
+          }
+        }
+      }
+    },
+    "NoIAL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無選擇"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無選擇"
+          }
+        }
+      }
+    },
+    "NoSearchResults" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找不到符合的憑證 請確認關鍵字再嘗試一次"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找不到符合的憑證 請確認關鍵字再嘗試一次"
+          }
+        }
+      }
+    },
+    "NotAllowed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不允許"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不允許"
+          }
+        }
+      }
+    },
+    "NotificationSetting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知設定"
+          }
+        }
+      }
+    },
+    "NotInTrustedListContent" : {
+      "comment" : "提醒您，您將提供資料的單位尚未列入【信任清單】，建議再次確認是否要『送出資料』。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒您，您將提供資料的單位尚未列入【信任清單】，建議再次確認是否要『送出資料』。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒您，您將提供資料的單位尚未列入【信任清單】，建議再次確認是否要『送出資料』。"
+          }
+        }
+      }
+    },
+    "NotInTrustedListTitle" : {
+      "comment" : "確認單位資訊",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認單位資訊"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認單位資訊"
+          }
+        }
+      }
+    },
+    "NoVerifiableCredential" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無可授權的卡片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無可授權的卡片"
+          }
+        }
+      }
+    },
+    "OldToNew" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由舊到新"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由舊到新"
+          }
+        }
+      }
+    },
+    "OpenURLReminder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您將離開數位憑證皮夾 App，請確認是否要申請「%@」？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您將離開數位憑證皮夾 App，請確認是否要申請「%@」？"
+          }
+        }
+      }
+    },
+    "OperationLog" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作日誌"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作日誌"
+          }
+        }
+      }
+    },
+    "Permanent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "永不"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "永不"
+          }
+        }
+      }
+    },
+    "PermissionCamera_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同意後未來將可以使用相機掃描QRCode"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同意後未來將可以使用相機掃描QRCode"
+          }
+        }
+      }
+    },
+    "PermissionCamera_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要允許 Digital Wallet 使用相機嗎？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要允許 Digital Wallet 使用相機嗎？"
+          }
+        }
+      }
+    },
+    "Personal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人"
+          }
+        }
+      }
+    },
+    "PersonalManagement" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人化管理"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人化管理"
+          }
+        }
+      }
+    },
+    "PersonalPrivacyPolicy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾APP隱私權政策"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾APP隱私權政策"
+          }
+        }
+      }
+    },
+    "PinCodeError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼錯誤"
+          }
+        }
+      }
+    },
+    "pinCodeErrorHint" : {
+      "comment" : "皮夾密碼錯誤，重新輸入皮夾密碼",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼錯誤，重新輸入皮夾密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼錯誤，重新輸入皮夾密碼"
+          }
+        }
+      }
+    },
+    "PinCodeErrorOverFive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾密碼錯誤已達5次以上，\n請輸入正確的皮夾密碼或移除APP重新下載並重新放入卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾密碼錯誤已達5次以上，\n請輸入正確的皮夾密碼或移除APP重新下載並重新放入卡片。"
+          }
+        }
+      }
+    },
+    "PinCodeErrorTryAgain" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾密碼錯誤，請輸入正確的皮夾密碼。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾密碼錯誤，請輸入正確的皮夾密碼。"
+          }
+        }
+      }
+    },
+    "PinCodeNotSame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼與再次輸入密碼不相同，請確認後再次嘗試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼與再次輸入密碼不相同，請確認後再次嘗試。"
+          }
+        }
+      }
+    },
+    "PinCodeSettingMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定當前皮夾的皮夾密碼，若您已開啟生物辨識，預設登入模式將維持不變。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定當前皮夾的皮夾密碼，若您已開啟生物辨識，預設登入模式將維持不變。"
+          }
+        }
+      }
+    },
+    "PinCodeUpdateMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修改當前皮夾的皮夾密碼，若您已開啟生物辨識，預設登入模式將維持不變。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修改當前皮夾的皮夾密碼，若您已開啟生物辨識，預設登入模式將維持不變。"
+          }
+        }
+      }
+    },
+    "PleaseRegenerateQRCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請重新產生條碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請重新產生條碼"
+          }
+        }
+      }
+    },
+    "PleaseShowQRCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請出示憑證條碼進行掃描"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請出示憑證條碼進行掃描"
+          }
+        }
+      }
+    },
+    "PreviewFeatureVC_Step1Content" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整合多元實體證件，讓你無卡體驗日常服務，不論你在哪，只要拿出手機打開數位憑證皮夾，就能隨時隨地使用，不用再擔心忘記帶證件出門，只需要掃 QR-Code，對方就能快速驗證你的身分，無論是就醫、租車，還是入住飯店，這一切都可以變得前所未有的輕鬆。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整合多元實體證件，讓你無卡體驗日常服務，不論你在哪，只要拿出手機打開數位憑證皮夾，就能隨時隨地使用，不用再擔心忘記帶證件出門，只需要掃 QR-Code，對方就能快速驗證你的身分，無論是就醫、租車，還是入住飯店，這一切都可以變得前所未有的輕鬆。"
+          }
+        }
+      }
+    },
+    "PreviewFeatureVC_Step1Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整合多元證件，無卡體驗日常服務"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整合多元證件，無卡體驗日常服務"
+          }
+        }
+      }
+    },
+    "PreviewFeatureVC_Step2Content" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾使用獨一無二的密碼鑰匙，彷彿數位保險箱，將各種數位證件、數位憑證妥善保存在手機裡面。未來你可以在多個網路服務間輕鬆把關資料的授權情形，無需每次都要註冊新帳號，或記憶新密碼。一個數位APP無限延展，打造前所未有的安全體驗。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾使用獨一無二的密碼鑰匙，彷彿數位保險箱，將各種數位證件、數位憑證妥善保存在手機裡面。未來你可以在多個網路服務間輕鬆把關資料的授權情形，無需每次都要註冊新帳號，或記憶新密碼。一個數位APP無限延展，打造前所未有的安全體驗。"
+          }
+        }
+      }
+    },
+    "PreviewFeatureVC_Step2Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一鍵防護，數位服務"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一鍵防護，數位服務"
+          }
+        }
+      }
+    },
+    "PreviewFeatureVC_Step3Content" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾絕對保護你的個人資料，利用「可驗證憑證」技術，確保你的憑證不會被偽造或篡改，讓你可以信任別人，也讓你可以為別人給信任。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾絕對保護你的個人資料，利用「可驗證憑證」技術，確保你的憑證不會被偽造或篡改，讓你可以信任別人，也讓你可以為別人給信任。"
+          }
+        }
+      }
+    },
+    "PreviewFeatureVC_Step3Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "極致安全，讓你無後顧之憂！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "極致安全，讓你無後顧之憂！"
+          }
+        }
+      }
+    },
+    "PrivacyTermsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人資料的隱私政策"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人資料的隱私政策"
+          }
+        }
+      }
+    },
+    "ProblemReport" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "問題回報"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "問題回報"
+          }
+        }
+      }
+    },
+    "PromptMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提示訊息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提示訊息"
+          }
+        }
+      }
+    },
+    "purposeTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．目的"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "．目的"
+          }
+        }
+      }
+    },
+    "PushNotificationRegisterFailed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "註冊失敗"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "註冊失敗"
+          }
+        }
+      }
+    },
+    "QRCodeAlreadyExpired" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "條碼已失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "條碼已失效"
+          }
+        }
+      }
+    },
+    "QuestionCenter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "問題中心"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "問題中心"
+          }
+        }
+      }
+    },
+    "QuestionReport" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾系統 - 問題回報"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾系統 - 問題回報"
+          }
+        }
+      }
+    },
+    "QuickAuthorizationList" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速授權列表"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速授權列表"
+          }
+        }
+      }
+    },
+    "recordAddCard" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入憑證"
+          }
+        }
+      }
+    },
+    "recordAuthorized" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授權憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授權憑證"
+          }
+        }
+      }
+    },
+    "recordExpired" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "失效憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "失效憑證"
+          }
+        }
+      }
+    },
+    "RegenerateQRCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新產生條碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新產生條碼"
+          }
+        }
+      }
+    },
+    "ReminderMessage" : {
+      "comment" : "提醒訊息",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒訊息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒訊息"
+          }
+        }
+      }
+    },
+    "RemoveCardFinish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已完成移除憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已完成移除憑證"
+          }
+        }
+      }
+    },
+    "RemoveCardMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已完成移除「%@」憑證，如需使用此憑證可再次申請。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已完成移除「%@」憑證，如需使用此憑證可再次申請。"
+          }
+        }
+      }
+    },
+    "ScanQRCodeError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法辨識QRCode，請再次確認QRCode是否正確並重新掃描。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法辨識QRCode，請再次確認QRCode是否正確並重新掃描。"
+          }
+        }
+      }
+    },
+    "ScreenshotWarning" : {
+      "comment" : "為維護您的個人資料安全，使用截圖功能時，請務必妥善保管。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "為維護您的個人資料安全，使用截圖功能時，請務必妥善保管。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "為維護您的個人資料安全，使用截圖功能時，請務必妥善保管。"
+          }
+        }
+      }
+    },
+    "SDKDecodeError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料回傳格式不正確，請與QRCODE提供單位再次確認後並重新操作，謝謝。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料回傳格式不正確，請與QRCODE提供單位再次確認後並重新操作，謝謝。"
+          }
+        }
+      }
+    },
+    "SDKError2001" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "authorization response回傳錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "authorization response回傳錯誤"
+          }
+        }
+      }
+    },
+    "SDKError2002" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的vp"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的vp"
+          }
+        }
+      }
+    },
+    "SDKError2003" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vp/vc數量錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vp/vc數量錯誤"
+          }
+        }
+      }
+    },
+    "SDKError2004" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "驗證vp失敗"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "驗證vp失敗"
+          }
+        }
+      }
+    },
+    "SDKError2005" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "client_id/nonce錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "client_id/nonce錯誤"
+          }
+        }
+      }
+    },
+    "SDKError2006" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc不符合驗證需求"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc不符合驗證需求"
+          }
+        }
+      }
+    },
+    "SDKError2007" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "presentation_submission不符合presentation_definitio"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "presentation_submission不符合presentation_definitio"
+          }
+        }
+      }
+    },
+    "SDKError2008" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc欄位不符合驗證條件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc欄位不符合驗證條件"
+          }
+        }
+      }
+    },
+    "SDKError2009" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc缺少必要欄位"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc缺少必要欄位"
+          }
+        }
+      }
+    },
+    "SDKError2010" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "input_descriptors重複id"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "input_descriptors重複id"
+          }
+        }
+      }
+    },
+    "SDKError2011" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的presentation_definition"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的presentation_definition"
+          }
+        }
+      }
+    },
+    "SDKError2012" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的presentation_submission"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的presentation_submission"
+          }
+        }
+      }
+    },
+    "SDKError2013" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc不符合presentation_submission"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc不符合presentation_submission"
+          }
+        }
+      }
+    },
+    "SDKError2014" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的submission requirement"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的submission requirement"
+          }
+        }
+      }
+    },
+    "SDKError3000" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的oidvp參數"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無效的oidvp參數"
+          }
+        }
+      }
+    },
+    "SDKError4001" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入參數錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入參數錯誤"
+          }
+        }
+      }
+    },
+    "SDKError5000" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統錯誤"
+          }
+        }
+      }
+    },
+    "SDKError5001" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DB異常"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DB異常"
+          }
+        }
+      }
+    },
+    "SDKError5002" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JWT簽章異常"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JWT簽章異常"
+          }
+        }
+      }
+    },
+    "SDKError5003" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCode編碼異常"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCode編碼異常"
+          }
+        }
+      }
+    },
+    "SDKError5005" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非預期的驗證錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非預期的驗證錯誤"
+          }
+        }
+      }
+    },
+    "SDKError11001" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少參數或參數不合法"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少參數或參數不合法"
+          }
+        }
+      }
+    },
+    "SDKError11002" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用者未經過身分認證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用者未經過身分認證"
+          }
+        }
+      }
+    },
+    "SDKError11003" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID_token格式不正確"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID_token格式不正確"
+          }
+        }
+      }
+    },
+    "SDKError11005" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nonce已重複"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nonce已重複"
+          }
+        }
+      }
+    },
+    "SDKError11007" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已失效，請重新產生後再掃描使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已失效，請重新產生後再掃描使用。"
+          }
+        }
+      }
+    },
+    "SDKError11008" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已逾期，請重新產生後再掃描使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已逾期，請重新產生後再掃描使用"
+          }
+        }
+      }
+    },
+    "SDKError11009" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已失效，請重新產生後再掃描使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已失效，請重新產生後再掃描使用。"
+          }
+        }
+      }
+    },
+    "SDKError11010" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不支援此種grant_type"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不支援此種grant_type"
+          }
+        }
+      }
+    },
+    "SDKError11011" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不支援此VC種類"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不支援此VC種類"
+          }
+        }
+      }
+    },
+    "SDKError11012" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "authorization_details不合法"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "authorization_details不合法"
+          }
+        }
+      }
+    },
+    "SDKError11013" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "產製access_token時發生錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "產製access_token時發生錯誤"
+          }
+        }
+      }
+    },
+    "SDKError11014" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authorization header不存在或不合法"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authorization header不存在或不合法"
+          }
+        }
+      }
+    },
+    "SDKError11015" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少access_token"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少access_token"
+          }
+        }
+      }
+    },
+    "SDKError11016" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "proofs jwt不合法"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "proofs jwt不合法"
+          }
+        }
+      }
+    },
+    "SDKError11017" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "access_token不存在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "access_token不存在"
+          }
+        }
+      }
+    },
+    "SDKError11018" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "access_token已逾期或已被使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "access_token已逾期或已被使用"
+          }
+        }
+      }
+    },
+    "SDKError11019" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_identifier不合法"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_identifier不合法"
+          }
+        }
+      }
+    },
+    "SDKError11020" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VC產製發生錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VC產製發生錯誤"
+          }
+        }
+      }
+    },
+    "SDKError11021" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VC伺服器內部錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VC伺服器內部錯誤"
+          }
+        }
+      }
+    },
+    "SDKError11022" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連線至VC伺服器時發生錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連線至VC伺服器時發生錯誤"
+          }
+        }
+      }
+    },
+    "SDKError11023" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已失效，請重新產生後再掃描使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRCODE已失效，請重新產生後再掃描使用。"
+          }
+        }
+      }
+    },
+    "SDKError11032" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "驗證碼錯誤，請重新開啟『顯示驗證碼』後，按下『確認』，並重新於網站中輸入確認後的2位驗證碼，再次掃描QRCODE完成流程。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "驗證碼錯誤，請重新開啟『顯示驗證碼』後，按下『確認』，並重新於網站中輸入確認後的2位驗證碼，再次掃描QRCODE完成流程。"
+          }
+        }
+      }
+    },
+    "SDKError11500" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器內部錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器內部錯誤"
+          }
+        }
+      }
+    },
+    "SDKError11901" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "business id錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "business id錯誤"
+          }
+        }
+      }
+    },
+    "SDKError12000" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_offer不存在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_offer不存在"
+          }
+        }
+      }
+    },
+    "SDKError12003" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "db_secret不存在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "db_secret不存在"
+          }
+        }
+      }
+    },
+    "SDKError12006" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_issuer_meta不存在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_issuer_meta不存在"
+          }
+        }
+      }
+    },
+    "SDKError12007" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_offer(txcode)不存在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_offer(txcode)不存在"
+          }
+        }
+      }
+    },
+    "SDKError12009" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_url不存在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "credential_url不存在"
+          }
+        }
+      }
+    },
+    "SDKServiceUnknownError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服務未知錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服務未知錯誤"
+          }
+        }
+      }
+    },
+    "SDKSystemBasicUnknownError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統底層未知錯誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統底層未知錯誤"
+          }
+        }
+      }
+    },
+    "SDKUnknownErrorReason" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明錯誤原因，請先確認網路狀態，或稍後再試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明錯誤原因，請先確認網路狀態，或稍後再試。"
+          }
+        }
+      }
+    },
+    "SearchCertificates" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋"
+          }
+        }
+      }
+    },
+    "SearchLogs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋紀錄"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋紀錄"
+          }
+        }
+      }
+    },
+    "SearchResults" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋結果"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋結果"
+          }
+        }
+      }
+    },
+    "SelectCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇卡片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇卡片"
+          }
+        }
+      }
+    },
+    "SelectCardExplanation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已選擇「%@」作為授權卡片，\n請勾選要提供的個人資料。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已選擇「%@」作為授權卡片，\n請勾選要提供的個人資料。"
+          }
+        }
+      }
+    },
+    "SelectCardMessage" : {
+      "comment" : "請選擇提供的資料",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最多可選擇%@張，可選擇憑證如下"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最多可選擇%@張，可選擇憑證如下"
+          }
+        }
+      }
+    },
+    "SelectCardTitle" : {
+      "comment" : "憑證內容",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證內容"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證內容"
+          }
+        }
+      }
+    },
+    "SelectVerifyCard" : {
+      "comment" : "選擇憑證",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇憑證"
+          }
+        }
+      }
+    },
+    "SelectVerifyCardTitle" : {
+      "comment" : "更改憑證",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改憑證"
+          }
+        }
+      }
+    },
+    "SelectYouWantToProvide" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇要提供的個人資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇要提供的個人資料"
+          }
+        }
+      }
+    },
+    "ServiceEmail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "service@wallet.gov.tw"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "service@wallet.gov.tw"
+          }
+        }
+      }
+    },
+    "ServiceMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "若有其他問題想要詢問，歡迎使用客服信箱，將有專人替您服務。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "若有其他問題想要詢問，歡迎使用客服信箱，將有專人替您服務。"
+          }
+        }
+      }
+    },
+    "SettingNewWalletPW" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定新皮夾密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定新皮夾密碼"
+          }
+        }
+      }
+    },
+    "SetWalletNameTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾設定"
+          }
+        }
+      }
+    },
+    "ShowAll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示全部"
+          }
+        }
+      }
+    },
+    "ShowCertificates" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出示憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出示憑證"
+          }
+        }
+      }
+    },
+    "ShowQRCodeCountDown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR-Code 將於"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR-Code 將於"
+          }
+        }
+      }
+    },
+    "TurnOffAutoUpdates" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉後，卡片將不會自動更新。當您需要卡片授權時，系統會在授權前自動進行更新，可能導致等待時間變長。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉後，卡片將不會自動更新。當您需要卡片授權時，系統會在授權前自動進行更新，可能導致等待時間變長。"
+          }
+        }
+      }
+    },
+    "UnableToLogin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法登入"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法登入"
+          }
+        }
+      }
+    },
+    "unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
+    },
+    "UnknowReason" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知的原因"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知的原因"
+          }
+        }
+      }
+    },
+    "unmatch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
+        }
+      }
+    },
+    "UnselectVerifyCardHint" : {
+      "comment" : "尚未選擇憑證 請點選更改憑證",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚未選擇憑證 請點選更改憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚未選擇憑證 請點選更改憑證"
+          }
+        }
+      }
+    },
+    "UntrustworthyIssuer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不可信任的issuer"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不可信任的issuer"
+          }
+        }
+      }
+    },
+    "UpdateTime" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新時間：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新時間：%@"
+          }
+        }
+      }
+    },
+    "UpdateWalletPinCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修改皮夾密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修改皮夾密碼"
+          }
+        }
+      }
+    },
+    "VcInvalid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc失效"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vc失效"
+          }
+        }
+      }
+    },
+    "VerifiablePresentationRemoveCardContent" : {
+      "comment" : "「%@」目前尚未選擇任何授權資料，請重新選擇憑證進行授權。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」目前尚未選擇任何授權資料，請重新選擇憑證進行授權。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」目前尚未選擇任何授權資料，請重新選擇憑證進行授權。"
+          }
+        }
+      }
+    },
+    "VerifiablePresentationRemoveCardTitle" : {
+      "comment" : "提供資料確認",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供資料確認"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提供資料確認"
+          }
+        }
+      }
+    },
+    "VerificationApplication" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授權申請"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授權申請"
+          }
+        }
+      }
+    },
+    "VerifyAgreementSubtitle" : {
+      "comment" : "%@知情同意書",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@知情同意書"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@知情同意書"
+          }
+        }
+      }
+    },
+    "VerifyAgreementTitle" : {
+      "comment" : "點擊「%@」即表示同意資料提供",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點擊「%@」即表示同意資料提供"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點擊「%@」即表示同意資料提供"
+          }
+        }
+      }
+    },
+    "VerifyButtonShowScanTitle" : {
+      "comment" : "產生條碼",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "產生條碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "產生條碼"
+          }
+        }
+      }
+    },
+    "VerifyButtonTitle" : {
+      "comment" : "送出資料",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "送出資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "送出資料"
+          }
+        }
+      }
+    },
+    "VerifyCardNoAuthorizedButtonTitle" : {
+      "comment" : "查看可授權的憑證清單",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看可授權的憑證清單"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看可授權的憑證清單"
+          }
+        }
+      }
+    },
+    "VerifyCardNoAuthorizedHint" : {
+      "comment" : "目前缺少可授權的憑證",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目前缺少可授權的憑證"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目前缺少可授權的憑證"
+          }
+        }
+      }
+    },
+    "VerifyCardSelected" : {
+      "comment" : "已選擇 %d 張",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已選擇 %d 張"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已選擇 %d 張"
+          }
+        }
+      }
+    },
+    "VerifyFail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料授權失敗"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料授權失敗"
+          }
+        }
+      }
+    },
+    "VerifyingCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片授權中"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片授權中"
+          }
+        }
+      }
+    },
+    "VerifyState" : {
+      "comment" : "您已將資料授權送出至 %@。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已將資料授權送出至 %@。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已將資料授權送出至 %@。"
+          }
+        }
+      }
+    },
+    "VerifyStateFailMessage" : {
+      "comment" : "資料授權失敗，請稍候再嘗試。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料授權失敗，請稍候再嘗試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料授權失敗，請稍候再嘗試。"
+          }
+        }
+      }
+    },
+    "VerifySuccess" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料已授權"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料已授權"
+          }
+        }
+      }
+    },
+    "VersionInformation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本資訊"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本資訊"
+          }
+        }
+      }
+    },
+    "WalletBasicData" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾基本資料"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾基本資料"
+          }
+        }
+      }
+    },
+    "WalletLockSetting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾鎖定設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾鎖定設定"
+          }
+        }
+      }
+    },
+    "WalletName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾命名"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾命名"
+          }
+        }
+      }
+    },
+    "WalletNameAlreadyReusePleaseChangeTheName" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾名稱與您的其他皮夾重複，請重新輸入。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾名稱與您的其他皮夾重複，請重新輸入。"
+          }
+        }
+      }
+    },
+    "WalletnameAlreadyUse" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱已被使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱已被使用"
+          }
+        }
+      }
+    },
+    "WalletNameAlreadyUseHint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱不可與其他皮夾重複，且僅能輸入中文、英文與數字，上限8個字。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱不可與其他皮夾重複，且僅能輸入中文、英文與數字，上限8個字。"
+          }
+        }
+      }
+    },
+    "WalletNameAlreadyUsePleaseChangeTheName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱已被使用，請更換名字。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱已被使用，請更換名字。"
+          }
+        }
+      }
+    },
+    "WalletNameErrorHint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅能輸入中文、英文與數字，上限8個字。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅能輸入中文、英文與數字，上限8個字。"
+          }
+        }
+      }
+    },
+    "WalletNameIllegalPleaseTryAgain" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾名稱出現特殊符號，請確認後再次嘗試。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您輸入的皮夾名稱出現特殊符號，請確認後再次嘗試。"
+          }
+        }
+      }
+    },
+    "WalletNameIllegalTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱有誤"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱有誤"
+          }
+        }
+      }
+    },
+    "WalletNameReuseTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱重複"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾名稱重複"
+          }
+        }
+      }
+    },
+    "WalletNoPinCodeMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "因為目前手機密碼被關閉且此皮夾未設定皮夾密碼，為保護皮夾的安全，此皮夾無法登入。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "因為目前手機密碼被關閉且此皮夾未設定皮夾密碼，為保護皮夾的安全，此皮夾無法登入。"
+          }
+        }
+      }
+    },
+    "WalletPW" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼"
+          }
+        }
+      }
+    },
+    "WalletPWAgain" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再次輸入皮夾密碼"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再次輸入皮夾密碼"
+          }
+        }
+      }
+    },
+    "WalletPWConfirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼確認"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼確認"
+          }
+        }
+      }
+    },
+    "WalletPWSetting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾密碼設定"
+          }
+        }
+      }
+    },
+    "WalletSetting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾設定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "皮夾設定"
+          }
+        }
+      }
+    },
+    "WebViewNavigationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾系統-%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數位憑證皮夾系統-%@"
+          }
+        }
+      }
+    },
+    "WelcomeVC_Start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始使用數位憑證皮夾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始使用數位憑證皮夾"
+          }
+        }
+      }
+    },
+    "WelcomeVC_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在就開始體驗！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在就開始體驗！"
+          }
+        }
+      }
+    },
+    "WelcomeVC_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歡迎使用 數位憑證皮夾\n讓生活變得更加安全、便利"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歡迎使用 數位憑證皮夾\n讓生活變得更加安全、便利"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

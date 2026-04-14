@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Medium.ttf">
+            <string>NotoSansTC-Medium</string>
+        </array>
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomWarningViewViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="contentLabel" destination="ZIe-KB-MMf" id="ZHP-dZ-WHp"/>
+                <outlet property="titleLabel" destination="fPT-wS-4dO" id="ZEN-1V-NbF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqN-XB-uzB">
+                    <rect key="frame" x="20" y="144" width="280" height="280"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="標題" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPT-wS-4dO">
+                            <rect key="frame" x="8" y="116" width="264" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="fPT-wS-4dO" secondAttribute="height" multiplier="88:7" id="iwh-cf-E88"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" name="2E3A64"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="內文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIe-KB-MMf">
+                            <rect key="frame" x="40" y="145" width="200" height="67"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                            <color key="textColor" name="767676"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="12N-BE-idl">
+                            <rect key="frame" x="90" y="8" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="12N-BE-idl" secondAttribute="height" multiplier="1:1" id="3vG-eh-IrL"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wri-zv-I5Q">
+                            <rect key="frame" x="40" y="220" width="200" height="40"/>
+                            <color key="backgroundColor" name="4E61A7"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="wri-zv-I5Q" secondAttribute="height" multiplier="5:1" id="kO4-gZ-7oA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="確認">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onClickConfirm:" destination="-1" eventType="touchUpInside" id="XVX-sm-gJs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="ZIe-KB-MMf" firstAttribute="leading" secondItem="EqN-XB-uzB" secondAttribute="leading" constant="40" id="DT9-mo-kd0"/>
+                        <constraint firstAttribute="trailing" secondItem="ZIe-KB-MMf" secondAttribute="trailing" constant="40" id="H6b-3K-ahO"/>
+                        <constraint firstAttribute="bottom" secondItem="wri-zv-I5Q" secondAttribute="bottom" constant="20" symbolic="YES" id="Hd5-80-nSX"/>
+                        <constraint firstItem="12N-BE-idl" firstAttribute="centerX" secondItem="EqN-XB-uzB" secondAttribute="centerX" id="PGG-uA-4lE"/>
+                        <constraint firstItem="fPT-wS-4dO" firstAttribute="leading" secondItem="EqN-XB-uzB" secondAttribute="leading" constant="8" id="W40-QN-8eW"/>
+                        <constraint firstAttribute="trailing" secondItem="fPT-wS-4dO" secondAttribute="trailing" constant="8" id="ZlF-hH-Ucj"/>
+                        <constraint firstAttribute="trailing" secondItem="wri-zv-I5Q" secondAttribute="trailing" constant="40" id="a2a-vl-rCI"/>
+                        <constraint firstAttribute="width" secondItem="EqN-XB-uzB" secondAttribute="height" multiplier="1:1" id="bIJ-Sa-QvO"/>
+                        <constraint firstItem="wri-zv-I5Q" firstAttribute="leading" secondItem="EqN-XB-uzB" secondAttribute="leading" constant="40" id="dbV-Mn-gAa"/>
+                        <constraint firstItem="ZIe-KB-MMf" firstAttribute="top" secondItem="fPT-wS-4dO" secondAttribute="bottom" constant="8" symbolic="YES" id="iAd-S6-d8P"/>
+                        <constraint firstItem="12N-BE-idl" firstAttribute="top" secondItem="EqN-XB-uzB" secondAttribute="top" constant="8" id="kcP-xT-Jd3"/>
+                        <constraint firstItem="wri-zv-I5Q" firstAttribute="top" secondItem="ZIe-KB-MMf" secondAttribute="bottom" constant="8" symbolic="YES" id="nop-pL-mbL"/>
+                        <constraint firstItem="fPT-wS-4dO" firstAttribute="top" secondItem="12N-BE-idl" secondAttribute="bottom" constant="8" symbolic="YES" id="rP4-C3-9c9"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EqN-XB-uzB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2hQ-fU-1YQ"/>
+                <constraint firstItem="EqN-XB-uzB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="60j-45-bpD"/>
+                <constraint firstItem="EqN-XB-uzB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U8g-50-T5v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EqN-XB-uzB" secondAttribute="trailing" constant="20" id="c0W-tB-V5m"/>
+            </constraints>
+            <point key="canvasLocation" x="138.75" y="19.014084507042252"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Warning" width="100.5" height="100"/>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

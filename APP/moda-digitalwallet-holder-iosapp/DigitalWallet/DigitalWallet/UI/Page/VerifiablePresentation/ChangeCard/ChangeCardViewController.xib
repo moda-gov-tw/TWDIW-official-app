@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Bold.ttf">
+            <string>NotoSansTC-Bold</string>
+        </array>
+        <array key="NotoSansTC-Medium.ttf">
+            <string>NotoSansTC-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeCardViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonBackGroundView" destination="6Qw-yH-Sx6" id="ifK-QA-9HB"/>
+                <outlet property="cardTitleLabel" destination="nyK-SQ-6zD" id="6BF-E3-oZW"/>
+                <outlet property="confirmButton" destination="htS-kc-fNk" id="WXH-Im-8eH"/>
+                <outlet property="expandButton" destination="0si-ay-ZVc" id="eRk-n3-OJB"/>
+                <outlet property="eyeButton" destination="LON-1x-HQo" id="yG6-AX-h4K"/>
+                <outlet property="tableView" destination="Yyg-Y8-xER" id="gPU-eG-4ap"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="kr9-bY-9bG">
+                    <rect key="frame" x="20" y="69" width="90" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="授權資料" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyK-SQ-6zD">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="20"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Bold" family="Noto Sans TC" pointSize="16"/>
+                            <color key="textColor" name="2E3A64"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LON-1x-HQo">
+                            <rect key="frame" x="70" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="m4s-NV-gTh"/>
+                                <constraint firstAttribute="width" secondItem="LON-1x-HQo" secondAttribute="height" id="q6H-lh-Ero"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="OpenEyes"/>
+                            <connections>
+                                <action selector="onClickEyeButton:" destination="-1" eventType="touchUpInside" id="XVE-Be-EVr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0si-ay-ZVc">
+                    <rect key="frame" x="281.66666666666669" y="63.666666666666657" width="91.333333333333314" height="31"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Bold" family="Noto Sans TC" pointSize="14"/>
+                    <inset key="contentEdgeInsets" minX="10" minY="5" maxX="5" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="展開全部" image="DownArrow">
+                        <color key="titleColor" name="4E61A7"/>
+                    </state>
+                    <state key="selected" title="收合全部" image="ArrowUp20"/>
+                    <connections>
+                        <action selector="onClickExpandButton:" destination="-1" eventType="touchUpInside" id="9md-iE-Tbt"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-Y8-xER">
+                    <rect key="frame" x="0.0" y="99" width="393" height="719"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qw-yH-Sx6">
+                    <rect key="frame" x="0.0" y="742" width="393" height="110"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htS-kc-fNk">
+                    <rect key="frame" x="20" y="758" width="353" height="40"/>
+                    <color key="backgroundColor" name="4E61A7"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="81b-Af-rdM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Medium" family="Noto Sans TC" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="確認">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" name="AAAAAA"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickConfirmButton:" destination="-1" eventType="touchUpInside" id="jZk-w2-cIk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="kr9-bY-9bG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6d6-Hl-trW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yyg-Y8-xER" secondAttribute="trailing" id="INf-b6-DqJ"/>
+                <constraint firstItem="Yyg-Y8-xER" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NnP-nY-RDO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Qw-yH-Sx6" secondAttribute="trailing" id="QIC-Hj-3Nc"/>
+                <constraint firstAttribute="bottom" secondItem="6Qw-yH-Sx6" secondAttribute="bottom" id="UnO-dX-nh8"/>
+                <constraint firstItem="kr9-bY-9bG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="WHM-ed-vrQ"/>
+                <constraint firstItem="6Qw-yH-Sx6" firstAttribute="top" secondItem="htS-kc-fNk" secondAttribute="top" constant="-16" id="YmI-jc-8FI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="htS-kc-fNk" secondAttribute="trailing" constant="20" id="Zcs-Y2-I3x"/>
+                <constraint firstItem="Yyg-Y8-xER" firstAttribute="top" secondItem="kr9-bY-9bG" secondAttribute="bottom" constant="10" id="c7I-pL-xQG"/>
+                <constraint firstItem="htS-kc-fNk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fuM-38-4Ar"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0si-ay-ZVc" secondAttribute="trailing" constant="20" id="im6-sj-9dv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="htS-kc-fNk" secondAttribute="bottom" constant="20" id="kar-13-W1l"/>
+                <constraint firstItem="0si-ay-ZVc" firstAttribute="centerY" secondItem="kr9-bY-9bG" secondAttribute="centerY" id="oRg-CL-g8q"/>
+                <constraint firstItem="6Qw-yH-Sx6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qvQ-rv-r5e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yyg-Y8-xER" secondAttribute="bottom" id="xQ0-Vt-7Hd"/>
+            </constraints>
+            <point key="canvasLocation" x="-2" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ArrowUp20" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="DownArrow" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="OpenEyes" width="24" height="24"/>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AAAAAA">
+            <color red="0.66699999570846558" green="0.66699999570846558" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

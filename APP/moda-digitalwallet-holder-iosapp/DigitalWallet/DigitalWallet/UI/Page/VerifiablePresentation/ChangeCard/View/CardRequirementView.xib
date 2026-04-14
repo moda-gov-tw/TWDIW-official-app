@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+        <array key="NotoSansTC-SemiBold.ttf">
+            <string>NotoSansTC-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardRequirementView" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="contentLabel" destination="BVa-OX-OGS" id="wGC-ZC-aus"/>
+                <outlet property="nameLabel" destination="toC-ke-sYu" id="2K8-IS-jkH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="159"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Xjn-dT-FNl">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toC-ke-sYu">
+                            <rect key="frame" x="0.0" y="0.0" width="129.66666666666666" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-SemiBold" family="Noto Sans TC" pointSize="14"/>
+                            <color key="textColor" name="464646"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-OX-OGS">
+                            <rect key="frame" x="133.66666666666666" y="0.0" width="259.33333333333337" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="14"/>
+                            <color key="textColor" name="767676"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="BVa-OX-OGS" firstAttribute="width" secondItem="toC-ke-sYu" secondAttribute="width" multiplier="2" id="77O-U3-hyL"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Xjn-dT-FNl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ERi-LU-rki"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xjn-dT-FNl" secondAttribute="bottom" id="JHn-dV-2rh"/>
+                <constraint firstItem="Xjn-dT-FNl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tFS-Gv-R8p"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xjn-dT-FNl" secondAttribute="trailing" id="ztw-f5-AwN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="31.297709923664122" y="-223.59154929577466"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="464646">
+            <color red="0.27500000596046448" green="0.27500000596046448" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

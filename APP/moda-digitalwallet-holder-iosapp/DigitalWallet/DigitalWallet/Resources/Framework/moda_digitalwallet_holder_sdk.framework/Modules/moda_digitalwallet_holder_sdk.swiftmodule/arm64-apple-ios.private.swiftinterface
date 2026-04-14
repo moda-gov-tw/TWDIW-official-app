@@ -1,0 +1,121 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name moda_digitalwallet_holder_sdk
+import CoreFoundation
+import CryptoKit
+import Flutter
+import Foundation
+import Security
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import moda_digitalwallet_holder_sdk
+public struct PrintPro {
+  public static var isEnabled: Swift.Bool
+  public static func print(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
+}
+public class ModaDigitalWalletHolderSDK {
+  public init()
+  public static var version: Swift.String {
+    get
+  }
+  public static var build: Swift.String {
+    get
+  }
+  public static var fullVersion: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public class TokenSDKManager {
+  public init(messenager: Flutter.FlutterEngine)
+  @objc deinit
+}
+public enum SourceType : Swift.String {
+  case platform
+  case kx701
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class ModaDidKey {
+  public init(keyTag: Swift.String, type: moda_digitalwallet_holder_sdk.SourceType, pin: Foundation.Data)
+  public func getP256Key() -> (Swift.String?, moda_digitalwallet_holder_sdk.Error?)
+  public func sign(header: Swift.String, payload: Swift.String) -> (Swift.String?, moda_digitalwallet_holder_sdk.Error?)
+  public func delete() -> (Swift.Bool, moda_digitalwallet_holder_sdk.Error?)
+  public func verifyUser(publicKey: Swift.String) -> (Swift.Bool, moda_digitalwallet_holder_sdk.Error?)
+  @objc deinit
+}
+public let SOFTWARE_LICENSE_ASN1_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_LICENSE_CREATE_KEY_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_STRING_TO_DATA_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_BASE64_TO_DATA_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_HEX_TO_BASE64_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_INVALID_PARAMETER_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_VERIFY_SIGNATURE_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_LOAD_FRAMEWORK_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_GET_SYMBOL_ERROR: Swift.CUnsignedLong
+public let SOFTWARE_KEY_GENERATION_FAILED: Swift.CUnsignedLong
+public let SOFTWARE_KEY_NOT_FOUND: Swift.CUnsignedLong
+public let SOFTWARE_SIGNING_FAILED: Swift.CUnsignedLong
+public let SOFTWARE_VERIFICATION_FAILED: Swift.CUnsignedLong
+public let SOFTWARE_PUBLIC_KEY_EXTRACTION_FAILED: Swift.CUnsignedLong
+public let SOFTWARE_ENCODING_FAILED: Swift.CUnsignedLong
+public let SOFTWARE_INVALID_KEY: Swift.CUnsignedLong
+public let SOFTWARE_UNSUPPORTED_KEY_TYPE_OR_CURVE: Swift.CUnsignedLong
+public let SOFTWARE_INVALID_COORDINATE_DATA: Swift.CUnsignedLong
+public let SOFTWARE_DER_TO_RAW_CONVERSION_FAILED: Swift.CUnsignedLong
+public let SOFTWARE_INVALID_SIGNATURE_DATA: Swift.CUnsignedLong
+public let SOFTWARE_INVALID_JWK_FORMAT: Swift.CUnsignedLong
+public enum Error : Swift.Error {
+  case pkcs11(code: Swift.CUnsignedLong, method: Swift.String)
+  case general(code: Swift.CUnsignedLong)
+  case security(status: Darwin.OSStatus, method: Swift.String?)
+  case cfError(error: CoreFoundation.CFError, method: Swift.String?)
+  public static func from(_ code: Swift.CUnsignedLong, method: Swift.String) -> moda_digitalwallet_holder_sdk.Error?
+  public static func fromGeneral(_ code: Swift.CUnsignedLong) -> moda_digitalwallet_holder_sdk.Error
+  public static func fromOSStatus(_ status: Darwin.OSStatus, method: Swift.String? = nil) -> moda_digitalwallet_holder_sdk.Error
+  public static func fromCFError(_ unmanagedError: Swift.Unmanaged<CoreFoundation.CFError>, method: Swift.String? = nil) -> moda_digitalwallet_holder_sdk.Error
+  public var code: Swift.Int {
+    get
+  }
+  public var originalStatus: Darwin.OSStatus? {
+    get
+  }
+  public var method: Swift.String? {
+    get
+  }
+}
+extension moda_digitalwallet_holder_sdk.Error : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension moda_digitalwallet_holder_sdk.Error : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension moda_digitalwallet_holder_sdk.Error : Swift.Equatable {
+  public static func == (lhs: moda_digitalwallet_holder_sdk.Error, rhs: moda_digitalwallet_holder_sdk.Error) -> Swift.Bool
+}
+extension moda_digitalwallet_holder_sdk.Error {
+  public var hexErrorCode: Swift.String {
+    get
+  }
+  public var isVendorDefined: Swift.Bool {
+    get
+  }
+}
+extension moda_digitalwallet_holder_sdk.Error {
+  public static func createError(domain: Swift.String, code: Swift.CUnsignedLong, description: Swift.String, recoverySuggestion: Swift.String? = nil, failureReason: Swift.String? = nil) -> moda_digitalwallet_holder_sdk.Error
+  public var domain: Swift.String {
+    get
+  }
+}
+extension moda_digitalwallet_holder_sdk.SourceType : Swift.Equatable {}
+extension moda_digitalwallet_holder_sdk.SourceType : Swift.Hashable {}
+extension moda_digitalwallet_holder_sdk.SourceType : Swift.RawRepresentable {}

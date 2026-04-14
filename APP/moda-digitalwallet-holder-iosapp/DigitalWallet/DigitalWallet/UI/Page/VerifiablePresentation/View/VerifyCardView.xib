@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Bold.ttf">
+            <string>NotoSansTC-Bold</string>
+        </array>
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyCardView" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="cardNamelabel" destination="ZXD-gk-Wyb" id="fXg-Te-yxk"/>
+                <outlet property="expandButton" destination="OA8-gH-O5q" id="d63-95-53P"/>
+                <outlet property="infoBackGroundView" destination="Goq-bf-6aU" id="U3f-nj-Qe4"/>
+                <outlet property="infoLabel" destination="A5U-u7-8gM" id="ZSL-K0-Vtn"/>
+                <outlet property="infoStackView" destination="MMM-GH-lOD" id="xMg-ft-6gt"/>
+                <outlet property="orgLabel" destination="tMB-el-hPl" id="Ett-GB-6Gr"/>
+                <outlet property="orgView" destination="bef-qz-go9" id="bnD-HN-Pra"/>
+                <outlet property="selectAllButton" destination="Xl7-vE-c13" id="rQz-xc-oTZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="350"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CBU-xw-GUL">
+                    <rect key="frame" x="0.0" y="0.0" width="413" height="350"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="0Qy-wd-kZ8">
+                            <rect key="frame" x="0.0" y="0.0" width="413" height="32"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效汽車駕照" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-gk-Wyb">
+                                    <rect key="frame" x="0.0" y="0.0" width="367" height="32"/>
+                                    <fontDescription key="fontDescription" name="NotoSansTC-Bold" family="Noto Sans TC" pointSize="14"/>
+                                    <color key="textColor" name="464646"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OA8-gH-O5q">
+                                    <rect key="frame" x="381" y="0.0" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="OA8-gH-O5q" secondAttribute="height" id="HP1-bb-qsd"/>
+                                        <constraint firstAttribute="height" constant="32" id="ds8-2T-zbN"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ArrowDown20"/>
+                                    <state key="selected" image="ArrowUp20"/>
+                                    <connections>
+                                        <action selector="onClickExpand:" destination="-1" eventType="touchUpInside" id="Oae-Ch-GG8"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ZXD-gk-Wyb" secondAttribute="bottom" id="F1m-bh-QFm"/>
+                                <constraint firstItem="ZXD-gk-Wyb" firstAttribute="top" secondItem="0Qy-wd-kZ8" secondAttribute="top" id="V6M-Th-P4o"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bef-qz-go9">
+                            <rect key="frame" x="0.0" y="40" width="413" height="107"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMB-el-hPl">
+                                    <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="107"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="14"/>
+                                    <color key="textColor" name="767676"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-vE-c13">
+                                    <rect key="frame" x="383" y="39" width="30" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="全選">
+                                        <color key="titleColor" name="4E61A7"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickSelectAll:" destination="-1" eventType="touchUpInside" id="ecS-Y5-MHu"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Xl7-vE-c13" firstAttribute="centerY" secondItem="bef-qz-go9" secondAttribute="centerY" id="HPk-0Q-n8b"/>
+                                <constraint firstAttribute="bottom" secondItem="tMB-el-hPl" secondAttribute="bottom" id="fNe-lc-B9x"/>
+                                <constraint firstItem="tMB-el-hPl" firstAttribute="top" secondItem="bef-qz-go9" secondAttribute="top" id="gZw-S6-uYO"/>
+                                <constraint firstItem="tMB-el-hPl" firstAttribute="leading" secondItem="bef-qz-go9" secondAttribute="leading" id="gwb-Rx-AaN"/>
+                                <constraint firstItem="Xl7-vE-c13" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tMB-el-hPl" secondAttribute="trailing" constant="4" id="hHT-hH-JYA"/>
+                                <constraint firstAttribute="trailing" secondItem="Xl7-vE-c13" secondAttribute="trailing" id="pDv-rL-r5q"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中華民國內政部" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5U-u7-8gM">
+                            <rect key="frame" x="0.0" y="155" width="413" height="20.333333333333343"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="14"/>
+                            <color key="textColor" name="767676"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-bf-6aU">
+                            <rect key="frame" x="0.0" y="183.33333333333337" width="413" height="166.66666666666663"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MMM-GH-lOD">
+                                    <rect key="frame" x="0.0" y="0.0" width="413" height="166.66666666666666"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="MMM-GH-lOD" secondAttribute="bottom" id="Alm-ao-TOT"/>
+                                <constraint firstItem="MMM-GH-lOD" firstAttribute="leading" secondItem="Goq-bf-6aU" secondAttribute="leading" id="X06-vp-B7J"/>
+                                <constraint firstItem="MMM-GH-lOD" firstAttribute="top" secondItem="Goq-bf-6aU" secondAttribute="top" id="nUR-t0-oPc"/>
+                                <constraint firstAttribute="trailing" secondItem="MMM-GH-lOD" secondAttribute="trailing" id="syS-f2-QCs"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CBU-xw-GUL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5mD-al-XKf"/>
+                <constraint firstItem="CBU-xw-GUL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KWT-Kt-3w2"/>
+                <constraint firstAttribute="trailing" secondItem="CBU-xw-GUL" secondAttribute="trailing" id="Wk3-Q9-xzl"/>
+                <constraint firstAttribute="bottom" secondItem="CBU-xw-GUL" secondAttribute="bottom" id="hJI-Ms-zOi"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="150.38167938931298" y="-156.33802816901408"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ArrowDown20" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="ArrowUp20" width="20.333333969116211" height="20.333333969116211"/>
+        <namedColor name="464646">
+            <color red="0.27500000596046448" green="0.27500000596046448" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

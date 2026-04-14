@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreviewFeatureViewController" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <connections>
+                <outlet property="contentLabel" destination="pVj-7x-41q" id="kxf-b1-9oA"/>
+                <outlet property="imageView" destination="e8J-FG-Z22" id="gwj-wP-dmi"/>
+                <outlet property="leftButton" destination="wna-zM-TXj" id="BIb-vs-0Tf"/>
+                <outlet property="pageControl" destination="M9Q-gy-mvs" id="iWZ-Iz-0ZK"/>
+                <outlet property="titleLabel" destination="lLC-DU-glN" id="kaZ-fj-nQ1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" image="PreviewStep1" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-FG-Z22">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="457"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="e8J-FG-Z22" secondAttribute="height" multiplier="375:436" id="bq8-cb-5QW"/>
+                    </constraints>
+                </imageView>
+                <pageControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="999" verticalHuggingPriority="500" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="M9Q-gy-mvs">
+                    <rect key="frame" x="160" y="772.33333333333337" width="73" height="25.666666666666629"/>
+                    <color key="pageIndicatorTintColor" name="919DC8"/>
+                    <color key="currentPageIndicatorTintColor" name="4E61A7"/>
+                    <connections>
+                        <action selector="changePage:" destination="-1" eventType="valueChanged" id="AFB-Ri-aWQ"/>
+                    </connections>
+                </pageControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="500" horizontalCompressionResistancePriority="999" text="整合多元實體證件，讓你無卡體驗日常服務，不論你在哪，只要拿出手機打開數位憑證皮夾，就能隨時隨地使用，不用再擔心忘記帶證件出門，只需要掃 QR-Code，對方就能快速授權你的身份，無論是就醫、租車，還是入住飯店，這一切都可以變得前所未有的輕鬆。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVj-7x-41q">
+                    <rect key="frame" x="20" y="525.66666666666663" width="353" height="139.33333333333337"/>
+                    <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                    <color key="textColor" name="767676"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="500" horizontalCompressionResistancePriority="999" text="整合多元證件，無卡體驗日常服務" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLC-DU-glN">
+                    <rect key="frame" x="20" y="487" width="353" height="28.666666666666629"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" name="2E3A64"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wna-zM-TXj">
+                    <rect key="frame" x="20" y="769.33333333333337" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="5vD-pA-sHx"/>
+                        <constraint firstAttribute="height" constant="32" id="J9X-CI-5V4"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="LeftArrowFill"/>
+                    <connections>
+                        <action selector="onClickLeft:" destination="-1" eventType="touchUpInside" id="oS5-ce-Dv1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-TL-pua">
+                    <rect key="frame" x="341" y="769.33333333333337" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="9cu-jq-43a"/>
+                        <constraint firstAttribute="width" constant="32" id="dfc-qa-aI8"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="RightArrowFill"/>
+                    <connections>
+                        <action selector="onClickRight:" destination="-1" eventType="touchUpInside" id="6fj-et-yeR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="lLC-DU-glN" firstAttribute="top" secondItem="e8J-FG-Z22" secondAttribute="bottom" constant="30" id="57a-Lc-TUn"/>
+                <constraint firstItem="lLC-DU-glN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EEb-J6-49q"/>
+                <constraint firstItem="pVj-7x-41q" firstAttribute="top" secondItem="lLC-DU-glN" secondAttribute="bottom" constant="10" id="Ffm-RO-Tmf"/>
+                <constraint firstItem="wna-zM-TXj" firstAttribute="leading" secondItem="pVj-7x-41q" secondAttribute="leading" id="Iq6-2g-scE"/>
+                <constraint firstItem="cvc-TL-pua" firstAttribute="centerY" secondItem="M9Q-gy-mvs" secondAttribute="centerY" id="NBb-lX-9T4"/>
+                <constraint firstItem="cvc-TL-pua" firstAttribute="trailing" secondItem="pVj-7x-41q" secondAttribute="trailing" id="QgY-Ob-Eew"/>
+                <constraint firstItem="pVj-7x-41q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Tml-Rp-Lvm"/>
+                <constraint firstItem="e8J-FG-Z22" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-59" id="YXU-gg-OoL"/>
+                <constraint firstItem="e8J-FG-Z22" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cI0-cf-cux"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pVj-7x-41q" secondAttribute="trailing" constant="20" id="fWa-j4-0rr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lLC-DU-glN" secondAttribute="trailing" constant="20" id="sC4-gw-a1l"/>
+                <constraint firstItem="e8J-FG-Z22" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tIY-X2-qZi"/>
+                <constraint firstItem="M9Q-gy-mvs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tTb-nX-MLC"/>
+                <constraint firstItem="M9Q-gy-mvs" firstAttribute="centerY" secondItem="wna-zM-TXj" secondAttribute="centerY" id="uDL-IB-hWf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="M9Q-gy-mvs" secondAttribute="bottom" constant="20" id="z5H-MY-awg"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="20.689655172413794"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LeftArrowFill" width="32" height="32"/>
+        <image name="PreviewStep1" width="375" height="436.33334350585938"/>
+        <image name="RightArrowFill" width="32" height="32"/>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="4E61A7">
+            <color red="0.3059999942779541" green="0.37999999523162842" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="767676">
+            <color red="0.46299999952316284" green="0.46299999952316284" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="919DC8">
+            <color red="0.5690000057220459" green="0.61599999666213989" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

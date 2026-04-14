@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansTC-Regular.ttf">
+            <string>NotoSansTC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="CardInfomationTableViewCell" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="303" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="303" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-Rp-3dz">
+                        <rect key="frame" x="20" y="0.0" width="239" height="85"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df8-Mk-J6r">
+                                <rect key="frame" x="0.0" y="37" width="239" height="48"/>
+                                <fontDescription key="fontDescription" name="NotoSansTC-Regular" family="Noto Sans TC" pointSize="16"/>
+                                <color key="textColor" name="464646"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMs-rF-eh8">
+                                <rect key="frame" x="0.0" y="0.0" width="239" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fMs-rF-eh8" secondAttribute="height" multiplier="239:36" id="9Gf-1E-URf"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="title">
+                                        <attributes>
+                                            <color key="NSColor" name="464646"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="df8-Mk-J6r" secondAttribute="bottom" id="5Nx-Aq-P8z"/>
+                            <constraint firstItem="fMs-rF-eh8" firstAttribute="top" secondItem="SE5-Rp-3dz" secondAttribute="top" id="5xh-AC-utB"/>
+                            <constraint firstItem="fMs-rF-eh8" firstAttribute="leading" secondItem="SE5-Rp-3dz" secondAttribute="leading" id="FnG-6P-5sr"/>
+                            <constraint firstItem="df8-Mk-J6r" firstAttribute="leading" secondItem="SE5-Rp-3dz" secondAttribute="leading" id="UdF-Jn-g4O"/>
+                            <constraint firstItem="df8-Mk-J6r" firstAttribute="top" secondItem="fMs-rF-eh8" secondAttribute="bottom" constant="1" id="el6-qn-fZ6"/>
+                            <constraint firstAttribute="trailing" secondItem="df8-Mk-J6r" secondAttribute="trailing" id="kOq-jp-lN1"/>
+                            <constraint firstAttribute="trailing" secondItem="fMs-rF-eh8" secondAttribute="trailing" id="tvm-vJ-iUl"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl8-93-Ccl">
+                        <rect key="frame" x="267" y="36" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="dl8-93-Ccl" secondAttribute="height" multiplier="1:1" id="5aI-wV-Nvd"/>
+                            <constraint firstAttribute="height" constant="24" id="Lb2-ZE-f2L"/>
+                            <constraint firstAttribute="width" constant="24" id="v0n-dE-DOG"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="OpenEyes"/>
+                        <state key="selected" image="CloseEyes"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-zJ-k47">
+                        <rect key="frame" x="20" y="95" width="271" height="1"/>
+                        <color key="backgroundColor" name="DEDEDE"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Agt-Qj-0Wc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dl8-93-Ccl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Hg-6m-by3"/>
+                    <constraint firstItem="SE5-Rp-3dz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="3B6-Ja-M1z"/>
+                    <constraint firstAttribute="bottom" secondItem="D7T-zJ-k47" secondAttribute="bottom" id="8Ga-cA-YoD"/>
+                    <constraint firstItem="SE5-Rp-3dz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Eqh-oz-lhM"/>
+                    <constraint firstAttribute="trailing" secondItem="dl8-93-Ccl" secondAttribute="trailing" constant="12" id="ZVy-7B-bGo"/>
+                    <constraint firstItem="D7T-zJ-k47" firstAttribute="leading" secondItem="SE5-Rp-3dz" secondAttribute="leading" id="cwa-TL-0iT"/>
+                    <constraint firstItem="dl8-93-Ccl" firstAttribute="trailing" secondItem="D7T-zJ-k47" secondAttribute="trailing" id="sgE-hB-cQw"/>
+                    <constraint firstItem="D7T-zJ-k47" firstAttribute="top" secondItem="SE5-Rp-3dz" secondAttribute="bottom" constant="10" id="tbv-Bh-FHK"/>
+                    <constraint firstItem="dl8-93-Ccl" firstAttribute="leading" secondItem="SE5-Rp-3dz" secondAttribute="trailing" constant="8" symbolic="YES" id="zZk-HO-jJv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="df8-Mk-J6r" id="OoN-Ft-Wsy"/>
+                <outlet property="hideOrShowButton" destination="dl8-93-Ccl" id="ebS-hn-5cZ"/>
+                <outlet property="titleLabel" destination="fMs-rF-eh8" id="cmi-ga-4cG"/>
+            </connections>
+            <point key="canvasLocation" x="101.5267175572519" y="28.87323943661972"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="CloseEyes" width="24" height="24"/>
+        <image name="OpenEyes" width="24" height="24"/>
+        <namedColor name="464646">
+            <color red="0.27500000596046448" green="0.27500000596046448" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DEDEDE">
+            <color red="0.87099999189376831" green="0.87099999189376831" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

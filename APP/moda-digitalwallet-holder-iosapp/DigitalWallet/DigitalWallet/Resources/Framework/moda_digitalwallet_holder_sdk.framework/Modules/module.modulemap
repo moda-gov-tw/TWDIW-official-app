@@ -1,0 +1,6 @@
+framework module moda_digitalwallet_holder_sdk {
+  umbrella header "moda_digitalwallet_holder_sdk.h"
+  export *
+
+  module * { export * }
+}

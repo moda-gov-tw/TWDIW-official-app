@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="QuickAuthTitleTableViewCell" customModule="DigitalWallet_PROD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-bZ-HyO">
+                        <rect key="frame" x="20" y="20" width="280" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速授權列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNY-S6-5hq">
+                                <rect key="frame" x="0.0" y="4" width="101.33333333333333" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="2E3A64"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEj-vD-6EL">
+                                <rect key="frame" x="101.33333333333333" y="0.0" width="27.999999999999986" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="9jr-eX-IYn"/>
+                                    <constraint firstAttribute="width" secondItem="zEj-vD-6EL" secondAttribute="height" multiplier="27:35" id="JEB-Bc-D1p"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ArrowUp20">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" image="ArrowDown20">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickExpand:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="U3w-jM-Ost"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tNY-S6-5hq" secondAttribute="bottom" constant="4" id="8dL-Tu-azY"/>
+                            <constraint firstAttribute="height" constant="36" id="CSq-xV-ARZ"/>
+                            <constraint firstItem="zEj-vD-6EL" firstAttribute="leading" secondItem="tNY-S6-5hq" secondAttribute="trailing" id="D0B-6v-zYU"/>
+                            <constraint firstItem="tNY-S6-5hq" firstAttribute="top" secondItem="Mvo-bZ-HyO" secondAttribute="top" constant="4" id="EZV-KO-WsQ"/>
+                            <constraint firstItem="zEj-vD-6EL" firstAttribute="centerY" secondItem="tNY-S6-5hq" secondAttribute="centerY" id="Fag-GT-G1k"/>
+                            <constraint firstItem="tNY-S6-5hq" firstAttribute="leading" secondItem="Mvo-bZ-HyO" secondAttribute="leading" id="TfV-ly-3MT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Mvo-bZ-HyO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5Zg-MC-J2K"/>
+                    <constraint firstAttribute="trailing" secondItem="Mvo-bZ-HyO" secondAttribute="trailing" constant="20" id="Jgc-tN-IeQ"/>
+                    <constraint firstItem="Mvo-bZ-HyO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="cn4-sT-edF"/>
+                    <constraint firstAttribute="bottom" secondItem="Mvo-bZ-HyO" secondAttribute="bottom" id="pW7-Qd-JfI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="expandButton" destination="zEj-vD-6EL" id="cv5-YX-zYp"/>
+                <outlet property="titleLabel" destination="tNY-S6-5hq" id="lye-44-jWL"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ArrowDown20" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="ArrowUp20" width="20.333333969116211" height="20.333333969116211"/>
+        <namedColor name="2E3A64">
+            <color red="0.18000000715255737" green="0.22699999809265137" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
