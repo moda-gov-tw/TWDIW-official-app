@@ -34,7 +34,6 @@
   - [擴充自訂欄位](#擴充自訂欄位)
   - [日誌紀錄行為](#日誌紀錄行為)
 - [支援與聯絡](#支援與聯絡)
-- [變更日誌](#變更日誌)
 - [致謝](#致謝)
 
 ### 專案簡介
@@ -220,10 +219,6 @@ build.put("environment", "production");
 - **官方網站**：[https://wallet.gov.tw](https://wallet.gov.tw)
 - **技術支援信箱**：service@wallet.gov.tw
 - **問題回報**：[GitHub Issues](https://github.com/moda-gov-tw/TWDIW-official-app/issues)
-
-### 變更日誌
-
-目前未額外維護獨立的 `CHANGELOG.md`，請參考 Git 提交紀錄了解版本變更。
 
 ### 致謝
 
