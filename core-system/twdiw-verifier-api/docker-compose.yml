@@ -1,0 +1,44 @@
+# Docker Compose 配置檔案
+# 用於本地開發環境的 PostgreSQL 資料庫
+
+version: '3.8'
+
+services:
+  # PostgreSQL 資料庫服務
+  postgres:
+    # 使用 PostgreSQL 16 版本（與正式環境一致）
+    image: postgres:16-alpine
+    # 容器名稱
+    container_name: twdiw-verifier-postgres
+    # 環境變數設定
+    environment:
+      # PostgreSQL 超級使用者密碼
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      # 建立資料庫
+      POSTGRES_DB: ${POSTGRES_DB:-twdiw_verifier}
+      # 建立應用程式使用者
+      POSTGRES_USER: ${POSTGRES_USER:-twdiw_verifier}
+    # 埠號映射（主機:容器）
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    # 資料持久化（將資料儲存在本地目錄）
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      # 初始化腳本（如果需要的話）
+      - ./docker/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    # 健康檢查
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-twdiw_verifier}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # 重啟策略
+    restart: unless-stopped
+    # 網路設定
+    networks:
+      - twdiw-network
+
+# 網路定義
+networks:
+  twdiw-network:
+    driver: bridge

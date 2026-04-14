@@ -1,0 +1,3 @@
+"id";"login";"password_hash";"first_name";"last_name";"email";"image_url";"activated";"lang_key";"activation_key";"reset_key";"created_by";"created_date";"reset_date";"last_modified_by";"last_modified_date"
+1;admin;7c4386d2c843363fd13fa738ea8f01011a70e907838cadda803144d0d9e3978c474872ca3a9a19eceeb7958f90defc52afe02057da1b559bbcc2e8689b88446d;Administrator;Administrator;admin@localhost;"";true;zh-tw;;;system;;;system;
+2;modadwap;4aed9a1114dd15b0099a971c47bdc795d86dbc057ff86e6a5d1abec021d80f477783fa38dd707e8fc2f11c4395989d2ef6eed392c661dc2a42ff766a10f66508;;;modadwap@localhost;"";true;zh-tw;;;system;;;system;

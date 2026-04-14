@@ -1,0 +1,477 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overridden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+#
+# More information on profiles: https://www.jhipster.tech/profiles/
+# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+---
+# Conditionally disable springdoc on missing api-docs profile
+spring:
+  config:
+    activate:
+      on-profile: '!api-docs'
+  devtools:
+    restart:
+      enabled: true
+      additional-exclude: static/**
+    livereload:
+      enabled: false # we use Webpack dev server + BrowserSync for livereload
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    # 資料庫連線設定（透過環境變數設定）
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  messages:
+    cache-duration: PT1S # 1 second, see the ISO 8601 standard
+  thymeleaf:
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+springdoc:
+  api-docs:
+    enabled: false
+---
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include:
+          - configprops
+          - env
+          - health
+          - info
+          - jhimetrics
+          - jhiopenapigroups
+          - logfile
+          - loggers
+          - prometheus
+          - threaddump
+          - liquibase
+  endpoint:
+    health:
+      show-details: when_authorized
+      roles: 'ROLE_ADMIN'
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState,db
+    jhimetrics:
+      enabled: true
+  info:
+    git:
+      mode: full
+    env:
+      enabled: true
+  health:
+    mail:
+      enabled: false # When using the MailService, configure an SMTP server and set this to true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+        step: 60
+  observations:
+    key-values:
+      application: ${spring.application.name}
+  metrics:
+    enable:
+      http: true
+      jvm: true
+      logback: true
+      process: true
+      system: true
+    distribution:
+      percentiles-histogram:
+        all: true
+      percentiles:
+        all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
+    data:
+      repository:
+        autotime:
+          enabled: true
+
+spring:
+  application:
+    name: modaDigitalwalletManagerService
+  profiles:
+    # The commented value for `active` can be replaced with valid Spring profiles to load.
+    # Otherwise, it will be filled in by maven when building the JAR file
+    # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
+    active: '@spring.profiles.active@'
+    group:
+      dev:
+        - release
+        - api-docs
+        # Uncomment to activate TLS for the dev profile
+        #- tls
+  jmx:
+    enabled: false
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.timezone.default_storage: NORMALIZE
+      hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+      # modify batch size as necessary
+      hibernate.jdbc.batch_size: 25
+      hibernate.order_inserts: true
+      hibernate.order_updates: true
+      # modify fetch size as necessary
+      hibernate.jdbc.fetch_size: 150
+      hibernate.criteria.literal_handling_mode: BIND
+      hibernate.query.fail_on_pagination_over_collection_fetch: true
+      hibernate.query.in_clause_parameter_padding: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+  messages:
+    basename: i18n/messages
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    problemdetails:
+      enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          authority-prefix: ''
+          authorities-claim-name: auth
+  task:
+    execution:
+      thread-name-prefix: twdiw-verifier-server-task-
+      pool:
+        core-size: 2
+        max-size: 50
+        queue-capacity: 10000
+    scheduling:
+      thread-name-prefix: twdiw-verifier-server-scheduling-
+      pool:
+        size: 2
+  thymeleaf:
+    mode: HTML
+  output:
+    ansi:
+      console-available: true
+  mail:
+    # 郵件伺服器主機（從環境變數讀取，避免洩漏內部資訊）
+    # 設定方式：export SPRING_MAIL_HOST=your.smtp.server
+    host: ${SPRING_MAIL_HOST:localhost}
+    # 郵件伺服器埠號（從環境變數讀取）
+    # 設定方式：export SPRING_MAIL_PORT=25
+    port: ${SPRING_MAIL_PORT:25}
+    # 郵件伺服器驗證帳號（從環境變數讀取）
+    # 設定方式：export SPRING_MAIL_USERNAME=your.smtp.username
+    username: ${SPRING_MAIL_USERNAME:}
+    # 郵件伺服器驗證密碼（從環境變數讀取）
+    # 設定方式：export SPRING_MAIL_PASSWORD=your.smtp.password
+    password: ${SPRING_MAIL_PASSWORD:}
+  liquibase:
+    enabled: true
+    change-log: classpath:config/liquibase/master.xml
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        same-site: strict
+        secure: true
+  port: 8080
+
+springdoc:
+  show-actuator: true
+
+# Properties to be exposed on the /info management endpoint
+info:
+  # Comma separated list of profiles that will trigger the ribbon to show
+  display-ribbon-on-profiles: 'dev'
+
+# ===================================================================
+# JHipster specific properties
+#
+# Full reference is available at: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+jhipster:
+  # CORS is only enabled by default with the "dev" profile
+  cors:
+    # Allow Ionic for JHipster by default (* no longer allowed in Spring Boot 2.4+)
+    allowed-origins: http://${verifier.host.name}/,https://${verifier.host.name}/,http://${verifier.host.name}:81/,https://${verifier.host.name}:81/
+    # Enable CORS when running in GitHub Codespaces
+    # allowed-origin-patterns: 'https://*.githubpreview.dev'
+    allowed-methods: '*'
+    allowed-headers: '*'
+    exposed-headers: 'Authorization,Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params'
+    # allow-credentials: true
+    max-age: 1800
+  clientApp:
+    name: 'twdiwVerifierServerApp'
+  # By default CORS is disabled. Uncomment to enable.
+  # cors:
+  #   allowed-origins: "http://localhost:8100,http://localhost:9000"
+  #   allowed-methods: "*"
+  #   allowed-headers: "*"
+  #   exposed-headers: "Authorization,Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params"
+  #   allow-credentials: true
+  #   max-age: 1800
+  mail:
+    from: twdiwVerifierServer@localhost
+    base-url: https://${verifier.host.name}/verifiermgr
+  api-docs:
+    default-include-pattern: /api/**
+    management-include-pattern: /management/**
+    title: Twdiw Verifier Server API
+    description: Twdiw Verifier Server API documentation
+    version: 0.0.1
+    terms-of-service-url:
+    contact-name:
+    contact-url:
+    contact-email:
+    license: unlicensed
+    license-url:
+  security:
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+        base64-secret: ${JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET}
+        # Token is valid 24 hours
+        #        token-validity-in-seconds: 3600
+        token-validity-in-seconds: 1200
+        token-validity-in-seconds-for-remember-me: 2592000
+  logging:
+    use-json-format: false # By default, logs are not in Json format
+    logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
+      enabled: false
+      host: localhost
+      port: 5000
+      ring-buffer-size: 512
+
+logging:
+  level:
+    ROOT: INFO
+    tech.jhipster: INFO
+    org.hibernate.SQL: INFO
+    gov.moda.dw.manager: INFO
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration, like in the JHipsterProperties above
+#
+# More documentation is available at:
+# https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+api:
+  version: ${API_VERSION:1.0.13}
+
+custom:
+  inSandbox: false
+  job:
+    removeNotActivatedUsers: true
+  liquibase:
+    loadType: Verifier # Issuer / Verifier / Issuer,Verifier
+  schedule:
+    sendInformEmail: false
+
+# application:
+sandbox:
+  privileged-account: verify_admin
+app.base.path: /api
+
+# 遠端服務 API 介接
+remote-url:
+  # vdr
+  vdr-issuer-metadata: https://${verifier.host.name}/oid4vci/api/issuer/{businessId}/.well-known/openid-credential-issuer
+  vdr-issuer-list: ${dwfront.url}/api/did
+  # api
+  verifier-oid4vp: ${oid4vp.internal.url}
+  verifier-vp: ${vp.internal.url}
+  # 操作手冊 PDF 連結（可透過環境變數 REMOTE_URL_OPERATION_MANUAL 覆寫）
+  operation-manual: ${REMOTE_URL_OPERATION_MANUAL:https://wallet.gov.tw/apply/docs/twdiw_verifiermgr_mannual.pdf}
+
+# 前端服務設定
+dwfront:
+  dwfront-301i: ${dwfront.url}/api/did
+
+# RSA 金鑰對設定 (請設定環境變數)
+# 警告：絕對不要在此處硬編碼實際的私鑰！
+# 請使用環境變數設定：
+# - FIN_RSAUTIL_PRVKY: RSA 私鑰（Base64 編碼）
+# - FIN_RSAUTIL_PKY: RSA 公鑰（Base64 編碼）
+fin.rsaUtil.prvKy: ${FIN_RSAUTIL_PRVKY}
+fin.rsaUtil.pky: ${FIN_RSAUTIL_PKY}
+
+# TrackService
+gov.moda.dw.manager.company.id: moda
+
+# Apple Store圖片
+appleStoreImgPath: ${APPLE_STORE_IMG_PATH:img/appleStore.png}
+# Google Play圖片
+googlePlayImgPath: ${GOOGLE_PLAY_IMG_PATH:img/googlePlay.png}
+# 預設 LOGO 圖片
+defaultLogoImgPath: ${DEFAULT_LOGO_IMG_PATH:img/defaultLogo.png}
+# 組織預設 LOGO 圖片
+defaultLogoSmallImgPath: ${DEFAULT_LOGO_SMALL_IMG_PATH:img/defaultLogo_small.png}
+# OTP 有效時間(秒)
+otpExpireTime: ${OTP_EXPIRE_TIME:300}
+# OTP 重發時間(秒)
+otpReSendTime: ${OTP_RE_SEND_TIME:60}
+# APP 更新日期
+appDownloadDate: ${APP_DOWNLOAD_DATE:2025/12/05}
+
+attributeencryptor:
+  key: ${ATTRIBUTEENCRYPTOR_KEY}
+
+verifier:
+  host:
+    # 驗證端 HOST name
+    name: ${VERIFIER_HOST_NAME:localhost:8080}
+  dwverifier-oidvp-501i: ${oid4vp.internal.url}/api/oidvp/did
+
+# 條款 base url 設定
+verifierOid4vpUrl: https://${verifier.host.name}/oid4vp
+
+# 時間相關設定
+time:
+  # Jwt 有效時間(秒)
+  jwtTimeout: ${TIME_JWTTIMEOUT:600}
+  # Totp 有效時間(秒)
+  totpTimeout: ${TIME_TOTPTIMEOUT:60}
+  # Totp 時間偏移量(秒)
+  totpTimeOffset: ${TIME_TOTPTIMEOFFSET:30}
+
+# 開關設定
+switch:
+  verify:
+    # Jwt 驗簽
+    jwt: ${SWITCH_VERIFY_JWT:true}
+    # OTP 驗證
+    otp: ${SWITCH_VERIFY_OTP:false}
+
+# 寄件者資訊
+mail:
+  from:
+    address: ${MAIL_FROM_ADDRESS:}
+
+# 動態 Qr Code 型態，1: 原始 deeplink, 2: Universal/App link
+qrcode:
+  link:
+    type: ${QRCODE_LINK_TYPE:2}
+
+# vp, oid4vp服務內部url
+oid4vp:
+  internal:
+    url: ${OID4VP_INTERNAL_URL:http://moda-digitalwallet-docker-verifier-oid4vp-service:8080}
+vp:
+  internal:
+    url: ${VP_INTERNAL_URL:http://moda-digitalwallet-docker-verifier-vp-service:8080}
+
+# 日誌檔案路徑
+log:
+  path: ${LOG_PATH:aplogs}
+
+---
+# ===================================================================
+# Release 環境專屬配置
+# ===================================================================
+spring:
+  config:
+    activate:
+      on-profile: release
+  liquibase:
+    # 在 release 環境載入特定的資料
+    contexts: release
+  mail:
+    # 郵件暱稱設定為正式環境名稱
+    nickname: 驗證端模組系統
+
+# 前端系統相關設定 - Release 環境
+dwfront:
+  # 前端系統基礎網址，可透過環境變數 DWFRONT_URL 覆寫
+  url: ${DWFRONT_URL:https://frontend.wallet.gov.tw}
+
+# IVPAS 驗證服務設定 - Release 環境
+ivpas:
+  # DID 驗證 API 端點（正式環境）
+  verify-did: https://wallet.gov.tw/apply/ivpas/api/verifyAccessToken
+  # IVPAS 健康檢查 API 端點（正式環境）
+  health: https://wallet.gov.tw/apply/ivpas/actuator/health
+
+# Apple Store APP公開下載連結 - Release 環境
+appleStoreAppUrl: ${APPLE_STORE_APP_URL:https://apps.apple.com/tw/app/id6742222992}
+
+# Google Play APP公開下載連結 - Release 環境
+googlePlayAppUrl: ${GOOGLE_PLAY_APP_URL:https://play.google.com/store/apps/details?id=tw.gov.moda.diw}
+
+---
+# ===================================================================
+# Test (UAT) 環境專屬配置
+# ===================================================================
+spring:
+  config:
+    activate:
+      on-profile: test
+  liquibase:
+    # 在 test 環境載入特定的資料
+    contexts: test
+  mail:
+    # 郵件暱稱設定為測試環境名稱
+    nickname: 驗證端模組系統UAT
+
+# 前端系統相關設定 - Test 環境
+dwfront:
+  # 前端系統基礎網址，可透過環境變數 DWFRONT_URL 覆寫
+  url: ${DWFRONT_URL:https://frontend-uat.wallet.gov.tw}
+
+# IVPAS 驗證服務設定 - Test 環境
+ivpas:
+  # DID 驗證 API 端點（測試環境）
+  verify-did: https://www-uat.wallet.gov.tw/apply/ivpas/api/verifyAccessToken
+  # IVPAS 健康檢查 API 端點（測試環境）
+  health: https://www-uat.wallet.gov.tw/apply/ivpas/actuator/health
+
+# Apple Store APP公開下載連結 - Test 環境
+appleStoreAppUrl: ${APPLE_STORE_APP_URL:https://testflight.apple.com/join/PssjD8qx}
+
+# Google Play APP公開下載連結 - Test 環境
+googlePlayAppUrl: ${GOOGLE_PLAY_APP_URL:https://www.wallet.gov.tw/apply/beta_app_download_page.html}

@@ -1,0 +1,55 @@
+"id";"type_id";"res_id";"res_grp";"res_name";"description";"state";"api_uri";"web_url";"data_role_1";"data_role_2";"create_time"
+27;web;ams311w_c;account;帳號建立;"";"1";/api/modadw311w/create;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+28;web;ams311w_s;account;帳號查詢;"";"1";/api/modadw311w/queryAll,/api/modadw311w/queryDetail;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+29;web;ams321w_c;role;角色建立;"";"1";/api/modadw321/create;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+30;web;ams321w_s;role;角色查詢;"";"1";/api/modadw321w/search;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+31;web;ams321w_e;role;角色編輯;"";"1";/api/modadw321w/update;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+32;web;ams321w_d;role;角色刪除;"";"1";/api/modadw321w/delete;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+33;web;ams331w_s;func;功能查詢;"";"0";/api/modadw331w/search;/modadw/modadw331w;"";"";2024-07-26 03:47:12.007
+34;web;ams351w_c;accessToken;token建立;"";"1";/api/modadw351w/create;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+35;web;ams351w_s;accessToken;token查詢;"";"1";/api/modadw351w;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+36;web;ams312w_s;accountChange;帳號異動查詢;"";"0";/api/modadw312w/search;/modadw/modadw312w;"";"";2024-07-26 03:47:12.007
+37;web;ams322w_s;roleChange;角色異動查詢;"";"0";/api/modadw322w/search;/modadw/modadw322w;"";"";2024-07-26 03:47:12.007
+38;web;ams332w_s;funcChange;功能異動查詢;"";"0";/api/modadw332w/search;/modadw/modadw332w;"";"";2024-07-26 03:47:12.007
+39;web;ams341w_s;trace;操作軌跡查詢;"";"0";/api/modadw341w;/modadw/modadw341w;"";"";2024-07-26 03:47:12.007
+57;node;Top_account;Top_account;帳號權限;"";"1";x;"";"";"";2024-07-26 03:47:12.007
+58;node;account;account;帳號管理;"";"1";x;"";"";"";2024-07-26 03:47:12.007
+59;node;role;role;角色管理;"";"1";x;"";"";"";2024-07-26 03:47:12.007
+60;node;func;func;功能管理;"";"0";x;"";"";"";2024-07-26 03:47:12.007
+61;node;accessToken;accessToken;AccessToken管理;"";"1";x;"";"";"";2024-07-26 03:47:12.007
+62;node;accountChange;accountChange;帳號異動清單查詢;"";"0";x;"";"";"";2024-07-26 03:47:12.007
+63;node;roleChange;roleChange;角色異動清單查詢;"";"0";x;"";"";"";2024-07-26 03:47:12.007
+64;node;funcChange;funcChange;功能異動清單查詢;"";"0";x;"";"";"";2024-07-26 03:47:12.007
+65;node;trace;trace;使用者操作軌跡管理;"";"0";x;"";"";"";2024-07-26 03:47:12.007
+66;web;ams331w_upState;func;功能啟停;"";"0";/api/modadw331w/updateState;/modadw/modadw331w;"";"";2024-07-26 03:47:12.007
+67;web;ams321w_upState;role;角色啟停;"";"1";/api/modadw321/updateState;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+68;web;ams321w_conferRes;role;角色授權功能;"";"1";/api/modadw321/saveConferRes,/modadw321w/searchResTree;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+69;web;ams321w_hasRes;role;角色功能資訊;角色已授權功能列表;"1";/api/modadw321/searchRoleRes;/modadw/modadw321w;"";"";2024-07-26 03:47:12.007
+70;web;ams311w_conferRole;account;授權角色;"";"1";/api/modadw311w/allRole,/api/modadw311w/roles;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+72;web;ams311w_resetBwd;account;重置密碼;"";"1";/api/modadw311w/resetBwd;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+73;web;ams311w_upState;account;帳號啟停;"";"1";/api/modadw311w/changeActivated;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+74;web;ams311w_e;account;帳號編輯;"";"1";/api/modadw311w/update;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+75;web;ams311w_userRoles;account;帳號已授權角色清單;"";"1";/api/ams311w/userRoles;/ams/ams311w;"";"";2024-07-26 03:47:12.007
+88;web;ams351w_e;accessToken;token編輯; ;"1";/api/modadw351w/update;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+89;web;ams351w_d;accessToken;token刪除; ;"1";/api/modadw351w;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+90;web;ams351w_upState;accessToken;token啟停; ;"1";/api/modadw351w/changeState;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+91;web;ams351w_conferRes;accessToken;token授權功能; ;"1";/api/modadw351/searchResTree,/modadw351w/saveRel;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+92;web;ams351w_hasRes;accessToken;token查詢功能; ;"1";/api/modadw351w/getDetail/res;/modadw/modadw351w;"";"";2024-07-26 03:47:12.007
+100;node;org;org;組織管理;"";"1";x;"";"";"";2024-09-23 03:47:12.007
+101;web;org_a;org;組織建立;"";"1";/api/modadworg/create;/modadw/modaorg;"";"";2024-09-23 03:47:12.007
+102;web;org_b;org;組織起停;"";"0";/api/modadworg/updateState;/modadw/modaorg;"";"";2024-09-23 03:47:12.007
+103;web;org_c;org;組織編輯;"";"1";/api/modadworg/update;/modadw/modaorg;"";"";2024-09-23 03:47:12.007
+104;web;org_d;org;組織刪除;"";"1";/api/modadworg/delete;/modadw/modaorg;"";"";2024-09-23 03:47:12.007
+105;web;org_s;org;組織查詢;"";"1";/api/modadworg/search;/modadw/modaorg;"";"";2024-09-23 03:47:12.007
+110;web;ams311w_PrsonInfo;account;個人資料管理;"";"1";/api/modadw311w/getUserDetails,/api/modadw311w/updateUserDetails;/dashboard/index;defaultRes;"";2024-08-30 03:47:12.000
+111;web;ams311w_upPwd;account;修改密碼;"";"1";/api/modadw302w/change-bwd/finish;/dashboard/index;defaultRes;"";2024-08-30 03:47:12.000
+208;web;verifier_CreateVP;verifier;VP建立管理;"";"1";x;/dw/CreateVP;"";"";2024-07-26 03:47:12.007
+210;node;Top_verifier;Top_verifier;VP管理;"";"1";x;"";"";"";2024-07-26 03:47:12.007
+215;node;api_verifier;api_verifier;Verifier 業務性 API 管理;"";"1";x;"";"";"";2024-07-26 03:47:12.007
+217;web;ams311w_d;account;帳號刪除;"";"1";/api/modadw311w/deleteAccount;/modadw/modadw311w;"";"";2024-07-26 03:47:12.007
+219;web;VP_Create_ExtApi;api_verifier;VP建立管理API(對外);"";"1";x;"";"";"";2025-02-03 03:47:12.007
+222;node;api_verifier_manager;api_verifier_manager;Verifier 管理性 API 管理;"";"1";x;"";"";"";2025-02-10 02:45:12.007
+223;node;TOP_verifier_did;TOP_verifier_did;verifier功能;"";"1";x;"";"";"";2025-04-17 15:35:00.000
+224;web;verifier_DIDregister;dw;註冊DID;"";"1";x;/dw/DIDregister;"";"";2025-04-17 15:35:00.000
+225;web;verifier_OrgLogo;dw;組織 LOGO 上傳;"";"1";x;/dw/OrgLogoUpload;"";"";2025-06-13 03:47:12.007
+226;web;verifier_OrgKeySetting;dw;組織金鑰管理;"";"1";x;/dw/OrgKeySetting;"";"";2025-07-04 09:34:35.007
