@@ -1,0 +1,87 @@
+//主題顏色設定
+// $primary: #2094e5;
+$primary: #d33e5f;
+$secondary: #2094e5;
+$accent: #26a69a;
+
+$dark: #d3d3d3;
+
+$positive: #4e90ad;
+$negative: #d33e5f;
+$info: #31ccec;
+$warning: #f2c037;
+
+//根據概念形象網站視覺規範指引所改動的設計規範
+//網站斷點規劃
+$breakpoint-xs: 374px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1439px;
+
+//字體大小規範
+
+$grey-1: #ededed;
+$grey-2: #828282;
+$grey-3: #919191;
+$grey-4: #707070;
+$grey-5: #4e4e4e;
+$grey-6: #2c2d2d;
+
+$red-1: #d33e5f;
+$red-2: #c94d70;
+
+$orange-1: #fdefdd;
+$orange-2: #fbe3c3;
+$orange-3: #f9c6a9;
+$orange-4: #f7ca90;
+$orange-5: #f5bd76;
+$orange-6: #f3b15d;
+$orange-7: #e29450;
+$orange-8: #d97744;
+$orange-9: #ba5d38;
+
+$indigo-1: #f6f7fa;
+$indigo-2: #d4d9e9;
+$indigo-3: #b2bbd9;
+$indigo-4: #919dcb;
+$indigo-5: #6f7fb7;
+$indigo-6: #4e61a7;
+$indigo-7: #3e4d85;
+$indigo-8: #2e3a64;
+$indigo-9: #1f2642;
+
+p {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.titleRwd {
+  font-size: clamp(1.6rem, 2.4vw, 6rem);
+  font-weight: 700;
+  display: inline-block;
+  color: #4e4e4e;
+}
+
+.text-black {
+  color: #2c2d2d !important;
+}
+
+.alert-text {
+  font-size: clamp(0.9rem, 1.3vw, 1.25rem);
+  font-weight: 500;
+  display: flex;
+  color: $primary;
+}
+
+.text-h6-cus {
+  font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: 0.0125em;
+}
