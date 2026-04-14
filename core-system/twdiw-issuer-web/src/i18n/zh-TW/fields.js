@@ -1,0 +1,40 @@
+export default {
+  fieldsTitle: "VC 欄位管理",
+  basicFieldsTitle: "基本欄位",
+  normalFieldsTitle: "常用欄位",
+  addCommonFields: "新增常用欄位",
+  fields: {
+    type: "欄位類別",
+    cname: "欄位對外名稱",
+    ename: "欄位名稱(英)",
+    visible: "是否顯示",
+    isRequired: "欄位必填",
+    required: "必填",
+    notRequired: "非必填"
+  },
+  fieldsDelete: "刪除",
+  createSuccess: "新增成功",
+  tempSuccess: "暫存成功",
+  removeSuccess: "刪除成功",
+  regenerateQRCodeSuccess: "重新產生 QR Code 成功",
+  regularExpressionTitle: "正規表示法",
+  regularExpression: {
+    type: "類別",
+    name: "名稱",
+    regular: "正規表達式",
+    description: "限定資料格式",
+    errorMsg: "錯誤訊息",
+    ruleType: "規則類型",
+    rule: "規則",
+    edit: "編輯"
+  },
+  noDataLabel: "目前無資料，請重新查詢",
+  noResultsLabel: "查無資料，請重新輸入",
+  pleaseEnterData: "請輸入資料",
+  cancelLabel: "取消",
+  successLabel: "確認",
+  searchCriteria: "搜尋條件",
+  resetLabel: "重置",
+  filterLabel: "篩選",
+  information: "詳細資訊"
+};
