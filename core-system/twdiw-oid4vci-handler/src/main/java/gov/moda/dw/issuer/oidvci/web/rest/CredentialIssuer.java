@@ -214,7 +214,7 @@ public class CredentialIssuer
                     String nonce = null;
                     String credential_configuration_id = null;
                     String tx_code = null;
-                    JSONObject IDT_payload_obj = (JSONObject)new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(Base64.getDecoder().decode(IDT_payload));
+                    JSONObject IDT_payload_obj = (JSONObject)new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(Base64.getUrlDecoder().decode(IDT_payload));
 
                     try
                     {
@@ -1661,7 +1661,7 @@ public class CredentialIssuer
                 final String payload_str = split_jwt[1];
                 final String signature_str = split_jwt[2];
 
-                JSONObject header_obj = (JSONObject)new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(Base64.getDecoder().decode(header_str));
+                JSONObject header_obj = (JSONObject)new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(Base64.getUrlDecoder().decode(header_str));
                 jwt_kid = header_obj.getAsString("kid");
                 String typ = header_obj.getAsString("typ");
                 String alg = header_obj.getAsString("alg");
@@ -1733,7 +1733,7 @@ public class CredentialIssuer
                     return ResponseEntity.badRequest().contentType(MediaType.APPLICATION_JSON).body(ret_json.toJSONString(JSONStyle.LT_COMPRESS));
                 }
 
-                JSONObject payload_obj = (JSONObject)new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(Base64.getDecoder().decode(payload_str));
+                JSONObject payload_obj = (JSONObject)new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(Base64.getUrlDecoder().decode(payload_str));
                 jwt_client_id = payload_obj.getAsString("iss");
                 jwt_credential_identifier = payload_obj.getAsString("aud");
                 jwt_c_nonce = payload_obj.getAsString("nonce");
