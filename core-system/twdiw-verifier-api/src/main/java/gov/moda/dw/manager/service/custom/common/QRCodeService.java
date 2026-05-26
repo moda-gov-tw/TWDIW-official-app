@@ -10,8 +10,6 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-// 引入 Java 標準庫相關類別
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
