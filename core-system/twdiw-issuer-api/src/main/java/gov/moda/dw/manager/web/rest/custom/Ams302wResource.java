@@ -21,7 +21,6 @@ import gov.moda.dw.manager.service.dto.custom.JwtUserDTO;
 import gov.moda.dw.manager.service.dto.custom.ResponseDTO;
 import gov.moda.dw.manager.util.RSAUtils;
 import gov.moda.dw.manager.web.rest.vm.KeyAndPasswordVM;
-// import gov.moda.dw.manager.service.dto.custom.BwdRSAResultDTO;
 import lombok.extern.slf4j.Slf4j;
 
 /*
