@@ -1,0 +1,74 @@
+name: Spotless Check
+
+on:
+  pull_request:
+    paths:
+      - 'core-system/**/*.java'
+      - 'core-system/**/pom.xml'
+
+jobs:
+  changes:
+    name: Detect changed modules
+    runs-on: ubuntu-latest
+    outputs:
+      modules: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            # 新增模組時，在此依相同格式加一個 entry，filter 名稱須與 core-system/ 下的目錄名稱完全一致。
+            # When adding a new module, append an entry here following the same pattern.
+            # The filter name must exactly match the directory name under core-system/.
+            moda-digitalwallet-common:
+              - 'core-system/moda-digitalwallet-common/**/*.java'
+              - 'core-system/moda-digitalwallet-common/**/pom.xml'
+            twdiw-issuer-api:
+              - 'core-system/twdiw-issuer-api/**/*.java'
+              - 'core-system/twdiw-issuer-api/**/pom.xml'
+            twdiw-oid4vci-handler:
+              - 'core-system/twdiw-oid4vci-handler/**/*.java'
+              - 'core-system/twdiw-oid4vci-handler/**/pom.xml'
+            twdiw-oid4vp-handler:
+              - 'core-system/twdiw-oid4vp-handler/**/*.java'
+              - 'core-system/twdiw-oid4vp-handler/**/pom.xml'
+            twdiw-vc-handler:
+              - 'core-system/twdiw-vc-handler/**/*.java'
+              - 'core-system/twdiw-vc-handler/**/pom.xml'
+            twdiw-verifier-api:
+              - 'core-system/twdiw-verifier-api/**/*.java'
+              - 'core-system/twdiw-verifier-api/**/pom.xml'
+            twdiw-vp-handler:
+              - 'core-system/twdiw-vp-handler/**/*.java'
+              - 'core-system/twdiw-vp-handler/**/pom.xml'
+
+  spotless:
+    name: spotless:check — ${{ matrix.module }}
+    needs: changes
+    if: ${{ needs.changes.outputs.modules != '[]' && needs.changes.outputs.modules != '' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module: ${{ fromJson(needs.changes.outputs.modules) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Install parent POM
+        run: mvn install -N --no-transfer-progress -f core-system/moda-digitalwallet-parent-pom/pom.xml
+
+      - name: Run spotless:check
+        run: |
+          mvn spotless:check --no-transfer-progress -f core-system/${{ matrix.module }}/pom.xml || {
+            echo "::error::${{ matrix.module }}: format violations found. Run 'mvn spotless:apply' locally to fix."
+            exit 1
+          }
