@@ -8,27 +8,27 @@ import org.slf4j.LoggerFactory;
 
 public class SchemaUtils {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SchemaUtils.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(SchemaUtils.class);
 
-    public static boolean validateBySchema(String schemaJson, String inputJson) {
+  public static boolean validateBySchema(String schemaJson, String inputJson) {
 
-        boolean result = false;
+    boolean result = false;
 
-        try {
-            // load schema
-            SchemaStore schemaStore = new SchemaStore();
-            Schema schema = schemaStore.loadSchemaJson(schemaJson);
+    try {
+      // load schema
+      SchemaStore schemaStore = new SchemaStore();
+      Schema schema = schemaStore.loadSchemaJson(schemaJson);
 
-            // validation error will throw exception
-            Validator validator = new Validator();
-            validator.validateJson(schema, inputJson);
+      // validation error will throw exception
+      Validator validator = new Validator();
+      validator.validateJson(schema, inputJson);
 
-            return true;
+      return true;
 
-        } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
-        }
-
-        return result;
+    } catch (Exception e) {
+      LOGGER.error(e.getMessage(), e);
     }
+
+    return result;
+  }
 }

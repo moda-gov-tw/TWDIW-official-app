@@ -14,33 +14,31 @@ import java.util.List;
 @JsonInclude(value = Include.NON_NULL)
 public class PresentationSubmission {
 
-    private String id;
+  private String id;
 
-    @JsonProperty("definition_id")
-    private String definitionId;
+  @JsonProperty("definition_id")
+  private String definitionId;
 
-    @JsonProperty("descriptor_map")
-    private List<DescriptorMap> descriptorMap;
+  @JsonProperty("descriptor_map")
+  private List<DescriptorMap> descriptorMap;
 
-    
-    private PresentationSubmission() {
-    }
+  private PresentationSubmission() {}
 
-    public PresentationSubmission(String definitionId, List<DescriptorMap> descriptorMap, String id) {
-        this.definitionId = definitionId;
-        this.descriptorMap = descriptorMap;
-        this.id = id;
-    }
+  public PresentationSubmission(String definitionId, List<DescriptorMap> descriptorMap, String id) {
+    this.definitionId = definitionId;
+    this.descriptorMap = descriptorMap;
+    this.id = id;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getDefinitionId() {
-        return definitionId;
-    }
+  public String getDefinitionId() {
+    return definitionId;
+  }
 
-    public List<DescriptorMap> getDescriptorMap() {
-        return descriptorMap;
-    }
+  public List<DescriptorMap> getDescriptorMap() {
+    return descriptorMap;
+  }
 }

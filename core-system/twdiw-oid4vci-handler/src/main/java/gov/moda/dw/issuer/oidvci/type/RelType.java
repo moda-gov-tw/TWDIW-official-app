@@ -9,14 +9,11 @@ public enum RelType {
   ROLETORES("2", "Role", "Res"),
   ACCESSTOKENTORES("3", "AccessToken", "Res");
 
-  @Getter
-  private String code;
+  @Getter private String code;
 
-  @Getter
-  private String leftTbl;
+  @Getter private String leftTbl;
 
-  @Getter
-  private String rightTbl;
+  @Getter private String rightTbl;
 
   public static RelType toAdminType(String code) {
     for (RelType tmp : RelType.values()) {

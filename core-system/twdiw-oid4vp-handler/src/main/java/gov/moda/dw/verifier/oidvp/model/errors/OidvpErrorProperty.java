@@ -4,7 +4,7 @@ import gov.moda.dw.verifier.oidvp.common.OidvpErrorCode.OidvpError;
 
 public interface OidvpErrorProperty {
 
-    OidvpError getOidvpError();
+  OidvpError getOidvpError();
 
-    String getOidvpErrorMessage();
+  String getOidvpErrorMessage();
 }

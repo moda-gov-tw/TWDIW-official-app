@@ -13,14 +13,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class TransactionIdFilter implements Filter {
 
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-        throws IOException, ServletException
-    {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String transactionId = httpServletRequest.getHeader("transaction-id");
-        LogUtils.addRequestID(transactionId);
-        chain.doFilter(request, response);
-        LogUtils.clearAll();
-    }
+  @Override
+  public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+      throws IOException, ServletException {
+    HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    String transactionId = httpServletRequest.getHeader("transaction-id");
+    LogUtils.addRequestID(transactionId);
+    chain.doFilter(request, response);
+    LogUtils.clearAll();
+  }
 }

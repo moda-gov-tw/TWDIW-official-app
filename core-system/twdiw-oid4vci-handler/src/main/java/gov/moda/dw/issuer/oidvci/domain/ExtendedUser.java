@@ -1,16 +1,14 @@
 package gov.moda.dw.issuer.oidvci.domain;
 
+import gov.moda.dw.issuer.oidvci.config.AttributeEncryptor;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
-import gov.moda.dw.issuer.oidvci.config.AttributeEncryptor;
 
-/**
- * ExtendedUser
- */
+/** ExtendedUser */
 @Entity
-@Table(name = "extended_user",schema = "public")
+@Table(name = "extended_user", schema = "public")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ExtendedUser implements Serializable {
 
@@ -22,109 +20,79 @@ public class ExtendedUser implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 組織
-   */
+  /** 組織 */
   @Size(max = 30)
   @Column(name = "org_id", length = 30)
   private String orgId;
 
-  /**
-   * 帳號
-   */
+  /** 帳號 */
   @NotNull
   @Size(max = 320)
   @Column(name = "user_id", length = 320, nullable = false)
   private String userId;
 
-  /**
-   * 姓名
-   */
+  /** 姓名 */
   @NotNull
   @Size(max = 128)
   @Column(name = "user_name", length = 128, nullable = false)
   @Convert(converter = AttributeEncryptor.class) // 此欄位若重新刷新，就可以重新加密。
   private String userName;
 
-  /**
-   * email
-   */
+  /** email */
   @Size(max = 320)
   @Column(name = "email", length = 320)
   private String email;
 
-  /**
-   * 手機
-   */
+  /** 手機 */
   @Size(max = 20)
   @Column(name = "phone", length = 20)
   private String phone;
 
-  /**
-   * 市話
-   */
+  /** 市話 */
   @Size(max = 20)
   @Column(name = "tel", length = 20)
   private String tel;
 
-  /**
-   * 員工編號
-   */
+  /** 員工編號 */
   @Size(max = 20)
   @Column(name = "employee_id", length = 20)
   private String employeeId;
 
-  /**
-   * 員工類型
-   */
+  /** 員工類型 */
   @Size(max = 10)
   @Column(name = "employee_type_id", length = 10)
   private String employeeTypeId;
 
-  /**
-   * 離職日
-   */
+  /** 離職日 */
   @Column(name = "left_date")
   private Instant leftDate;
 
-  /**
-   * 到職日
-   */
+  /** 到職日 */
   @Column(name = "onboard_date")
   private Instant onboardDate;
 
-  /**
-   * 帳號類型
-   */
+  /** 帳號類型 */
   @Size(max = 10)
   @Column(name = "user_type_id", length = 10)
   private String userTypeId;
 
-  /**
-   * 資料角色1
-   */
+  /** 資料角色1 */
   @Size(max = 255)
   @Column(name = "data_role_1", length = 255)
   private String dataRole1;
 
-  /**
-   * 資料角色2
-   */
+  /** 資料角色2 */
   @Size(max = 255)
   @Column(name = "data_role_2", length = 255)
   private String dataRole2;
 
-  /**
-   * 狀態
-   */
+  /** 狀態 */
   @NotNull
   @Size(max = 10)
   @Column(name = "state", length = 10, nullable = false)
   private String state;
 
-  /**
-   * 建立日
-   */
+  /** 建立日 */
   @NotNull
   @Column(name = "create_time", nullable = false)
   private Instant createTime;
@@ -354,30 +322,62 @@ public class ExtendedUser implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ExtendedUser{" +
-            "id=" + getId() +
-            ", orgId='" + getOrgId() + "'" +
-            ", userId='" + getUserId() + "'" +
-            ", userName='" + getUserName() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", phone='" + getPhone() + "'" +
-            ", tel='" + getTel() + "'" +
-            ", employeeId='" + getEmployeeId() + "'" +
-            ", employeeTypeId='" + getEmployeeTypeId() + "'" +
-            ", leftDate='" + getLeftDate() + "'" +
-            ", onboardDate='" + getOnboardDate() + "'" +
-            ", userTypeId='" + getUserTypeId() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", state='" + getState() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ExtendedUser{"
+        + "id="
+        + getId()
+        + ", orgId='"
+        + getOrgId()
+        + "'"
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", userName='"
+        + getUserName()
+        + "'"
+        + ", email='"
+        + getEmail()
+        + "'"
+        + ", phone='"
+        + getPhone()
+        + "'"
+        + ", tel='"
+        + getTel()
+        + "'"
+        + ", employeeId='"
+        + getEmployeeId()
+        + "'"
+        + ", employeeTypeId='"
+        + getEmployeeTypeId()
+        + "'"
+        + ", leftDate='"
+        + getLeftDate()
+        + "'"
+        + ", onboardDate='"
+        + getOnboardDate()
+        + "'"
+        + ", userTypeId='"
+        + getUserTypeId()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

@@ -4,29 +4,29 @@ import java.util.Date;
 
 public class RequestObjectOpts {
 
-    private String issuer;
-    private Date expiredTime;
+  private String issuer;
+  private Date expiredTime;
 
-    public RequestObjectOpts() {}
+  public RequestObjectOpts() {}
 
-    @Deprecated
-    public RequestObjectOpts(String issuer) {
-        if (issuer == null || issuer.isEmpty()) {
-            throw new IllegalArgumentException("issuer must not be empty.");
-        }
-        this.issuer = issuer;
+  @Deprecated
+  public RequestObjectOpts(String issuer) {
+    if (issuer == null || issuer.isEmpty()) {
+      throw new IllegalArgumentException("issuer must not be empty.");
     }
+    this.issuer = issuer;
+  }
 
-    public RequestObjectOpts setExpiredTime(Date expiredTime) {
-        this.expiredTime = expiredTime;
-        return this;
-    }
+  public RequestObjectOpts setExpiredTime(Date expiredTime) {
+    this.expiredTime = expiredTime;
+    return this;
+  }
 
-    public Date getExpiredTime() {
-        return expiredTime;
-    }
+  public Date getExpiredTime() {
+    return expiredTime;
+  }
 
-    public String getIssuer() {
-        return issuer;
-    }
+  public String getIssuer() {
+    return issuer;
+  }
 }

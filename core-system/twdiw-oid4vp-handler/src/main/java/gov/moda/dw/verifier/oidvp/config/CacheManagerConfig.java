@@ -13,32 +13,34 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class CacheManagerConfig {
 
-    public static final String METADATA_CACHE_MANAGER = "metadata-CacheManager";
-    public static final String DID_CACHE_MANAGER = "did-CacheManager";
+  public static final String METADATA_CACHE_MANAGER = "metadata-CacheManager";
+  public static final String DID_CACHE_MANAGER = "did-CacheManager";
 
-    public static final String METADATA_CACHE_NAME = "metadata";
-    public static final String DID_CACHE_NAME = "did";
+  public static final String METADATA_CACHE_NAME = "metadata";
+  public static final String DID_CACHE_NAME = "did";
 
-    @Bean(name = METADATA_CACHE_MANAGER)
-    public CacheManager metadataCaffeineCacheManager() {
-        CaffeineCacheManager caffeineCacheManager = new CaffeineCacheManager(METADATA_CACHE_NAME);
-        Caffeine<Object, Object> metadataCaffeine = Caffeine.newBuilder()
-                                                            .expireAfterAccess(60, TimeUnit.MINUTES)
-                                                            .maximumSize(5)
-                                                            .initialCapacity(5);
-        caffeineCacheManager.setCaffeine(metadataCaffeine);
-        return caffeineCacheManager;
-    }
+  @Bean(name = METADATA_CACHE_MANAGER)
+  public CacheManager metadataCaffeineCacheManager() {
+    CaffeineCacheManager caffeineCacheManager = new CaffeineCacheManager(METADATA_CACHE_NAME);
+    Caffeine<Object, Object> metadataCaffeine =
+        Caffeine.newBuilder()
+            .expireAfterAccess(60, TimeUnit.MINUTES)
+            .maximumSize(5)
+            .initialCapacity(5);
+    caffeineCacheManager.setCaffeine(metadataCaffeine);
+    return caffeineCacheManager;
+  }
 
-    @Bean(name = DID_CACHE_MANAGER)
-    @Primary
-    public CacheManager didCaffeineCacheManager() {
-        CaffeineCacheManager caffeineCacheManager = new CaffeineCacheManager(DID_CACHE_NAME);
-        Caffeine<Object, Object> didInfoCaffeine = Caffeine.newBuilder()
-                                                           .expireAfterAccess(60, TimeUnit.MINUTES)
-                                                           .maximumSize(5)
-                                                           .initialCapacity(5);
-        caffeineCacheManager.setCaffeine(didInfoCaffeine);
-        return caffeineCacheManager;
-    }
+  @Bean(name = DID_CACHE_MANAGER)
+  @Primary
+  public CacheManager didCaffeineCacheManager() {
+    CaffeineCacheManager caffeineCacheManager = new CaffeineCacheManager(DID_CACHE_NAME);
+    Caffeine<Object, Object> didInfoCaffeine =
+        Caffeine.newBuilder()
+            .expireAfterAccess(60, TimeUnit.MINUTES)
+            .maximumSize(5)
+            .initialCapacity(5);
+    caffeineCacheManager.setCaffeine(didInfoCaffeine);
+    return caffeineCacheManager;
+  }
 }

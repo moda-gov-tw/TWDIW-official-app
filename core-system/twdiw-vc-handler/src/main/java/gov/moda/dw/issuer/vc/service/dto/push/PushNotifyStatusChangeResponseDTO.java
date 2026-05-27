@@ -1,7 +1,6 @@
 package gov.moda.dw.issuer.vc.service.dto.push;
 
 import gov.moda.dw.issuer.vc.util.JsonUtils;
-
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -12,71 +11,69 @@ import java.io.Serializable;
  */
 public class PushNotifyStatusChangeResponseDTO implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
-    private ResponseHeader responseHeader;
+  private ResponseHeader responseHeader;
 
-    public PushNotifyStatusChangeResponseDTO() {
+  public PushNotifyStatusChangeResponseDTO() {}
+
+  public PushNotifyStatusChangeResponseDTO(ResponseHeader responseHeader) {
+    this.responseHeader = responseHeader;
+  }
+
+  public PushNotifyStatusChangeResponseDTO(String respJson) {
+
+    if (respJson != null && !respJson.isBlank()) {
+      PushNotifyStatusChangeResponseDTO pushNotifyStatusChangeResponseDTO =
+          JsonUtils.jsToVo(respJson, this.getClass());
+      if (pushNotifyStatusChangeResponseDTO != null) {
+        this.responseHeader = pushNotifyStatusChangeResponseDTO.getResponseHeader();
+      }
+    }
+  }
+
+  public ResponseHeader getResponseHeader() {
+    return responseHeader;
+  }
+
+  public PushNotifyStatusChangeResponseDTO setResponseHeader(ResponseHeader responseHeader) {
+    this.responseHeader = responseHeader;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return JsonUtils.voToJs(this);
+  }
+
+  public static class ResponseHeader {
+
+    private String returnCode;
+    private String returnMsg;
+
+    public ResponseHeader() {}
+
+    public ResponseHeader(String returnCode, String returnMsg) {
+      this.returnCode = returnCode;
+      this.returnMsg = returnMsg;
     }
 
-    public PushNotifyStatusChangeResponseDTO(ResponseHeader responseHeader) {
-        this.responseHeader = responseHeader;
+    public String getReturnCode() {
+      return returnCode;
     }
 
-    public PushNotifyStatusChangeResponseDTO(String respJson) {
-
-        if (respJson != null && !respJson.isBlank()) {
-            PushNotifyStatusChangeResponseDTO pushNotifyStatusChangeResponseDTO = JsonUtils.jsToVo(respJson, this.getClass());
-            if (pushNotifyStatusChangeResponseDTO != null) {
-                this.responseHeader = pushNotifyStatusChangeResponseDTO.getResponseHeader();
-            }
-        }
+    public ResponseHeader setReturnCode(String returnCode) {
+      this.returnCode = returnCode;
+      return this;
     }
 
-    public ResponseHeader getResponseHeader() {
-        return responseHeader;
+    public String getReturnMsg() {
+      return returnMsg;
     }
 
-    public PushNotifyStatusChangeResponseDTO setResponseHeader(ResponseHeader responseHeader) {
-        this.responseHeader = responseHeader;
-        return this;
+    public ResponseHeader setReturnMsg(String returnMsg) {
+      this.returnMsg = returnMsg;
+      return this;
     }
-
-    @Override
-    public String toString() {
-        return JsonUtils.voToJs(this);
-    }
-
-    public static class ResponseHeader {
-
-        private String returnCode;
-        private String returnMsg;
-
-        public ResponseHeader() {
-        }
-
-        public ResponseHeader(String returnCode, String returnMsg) {
-            this.returnCode = returnCode;
-            this.returnMsg = returnMsg;
-        }
-
-        public String getReturnCode() {
-            return returnCode;
-        }
-
-        public ResponseHeader setReturnCode(String returnCode) {
-            this.returnCode = returnCode;
-            return this;
-        }
-
-        public String getReturnMsg() {
-            return returnMsg;
-        }
-
-        public ResponseHeader setReturnMsg(String returnMsg) {
-            this.returnMsg = returnMsg;
-            return this;
-        }
-    }
+  }
 }

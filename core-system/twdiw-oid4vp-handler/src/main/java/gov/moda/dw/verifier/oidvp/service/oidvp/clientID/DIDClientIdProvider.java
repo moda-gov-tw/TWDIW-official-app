@@ -10,46 +10,49 @@ import gov.moda.dw.verifier.oidvp.service.did.DIDService;
 
 public class DIDClientIdProvider implements OidvpClientIdProvider {
 
-    private final DIDService didService;
+  private final DIDService didService;
 
-    public DIDClientIdProvider(DIDService didService) {
-        this.didService = didService;
+  public DIDClientIdProvider(DIDService didService) {
+    this.didService = didService;
+  }
+
+  @Override
+  public ClientIdScheme getClientIdScheme() {
+    return ClientIdScheme.DID;
+  }
+
+  @Override
+  public ClientID getOriginalClientID() {
+    return new ClientID(getDID());
+  }
+
+  @Override
+  public JWK getSigningJWK() {
+    try {
+      return didService.getDIDKey();
+    } catch (OidvpException e) {
+      throw new OidvpRuntimeException(e.getOidvpError(), e);
+    }
+  }
+
+  private String getDID() {
+    String did;
+    // check if DID is existed
+    try {
+      did = didService.getDID();
+    } catch (Exception e) {
+      throw new OidvpRuntimeException(OidvpError.GET_DID_ERROR, e.getMessage(), e);
     }
 
-    @Override
-    public ClientIdScheme getClientIdScheme() {
-        return ClientIdScheme.DID;
+    // check if DID Key is existed
+    try {
+      didService.getDIDKey();
+    } catch (Exception e) {
+      throw new OidvpRuntimeException(
+          OidvpError.GET_DID_ERROR,
+          "DID key is not valid. The DID registration might not have been successfully completed.",
+          e);
     }
-
-    @Override
-    public ClientID getOriginalClientID() {
-        return new ClientID(getDID());
-    }
-
-    @Override
-    public JWK getSigningJWK() {
-        try {
-            return didService.getDIDKey();
-        } catch (OidvpException e) {
-            throw new OidvpRuntimeException(e.getOidvpError(), e);
-        }
-    }
-
-    private String getDID() {
-        String did;
-        // check if DID is existed
-        try {
-            did = didService.getDID();
-        } catch (Exception e) {
-            throw new OidvpRuntimeException(OidvpError.GET_DID_ERROR, e.getMessage(), e);
-        }
-
-        // check if DID Key is existed
-        try {
-            didService.getDIDKey();
-        } catch (Exception e) {
-            throw new OidvpRuntimeException(OidvpError.GET_DID_ERROR, "DID key is not valid. The DID registration might not have been successfully completed.", e);
-        }
-        return did;
-    }
+    return did;
+  }
 }

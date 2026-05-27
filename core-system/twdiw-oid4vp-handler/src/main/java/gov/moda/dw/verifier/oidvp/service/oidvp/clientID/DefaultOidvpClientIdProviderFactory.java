@@ -12,32 +12,38 @@ import org.springframework.stereotype.Component;
 @Component
 public class DefaultOidvpClientIdProviderFactory implements OidvpClientIdProviderFactory {
 
-    private static DIDClientIdProvider didClientIdProvider;
-    private static RedirectUriClientIdProvider redirectUriClientIdProvider;
-    private static RedirectUriClientIdProvider responseUriClientIdProvider;
+  private static DIDClientIdProvider didClientIdProvider;
+  private static RedirectUriClientIdProvider redirectUriClientIdProvider;
+  private static RedirectUriClientIdProvider responseUriClientIdProvider;
 
-    public DefaultOidvpClientIdProviderFactory(DIDService didService, OidvpConfig oidvpConfig) {
-        didClientIdProvider = new DIDClientIdProvider(didService);
-        redirectUriClientIdProvider = new RedirectUriClientIdProvider(Objects.requireNonNull(oidvpConfig.getRedirectUri()));
-        responseUriClientIdProvider = new RedirectUriClientIdProvider(Objects.requireNonNull(oidvpConfig.getResponseUri()));
+  public DefaultOidvpClientIdProviderFactory(DIDService didService, OidvpConfig oidvpConfig) {
+    didClientIdProvider = new DIDClientIdProvider(didService);
+    redirectUriClientIdProvider =
+        new RedirectUriClientIdProvider(Objects.requireNonNull(oidvpConfig.getRedirectUri()));
+    responseUriClientIdProvider =
+        new RedirectUriClientIdProvider(Objects.requireNonNull(oidvpConfig.getResponseUri()));
+  }
+
+  @Override
+  public OidvpClientIdProvider createClientIdProvider(
+      ClientIdScheme clientIdScheme, @Nullable ResponseMode responseMode) {
+    if (clientIdScheme == null) {
+      throw new IllegalArgumentException("clientIdScheme must not be null");
     }
 
-    @Override
-    public OidvpClientIdProvider createClientIdProvider(ClientIdScheme clientIdScheme, @Nullable ResponseMode responseMode) {
-        if (clientIdScheme == null) {
-            throw new IllegalArgumentException("clientIdScheme must not be null");
+    return switch (clientIdScheme) {
+      case DID -> didClientIdProvider;
+      case REDIRECT_URI -> {
+        if (responseMode == null) {
+          throw new IllegalArgumentException(
+              "when client_id_scheme is 'redirect_uri' responseMode must not be null.");
         }
-
-        return switch (clientIdScheme) {
-            case DID -> didClientIdProvider;
-            case REDIRECT_URI -> {
-                if (responseMode == null) {
-                    throw new IllegalArgumentException("when client_id_scheme is 'redirect_uri' responseMode must not be null.");
-                }
-                yield OID4VP.isUsingResponseURI(responseMode) ? responseUriClientIdProvider : redirectUriClientIdProvider;
-            }
-            default ->
-                throw new UnsupportedOperationException("unsupported ClientIdProvider for clientIdScheme: " + clientIdScheme);
-        };
-    }
+        yield OID4VP.isUsingResponseURI(responseMode)
+            ? responseUriClientIdProvider
+            : redirectUriClientIdProvider;
+      }
+      default -> throw new UnsupportedOperationException(
+          "unsupported ClientIdProvider for clientIdScheme: " + clientIdScheme);
+    };
+  }
 }

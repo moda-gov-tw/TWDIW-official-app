@@ -8,23 +8,23 @@ import java.util.Map;
 
 public class VerifierMetadata extends ClientMetadata {
 
-    // new parameter vp_formats
-    private Map<FormatRegistry, FormatDescription> vpFormats;
+  // new parameter vp_formats
+  private Map<FormatRegistry, FormatDescription> vpFormats;
 
-    public VerifierMetadata() {
-        super();
-    }
+  public VerifierMetadata() {
+    super();
+  }
 
-    public void setVpFormats(Map<FormatRegistry, FormatDescription> vpFormats) {
-        Map<String, Object> map = JsonUtils.convertObjectToMap(vpFormats);
-        if (map == null) {
-            throw new IllegalArgumentException("invalid vp_formats format");
-        }
-        this.vpFormats = vpFormats;
-        super.setCustomField("vp_formats", map);
+  public void setVpFormats(Map<FormatRegistry, FormatDescription> vpFormats) {
+    Map<String, Object> map = JsonUtils.convertObjectToMap(vpFormats);
+    if (map == null) {
+      throw new IllegalArgumentException("invalid vp_formats format");
     }
+    this.vpFormats = vpFormats;
+    super.setCustomField("vp_formats", map);
+  }
 
-    public Map<FormatRegistry, FormatDescription> getVpFormats() {
-        return vpFormats;
-    }
+  public Map<FormatRegistry, FormatDescription> getVpFormats() {
+    return vpFormats;
+  }
 }

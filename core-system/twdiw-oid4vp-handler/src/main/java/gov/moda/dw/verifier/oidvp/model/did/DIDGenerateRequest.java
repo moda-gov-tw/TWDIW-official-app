@@ -6,19 +6,19 @@ import com.nimbusds.jose.jwk.ECKey;
 
 public class DIDGenerateRequest {
 
-    private final ECKey publicKeyJwk;
+  private final ECKey publicKeyJwk;
 
-    public DIDGenerateRequest(ECKey publicKeyJwk) {
-        this.publicKeyJwk = publicKeyJwk.toPublicJWK();
-    }
+  public DIDGenerateRequest(ECKey publicKeyJwk) {
+    this.publicKeyJwk = publicKeyJwk.toPublicJWK();
+  }
 
-    @JsonGetter("publicKeyJwk")
-    @JsonRawValue
-    public String serialize() {
-        return publicKeyJwk.toJSONString();
-    }
+  @JsonGetter("publicKeyJwk")
+  @JsonRawValue
+  public String serialize() {
+    return publicKeyJwk.toJSONString();
+  }
 
-    public ECKey getPublicKeyJwk() {
-        return publicKeyJwk;
-    }
+  public ECKey getPublicKeyJwk() {
+    return publicKeyJwk;
+  }
 }

@@ -1,5 +1,6 @@
 package gov.moda.dw.verifier.oidvp.util;
 
+import gov.moda.dw.verifier.oidvp.type.ZoneType;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
@@ -16,7 +17,6 @@ import java.util.Date;
 import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import gov.moda.dw.verifier.oidvp.type.ZoneType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +45,8 @@ public class DateUtils {
    * @param convertFormat 轉換格式
    * @return 轉換後字串
    */
-  public static String convertZone(Instant instant, ZoneId zoneId_1, ZoneId zoneId_2, String convertFormat) {
+  public static String convertZone(
+      Instant instant, ZoneId zoneId_1, ZoneId zoneId_2, String convertFormat) {
     ZonedDateTime time1 = ZonedDateTime.ofInstant(instant, zoneId_1);
     ZonedDateTime time2 = time1.withZoneSameInstant(zoneId_2);
     return DateTimeFormatter.ofPattern(convertFormat).format(time2);
@@ -95,10 +96,11 @@ public class DateUtils {
   public static Instant convertInstant(Date date, String convertFormat) {
     if (null == date) return null;
     String datetime = convertDate(date, convertFormat);
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern(convertFormat)
-      .toFormatter()
-      .withZone(ZoneType.TAIPEI.getZoneId());/* <- needed time zone here */
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern(convertFormat)
+            .toFormatter()
+            .withZone(ZoneType.TAIPEI.getZoneId()); /* <- needed time zone here */
     ZonedDateTime zdtOriginal = ZonedDateTime.parse(datetime, dtf);
     return zdtOriginal.toInstant();
   }
@@ -114,10 +116,11 @@ public class DateUtils {
   public static Instant convertInstant(Date date, String convertFormat, ZoneType zoneType) {
     if (null == date) return null;
     String datetime = convertDate(date, convertFormat);
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern(convertFormat)
-      .toFormatter()
-      .withZone(zoneType.getZoneId());/* <- needed time zone here */
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern(convertFormat)
+            .toFormatter()
+            .withZone(zoneType.getZoneId()); /* <- needed time zone here */
     ZonedDateTime zdtOriginal = ZonedDateTime.parse(datetime, dtf);
     return zdtOriginal.toInstant();
   }
@@ -132,11 +135,12 @@ public class DateUtils {
   @Deprecated
   public static Instant convertInstant(String dateTime, String convertFormat) {
     if (null == dateTime) return null;
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern(convertFormat)
-      .parseDefaulting(ChronoField.NANO_OF_DAY, 0)
-      .toFormatter()
-      .withZone(ZoneId.of("GMT")/* <- needed time zone here */);
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern(convertFormat)
+            .parseDefaulting(ChronoField.NANO_OF_DAY, 0)
+            .toFormatter()
+            .withZone(ZoneId.of("GMT") /* <- needed time zone here */);
     ZonedDateTime zdtOriginal = ZonedDateTime.parse(dateTime, dtf);
     return zdtOriginal.toInstant();
   }
@@ -161,11 +165,12 @@ public class DateUtils {
    */
   public static Instant convertDateInstant(String date, String convertFormat, ZoneType zoneType) {
     if (null == date) return null;
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern(convertFormat)
-      .parseDefaulting(ChronoField.NANO_OF_DAY, 0)
-      .toFormatter()
-      .withZone(zoneType.getZoneId());
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern(convertFormat)
+            .parseDefaulting(ChronoField.NANO_OF_DAY, 0)
+            .toFormatter()
+            .withZone(zoneType.getZoneId());
     ZonedDateTime zdtOriginal = ZonedDateTime.parse(date, dtf);
     return zdtOriginal.toInstant();
   }
@@ -177,7 +182,8 @@ public class DateUtils {
    * @param convertFormat 轉換格式
    * @return 轉換後字串
    */
-  public static Instant convertDateTimeInstant(String dateTime, String convertFormat, ZoneType zoneType) {
+  public static Instant convertDateTimeInstant(
+      String dateTime, String convertFormat, ZoneType zoneType) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(convertFormat);
     LocalDateTime localDateTime = LocalDateTime.parse(dateTime, formatter);
     ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, zoneType.getZoneId());
@@ -209,19 +215,21 @@ public class DateUtils {
       try {
         formatter.parse(dateString);
         retValue = true;
-      } catch (ParseException ignored) {}
+      } catch (ParseException ignored) {
+      }
     }
     return retValue;
   }
 
   /** 檢驗input date是否為uuuuMMdd格式 注意，因保險公司輸入的時間為台灣時間，所以要用Asia/Taipei時區時間 */
   public static boolean verifyByConvertToInstantDate(String date, String entityName) {
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern("uuuuMMdd")
-      .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
-      .toFormatter()
-      .withResolverStyle(ResolverStyle.STRICT)
-      .withZone(ZoneType.TAIPEI.getZoneId());
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern("uuuuMMdd")
+            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+            .toFormatter()
+            .withResolverStyle(ResolverStyle.STRICT)
+            .withZone(ZoneType.TAIPEI.getZoneId());
     try {
       ZonedDateTime.parse(date, dtf);
       return true;
@@ -239,11 +247,12 @@ public class DateUtils {
    */
   public static boolean verifyByConvertToInstantTime(String time, String entityName) {
     String datetime = DateUtils.getDate("yyyyMMdd") + time;
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern("yyyyMMddHHmm")
-      .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
-      .toFormatter()
-      .withZone(ZoneType.TAIPEI.getZoneId());
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern("yyyyMMddHHmm")
+            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+            .toFormatter()
+            .withZone(ZoneType.TAIPEI.getZoneId());
     try {
       ZonedDateTime.parse(datetime, dtf);
       return true;
@@ -261,10 +270,11 @@ public class DateUtils {
    * @return
    */
   public static Instant toInstantDateTime(String datetime) {
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern("yyyyMMddHHmm")
-      .toFormatter()
-      .withZone(ZoneType.TAIPEI.getZoneId());
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern("yyyyMMddHHmm")
+            .toFormatter()
+            .withZone(ZoneType.TAIPEI.getZoneId());
     ZonedDateTime zdtOriginal = ZonedDateTime.parse(datetime, dtf);
     return zdtOriginal.toInstant();
   }
@@ -276,17 +286,19 @@ public class DateUtils {
    * @return
    */
   public static Instant toInstantDate(String date) {
-    DateTimeFormatter dtf = new DateTimeFormatterBuilder()
-      .appendPattern("yyyyMMdd")
-      .parseDefaulting(ChronoField.NANO_OF_DAY, 0)
-      .toFormatter()
-      .withZone(ZoneType.TAIPEI.getZoneId());
+    DateTimeFormatter dtf =
+        new DateTimeFormatterBuilder()
+            .appendPattern("yyyyMMdd")
+            .parseDefaulting(ChronoField.NANO_OF_DAY, 0)
+            .toFormatter()
+            .withZone(ZoneType.TAIPEI.getZoneId());
     OffsetDateTime offsetDateTime = ZonedDateTime.parse(date, dtf).toOffsetDateTime();
     return offsetDateTime.toInstant();
   }
 
   /**
-   *  將localDate(yyyy-MM-dd)轉為民國年yyy/MM/dd
+   * 將localDate(yyyy-MM-dd)轉為民國年yyy/MM/dd
+   *
    * @param yyyyMMdd
    * @return
    */
@@ -299,13 +311,14 @@ public class DateUtils {
     int month = Integer.parseInt(yyyyMMdd.split("-")[1]);
     int day = Integer.parseInt(yyyyMMdd.split("-")[2]);
 
-    LocalDate toParse = LocalDate.of(yyyy, month, day); //格式器
-    DateTimeFormatter df = new DateTimeFormatterBuilder()
-      .parseLenient()
-      .appendPattern("yyy/MM/dd")
-      .toFormatter()
-      .withChronology(chrono)
-      .withDecimalStyle(DecimalStyle.of(Locale.getDefault()));
+    LocalDate toParse = LocalDate.of(yyyy, month, day); // 格式器
+    DateTimeFormatter df =
+        new DateTimeFormatterBuilder()
+            .parseLenient()
+            .appendPattern("yyy/MM/dd")
+            .toFormatter()
+            .withChronology(chrono)
+            .withDecimalStyle(DecimalStyle.of(Locale.getDefault()));
     return toParse.format(df);
   }
 }

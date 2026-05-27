@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link Rel} entity.
- */
+/** A DTO for the {@link Rel} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class RelDTO implements Serializable {
 
@@ -130,17 +128,17 @@ public class RelDTO implements Serializable {
     return dataRole1;
   }
 
-//  public void setDataRole1(String dataRole1) {
-//    this.dataRole1 = dataRole1;
-//  }
+  //  public void setDataRole1(String dataRole1) {
+  //    this.dataRole1 = dataRole1;
+  //  }
 
   public String getDataRole2() {
     return dataRole2;
   }
 
-//  public void setDataRole2(String dataRole2) {
-//    this.dataRole2 = dataRole2;
-//  }
+  //  public void setDataRole2(String dataRole2) {
+  //    this.dataRole2 = dataRole2;
+  //  }
 
   public String getDataAuth() {
     return dataAuth;
@@ -180,21 +178,42 @@ public class RelDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "RelDTO{" +
-            "id=" + getId() +
-            ", leftTbl='" + getLeftTbl() + "'" +
-            ", leftId=" + getLeftId() +
-            ", rightTbl='" + getRightTbl() + "'" +
-            ", rightId=" + getRightId() +
-            ", leftCode='" + getLeftCode() + "'" +
-            ", rightCode='" + getRightCode() + "'" +
-            ", state='" + getState() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", dataAuth='" + getDataAuth() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "RelDTO{"
+        + "id="
+        + getId()
+        + ", leftTbl='"
+        + getLeftTbl()
+        + "'"
+        + ", leftId="
+        + getLeftId()
+        + ", rightTbl='"
+        + getRightTbl()
+        + "'"
+        + ", rightId="
+        + getRightId()
+        + ", leftCode='"
+        + getLeftCode()
+        + "'"
+        + ", rightCode='"
+        + getRightCode()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", dataAuth='"
+        + getDataAuth()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

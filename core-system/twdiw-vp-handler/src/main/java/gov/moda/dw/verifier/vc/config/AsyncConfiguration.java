@@ -21,28 +21,28 @@ import tech.jhipster.async.ExceptionHandlingAsyncTaskExecutor;
 @Profile("!testdev & !testprod")
 public class AsyncConfiguration implements AsyncConfigurer {
 
-    private static final Logger log = LoggerFactory.getLogger(AsyncConfiguration.class);
+  private static final Logger log = LoggerFactory.getLogger(AsyncConfiguration.class);
 
-    private final TaskExecutionProperties taskExecutionProperties;
+  private final TaskExecutionProperties taskExecutionProperties;
 
-    public AsyncConfiguration(TaskExecutionProperties taskExecutionProperties) {
-        this.taskExecutionProperties = taskExecutionProperties;
-    }
+  public AsyncConfiguration(TaskExecutionProperties taskExecutionProperties) {
+    this.taskExecutionProperties = taskExecutionProperties;
+  }
 
-    @Override
-    @Bean(name = "taskExecutor")
-    public Executor getAsyncExecutor() {
-        log.debug("Creating Async Task Executor");
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(taskExecutionProperties.getPool().getCoreSize());
-        executor.setMaxPoolSize(taskExecutionProperties.getPool().getMaxSize());
-        executor.setQueueCapacity(taskExecutionProperties.getPool().getQueueCapacity());
-        executor.setThreadNamePrefix(taskExecutionProperties.getThreadNamePrefix());
-        return new ExceptionHandlingAsyncTaskExecutor(executor);
-    }
+  @Override
+  @Bean(name = "taskExecutor")
+  public Executor getAsyncExecutor() {
+    log.debug("Creating Async Task Executor");
+    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    executor.setCorePoolSize(taskExecutionProperties.getPool().getCoreSize());
+    executor.setMaxPoolSize(taskExecutionProperties.getPool().getMaxSize());
+    executor.setQueueCapacity(taskExecutionProperties.getPool().getQueueCapacity());
+    executor.setThreadNamePrefix(taskExecutionProperties.getThreadNamePrefix());
+    return new ExceptionHandlingAsyncTaskExecutor(executor);
+  }
 
-    @Override
-    public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
-        return new SimpleAsyncUncaughtExceptionHandler();
-    }
+  @Override
+  public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
+    return new SimpleAsyncUncaughtExceptionHandler();
+  }
 }

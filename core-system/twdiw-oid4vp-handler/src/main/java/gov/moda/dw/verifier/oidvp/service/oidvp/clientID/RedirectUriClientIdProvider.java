@@ -7,25 +7,25 @@ import java.net.URI;
 
 public class RedirectUriClientIdProvider implements OidvpClientIdProvider {
 
-    private final URI redirectOrResponseURI;
+  private final URI redirectOrResponseURI;
 
-    public RedirectUriClientIdProvider(URI redirectOrResponseURI) {
-        this.redirectOrResponseURI = redirectOrResponseURI;
-    }
+  public RedirectUriClientIdProvider(URI redirectOrResponseURI) {
+    this.redirectOrResponseURI = redirectOrResponseURI;
+  }
 
-    @Override
-    public ClientIdScheme getClientIdScheme() {
-        return ClientIdScheme.REDIRECT_URI;
-    }
+  @Override
+  public ClientIdScheme getClientIdScheme() {
+    return ClientIdScheme.REDIRECT_URI;
+  }
 
-    @Override
-    public ClientID getOriginalClientID() {
-        return new ClientID(redirectOrResponseURI.toString());
-    }
+  @Override
+  public ClientID getOriginalClientID() {
+    return new ClientID(redirectOrResponseURI.toString());
+  }
 
-    @Override
-    public JWK getSigningJWK() {
-        // client_id_scheme=redirect_uri can not sign request
-        return null;
-    }
+  @Override
+  public JWK getSigningJWK() {
+    // client_id_scheme=redirect_uri can not sign request
+    return null;
+  }
 }

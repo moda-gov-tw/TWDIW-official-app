@@ -1,10 +1,9 @@
 package gov.moda.dw.issuer.vc.service.dto;
 
+import gov.moda.dw.issuer.vc.util.JsonUtils;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Map;
-
-import gov.moda.dw.issuer.vc.util.JsonUtils;
 
 /**
  * generate status list signing key response
@@ -13,30 +12,27 @@ import gov.moda.dw.issuer.vc.util.JsonUtils;
  */
 public class GenerateStatusListKeyResponseDTO implements Serializable {
 
-	@Serial
-    private static final long serialVersionUID = 1L;
-	
-	private Map<String, Object> key;
-	
-	public GenerateStatusListKeyResponseDTO() {
-		
-	}
-	
-	public GenerateStatusListKeyResponseDTO(Map<String, Object> key) {
-		this.key = key;
-	}
-	
-	public Map<String, Object> getKey() {
-		return key;
-	}
+  @Serial private static final long serialVersionUID = 1L;
 
-	public GenerateStatusListKeyResponseDTO setKey(Map<String, Object> key) {
-		this.key = key;
-		return this;
-	}
+  private Map<String, Object> key;
 
-	@Override
-    public String toString() {
-        return JsonUtils.voToJs(this);
-    }
+  public GenerateStatusListKeyResponseDTO() {}
+
+  public GenerateStatusListKeyResponseDTO(Map<String, Object> key) {
+    this.key = key;
+  }
+
+  public Map<String, Object> getKey() {
+    return key;
+  }
+
+  public GenerateStatusListKeyResponseDTO setKey(Map<String, Object> key) {
+    this.key = key;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return JsonUtils.voToJs(this);
+  }
 }

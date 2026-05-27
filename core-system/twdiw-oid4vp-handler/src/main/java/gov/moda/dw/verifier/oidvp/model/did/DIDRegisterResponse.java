@@ -8,25 +8,25 @@ import java.util.Map;
 @JsonInclude(Include.NON_NULL)
 public class DIDRegisterResponse extends DIDBaseResponse {
 
-    private DIDResponseData data;
+  private DIDResponseData data;
 
-    @JsonAnySetter
-    @JsonInclude(value = Include.NON_EMPTY, content = Include.NON_NULL)
-    private Map<String, Object> customParams;
+  @JsonAnySetter
+  @JsonInclude(value = Include.NON_EMPTY, content = Include.NON_NULL)
+  private Map<String, Object> customParams;
 
-    public DIDResponseData getData() {
-        return data;
-    }
+  public DIDResponseData getData() {
+    return data;
+  }
 
-    public void setData(DIDResponseData data) {
-        this.data = data;
-    }
+  public void setData(DIDResponseData data) {
+    this.data = data;
+  }
 
-    public Map<String, Object> getCustomParams() {
-        return customParams;
-    }
+  public Map<String, Object> getCustomParams() {
+    return customParams;
+  }
 
-    public void setCustomParams(Map<String, Object> customParams) {
-        this.customParams = customParams;
-    }
+  public void setCustomParams(Map<String, Object> customParams) {
+    this.customParams = customParams;
+  }
 }

@@ -29,131 +29,141 @@ import org.springframework.stereotype.Component;
 @Component
 public class RequestLoggerAspect {
 
-    @Pointcut("@annotation(gov.moda.dw.verifier.oidvp.annotation.LogInfo) || @within(gov.moda.dw.verifier.oidvp.annotation.LogInfo)")
-    public void logRequestPointcut() {
+  @Pointcut(
+      "@annotation(gov.moda.dw.verifier.oidvp.annotation.LogInfo) || @within(gov.moda.dw.verifier.oidvp.annotation.LogInfo)")
+  public void logRequestPointcut() {}
+
+  private Logger logger(JoinPoint joinPoint) {
+    return LoggerFactory.getLogger(joinPoint.getSignature().getDeclaringTypeName());
+  }
+
+  @Before(value = "@annotation(logAPI)")
+  @Order(1)
+  public void addAPINameToLog(LogAPI logAPI) {
+    LogUtils.addAPIName(logAPI.value());
+  }
+
+  @AfterThrowing(value = "logRequestPointcut()")
+  public void logRequest(JoinPoint joinPoint) {
+    LogInfo logInfo = getLogRequestAnnotation(joinPoint);
+    if (logInfo != null) {
+      if (logInfo.logType() != LogType.RESPONSE) {
+        Logger log = logger(joinPoint);
+        log.info(
+            "Enter: {}() with arguments = {}",
+            joinPoint.getSignature().getName(),
+            getParameters(joinPoint));
+      }
     }
+  }
 
-    private Logger logger(JoinPoint joinPoint) {
-        return LoggerFactory.getLogger(joinPoint.getSignature().getDeclaringTypeName());
-    }
+  @AfterReturning(value = "logRequestPointcut()", returning = "response")
+  public void logRequest(JoinPoint joinPoint, Object response) {
+    LogInfo logInfo = getLogRequestAnnotation(joinPoint);
+    if (logInfo != null) {
+      Logger log = logger(joinPoint);
+      LogType logType = logInfo.logType();
+      if (logType != LogType.RESPONSE) {
+        log.info(
+            "Enter: {}() with arguments = {}",
+            joinPoint.getSignature().getName(),
+            getParameters(joinPoint));
+      }
 
-    @Before(value = "@annotation(logAPI)")
-    @Order(1)
-    public void addAPINameToLog(LogAPI logAPI) {
-        LogUtils.addAPIName(logAPI.value());
-    }
-
-    @AfterThrowing(value = "logRequestPointcut()")
-    public void logRequest(JoinPoint joinPoint) {
-        LogInfo logInfo = getLogRequestAnnotation(joinPoint);
-        if (logInfo != null) {
-            if (logInfo.logType() != LogType.RESPONSE) {
-                Logger log = logger(joinPoint);
-                log.info("Enter: {}() with arguments = {}", joinPoint.getSignature().getName(), getParameters(joinPoint));
-            }
-        }
-    }
-
-    @AfterReturning(value = "logRequestPointcut()", returning = "response")
-    public void logRequest(JoinPoint joinPoint, Object response) {
-        LogInfo logInfo = getLogRequestAnnotation(joinPoint);
-        if (logInfo != null) {
-            Logger log = logger(joinPoint);
-            LogType logType = logInfo.logType();
-            if (logType != LogType.RESPONSE) {
-                log.info("Enter: {}() with arguments = {}", joinPoint.getSignature().getName(), getParameters(joinPoint));
-            }
-
-            if (logType != LogType.REQUEST) {
-                Object responseValue;
-                if (response instanceof ResponseEntity<?> _response) {
-                    responseValue = _response.getBody();
-                } else {
-                    responseValue = response;
-                }
-                log.info("Return: response = {}", responseValue);
-            }
-        }
-    }
-
-    private LogInfo getLogRequestAnnotation(JoinPoint joinPoint) {
-        LogInfo logInfo = AnnotationUtils.findAnnotation(joinPoint.getSignature().getDeclaringType(), LogInfo.class);
-        if (logInfo == null) {
-            return AnnotationUtils.findAnnotation(((MethodSignature) joinPoint.getSignature()).getMethod(), LogInfo.class);
+      if (logType != LogType.REQUEST) {
+        Object responseValue;
+        if (response instanceof ResponseEntity<?> _response) {
+          responseValue = _response.getBody();
         } else {
-            return logInfo;
+          responseValue = response;
         }
+        log.info("Return: response = {}", responseValue);
+      }
     }
+  }
 
-    private Map<String, Object> getParameters(JoinPoint joinPoint) {
-        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        String[] parameterNames = signature.getParameterNames();
-        Object[] args = joinPoint.getArgs();
-        Annotation[][] annotations = signature.getMethod().getParameterAnnotations();
-        Map<String, Object> parameters = new HashMap<>();
+  private LogInfo getLogRequestAnnotation(JoinPoint joinPoint) {
+    LogInfo logInfo =
+        AnnotationUtils.findAnnotation(joinPoint.getSignature().getDeclaringType(), LogInfo.class);
+    if (logInfo == null) {
+      return AnnotationUtils.findAnnotation(
+          ((MethodSignature) joinPoint.getSignature()).getMethod(), LogInfo.class);
+    } else {
+      return logInfo;
+    }
+  }
 
-        // data masking
-        for (int i = 0; i < annotations.length; i++) {
-            Annotation[] annotation = annotations[i];
-            String parameterName = parameterNames[i];
-            Object parameter = args[i];
-            for (Annotation anno : annotation) {
-                if (anno instanceof PrivacyInfo) {
-                    if (parameter instanceof String value) {
-                        parameters.put(parameterName, getMaskedString(value));
-                    } else if (parameter instanceof Map<?, ?> map) {
-                        List<String> nameList = Arrays.stream(((PrivacyInfo) anno).keyName()).toList();
-                        map.forEach((k, v) -> {
-                            if (v instanceof List<?> list) {
-                                if (list.size() == 1) {
-                                    parameters.put((String) k, getDisplayString((String) k, list.get(0), nameList));
-                                } else {
-                                    ArrayList<String> valueList = new ArrayList<>();
-                                    list.forEach(lv -> valueList.add(getDisplayString((String) k, lv, nameList)));
-                                    parameters.put((String) k, valueList);
-                                }
-                            } else {
-                                parameters.put((String) k, getDisplayString((String) k, v, nameList));
-                            }
-                        });
+  private Map<String, Object> getParameters(JoinPoint joinPoint) {
+    MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+    String[] parameterNames = signature.getParameterNames();
+    Object[] args = joinPoint.getArgs();
+    Annotation[][] annotations = signature.getMethod().getParameterAnnotations();
+    Map<String, Object> parameters = new HashMap<>();
+
+    // data masking
+    for (int i = 0; i < annotations.length; i++) {
+      Annotation[] annotation = annotations[i];
+      String parameterName = parameterNames[i];
+      Object parameter = args[i];
+      for (Annotation anno : annotation) {
+        if (anno instanceof PrivacyInfo) {
+          if (parameter instanceof String value) {
+            parameters.put(parameterName, getMaskedString(value));
+          } else if (parameter instanceof Map<?, ?> map) {
+            List<String> nameList = Arrays.stream(((PrivacyInfo) anno).keyName()).toList();
+            map.forEach(
+                (k, v) -> {
+                  if (v instanceof List<?> list) {
+                    if (list.size() == 1) {
+                      parameters.put(
+                          (String) k, getDisplayString((String) k, list.get(0), nameList));
                     } else {
-                        parameters.put(parameterName, "*****");
+                      ArrayList<String> valueList = new ArrayList<>();
+                      list.forEach(lv -> valueList.add(getDisplayString((String) k, lv, nameList)));
+                      parameters.put((String) k, valueList);
                     }
-                    break;
-                } else {
-                    parameters.put(parameterName, parameter);
-                }
-            }
-        }
-
-        return parameters;
-    }
-
-    private String getMaskedString(String value) {
-        if (value == null) {
-            return null;
-        }
-
-        int length = value.length();
-        String masked;
-        if (length > 12) {
-            masked = value.substring(0, 3).concat("*****").concat(value.substring(length - 4));
-        } else if (length < 3) {
-            masked = value.substring(0, 1).concat("*****");
+                  } else {
+                    parameters.put((String) k, getDisplayString((String) k, v, nameList));
+                  }
+                });
+          } else {
+            parameters.put(parameterName, "*****");
+          }
+          break;
         } else {
-            masked = value.substring(0, 2).concat("*****");
+          parameters.put(parameterName, parameter);
         }
-        return masked;
+      }
     }
 
-    private String getDisplayString(String key, Object value, List<String> filterKeys) {
-        boolean mask = !filterKeys.isEmpty();
-        String _value;
-        if (mask && filterKeys.contains(key)) {
-            _value = value != null ? getMaskedString(value.toString()) : null;
-        } else {
-            _value = value.toString();
-        }
-        return _value;
+    return parameters;
+  }
+
+  private String getMaskedString(String value) {
+    if (value == null) {
+      return null;
     }
+
+    int length = value.length();
+    String masked;
+    if (length > 12) {
+      masked = value.substring(0, 3).concat("*****").concat(value.substring(length - 4));
+    } else if (length < 3) {
+      masked = value.substring(0, 1).concat("*****");
+    } else {
+      masked = value.substring(0, 2).concat("*****");
+    }
+    return masked;
+  }
+
+  private String getDisplayString(String key, Object value, List<String> filterKeys) {
+    boolean mask = !filterKeys.isEmpty();
+    String _value;
+    if (mask && filterKeys.contains(key)) {
+      _value = value != null ? getMaskedString(value.toString()) : null;
+    } else {
+      _value = value.toString();
+    }
+    return _value;
+  }
 }

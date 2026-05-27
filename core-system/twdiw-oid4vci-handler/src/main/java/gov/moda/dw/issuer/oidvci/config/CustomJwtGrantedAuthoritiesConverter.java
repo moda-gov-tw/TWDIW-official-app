@@ -14,7 +14,8 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CustomJwtGrantedAuthoritiesConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
+public class CustomJwtGrantedAuthoritiesConverter
+    implements Converter<Jwt, Collection<GrantedAuthority>> {
 
   @Override
   public Collection<GrantedAuthority> convert(Jwt jwt) {
@@ -24,7 +25,8 @@ public class CustomJwtGrantedAuthoritiesConverter implements Converter<Jwt, Coll
       log.error("empty list");
       return Collections.emptyList();
     }
-    List<GrantedAuthority> simple = authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+    List<GrantedAuthority> simple =
+        authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
     log.info("simple list:{}", simple);
     return simple;
   }

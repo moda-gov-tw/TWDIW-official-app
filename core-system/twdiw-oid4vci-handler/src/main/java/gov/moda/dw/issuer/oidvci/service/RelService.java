@@ -1,18 +1,16 @@
 package gov.moda.dw.issuer.oidvci.service;
 
-import java.util.Optional;
 import gov.moda.dw.issuer.oidvci.domain.Rel;
 import gov.moda.dw.issuer.oidvci.repository.RelRepository;
 import gov.moda.dw.issuer.oidvci.service.dto.RelDTO;
 import gov.moda.dw.issuer.oidvci.service.mapper.RelMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link Rel}.
- */
+/** Service Implementation for managing {@link Rel}. */
 @Service
 @Transactional
 public class RelService {
@@ -64,14 +62,15 @@ public class RelService {
     log.debug("Request to partially update Rel : {}", relDTO);
 
     return relRepository
-      .findById(relDTO.getId())
-      .map(existingRel -> {
-        relMapper.partialUpdate(existingRel, relDTO);
+        .findById(relDTO.getId())
+        .map(
+            existingRel -> {
+              relMapper.partialUpdate(existingRel, relDTO);
 
-        return existingRel;
-      })
-      .map(relRepository::save)
-      .map(relMapper::toDto);
+              return existingRel;
+            })
+        .map(relRepository::save)
+        .map(relMapper::toDto);
   }
 
   /**

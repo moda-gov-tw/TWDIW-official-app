@@ -21,61 +21,60 @@ import tech.jhipster.config.liquibase.SpringLiquibaseUtil;
 @Configuration
 public class LiquibaseConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(LiquibaseConfiguration.class);
+  private static final Logger log = LoggerFactory.getLogger(LiquibaseConfiguration.class);
 
-    private final Environment env;
+  private final Environment env;
 
-    public LiquibaseConfiguration(Environment env) {
-        this.env = env;
+  public LiquibaseConfiguration(Environment env) {
+    this.env = env;
+  }
+
+  @Value("${application.liquibase.async-start:true}")
+  private Boolean asyncStart;
+
+  @Bean
+  public SpringLiquibase liquibase(
+      @Qualifier("taskExecutor") Executor executor,
+      LiquibaseProperties liquibaseProperties,
+      @LiquibaseDataSource ObjectProvider<DataSource> liquibaseDataSource,
+      ObjectProvider<DataSource> dataSource,
+      DataSourceProperties dataSourceProperties) {
+    SpringLiquibase liquibase;
+    if (Boolean.TRUE.equals(asyncStart)) {
+      liquibase =
+          SpringLiquibaseUtil.createAsyncSpringLiquibase(
+              this.env,
+              executor,
+              liquibaseDataSource.getIfAvailable(),
+              liquibaseProperties,
+              dataSource.getIfUnique(),
+              dataSourceProperties);
+    } else {
+      liquibase =
+          SpringLiquibaseUtil.createSpringLiquibase(
+              liquibaseDataSource.getIfAvailable(),
+              liquibaseProperties,
+              dataSource.getIfUnique(),
+              dataSourceProperties);
     }
-
-    @Value("${application.liquibase.async-start:true}")
-    private Boolean asyncStart;
-
-    @Bean
-    public SpringLiquibase liquibase(
-        @Qualifier("taskExecutor") Executor executor,
-        LiquibaseProperties liquibaseProperties,
-        @LiquibaseDataSource ObjectProvider<DataSource> liquibaseDataSource,
-        ObjectProvider<DataSource> dataSource,
-        DataSourceProperties dataSourceProperties
-    ) {
-        SpringLiquibase liquibase;
-        if (Boolean.TRUE.equals(asyncStart)) {
-            liquibase = SpringLiquibaseUtil.createAsyncSpringLiquibase(
-                this.env,
-                executor,
-                liquibaseDataSource.getIfAvailable(),
-                liquibaseProperties,
-                dataSource.getIfUnique(),
-                dataSourceProperties
-            );
-        } else {
-            liquibase = SpringLiquibaseUtil.createSpringLiquibase(
-                liquibaseDataSource.getIfAvailable(),
-                liquibaseProperties,
-                dataSource.getIfUnique(),
-                dataSourceProperties
-            );
-        }
-        liquibase.setChangeLog("classpath:config/liquibase/master.xml");
-        liquibase.setContexts(liquibaseProperties.getContexts());
-        liquibase.setDefaultSchema(liquibaseProperties.getDefaultSchema());
-        liquibase.setLiquibaseSchema(liquibaseProperties.getLiquibaseSchema());
-        liquibase.setLiquibaseTablespace(liquibaseProperties.getLiquibaseTablespace());
-        liquibase.setDatabaseChangeLogLockTable(liquibaseProperties.getDatabaseChangeLogLockTable());
-        liquibase.setDatabaseChangeLogTable(liquibaseProperties.getDatabaseChangeLogTable());
-        liquibase.setDropFirst(liquibaseProperties.isDropFirst());
-        liquibase.setLabelFilter(liquibaseProperties.getLabelFilter());
-        liquibase.setChangeLogParameters(liquibaseProperties.getParameters());
-        liquibase.setRollbackFile(liquibaseProperties.getRollbackFile());
-        liquibase.setTestRollbackOnUpdate(liquibaseProperties.isTestRollbackOnUpdate());
-        if (env.acceptsProfiles(Profiles.of(JHipsterConstants.SPRING_PROFILE_NO_LIQUIBASE))) {
-            liquibase.setShouldRun(false);
-        } else {
-            liquibase.setShouldRun(liquibaseProperties.isEnabled());
-            log.debug("Configuring Liquibase");
-        }
-        return liquibase;
+    liquibase.setChangeLog("classpath:config/liquibase/master.xml");
+    liquibase.setContexts(liquibaseProperties.getContexts());
+    liquibase.setDefaultSchema(liquibaseProperties.getDefaultSchema());
+    liquibase.setLiquibaseSchema(liquibaseProperties.getLiquibaseSchema());
+    liquibase.setLiquibaseTablespace(liquibaseProperties.getLiquibaseTablespace());
+    liquibase.setDatabaseChangeLogLockTable(liquibaseProperties.getDatabaseChangeLogLockTable());
+    liquibase.setDatabaseChangeLogTable(liquibaseProperties.getDatabaseChangeLogTable());
+    liquibase.setDropFirst(liquibaseProperties.isDropFirst());
+    liquibase.setLabelFilter(liquibaseProperties.getLabelFilter());
+    liquibase.setChangeLogParameters(liquibaseProperties.getParameters());
+    liquibase.setRollbackFile(liquibaseProperties.getRollbackFile());
+    liquibase.setTestRollbackOnUpdate(liquibaseProperties.isTestRollbackOnUpdate());
+    if (env.acceptsProfiles(Profiles.of(JHipsterConstants.SPRING_PROFILE_NO_LIQUIBASE))) {
+      liquibase.setShouldRun(false);
+    } else {
+      liquibase.setShouldRun(liquibaseProperties.isEnabled());
+      log.debug("Configuring Liquibase");
     }
+    return liquibase;
+  }
 }

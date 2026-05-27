@@ -19,55 +19,65 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@ControllerAdvice(assignableTypes = {WellKnownController.class, OidvpEndpointController.class, VerifierDidController.class})
+@ControllerAdvice(
+    assignableTypes = {
+      WellKnownController.class,
+      OidvpEndpointController.class,
+      VerifierDidController.class
+    })
 @Order(1)
 @LogInfo(value = LogType.RESPONSE)
 @ResponseBody
 public class ExceptionController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
-    @ExceptionHandler({BaseOidvpException.class, BaseOidvpRuntimeException.class})
-    public ResponseEntity<OidvpResponse> handleOidvpException(Exception exception) {
-        OidvpErrorProperty oidvpErrorProperty = (OidvpErrorProperty) exception;
-        OidvpError error = oidvpErrorProperty.getOidvpError();
-        if (OidvpError.INVALID_SESSION.equals(error)) {
-            LOGGER.warn("invalid session: {}", exception.getMessage());
-        } else {
-            LOGGER.error("oidvp exception: {}", exception.getMessage(), exception);
-        }
-        return new ResponseEntity<>(OidvpResponse.error(error, oidvpErrorProperty.getOidvpErrorMessage()), error.getHttpStatus());
+  @ExceptionHandler({BaseOidvpException.class, BaseOidvpRuntimeException.class})
+  public ResponseEntity<OidvpResponse> handleOidvpException(Exception exception) {
+    OidvpErrorProperty oidvpErrorProperty = (OidvpErrorProperty) exception;
+    OidvpError error = oidvpErrorProperty.getOidvpError();
+    if (OidvpError.INVALID_SESSION.equals(error)) {
+      LOGGER.warn("invalid session: {}", exception.getMessage());
+    } else {
+      LOGGER.error("oidvp exception: {}", exception.getMessage(), exception);
     }
+    return new ResponseEntity<>(
+        OidvpResponse.error(error, oidvpErrorProperty.getOidvpErrorMessage()),
+        error.getHttpStatus());
+  }
 
-    @ExceptionHandler(SQLException.class)
-    public ResponseEntity<OidvpResponse> handleSQLException(SQLException exception) {
-        final OidvpError error = OidvpError.DB_ERROR;
-        LOGGER.error("db exception: {}", exception.getMessage(), exception);
-        return new ResponseEntity<>(OidvpResponse.error(error), error.getHttpStatus());
-    }
+  @ExceptionHandler(SQLException.class)
+  public ResponseEntity<OidvpResponse> handleSQLException(SQLException exception) {
+    final OidvpError error = OidvpError.DB_ERROR;
+    LOGGER.error("db exception: {}", exception.getMessage(), exception);
+    return new ResponseEntity<>(OidvpResponse.error(error), error.getHttpStatus());
+  }
 
-    @ExceptionHandler
-    public ResponseEntity<OidvpResponse> handleMissingRequestParamException(MissingRequestValueException exception) {
-        final OidvpError error = OidvpError.INVALID_PARAMETERS;
-        String errorMessage = Optional.ofNullable(exception.getDetailMessageArguments())
-                                      .map(args -> args[0])
-                                      .map(parameterName -> "missing required parameter '" + parameterName + "'")
-                                      .orElse(error.getMsg());
-        LOGGER.warn(exception.getMessage());
-        return new ResponseEntity<>(OidvpResponse.error(error, errorMessage), error.getHttpStatus());
-    }
+  @ExceptionHandler
+  public ResponseEntity<OidvpResponse> handleMissingRequestParamException(
+      MissingRequestValueException exception) {
+    final OidvpError error = OidvpError.INVALID_PARAMETERS;
+    String errorMessage =
+        Optional.ofNullable(exception.getDetailMessageArguments())
+            .map(args -> args[0])
+            .map(parameterName -> "missing required parameter '" + parameterName + "'")
+            .orElse(error.getMsg());
+    LOGGER.warn(exception.getMessage());
+    return new ResponseEntity<>(OidvpResponse.error(error, errorMessage), error.getHttpStatus());
+  }
 
-    @ExceptionHandler(NoSuchElementException.class)
-    public ResponseEntity<OidvpResponse> handleNoSuchElementException(NoSuchElementException exception) {
-        final OidvpError error = OidvpError.RESULT_NOT_FOUND;
-        LOGGER.warn("element not found: {}", exception.getMessage());
-        return new ResponseEntity<>(OidvpResponse.error(error, "not found"), error.getHttpStatus());
-    }
+  @ExceptionHandler(NoSuchElementException.class)
+  public ResponseEntity<OidvpResponse> handleNoSuchElementException(
+      NoSuchElementException exception) {
+    final OidvpError error = OidvpError.RESULT_NOT_FOUND;
+    LOGGER.warn("element not found: {}", exception.getMessage());
+    return new ResponseEntity<>(OidvpResponse.error(error, "not found"), error.getHttpStatus());
+  }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<OidvpResponse> handleOtherException(Exception exception) {
-        final OidvpError error = OidvpError.SERVER_ERROR;
-        LOGGER.error("internal error : unexpected error - {}", exception.getMessage(), exception);
-        return new ResponseEntity<>(OidvpResponse.error(error), error.getHttpStatus());
-    }
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<OidvpResponse> handleOtherException(Exception exception) {
+    final OidvpError error = OidvpError.SERVER_ERROR;
+    LOGGER.error("internal error : unexpected error - {}", exception.getMessage(), exception);
+    return new ResponseEntity<>(OidvpResponse.error(error), error.getHttpStatus());
+  }
 }

@@ -5,11 +5,9 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A ApiTrack.
- */
+/** A ApiTrack. */
 @Entity
-@Table(name = "api_track",schema = "vc_manager")
+@Table(name = "api_track", schema = "vc_manager")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ApiTrack implements Serializable {
 
@@ -21,149 +19,107 @@ public class ApiTrack implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 唯一識別碼
-   */
+  /** 唯一識別碼 */
   @NotNull
   @Size(max = 255)
   @Column(name = "uuid", length = 255, nullable = false)
   private String uuid;
 
-  /**
-   * 時間戳
-   */
+  /** 時間戳 */
   @Column(name = "timestamp")
   private Instant timestamp;
 
-  /**
-   * 來源位置
-   */
+  /** 來源位置 */
   @Size(max = 255)
   @Column(name = "source", length = 255)
   private String source;
 
-  /**
-   * 服務類型
-   */
+  /** 服務類型 */
   @Size(max = 255)
   @Column(name = "service_id", length = 255)
   private String serviceId;
 
-  /**
-   * 統一資源識別碼
-   */
+  /** 統一資源識別碼 */
   @Size(max = 255)
   @Column(name = "uri", length = 255)
   private String uri;
 
-  /**
-   * 統一資源定位符
-   */
+  /** 統一資源定位符 */
   @Size(max = 255)
   @Column(name = "url", length = 255)
   private String url;
 
-  /**
-   * 狀態碼
-   */
+  /** 狀態碼 */
   @Size(max = 255)
   @Column(name = "status_code", length = 255)
   private String statusCode;
 
-  /**
-   * 執行耗時(毫秒)
-   */
+  /** 執行耗時(毫秒) */
   @Size(max = 255)
   @Column(name = "rtt", length = 255)
   private String rtt;
 
-  /**
-   * 請求標頭
-   */
-//  @Lob
+  /** 請求標頭 */
+  //  @Lob
   @Column(name = "request_header")
   private String requestHeader;
 
-  /**
-   * 請求參數
-   */
-//  @Lob
+  /** 請求參數 */
+  //  @Lob
   @Column(name = "request_param")
   private String requestParam;
 
-  /**
-   * 請求內容
-   */
-//  @Lob
+  /** 請求內容 */
+  //  @Lob
   @Column(name = "request_body")
   private String requestBody;
 
-  /**
-   * 請求方法
-   */
+  /** 請求方法 */
   @Size(max = 255)
   @Column(name = "request_method", length = 255)
   private String requestMethod;
 
-  /**
-   * 回應標頭
-   */
-//  @Lob
+  /** 回應標頭 */
+  //  @Lob
   @Column(name = "response_header")
   private String responseHeader;
 
-  /**
-   * 回應內容
-   */
-//  @Lob
+  /** 回應內容 */
+  //  @Lob
   @Column(name = "response_body")
   private String responseBody;
 
-  /**
-   * 存取憑證1
-   */
+  /** 存取憑證1 */
   @Size(max = 255)
   @Column(name = "access_token_1", length = 255)
   private String accessToken1;
 
-  /**
-   * 存取憑證2
-   */
+  /** 存取憑證2 */
   @Size(max = 255)
   @Column(name = "access_token_2", length = 255)
   private String accessToken2;
 
-  /**
-   * 使用者
-   */
+  /** 使用者 */
   @Size(max = 255)
   @Column(name = "jhi_from", length = 255)
   private String jhiFrom;
 
-  /**
-   * 服務端
-   */
+  /** 服務端 */
   @Size(max = 255)
   @Column(name = "jhi_to", length = 255)
   private String jhiTo;
 
-  /**
-   * 花費
-   */
+  /** 花費 */
   @Size(max = 255)
   @Column(name = "cost", length = 255)
   private String cost;
 
-  /**
-   * 是否已完結
-   */
+  /** 是否已完結 */
   @Size(max = 10)
   @Column(name = "charged", length = 10)
   private String charged;
 
-  /**
-   * 是否已同步
-   */
+  /** 是否已同步 */
   @Size(max = 10)
   @Column(name = "synced", length = 10)
   private String synced;
@@ -471,36 +427,80 @@ public class ApiTrack implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ApiTrack{" +
-            "id=" + getId() +
-            ", uuid='" + getUuid() + "'" +
-            ", timestamp='" + getTimestamp() + "'" +
-            ", source='" + getSource() + "'" +
-            ", serviceId='" + getServiceId() + "'" +
-            ", uri='" + getUri() + "'" +
-            ", url='" + getUrl() + "'" +
-            ", statusCode='" + getStatusCode() + "'" +
-            ", rtt='" + getRtt() + "'" +
-            ", requestHeader='" + getRequestHeader() + "'" +
-            ", requestParam='" + getRequestParam() + "'" +
-            ", requestBody='" + getRequestBody() + "'" +
-            ", requestMethod='" + getRequestMethod() + "'" +
-            ", responseHeader='" + getResponseHeader() + "'" +
-            ", responseBody='" + getResponseBody() + "'" +
-            ", accessToken1='" + getAccessToken1() + "'" +
-            ", accessToken2='" + getAccessToken2() + "'" +
-            ", jhiFrom='" + getJhiFrom() + "'" +
-            ", jhiTo='" + getJhiTo() + "'" +
-            ", cost='" + getCost() + "'" +
-            ", charged='" + getCharged() + "'" +
-            ", synced='" + getSynced() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ApiTrack{"
+        + "id="
+        + getId()
+        + ", uuid='"
+        + getUuid()
+        + "'"
+        + ", timestamp='"
+        + getTimestamp()
+        + "'"
+        + ", source='"
+        + getSource()
+        + "'"
+        + ", serviceId='"
+        + getServiceId()
+        + "'"
+        + ", uri='"
+        + getUri()
+        + "'"
+        + ", url='"
+        + getUrl()
+        + "'"
+        + ", statusCode='"
+        + getStatusCode()
+        + "'"
+        + ", rtt='"
+        + getRtt()
+        + "'"
+        + ", requestHeader='"
+        + getRequestHeader()
+        + "'"
+        + ", requestParam='"
+        + getRequestParam()
+        + "'"
+        + ", requestBody='"
+        + getRequestBody()
+        + "'"
+        + ", requestMethod='"
+        + getRequestMethod()
+        + "'"
+        + ", responseHeader='"
+        + getResponseHeader()
+        + "'"
+        + ", responseBody='"
+        + getResponseBody()
+        + "'"
+        + ", accessToken1='"
+        + getAccessToken1()
+        + "'"
+        + ", accessToken2='"
+        + getAccessToken2()
+        + "'"
+        + ", jhiFrom='"
+        + getJhiFrom()
+        + "'"
+        + ", jhiTo='"
+        + getJhiTo()
+        + "'"
+        + ", cost='"
+        + getCost()
+        + "'"
+        + ", charged='"
+        + getCharged()
+        + "'"
+        + ", synced='"
+        + getSynced()
+        + "'"
+        + "}";
+  }
 }

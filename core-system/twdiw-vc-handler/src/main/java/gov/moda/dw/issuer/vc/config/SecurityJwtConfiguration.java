@@ -20,43 +20,42 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 @Configuration
 public class SecurityJwtConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(SecurityJwtConfiguration.class);
+  private static final Logger log = LoggerFactory.getLogger(SecurityJwtConfiguration.class);
 
-    @Value("${jhipster.security.authentication.jwt.base64-secret}")
-    private String jwtKey;
+  @Value("${jhipster.security.authentication.jwt.base64-secret}")
+  private String jwtKey;
 
-    @Bean
-    public JwtDecoder jwtDecoder(SecurityMetersService metersService) {
-        NimbusJwtDecoder jwtDecoder = NimbusJwtDecoder.withSecretKey(getSecretKey()).macAlgorithm(JWT_ALGORITHM).build();
-        return token -> {
-            try {
-                return jwtDecoder.decode(token);
-            } catch (Exception e) {
-                if (e.getMessage().contains("Invalid signature")) {
-                    metersService.trackTokenInvalidSignature();
-                } else if (e.getMessage().contains("Jwt expired at")) {
-                    metersService.trackTokenExpired();
-                } else if (
-                    e.getMessage().contains("Invalid JWT serialization") ||
-                    e.getMessage().contains("Malformed token") ||
-                    e.getMessage().contains("Invalid unsecured/JWS/JWE")
-                ) {
-                    metersService.trackTokenMalformed();
-                } else {
-                    log.error("Unknown JWT error {}", e.getMessage());
-                }
-                throw e;
-            }
-        };
-    }
+  @Bean
+  public JwtDecoder jwtDecoder(SecurityMetersService metersService) {
+    NimbusJwtDecoder jwtDecoder =
+        NimbusJwtDecoder.withSecretKey(getSecretKey()).macAlgorithm(JWT_ALGORITHM).build();
+    return token -> {
+      try {
+        return jwtDecoder.decode(token);
+      } catch (Exception e) {
+        if (e.getMessage().contains("Invalid signature")) {
+          metersService.trackTokenInvalidSignature();
+        } else if (e.getMessage().contains("Jwt expired at")) {
+          metersService.trackTokenExpired();
+        } else if (e.getMessage().contains("Invalid JWT serialization")
+            || e.getMessage().contains("Malformed token")
+            || e.getMessage().contains("Invalid unsecured/JWS/JWE")) {
+          metersService.trackTokenMalformed();
+        } else {
+          log.error("Unknown JWT error {}", e.getMessage());
+        }
+        throw e;
+      }
+    };
+  }
 
-    @Bean
-    public JwtEncoder jwtEncoder() {
-        return new NimbusJwtEncoder(new ImmutableSecret<>(getSecretKey()));
-    }
+  @Bean
+  public JwtEncoder jwtEncoder() {
+    return new NimbusJwtEncoder(new ImmutableSecret<>(getSecretKey()));
+  }
 
-    private SecretKey getSecretKey() {
-        byte[] keyBytes = Base64.from(jwtKey).decode();
-        return new SecretKeySpec(keyBytes, 0, keyBytes.length, JWT_ALGORITHM.getName());
-    }
+  private SecretKey getSecretKey() {
+    byte[] keyBytes = Base64.from(jwtKey).decode();
+    return new SecretKeySpec(keyBytes, 0, keyBytes.length, JWT_ALGORITHM.getName());
+  }
 }

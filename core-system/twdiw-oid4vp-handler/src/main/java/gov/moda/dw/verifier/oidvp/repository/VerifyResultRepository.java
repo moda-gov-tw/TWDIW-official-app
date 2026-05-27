@@ -10,15 +10,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface VerifyResultRepository extends JpaRepository<VerifyResultJpa, String> {
 
-    Optional<VerifyResultJpa> findByResponseCode(String code);
+  Optional<VerifyResultJpa> findByResponseCode(String code);
 
-    @Modifying
-    @Transactional
-    @Query(value = "delete from verify_result where transaction_id=?", nativeQuery = true)
-    int deleteVerifyResultById(String id);
+  @Modifying
+  @Transactional
+  @Query(value = "delete from verify_result where transaction_id=?", nativeQuery = true)
+  int deleteVerifyResultById(String id);
 
-    @Modifying
-    @Transactional
-    @Query(value = "delete from verify_result where response_time < ?", nativeQuery = true)
-    int deleteExpiredVerifyResult(LocalDateTime nowMinusAliveTime);
+  @Modifying
+  @Transactional
+  @Query(value = "delete from verify_result where response_time < ?", nativeQuery = true)
+  int deleteExpiredVerifyResult(LocalDateTime nowMinusAliveTime);
 }

@@ -20,58 +20,63 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/api/oidvp")
 public class WellKnownController {
 
-    @Autowired MetadataService metadataService;
+  @Autowired MetadataService metadataService;
 
-    /**
-     * get client metadata of verifier
-     *
-     * @return verifier metadata
-     */
-    @LogAPI(ApiId.VP005)
-    @GetMapping(path = ".well-known/openid-configuration", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> getVerifierMetadata() throws SQLException {
-        String metadataJson = metadataService.getVerifierMetadata().toString();
-        return new ResponseEntity<>(metadataJson, HttpStatus.OK);
-    }
+  /**
+   * get client metadata of verifier
+   *
+   * @return verifier metadata
+   */
+  @LogAPI(ApiId.VP005)
+  @GetMapping(
+      path = ".well-known/openid-configuration",
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> getVerifierMetadata() throws SQLException {
+    String metadataJson = metadataService.getVerifierMetadata().toString();
+    return new ResponseEntity<>(metadataJson, HttpStatus.OK);
+  }
 
-    /**
-     * get the jwk set of verifier
-     *
-     * @return jwk set
-     */
-    @GetMapping(path = "jwks", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, Object>> getPublicJWKSet() {
-        JWKSet jwkSet = metadataService.getPublicJWKSet();
-        Map<String, Object> jwks = (jwkSet == null) ? Collections.emptyMap() : jwkSet.toJSONObject();
-        return new ResponseEntity<>(jwks, HttpStatus.OK);
-    }
+  /**
+   * get the jwk set of verifier
+   *
+   * @return jwk set
+   */
+  @GetMapping(path = "jwks", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Map<String, Object>> getPublicJWKSet() {
+    JWKSet jwkSet = metadataService.getPublicJWKSet();
+    Map<String, Object> jwks = (jwkSet == null) ? Collections.emptyMap() : jwkSet.toJSONObject();
+    return new ResponseEntity<>(jwks, HttpStatus.OK);
+  }
 
-    @Deprecated
-    @LogInfo
-//    @PostMapping(path = "metadataProperty/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Response> saveMetadataProperty(@RequestBody MetadataFieldsRequest request) throws SQLException {
-        metadataService.saveMetadataProperty(request);
-        final OidvpError error = OidvpError.SUCCESS;
-        Response response = new Response();
-        response.setCode(error.getCode());
-        response.setMessage(error.getMsg());
-        return new ResponseEntity<>(response, error.getHttpStatus());
-    }
+  @Deprecated
+  @LogInfo
+  //    @PostMapping(path = "metadataProperty/save", consumes = MediaType.APPLICATION_JSON_VALUE,
+  // produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Response> saveMetadataProperty(@RequestBody MetadataFieldsRequest request)
+      throws SQLException {
+    metadataService.saveMetadataProperty(request);
+    final OidvpError error = OidvpError.SUCCESS;
+    Response response = new Response();
+    response.setCode(error.getCode());
+    response.setMessage(error.getMsg());
+    return new ResponseEntity<>(response, error.getHttpStatus());
+  }
 
-    @Deprecated
-    @LogInfo
-//    @PostMapping(path = "metadataProperty/remove", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Response> removeMetadataProperty(@RequestBody MetadataFieldsRequest request) throws SQLException {
-        metadataService.deleteMetadataProperty(request);
-        final OidvpError error = OidvpError.SUCCESS;
-        Response response = new Response();
-        response.setCode(error.getCode());
-        response.setMessage(error.getMsg());
-        return new ResponseEntity<>(response, error.getHttpStatus());
-    }
+  @Deprecated
+  @LogInfo
+  //    @PostMapping(path = "metadataProperty/remove", consumes = MediaType.APPLICATION_JSON_VALUE,
+  // produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Response> removeMetadataProperty(@RequestBody MetadataFieldsRequest request)
+      throws SQLException {
+    metadataService.deleteMetadataProperty(request);
+    final OidvpError error = OidvpError.SUCCESS;
+    Response response = new Response();
+    response.setCode(error.getCode());
+    response.setMessage(error.getMsg());
+    return new ResponseEntity<>(response, error.getHttpStatus());
+  }
 }

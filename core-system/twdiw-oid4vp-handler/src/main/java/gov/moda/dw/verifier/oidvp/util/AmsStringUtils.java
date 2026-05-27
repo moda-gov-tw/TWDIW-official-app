@@ -1,14 +1,11 @@
 package gov.moda.dw.verifier.oidvp.util;
 
-import java.util.Optional;
-import java.util.regex.Pattern;
-
 public class AmsStringUtils {
 
-    public static String trimString(String str, int length) {
-        if (str == null) {
-            return null;
-        }
-        return str.substring(0, Math.min(str.length(), length));
+  public static String trimString(String str, int length) {
+    if (str == null) {
+      return null;
     }
+    return str.substring(0, Math.min(str.length(), length));
+  }
 }

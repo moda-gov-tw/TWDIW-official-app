@@ -2,9 +2,7 @@ package gov.moda.dw.issuer.oidvci.security.accessToken;
 
 import lombok.Data;
 
-/**
- * 這是客製化的AccessToken物件
- */
+/** 這是客製化的AccessToken物件 */
 @Data
 public class AccessTokenUserObject {
 

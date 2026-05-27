@@ -10,38 +10,39 @@ import org.springframework.stereotype.Service;
 @Service
 public class MetadataService {
 
-    private final MetadataEntity metadataEntity;
+  private final MetadataEntity metadataEntity;
 
+  public MetadataService(MetadataEntity metadataEntity) {
+    this.metadataEntity = metadataEntity;
+  }
 
-    public MetadataService(MetadataEntity metadataEntity) {
-        this.metadataEntity = metadataEntity;
-    }
+  public VerifierMetadata getVerifierMetadata() throws SQLException {
+    return metadataEntity.loadMetadata();
+  }
 
-    public VerifierMetadata getVerifierMetadata() throws SQLException {
-        return metadataEntity.loadMetadata();
-    }
+  public void saveMetadataProperty(MetadataFieldsRequest request) throws SQLException {
+    metadataEntity.saveMetadataProperty(request);
+  }
 
-    public void saveMetadataProperty(MetadataFieldsRequest request) throws SQLException {
-        metadataEntity.saveMetadataProperty(request);
-    }
+  public VerifierMetadata saveMetadataPropertyAndLoad(MetadataFieldsRequest request)
+      throws SQLException {
+    metadataEntity.saveMetadataProperty(request);
+    return getVerifierMetadata();
+  }
 
-    public VerifierMetadata saveMetadataPropertyAndLoad(MetadataFieldsRequest request) throws SQLException {
-        metadataEntity.saveMetadataProperty(request);
-        return getVerifierMetadata();
-    }
+  public void deleteMetadataProperty(MetadataFieldsRequest request) throws SQLException {
+    List<String> removeFields = request.getRemoveFields();
+    metadataEntity.removeMetadataProperty(removeFields);
+  }
 
-    public void deleteMetadataProperty(MetadataFieldsRequest request) throws SQLException {
-        List<String> removeFields = request.getRemoveFields();
-        metadataEntity.removeMetadataProperty(removeFields);
-    }
+  public VerifierMetadata deleteMetadataPropertyAndLoad(MetadataFieldsRequest request)
+      throws SQLException {
+    List<String> removeFields = request.getRemoveFields();
+    metadataEntity.removeMetadataProperty(removeFields);
+    return getVerifierMetadata();
+  }
 
-    public VerifierMetadata deleteMetadataPropertyAndLoad(MetadataFieldsRequest request) throws SQLException {
-        List<String> removeFields = request.getRemoveFields();
-        metadataEntity.removeMetadataProperty(removeFields);
-        return getVerifierMetadata();
-    }
-
-    public JWKSet getPublicJWKSet() {
-        return metadataEntity.getPublicJWKSet();
-    }
+  public JWKSet getPublicJWKSet() {
+    return metadataEntity.getPublicJWKSet();
+  }
 }

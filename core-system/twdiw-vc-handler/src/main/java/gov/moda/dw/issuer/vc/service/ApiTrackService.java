@@ -1,18 +1,16 @@
 package gov.moda.dw.issuer.vc.service;
 
-import java.util.Optional;
 import gov.moda.dw.issuer.vc.domain.ApiTrack;
 import gov.moda.dw.issuer.vc.repository.ApiTrackRepository;
 import gov.moda.dw.issuer.vc.service.dto.ApiTrackDTO;
 import gov.moda.dw.issuer.vc.service.mapper.ApiTrackMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link ApiTrack}.
- */
+/** Service Implementation for managing {@link ApiTrack}. */
 @Service
 @Transactional
 public class ApiTrackService {
@@ -64,14 +62,15 @@ public class ApiTrackService {
     log.debug("Request to partially update ApiTrack : {}", apiTrackDTO);
 
     return apiTrackRepository
-      .findById(apiTrackDTO.getId())
-      .map(existingApiTrack -> {
-        apiTrackMapper.partialUpdate(existingApiTrack, apiTrackDTO);
+        .findById(apiTrackDTO.getId())
+        .map(
+            existingApiTrack -> {
+              apiTrackMapper.partialUpdate(existingApiTrack, apiTrackDTO);
 
-        return existingApiTrack;
-      })
-      .map(apiTrackRepository::save)
-      .map(apiTrackMapper::toDto);
+              return existingApiTrack;
+            })
+        .map(apiTrackRepository::save)
+        .map(apiTrackMapper::toDto);
   }
 
   /**

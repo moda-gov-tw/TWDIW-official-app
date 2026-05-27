@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PresentationDefinitionRepository extends JpaRepository<VpItemJpa, String> {
 
-    Optional<VpItemJpa> findByBusinessIdAndSerialNumber(String businessId, String serialNumber);
+  Optional<VpItemJpa> findByBusinessIdAndSerialNumber(String businessId, String serialNumber);
 
-    default Optional<VpItemJpa> getPresentationDefinition(String businessId, String serialNumber) {
-        return findByBusinessIdAndSerialNumber(businessId, serialNumber);
-    }
+  default Optional<VpItemJpa> getPresentationDefinition(String businessId, String serialNumber) {
+    return findByBusinessIdAndSerialNumber(businessId, serialNumber);
+  }
 }

@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class PublicInfoResource {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(PublicInfoResource.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(PublicInfoResource.class);
 
-    /**
-     * get current version
-     *
-     * @return current version
-     */
-    @GetMapping(path = "/version", produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity<String> version() {
-        // return current version
-        return new ResponseEntity<>(Definition.CURRENT_VERSION, HttpStatus.OK);
-    }
+  /**
+   * get current version
+   *
+   * @return current version
+   */
+  @GetMapping(path = "/version", produces = MediaType.TEXT_PLAIN_VALUE)
+  public ResponseEntity<String> version() {
+    // return current version
+    return new ResponseEntity<>(Definition.CURRENT_VERSION, HttpStatus.OK);
+  }
 }

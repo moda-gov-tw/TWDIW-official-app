@@ -1,11 +1,11 @@
 package gov.moda.dw.issuer.oidvci.service.dto.custom;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import gov.moda.dw.issuer.oidvci.type.StatusCode;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import gov.moda.dw.issuer.oidvci.type.StatusCode;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -13,18 +13,12 @@ public class ResponseDTO<T> implements Serializable {
 
   private static final long serialVersionUID = 3937533115408118803L;
 
-  @Setter
-  @Getter
-  private String code;
+  @Setter @Getter private String code;
 
-  @Setter
-  @Getter
-  private String msg;
+  @Setter @Getter private String msg;
 
   /** 實際的 ResponseDTO */
-  @Setter
-  @Getter
-  T data;
+  @Setter @Getter T data;
 
   public ResponseDTO() {
     this.setStatusCode(StatusCode.FAIL);
@@ -47,7 +41,7 @@ public class ResponseDTO<T> implements Serializable {
   /**
    * 只有 AOP 能用
    *
-   * @param msg  msg
+   * @param msg msg
    * @param code code
    */
   public ResponseDTO(String msg, String code) {

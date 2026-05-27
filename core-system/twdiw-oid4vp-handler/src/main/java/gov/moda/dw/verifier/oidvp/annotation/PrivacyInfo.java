@@ -10,12 +10,10 @@ import org.springframework.core.annotation.AliasFor;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PrivacyInfo {
 
-    @AliasFor("keyName")
-    String[] value() default "";
+  @AliasFor("keyName")
+  String[] value() default "";
 
-    /**
-     * for Map
-     */
-    @AliasFor("value")
-    String[] keyName() default "";
+  /** for Map */
+  @AliasFor("value")
+  String[] keyName() default "";
 }

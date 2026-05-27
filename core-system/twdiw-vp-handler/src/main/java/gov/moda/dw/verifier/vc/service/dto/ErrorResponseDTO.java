@@ -9,67 +9,66 @@ import java.util.Map;
 
 public class ErrorResponseDTO implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
-    @NotBlank
-    private int code;
+  @NotBlank private int code;
 
-    @NotBlank
-    private String message;
+  @NotBlank private String message;
 
-    private Map<String, Object> info;
+  private Map<String, Object> info;
 
-    public ErrorResponseDTO() {
-    }
+  public ErrorResponseDTO() {}
 
-    public ErrorResponseDTO(ErrorResponseProperty errorResponseProperty) {
-        this(errorResponseProperty.getResponseCode(), errorResponseProperty.getResponseMessage(), null);
-    }
+  public ErrorResponseDTO(ErrorResponseProperty errorResponseProperty) {
+    this(errorResponseProperty.getResponseCode(), errorResponseProperty.getResponseMessage(), null);
+  }
 
-    public ErrorResponseDTO(VpException vpException) {
-        this(((ErrorResponseProperty) vpException).getResponseCode(), ((ErrorResponseProperty) vpException).getResponseMessage(), null);
-    }
+  public ErrorResponseDTO(VpException vpException) {
+    this(
+        ((ErrorResponseProperty) vpException).getResponseCode(),
+        ((ErrorResponseProperty) vpException).getResponseMessage(),
+        null);
+  }
 
-    public ErrorResponseDTO(int code, String message) {
-        this(code, message, null);
-    }
+  public ErrorResponseDTO(int code, String message) {
+    this(code, message, null);
+  }
 
-    public ErrorResponseDTO(int code, String message, Map<String, Object> info) {
-        this.code = code;
-        this.message = message;
-        this.info = info;
-    }
+  public ErrorResponseDTO(int code, String message, Map<String, Object> info) {
+    this.code = code;
+    this.message = message;
+    this.info = info;
+  }
 
-    public int getCode() {
-        return code;
-    }
+  public int getCode() {
+    return code;
+  }
 
-    public ErrorResponseDTO setCode(int code) {
-        this.code = code;
-        return this;
-    }
+  public ErrorResponseDTO setCode(int code) {
+    this.code = code;
+    return this;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public String getMessage() {
+    return message;
+  }
 
-    public ErrorResponseDTO setMessage(String message) {
-        this.message = message;
-        return this;
-    }
+  public ErrorResponseDTO setMessage(String message) {
+    this.message = message;
+    return this;
+  }
 
-    public Map<String, Object> getInfo() {
-        return info;
-    }
+  public Map<String, Object> getInfo() {
+    return info;
+  }
 
-    public ErrorResponseDTO setInfo(Map<String, Object> info) {
-        this.info = info;
-        return this;
-    }
+  public ErrorResponseDTO setInfo(Map<String, Object> info) {
+    this.info = info;
+    return this;
+  }
 
-    @Override
-    public String toString() {
-        return JsonUtils.voToJs(this);
-    }
+  @Override
+  public String toString() {
+    return JsonUtils.voToJs(this);
+  }
 }

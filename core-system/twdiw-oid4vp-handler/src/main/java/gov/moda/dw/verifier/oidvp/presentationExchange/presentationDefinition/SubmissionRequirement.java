@@ -16,163 +16,161 @@ import java.util.List;
 @JsonInclude(value = Include.NON_NULL)
 public class SubmissionRequirement {
 
-    private String name;
+  private String name;
 
-    private String purpose;
+  private String purpose;
+
+  private SubmissionRequirementRule rule;
+
+  private Integer count;
+
+  private Integer min;
+
+  private Integer max;
+
+  private String from;
+
+  @JsonProperty("from_nested")
+  @JsonInclude(value = Include.NON_EMPTY)
+  private List<SubmissionRequirement> fromNested;
+
+  private SubmissionRequirement() {}
+
+  private SubmissionRequirement(Builder builder) {
+    rule = builder.rule;
+    from = builder.from;
+    fromNested = builder.fromNested;
+    name = builder.name;
+    purpose = builder.purpose;
+    count = builder.count;
+    min = builder.min;
+    max = builder.max;
+  }
+
+  public SubmissionRequirementRule getRule() {
+    return rule;
+  }
+
+  public String getFrom() {
+    return from;
+  }
+
+  public List<SubmissionRequirement> getFromNested() {
+    return fromNested;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getPurpose() {
+    return purpose;
+  }
+
+  public Integer getCount() {
+    return count;
+  }
+
+  public Integer getMin() {
+    return min;
+  }
+
+  public Integer getMax() {
+    return max;
+  }
+
+  public static final class Builder {
 
     private SubmissionRequirementRule rule;
-
+    private String from;
+    private List<SubmissionRequirement> fromNested = Collections.emptyList();
+    private String name;
+    private String purpose;
     private Integer count;
-
     private Integer min;
-
     private Integer max;
 
-    private String from;
-
-    @JsonProperty("from_nested")
-    @JsonInclude(value = Include.NON_EMPTY)
-    private List<SubmissionRequirement> fromNested;
-
-
-    private SubmissionRequirement() {
+    public Builder(SubmissionRequirementRule rule, String from) {
+      if (rule == null) {
+        throw new IllegalArgumentException("'rule' cannot be null");
+      }
+      if (from == null || from.isEmpty()) {
+        throw new IllegalArgumentException("'from' cannot be null or empty");
+      }
+      this.rule = rule;
+      this.from = from;
     }
 
-    private SubmissionRequirement(Builder builder) {
-        rule = builder.rule;
-        from = builder.from;
-        fromNested = builder.fromNested;
-        name = builder.name;
-        purpose = builder.purpose;
-        count = builder.count;
-        min = builder.min;
-        max = builder.max;
+    public Builder(SubmissionRequirementRule rule, List<SubmissionRequirement> fromNested) {
+      if (rule == null) {
+        throw new IllegalArgumentException("'rule' cannot be null");
+      }
+      if (fromNested == null || fromNested.isEmpty()) {
+        throw new IllegalArgumentException("'fromNested' cannot be null or empty");
+      }
+      this.rule = rule;
+      this.fromNested = fromNested;
     }
 
-    public SubmissionRequirementRule getRule() {
-        return rule;
+    public Builder setRule(SubmissionRequirementRule rule) {
+      this.rule = rule;
+      return this;
     }
 
-    public String getFrom() {
-        return from;
+    public Builder setFrom(String from) {
+      this.from = from;
+      return this;
     }
 
-    public List<SubmissionRequirement> getFromNested() {
-        return fromNested;
+    public Builder setFromNested(List<SubmissionRequirement> fromNested) {
+      this.fromNested = fromNested;
+      return this;
     }
 
-    public String getName() {
-        return name;
+    public Builder setName(String name) {
+      this.name = name;
+      return this;
     }
 
-    public String getPurpose() {
-        return purpose;
+    public Builder setPurpose(String purpose) {
+      this.purpose = purpose;
+      return this;
     }
 
-    public Integer getCount() {
-        return count;
+    public Builder setCount(Integer count) {
+      this.count = count;
+      return this;
     }
 
-    public Integer getMin() {
-        return min;
+    public Builder setMin(Integer min) {
+      this.min = min;
+      return this;
     }
 
-    public Integer getMax() {
-        return max;
+    public Builder setMax(Integer max) {
+      this.max = max;
+      return this;
     }
 
-    public static final class Builder {
+    public SubmissionRequirement build() {
+      return new SubmissionRequirement(this);
+    }
+  }
 
-        private SubmissionRequirementRule rule;
-        private String from;
-        private List<SubmissionRequirement> fromNested = Collections.emptyList();
-        private String name;
-        private String purpose;
-        private Integer count;
-        private Integer min;
-        private Integer max;
+  public enum SubmissionRequirementRule {
+    ALL("all"),
 
-        public Builder(SubmissionRequirementRule rule, String from) {
-            if (rule == null) {
-                throw new IllegalArgumentException("'rule' cannot be null");
-            }
-            if (from == null || from.isEmpty()) {
-                throw new IllegalArgumentException("'from' cannot be null or empty");
-            }
-            this.rule = rule;
-            this.from = from;
-        }
+    PICK("pick");
 
-        public Builder(SubmissionRequirementRule rule, List<SubmissionRequirement> fromNested) {
-            if (rule == null) {
-                throw new IllegalArgumentException("'rule' cannot be null");
-            }
-            if (fromNested == null || fromNested.isEmpty()) {
-                throw new IllegalArgumentException("'fromNested' cannot be null or empty");
-            }
-            this.rule = rule;
-            this.fromNested = fromNested;
-        }
+    private final String value;
 
-        public Builder setRule(SubmissionRequirementRule rule) {
-            this.rule = rule;
-            return this;
-        }
-
-        public Builder setFrom(String from) {
-            this.from = from;
-            return this;
-        }
-
-        public Builder setFromNested(List<SubmissionRequirement> fromNested) {
-            this.fromNested = fromNested;
-            return this;
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setPurpose(String purpose) {
-            this.purpose = purpose;
-            return this;
-        }
-
-        public Builder setCount(Integer count) {
-            this.count = count;
-            return this;
-        }
-
-        public Builder setMin(Integer min) {
-            this.min = min;
-            return this;
-        }
-
-        public Builder setMax(Integer max) {
-            this.max = max;
-            return this;
-        }
-
-        public SubmissionRequirement build() {
-            return new SubmissionRequirement(this);
-        }
+    private SubmissionRequirementRule(String value) {
+      this.value = value;
     }
 
-    public enum SubmissionRequirementRule {
-        ALL("all"),
-
-        PICK("pick");
-
-        private final String value;
-
-        private SubmissionRequirementRule(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
+    @JsonValue
+    public String getValue() {
+      return value;
     }
+  }
 }

@@ -6,48 +6,54 @@ import java.util.Map;
 
 public class DIDCreateRequest {
 
-    private final String did;
+  private final String did;
 
-    private final Integer orgType;
+  private final Integer orgType;
 
-    private final Map<String, Object> org;
+  private final Map<String, Object> org;
 
-    private final String p7data;
+  private final String p7data;
 
-    public DIDCreateRequest(String did, Integer orgType, Map<String, Object> org, String p7data) {
-        this.did = did;
-        this.orgType = orgType;
-        this.org = org == null ? Collections.emptyMap() : org;
-        this.p7data = p7data == null ? "" : p7data;
-    }
+  public DIDCreateRequest(String did, Integer orgType, Map<String, Object> org, String p7data) {
+    this.did = did;
+    this.orgType = orgType;
+    this.org = org == null ? Collections.emptyMap() : org;
+    this.p7data = p7data == null ? "" : p7data;
+  }
 
-    public String getDid() {
-        return did;
-    }
+  public String getDid() {
+    return did;
+  }
 
-    public Map<String, Object> getOrg() {
-        return org;
-    }
+  public Map<String, Object> getOrg() {
+    return org;
+  }
 
-    public Integer getOrgType() {
-        return orgType;
-    }
+  public Integer getOrgType() {
+    return orgType;
+  }
 
-    public String getP7data() {
-        return p7data;
-    }
+  public String getP7data() {
+    return p7data;
+  }
 
-    public String toJson() {
-        return "{" +
-            "\"did\":\"" + did + '\"' +
-            ",\"orgType\":" + orgType +
-            ",\"org\":" + JsonUtils.toJsonString(this.org) +
-            ",\"p7data\":\"" + p7data + '\"' +
-            "}";
-    }
+  public String toJson() {
+    return "{"
+        + "\"did\":\""
+        + did
+        + '\"'
+        + ",\"orgType\":"
+        + orgType
+        + ",\"org\":"
+        + JsonUtils.toJsonString(this.org)
+        + ",\"p7data\":\""
+        + p7data
+        + '\"'
+        + "}";
+  }
 
-    @Override
-    public String toString() {
-        return toJson();
-    }
+  @Override
+  public String toString() {
+    return toJson();
+  }
 }

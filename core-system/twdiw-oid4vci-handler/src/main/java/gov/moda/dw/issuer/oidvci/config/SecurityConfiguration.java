@@ -17,7 +17,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationEntryPoint;
@@ -33,92 +32,95 @@ import tech.jhipster.config.JHipsterProperties;
 @EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration {
 
-    private final JHipsterProperties jHipsterProperties;
+  private final JHipsterProperties jHipsterProperties;
 
-    private final UserDetailsService userDetailsService;
+  private final UserDetailsService userDetailsService;
 
-    private final AccessTokenProvider accessTokenProvider;
+  private final AccessTokenProvider accessTokenProvider;
 
-    private final ExceptionTrackService exceptionTrackService;
+  private final ExceptionTrackService exceptionTrackService;
 
-    @Autowired
-    private CustomJwtGrantedAuthoritiesConverter customJwtGrantedAuthoritiesConverter;
+  @Autowired private CustomJwtGrantedAuthoritiesConverter customJwtGrantedAuthoritiesConverter;
 
-    public SecurityConfiguration(
-        JHipsterProperties jHipsterProperties,
-        UserDetailsService userDetailsService,
-        AccessTokenProvider accessTokenProvider,
-        ExceptionTrackService exceptionTrackService
-    ) {
-        this.jHipsterProperties = jHipsterProperties;
-        this.userDetailsService = userDetailsService;
-        this.accessTokenProvider = accessTokenProvider;
-        this.exceptionTrackService = exceptionTrackService;
-    }
+  public SecurityConfiguration(
+      JHipsterProperties jHipsterProperties,
+      UserDetailsService userDetailsService,
+      AccessTokenProvider accessTokenProvider,
+      ExceptionTrackService exceptionTrackService) {
+    this.jHipsterProperties = jHipsterProperties;
+    this.userDetailsService = userDetailsService;
+    this.accessTokenProvider = accessTokenProvider;
+    this.exceptionTrackService = exceptionTrackService;
+  }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new ModadwPasswordEncoder();
-    }
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new ModadwPasswordEncoder();
+  }
 
-//     @Bean
-//     public PasswordEncoder passwordEncoder() {
-//       return new BCryptPasswordEncoder();
-//     }
+  //     @Bean
+  //     public PasswordEncoder passwordEncoder() {
+  //       return new BCryptPasswordEncoder();
+  //     }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http, MvcRequestMatcher.Builder mvc) throws Exception {
-        http
-            .cors(withDefaults())
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(
-                authz ->
-                    authz
-                        .requestMatchers(mvc.pattern("/api/**")).permitAll()
-                        .requestMatchers(mvc.pattern(HttpMethod.POST, "/api/modadw303w/authenticate")).permitAll()
-                        .requestMatchers(mvc.pattern("/management/health")).permitAll()
-                        .requestMatchers(mvc.pattern("/management/info")).permitAll()
-            )
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .exceptionHandling(
-                exceptions ->
-                    exceptions
-                        .authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
-                        .accessDeniedHandler(new BearerTokenAccessDeniedHandler())
-            )
-            //加上 CSP Header
-            .headers(headers ->
-                headers.contentSecurityPolicy(csp ->
-                    csp.policyDirectives("default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'")
-                )
-            )
-            .addFilterBefore(new AccessTokenFilter(accessTokenProvider), UsernamePasswordAuthenticationFilter.class);
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http, MvcRequestMatcher.Builder mvc)
+      throws Exception {
+    http.cors(withDefaults())
+        .csrf(csrf -> csrf.disable())
+        .authorizeHttpRequests(
+            authz ->
+                authz
+                    .requestMatchers(mvc.pattern("/api/**"))
+                    .permitAll()
+                    .requestMatchers(mvc.pattern(HttpMethod.POST, "/api/modadw303w/authenticate"))
+                    .permitAll()
+                    .requestMatchers(mvc.pattern("/management/health"))
+                    .permitAll()
+                    .requestMatchers(mvc.pattern("/management/info"))
+                    .permitAll())
+        .sessionManagement(
+            session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .exceptionHandling(
+            exceptions ->
+                exceptions
+                    .authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
+                    .accessDeniedHandler(new BearerTokenAccessDeniedHandler()))
+        // 加上 CSP Header
+        .headers(
+            headers ->
+                headers.contentSecurityPolicy(
+                    csp ->
+                        csp.policyDirectives(
+                            "default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'")))
+        .addFilterBefore(
+            new AccessTokenFilter(accessTokenProvider), UsernamePasswordAuthenticationFilter.class);
 
-        return http.build();
-    }
+    return http.build();
+  }
 
-    @Bean
-    public JwtAuthenticationConverter jwtAuthenticationConverter() {
-        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
-        converter.setJwtGrantedAuthoritiesConverter(customJwtGrantedAuthoritiesConverter);
-        return converter;
-    }
+  @Bean
+  public JwtAuthenticationConverter jwtAuthenticationConverter() {
+    JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+    converter.setJwtGrantedAuthoritiesConverter(customJwtGrantedAuthoritiesConverter);
+    return converter;
+  }
 
-    @Bean
-    MvcRequestMatcher.Builder mvc(HandlerMappingIntrospector introspector) {
-        return new MvcRequestMatcher.Builder(introspector);
-    }
+  @Bean
+  MvcRequestMatcher.Builder mvc(HandlerMappingIntrospector introspector) {
+    return new MvcRequestMatcher.Builder(introspector);
+  }
 
-    @Bean
-    public AmsAuthenticationProvider amsAuthenticationProvider() {
-        AmsAuthenticationProvider provider = new AmsAuthenticationProvider();
-        provider.setPasswordEncoder(passwordEncoder());
-        provider.setUserDetailsService(userDetailsService);
-        return provider;
-    }
+  @Bean
+  public AmsAuthenticationProvider amsAuthenticationProvider() {
+    AmsAuthenticationProvider provider = new AmsAuthenticationProvider();
+    provider.setPasswordEncoder(passwordEncoder());
+    provider.setUserDetailsService(userDetailsService);
+    return provider;
+  }
 
-    @Bean
-    public AuthenticationEntryPoint customAuAuthenticationEntryPoint() {
-        return new CustomAuthenticationEntryPoint(exceptionTrackService);
-    }
+  @Bean
+  public AuthenticationEntryPoint customAuAuthenticationEntryPoint() {
+    return new CustomAuthenticationEntryPoint(exceptionTrackService);
+  }
 }

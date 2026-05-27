@@ -5,7 +5,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 import java.sql.Timestamp;
 
 /**
@@ -17,135 +16,132 @@ import java.sql.Timestamp;
 @Table(name = "credential")
 public class Credential {
 
-    @Id
-    @Column(name = "cid")
-    private String cid;
+  @Id
+  @Column(name = "cid")
+  private String cid;
 
-    @Column(name = "credential_type")
-    private String credentialType;
+  @Column(name = "credential_type")
+  private String credentialType;
 
-    @Column(name = "credential_subject_id")
-    private String credentialSubjectId;
+  @Column(name = "credential_subject_id")
+  private String credentialSubjectId;
 
-    @Column(name = "issuance_date")
-    private Timestamp issuanceDate;
+  @Column(name = "issuance_date")
+  private Timestamp issuanceDate;
 
-    @Column(name = "expiration_date")
-    private Timestamp expirationDate;
+  @Column(name = "expiration_date")
+  private Timestamp expirationDate;
 
-    @Column(name = "content")
-    private String content;
+  @Column(name = "content")
+  private String content;
 
-    @Column(name = "ticket_number")
-    private int ticketNumber;
+  @Column(name = "ticket_number")
+  private int ticketNumber;
 
-    @Column(name = "last_update_time")
-    private Timestamp lastUpdateTime;
+  @Column(name = "last_update_time")
+  private Timestamp lastUpdateTime;
 
-    @Column(name = "credential_status")
-    private String credentialStatus;
+  @Column(name = "credential_status")
+  private String credentialStatus;
 
-    @Column(name = "nonce")
-    private String nonce;
+  @Column(name = "nonce")
+  private String nonce;
 
-    /**
-     * default constructor of entity is NECESSARY for JPA
-     */
-    public Credential() {
-    }
+  /** default constructor of entity is NECESSARY for JPA */
+  public Credential() {}
 
-    public String getCid() {
-        return cid;
-    }
+  public String getCid() {
+    return cid;
+  }
 
-    public Credential setCid(String cid) {
-        this.cid = cid;
-        return this;
-    }
+  public Credential setCid(String cid) {
+    this.cid = cid;
+    return this;
+  }
 
-    public String getCredentialType() {
-        return credentialType;
-    }
+  public String getCredentialType() {
+    return credentialType;
+  }
 
-    public Credential setCredentialType(String credentialType) {
-        this.credentialType = credentialType;
-        return this;
-    }
+  public Credential setCredentialType(String credentialType) {
+    this.credentialType = credentialType;
+    return this;
+  }
 
-    public String getCredentialSubjectId() {
-        return credentialSubjectId;
-    }
+  public String getCredentialSubjectId() {
+    return credentialSubjectId;
+  }
 
-    public Credential setCredentialSubjectId(String credentialSubjectId) {
-        this.credentialSubjectId = credentialSubjectId;
-        return this;
-    }
+  public Credential setCredentialSubjectId(String credentialSubjectId) {
+    this.credentialSubjectId = credentialSubjectId;
+    return this;
+  }
 
-    public Timestamp getIssuanceDate() {
-        return issuanceDate;
-    }
+  public Timestamp getIssuanceDate() {
+    return issuanceDate;
+  }
 
-    public Credential setIssuanceDate(Timestamp issuanceDate) {
-        this.issuanceDate = issuanceDate;
-        return this;
-    }
+  public Credential setIssuanceDate(Timestamp issuanceDate) {
+    this.issuanceDate = issuanceDate;
+    return this;
+  }
 
-    public Timestamp getExpirationDate() {
-        return expirationDate;
-    }
+  public Timestamp getExpirationDate() {
+    return expirationDate;
+  }
 
-    public Credential setExpirationDate(Timestamp expirationDate) {
-        this.expirationDate = expirationDate;
-        return this;
-    }
+  public Credential setExpirationDate(Timestamp expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
 
-    public String getContent() {
-        return content;
-    }
+  public String getContent() {
+    return content;
+  }
 
-    public Credential setContent(String content) {
-        this.content = content;
-        return this;
-    }
+  public Credential setContent(String content) {
+    this.content = content;
+    return this;
+  }
 
-    public int getTicketNumber() {
-        return ticketNumber;
-    }
+  public int getTicketNumber() {
+    return ticketNumber;
+  }
 
-    public Credential setTicketNumber(int ticketNumber) {
-        this.ticketNumber = ticketNumber;
-        return this;
-    }
+  public Credential setTicketNumber(int ticketNumber) {
+    this.ticketNumber = ticketNumber;
+    return this;
+  }
 
-    public Timestamp getLastUpdateTime() {
-        return lastUpdateTime;
-    }
+  public Timestamp getLastUpdateTime() {
+    return lastUpdateTime;
+  }
 
-    public Credential setLastUpdateTime(Timestamp lastUpdateTime) {
-        this.lastUpdateTime = lastUpdateTime;
-        return this;
-    }
+  public Credential setLastUpdateTime(Timestamp lastUpdateTime) {
+    this.lastUpdateTime = lastUpdateTime;
+    return this;
+  }
 
-    public String getCredentialStatus() {
-        return credentialStatus;
-    }
+  public String getCredentialStatus() {
+    return credentialStatus;
+  }
 
-    public Credential setCredentialStatus(String credentialStatus) {
-        this.credentialStatus = credentialStatus;
-        return this;
-    }
+  public Credential setCredentialStatus(String credentialStatus) {
+    this.credentialStatus = credentialStatus;
+    return this;
+  }
 
-    public String getNonce() {
-        return nonce;
-    }
+  public String getNonce() {
+    return nonce;
+  }
 
-    public Credential setNonce(String nonce) {
-        this.nonce = nonce;
-        return this;
-    }
+  public Credential setNonce(String nonce) {
+    this.nonce = nonce;
+    return this;
+  }
 
-    @Override
-    public String toString() {
-        return JsonUtils.voToJs(this);
-    }
+  @Override
+  public String toString() {
+    return JsonUtils.voToJs(this);
+  }
 }

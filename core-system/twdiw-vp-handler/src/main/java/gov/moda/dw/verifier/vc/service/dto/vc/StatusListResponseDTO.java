@@ -6,35 +6,33 @@ import java.io.Serializable;
 
 public class StatusListResponseDTO implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
-    private String statusList;
+  private String statusList;
 
-    public StatusListResponseDTO() {
+  public StatusListResponseDTO() {}
+
+  public StatusListResponseDTO(String respJson) {
+
+    if (respJson != null && !respJson.isBlank()) {
+      StatusListResponseDTO statusListResponseDTO = JsonUtils.jsToVo(respJson, getClass());
+      if (statusListResponseDTO != null) {
+        statusList = statusListResponseDTO.getStatusList();
+      }
     }
+  }
 
-    public StatusListResponseDTO(String respJson) {
+  public String getStatusList() {
+    return statusList;
+  }
 
-        if (respJson != null && !respJson.isBlank()) {
-            StatusListResponseDTO statusListResponseDTO = JsonUtils.jsToVo(respJson, getClass());
-            if (statusListResponseDTO != null) {
-                statusList = statusListResponseDTO.getStatusList();
-            }
-        }
-    }
+  public StatusListResponseDTO setStatusList(String statusList) {
+    this.statusList = statusList;
+    return this;
+  }
 
-    public String getStatusList() {
-        return statusList;
-    }
-
-    public StatusListResponseDTO setStatusList(String statusList) {
-        this.statusList = statusList;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return JsonUtils.voToJs(this);
-    }
+  @Override
+  public String toString() {
+    return JsonUtils.voToJs(this);
+  }
 }

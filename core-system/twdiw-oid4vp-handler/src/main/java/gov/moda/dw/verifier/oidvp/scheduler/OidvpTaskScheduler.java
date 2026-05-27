@@ -17,53 +17,58 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 @EnableScheduling
 public class OidvpTaskScheduler implements SchedulingConfigurer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OidvpTaskScheduler.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(OidvpTaskScheduler.class);
 
-    private final SessionRepository sessionRepository;
-    private final VerifyResultRepository verifyResultRepository;
-    private final OidvpConfig oidvpConfig;
+  private final SessionRepository sessionRepository;
+  private final VerifyResultRepository verifyResultRepository;
+  private final OidvpConfig oidvpConfig;
 
-    public OidvpTaskScheduler(OidvpConfig oidvpConfig, SessionRepository sessionRepository, VerifyResultRepository verifyResultRepository) {
-        this.oidvpConfig = oidvpConfig;
-        this.sessionRepository = sessionRepository;
-        this.verifyResultRepository = verifyResultRepository;
+  public OidvpTaskScheduler(
+      OidvpConfig oidvpConfig,
+      SessionRepository sessionRepository,
+      VerifyResultRepository verifyResultRepository) {
+    this.oidvpConfig = oidvpConfig;
+    this.sessionRepository = sessionRepository;
+    this.verifyResultRepository = verifyResultRepository;
+  }
+
+  public TaskScheduler taskScheduler() {
+    ThreadPoolTaskScheduler threadPoolTaskScheduler = new ThreadPoolTaskScheduler();
+    threadPoolTaskScheduler.setPoolSize(3);
+    threadPoolTaskScheduler.setThreadNamePrefix("OidvpScheduler-");
+    threadPoolTaskScheduler.initialize();
+    return threadPoolTaskScheduler;
+  }
+
+  @Override
+  public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
+    String sessionDeleteCron = oidvpConfig.getSessionDeleteCron();
+    String verifyResultDeleteCron = oidvpConfig.getVerifyResultDeleteCron();
+    taskRegistrar.setScheduler(taskScheduler());
+    taskRegistrar.addCronTask(() -> deleteExpiredSessionTask(), sessionDeleteCron);
+    taskRegistrar.addCronTask(() -> deleteExpiredVerifyResultTask(), verifyResultDeleteCron);
+  }
+
+  public void deleteExpiredSessionTask() {
+    LocalDateTime now = LocalDateTime.now();
+    try {
+      int deleted = sessionRepository.deleteExpiredSession(now);
+      LOGGER.debug("DELETE SESSION SCHEDULER - deleted expired sessions = {}", deleted);
+    } catch (Exception e) {
+      LOGGER.error("DELETE SESSION SCHEDULER - delete expired session error : {}", e.getMessage());
     }
+  }
 
-    public TaskScheduler taskScheduler() {
-        ThreadPoolTaskScheduler threadPoolTaskScheduler = new ThreadPoolTaskScheduler();
-        threadPoolTaskScheduler.setPoolSize(3);
-        threadPoolTaskScheduler.setThreadNamePrefix("OidvpScheduler-");
-        threadPoolTaskScheduler.initialize();
-        return threadPoolTaskScheduler;
+  public void deleteExpiredVerifyResultTask() {
+    LocalDateTime now = LocalDateTime.now();
+    LocalDateTime expiredTime = now.minusMinutes(oidvpConfig.getVerifyResultExpiredTime());
+    try {
+      int deleted = verifyResultRepository.deleteExpiredVerifyResult(expiredTime);
+      LOGGER.debug("DELETE VERIFY_RESULT SCHEDULER - deleted expired VerifyResults = {}", deleted);
+    } catch (Exception e) {
+      LOGGER.error(
+          "DELETE VERIFY_RESULT SCHEDULER - delete expired VerifyResult error : {}",
+          e.getMessage());
     }
-
-    @Override
-    public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
-        String sessionDeleteCron = oidvpConfig.getSessionDeleteCron();
-        String verifyResultDeleteCron = oidvpConfig.getVerifyResultDeleteCron();
-        taskRegistrar.setScheduler(taskScheduler());
-        taskRegistrar.addCronTask(() -> deleteExpiredSessionTask(), sessionDeleteCron);
-        taskRegistrar.addCronTask(() -> deleteExpiredVerifyResultTask(), verifyResultDeleteCron);
-    }
-
-    public void deleteExpiredSessionTask() {
-        LocalDateTime now = LocalDateTime.now();
-        try {
-            int deleted = sessionRepository.deleteExpiredSession(now);
-            LOGGER.debug("DELETE SESSION SCHEDULER - deleted expired sessions = {}", deleted);
-        } catch (Exception e) {
-            LOGGER.error("DELETE SESSION SCHEDULER - delete expired session error : {}", e.getMessage());
-        }
-    }
-
-    public void deleteExpiredVerifyResultTask() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime expiredTime = now.minusMinutes(oidvpConfig.getVerifyResultExpiredTime());
-        try {
-            int deleted = verifyResultRepository.deleteExpiredVerifyResult(expiredTime);
-            LOGGER.debug("DELETE VERIFY_RESULT SCHEDULER - deleted expired VerifyResults = {}", deleted);
-        } catch (Exception e) {
-            LOGGER.error("DELETE VERIFY_RESULT SCHEDULER - delete expired VerifyResult error : {}", e.getMessage());
-        }
-    }
+  }
 }

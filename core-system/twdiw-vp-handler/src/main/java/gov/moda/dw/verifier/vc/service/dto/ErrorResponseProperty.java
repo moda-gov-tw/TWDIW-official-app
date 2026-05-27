@@ -2,7 +2,7 @@ package gov.moda.dw.verifier.vc.service.dto;
 
 public interface ErrorResponseProperty {
 
-    String getResponseMessage();
+  String getResponseMessage();
 
-    int getResponseCode();
+  int getResponseCode();
 }

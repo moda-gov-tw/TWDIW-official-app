@@ -11,51 +11,50 @@ import org.springframework.stereotype.Service;
 @Service
 public class OidvpPropertyDAO {
 
-    private final OidvpPropertyRepository oidvpPropertyRepository;
+  private final OidvpPropertyRepository oidvpPropertyRepository;
 
-    public OidvpPropertyDAO(OidvpPropertyRepository oidvpPropertyRepository) {
-        this.oidvpPropertyRepository = oidvpPropertyRepository;
+  public OidvpPropertyDAO(OidvpPropertyRepository oidvpPropertyRepository) {
+    this.oidvpPropertyRepository = oidvpPropertyRepository;
+  }
+
+  public List<OidvpPropertyJpa> getProperties() throws SQLException {
+    try {
+      return oidvpPropertyRepository.findAll();
+    } catch (Exception e) {
+      throw new SQLException("find OidvpProperties error", e);
     }
+  }
 
-    public List<OidvpPropertyJpa> getProperties() throws SQLException {
-        try {
-            return oidvpPropertyRepository.findAll();
-        } catch (Exception e) {
-            throw new SQLException("find OidvpProperties error", e);
-        }
+  public OidvpPropertyJpa saveProperty(String key, String value) throws SQLException {
+    if (key == null) {
+      throw new BadOidvpParamException("OidvpProperty 'key' must not be null");
     }
-
-
-    public OidvpPropertyJpa saveProperty(String key, String value) throws SQLException {
-        if (key == null) {
-            throw new BadOidvpParamException("OidvpProperty 'key' must not be null");
-        }
-        try {
-            OidvpPropertyJpa oidvpPropertyJpa = new OidvpPropertyJpa().setKey(key).setValue(value);
-            return oidvpPropertyRepository.saveAndFlush(oidvpPropertyJpa);
-        } catch (Exception e) {
-            throw new SQLException("save OidvpProperty error", e);
-        }
+    try {
+      OidvpPropertyJpa oidvpPropertyJpa = new OidvpPropertyJpa().setKey(key).setValue(value);
+      return oidvpPropertyRepository.saveAndFlush(oidvpPropertyJpa);
+    } catch (Exception e) {
+      throw new SQLException("save OidvpProperty error", e);
     }
+  }
 
-    public OidvpPropertyJpa getPropertyByKey(String key) throws SQLException {
-        OidvpPropertyJpa findById;
-        try {
-            findById = oidvpPropertyRepository.findById(key).orElse(null);
-        } catch (Exception e) {
-            throw new SQLException("get OidvpProperty error", e);
-        }
-        if (findById == null) {
-            throw new NoSuchElementException("OidvpProperty not found, key=" + key);
-        }
-        return findById;
+  public OidvpPropertyJpa getPropertyByKey(String key) throws SQLException {
+    OidvpPropertyJpa findById;
+    try {
+      findById = oidvpPropertyRepository.findById(key).orElse(null);
+    } catch (Exception e) {
+      throw new SQLException("get OidvpProperty error", e);
     }
+    if (findById == null) {
+      throw new NoSuchElementException("OidvpProperty not found, key=" + key);
+    }
+    return findById;
+  }
 
-    public void deletePropertyByKey(String key) throws SQLException {
-        try {
-            oidvpPropertyRepository.deleteById(key);
-        } catch (Exception e) {
-            throw new SQLException("delete OidvpProperties error", e);
-        }
+  public void deletePropertyByKey(String key) throws SQLException {
+    try {
+      oidvpPropertyRepository.deleteById(key);
+    } catch (Exception e) {
+      throw new SQLException("delete OidvpProperties error", e);
     }
+  }
 }

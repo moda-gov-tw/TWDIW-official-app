@@ -17,55 +17,57 @@ import org.springframework.http.HttpMethod;
 
 public class AmsHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
-    private final byte[] body;
+  private final byte[] body;
 
-    public AmsHttpServletRequestWrapper(HttpServletRequest request) throws IOException, ServletException {
-        super(request);
-        // 如果是GET request 會沒有Content-types 導致 swagger-ui init直接噴錯
-        if (request.getMethod().equalsIgnoreCase(HttpMethod.POST.toString()) && null != request.getContentType()) {
-            if (request.getContentType().contains("multipart/form-data")) {
-                List<Part> parts = (List<Part>) request.getParts();
-                if (parts.size() > 0) {
-                    body = IOUtils.toByteArray(parts.get(0).getInputStream());
-                } else {
-                    body = null;
-                }
-            } else if(request.getContentType().contains("x-www-form-urlencoded")){
-                body = null;
-            }else {
-                body = IOUtils.toByteArray(request.getReader(), StandardCharsets.UTF_8);
-            }
+  public AmsHttpServletRequestWrapper(HttpServletRequest request)
+      throws IOException, ServletException {
+    super(request);
+    // 如果是GET request 會沒有Content-types 導致 swagger-ui init直接噴錯
+    if (request.getMethod().equalsIgnoreCase(HttpMethod.POST.toString())
+        && null != request.getContentType()) {
+      if (request.getContentType().contains("multipart/form-data")) {
+        List<Part> parts = (List<Part>) request.getParts();
+        if (parts.size() > 0) {
+          body = IOUtils.toByteArray(parts.get(0).getInputStream());
         } else {
-            body = IOUtils.toByteArray(request.getReader(), StandardCharsets.UTF_8);
+          body = null;
         }
+      } else if (request.getContentType().contains("x-www-form-urlencoded")) {
+        body = null;
+      } else {
+        body = IOUtils.toByteArray(request.getReader(), StandardCharsets.UTF_8);
+      }
+    } else {
+      body = IOUtils.toByteArray(request.getReader(), StandardCharsets.UTF_8);
     }
+  }
 
-    @Override
-    public BufferedReader getReader() {
-        return new BufferedReader(new InputStreamReader(getInputStream()));
-    }
+  @Override
+  public BufferedReader getReader() {
+    return new BufferedReader(new InputStreamReader(getInputStream()));
+  }
 
-    @Override
-    public ServletInputStream getInputStream() {
-        final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(body);
-        return new ServletInputStream() {
-            @Override
-            public int read() {
-                return byteArrayInputStream.read();
-            }
+  @Override
+  public ServletInputStream getInputStream() {
+    final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(body);
+    return new ServletInputStream() {
+      @Override
+      public int read() {
+        return byteArrayInputStream.read();
+      }
 
-            @Override
-            public boolean isFinished() {
-                return false;
-            }
+      @Override
+      public boolean isFinished() {
+        return false;
+      }
 
-            @Override
-            public boolean isReady() {
-                return false;
-            }
+      @Override
+      public boolean isReady() {
+        return false;
+      }
 
-            @Override
-            public void setReadListener(ReadListener arg0) {}
-        };
-    }
+      @Override
+      public void setReadListener(ReadListener arg0) {}
+    };
+  }
 }

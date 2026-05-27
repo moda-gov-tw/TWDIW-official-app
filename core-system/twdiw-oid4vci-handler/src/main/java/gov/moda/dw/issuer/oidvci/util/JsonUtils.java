@@ -189,22 +189,22 @@ public class JsonUtils {
     return convertJsonStringToMap(jsonString);
   }
 
-    /**
-     * To json.
-     *
-     * @param obj the obj
-     * @return the string
-     * @throws JsonProcessingException the json processing exception
-     */
-    public static String toJson(Object obj) throws JsonProcessingException {
-        return objectMapper.writeValueAsString(obj);
-    }
+  /**
+   * To json.
+   *
+   * @param obj the obj
+   * @return the string
+   * @throws JsonProcessingException the json processing exception
+   */
+  public static String toJson(Object obj) throws JsonProcessingException {
+    return objectMapper.writeValueAsString(obj);
+  }
 
-    public static String toJsonNoThrows(Object obj) {
-        try {
-            return objectMapper.writeValueAsString(obj);
-        } catch (JsonProcessingException e) {
-            return "";
-        }
+  public static String toJsonNoThrows(Object obj) {
+    try {
+      return objectMapper.writeValueAsString(obj);
+    } catch (JsonProcessingException e) {
+      return "";
     }
+  }
 }

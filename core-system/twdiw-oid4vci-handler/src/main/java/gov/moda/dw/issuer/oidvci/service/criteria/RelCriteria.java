@@ -1,23 +1,21 @@
 package gov.moda.dw.issuer.oidvci.service.criteria;
 
+import gov.moda.dw.issuer.oidvci.domain.Rel;
+import gov.moda.dw.issuer.oidvci.web.rest.RelResource;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
-
-import gov.moda.dw.issuer.oidvci.domain.Rel;
-import gov.moda.dw.issuer.oidvci.web.rest.RelResource;
 import org.springdoc.core.annotations.ParameterObject;
 import tech.jhipster.service.Criteria;
 import tech.jhipster.service.filter.*;
 
 /**
- * Criteria class for the {@link Rel} entity. This class is used
- * in {@link RelResource} to receive all the possible filtering options from
- * the Http GET request parameters.
- * For example the following could be a valid request:
- * {@code /rels?id.greaterThan=5&attr1.contains=something&attr2.specified=false}
- * As Spring is unable to properly convert the types, unless specific {@link Filter} class are used, we need to use
- * fix type specific filters.
+ * Criteria class for the {@link Rel} entity. This class is used in {@link RelResource} to receive
+ * all the possible filtering options from the Http GET request parameters. For example the
+ * following could be a valid request: {@code
+ * /rels?id.greaterThan=5&attr1.contains=something&attr2.specified=false} As Spring is unable to
+ * properly convert the types, unless specific {@link Filter} class are used, we need to use fix
+ * type specific filters.
  */
 @ParameterObject
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -234,16 +232,16 @@ public class RelCriteria implements Serializable, Criteria {
     return Optional.ofNullable(dataRole1);
   }
 
-//  public StringFilter dataRole1() {
-//    if (dataRole1 == null) {
-//      setDataRole1(new StringFilter());
-//    }
-//    return dataRole1;
-//  }
+  //  public StringFilter dataRole1() {
+  //    if (dataRole1 == null) {
+  //      setDataRole1(new StringFilter());
+  //    }
+  //    return dataRole1;
+  //  }
 
-//  public void setDataRole1(StringFilter dataRole1) {
-////    this.dataRole1 = dataRole1;
-//  }
+  //  public void setDataRole1(StringFilter dataRole1) {
+  ////    this.dataRole1 = dataRole1;
+  //  }
 
   public StringFilter getDataRole2() {
     return dataRole2;
@@ -253,16 +251,16 @@ public class RelCriteria implements Serializable, Criteria {
     return Optional.ofNullable(dataRole2);
   }
 
-//  public StringFilter dataRole2() {
-//    if (dataRole2 == null) {
-//      setDataRole2(new StringFilter());
-//    }
-//    return dataRole2;
-//  }
+  //  public StringFilter dataRole2() {
+  //    if (dataRole2 == null) {
+  //      setDataRole2(new StringFilter());
+  //    }
+  //    return dataRole2;
+  //  }
 
-//  public void setDataRole2(StringFilter dataRole2) {
-////    this.dataRole2 = dataRole2;
-//  }
+  //  public void setDataRole2(StringFilter dataRole2) {
+  ////    this.dataRole2 = dataRole2;
+  //  }
 
   public StringFilter getDataAuth() {
     return dataAuth;
@@ -280,7 +278,7 @@ public class RelCriteria implements Serializable, Criteria {
   }
 
   public void setDataAuth(StringFilter dataAuth) {
-    //this.dataAuth = dataAuth;
+    // this.dataAuth = dataAuth;
   }
 
   public InstantFilter getCreateTime() {
@@ -330,59 +328,56 @@ public class RelCriteria implements Serializable, Criteria {
       return false;
     }
     final RelCriteria that = (RelCriteria) o;
-    return (
-      Objects.equals(id, that.id) &&
-      Objects.equals(leftTbl, that.leftTbl) &&
-      Objects.equals(leftId, that.leftId) &&
-      Objects.equals(rightTbl, that.rightTbl) &&
-      Objects.equals(rightId, that.rightId) &&
-      Objects.equals(leftCode, that.leftCode) &&
-      Objects.equals(rightCode, that.rightCode) &&
-      Objects.equals(state, that.state) &&
-      Objects.equals(dataRole1, that.dataRole1) &&
-      Objects.equals(dataRole2, that.dataRole2) &&
-      Objects.equals(dataAuth, that.dataAuth) &&
-      Objects.equals(createTime, that.createTime) &&
-      Objects.equals(distinct, that.distinct)
-    );
+    return (Objects.equals(id, that.id)
+        && Objects.equals(leftTbl, that.leftTbl)
+        && Objects.equals(leftId, that.leftId)
+        && Objects.equals(rightTbl, that.rightTbl)
+        && Objects.equals(rightId, that.rightId)
+        && Objects.equals(leftCode, that.leftCode)
+        && Objects.equals(rightCode, that.rightCode)
+        && Objects.equals(state, that.state)
+        && Objects.equals(dataRole1, that.dataRole1)
+        && Objects.equals(dataRole2, that.dataRole2)
+        && Objects.equals(dataAuth, that.dataAuth)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(distinct, that.distinct));
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-      id,
-      leftTbl,
-      leftId,
-      rightTbl,
-      rightId,
-      leftCode,
-      rightCode,
-      state,
-      dataRole1,
-      dataRole2,
-      dataAuth,
-      createTime,
-      distinct
-    );
+        id,
+        leftTbl,
+        leftId,
+        rightTbl,
+        rightId,
+        leftCode,
+        rightCode,
+        state,
+        dataRole1,
+        dataRole2,
+        dataAuth,
+        createTime,
+        distinct);
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "RelCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalLeftTbl().map(f -> "leftTbl=" + f + ", ").orElse("") +
-            optionalLeftId().map(f -> "leftId=" + f + ", ").orElse("") +
-            optionalRightTbl().map(f -> "rightTbl=" + f + ", ").orElse("") +
-            optionalRightId().map(f -> "rightId=" + f + ", ").orElse("") +
-            optionalLeftCode().map(f -> "leftCode=" + f + ", ").orElse("") +
-            optionalRightCode().map(f -> "rightCode=" + f + ", ").orElse("") +
-            optionalState().map(f -> "state=" + f + ", ").orElse("") +
-            optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("") +
-            optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("") +
-            optionalDataAuth().map(f -> "dataAuth=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-        "}";
-    }
+  @Override
+  public String toString() {
+    return "RelCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalLeftTbl().map(f -> "leftTbl=" + f + ", ").orElse("")
+        + optionalLeftId().map(f -> "leftId=" + f + ", ").orElse("")
+        + optionalRightTbl().map(f -> "rightTbl=" + f + ", ").orElse("")
+        + optionalRightId().map(f -> "rightId=" + f + ", ").orElse("")
+        + optionalLeftCode().map(f -> "leftCode=" + f + ", ").orElse("")
+        + optionalRightCode().map(f -> "rightCode=" + f + ", ").orElse("")
+        + optionalState().map(f -> "state=" + f + ", ").orElse("")
+        + optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("")
+        + optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("")
+        + optionalDataAuth().map(f -> "dataAuth=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

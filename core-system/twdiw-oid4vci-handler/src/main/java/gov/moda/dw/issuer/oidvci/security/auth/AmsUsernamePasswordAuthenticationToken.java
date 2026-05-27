@@ -5,10 +5,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 
 public class AmsUsernamePasswordAuthenticationToken extends UsernamePasswordAuthenticationToken {
 
-  @Getter
-  private String nonceId;
+  @Getter private String nonceId;
 
-  public AmsUsernamePasswordAuthenticationToken(Object principal, Object credentials, String nonceId) {
+  public AmsUsernamePasswordAuthenticationToken(
+      Object principal, Object credentials, String nonceId) {
     super(principal, credentials);
     this.nonceId = nonceId;
   }

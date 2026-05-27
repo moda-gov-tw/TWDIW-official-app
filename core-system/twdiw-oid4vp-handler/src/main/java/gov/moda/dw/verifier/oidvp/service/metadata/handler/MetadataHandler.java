@@ -6,9 +6,9 @@ import java.util.Map;
 
 public abstract class MetadataHandler {
 
-    public abstract String getFieldName();
+  public abstract String getFieldName();
 
-    public abstract void setField(VerifierMetadata metadata, Map<String, String> fieldMap);
+  public abstract void setField(VerifierMetadata metadata, Map<String, String> fieldMap);
 
-    public abstract String checkAndGetFieldValue(MetadataFieldsRequest request);
+  public abstract String checkAndGetFieldValue(MetadataFieldsRequest request);
 }

@@ -43,7 +43,8 @@ public class EncryptUtils {
   }
 
   public static void main(String[] args) {
-    String[] userList = new String[] { "leo_lu", "admin", "navien", "a123456789", "system", "A147684589", "user" };
+    String[] userList =
+        new String[] {"leo_lu", "admin", "navien", "a123456789", "system", "A147684589", "user"};
     for (String userName : userList) {
       log.info("{} sha512 result = {}", userName, EncryptUtils.gainSHA512(userName.toUpperCase()));
       log.info("{} sha256 result = {}", userName, EncryptUtils.gainSHA256(userName.toUpperCase()));

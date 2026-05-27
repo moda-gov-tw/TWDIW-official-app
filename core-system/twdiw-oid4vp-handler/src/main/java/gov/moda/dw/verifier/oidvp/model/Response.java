@@ -12,40 +12,37 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class Response {
 
-    protected Integer code;
+  protected Integer code;
 
-    protected String message;
+  protected String message;
 
+  public Integer getCode() {
+    return code;
+  }
 
-    public Integer getCode() {
-        return code;
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder("{");
+    if (code != null) {
+      sb.append("\"code\":").append(code);
     }
-
-    public void setCode(Integer code) {
-        this.code = code;
+    if (message != null) {
+      sb.append(",\"message\":\"").append(message).append('\"');
     }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("{");
-        if (code != null) {
-            sb.append("\"code\":")
-              .append(code);
-        }
-        if (message != null) {
-            sb.append(",\"message\":\"")
-              .append(message).append('\"');
-        }
-        sb.append("}");
-        String s = sb.toString();
-        return (s.startsWith("{,")) ? s.replace("{,", "{") : s;
-    }
+    sb.append("}");
+    String s = sb.toString();
+    return (s.startsWith("{,")) ? s.replace("{,", "{") : s;
+  }
 }

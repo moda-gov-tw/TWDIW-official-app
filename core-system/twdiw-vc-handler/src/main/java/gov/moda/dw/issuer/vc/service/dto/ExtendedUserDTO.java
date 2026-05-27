@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ExtendedUser} entity.
- */
+/** A DTO for the {@link ExtendedUser} entity. */
 @Schema(description = "ExtendedUser")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ExtendedUserDTO implements Serializable {
@@ -227,25 +225,56 @@ public class ExtendedUserDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ExtendedUserDTO{" +
-            "id=" + getId() +
-            ", orgId='" + getOrgId() + "'" +
-            ", userId='" + getUserId() + "'" +
-            ", userName='" + getUserName() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", phone='" + getPhone() + "'" +
-            ", tel='" + getTel() + "'" +
-            ", employeeId='" + getEmployeeId() + "'" +
-            ", employeeTypeId='" + getEmployeeTypeId() + "'" +
-            ", leftDate='" + getLeftDate() + "'" +
-            ", onboardDate='" + getOnboardDate() + "'" +
-            ", userTypeId='" + getUserTypeId() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", state='" + getState() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ExtendedUserDTO{"
+        + "id="
+        + getId()
+        + ", orgId='"
+        + getOrgId()
+        + "'"
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", userName='"
+        + getUserName()
+        + "'"
+        + ", email='"
+        + getEmail()
+        + "'"
+        + ", phone='"
+        + getPhone()
+        + "'"
+        + ", tel='"
+        + getTel()
+        + "'"
+        + ", employeeId='"
+        + getEmployeeId()
+        + "'"
+        + ", employeeTypeId='"
+        + getEmployeeTypeId()
+        + "'"
+        + ", leftDate='"
+        + getLeftDate()
+        + "'"
+        + ", onboardDate='"
+        + getOnboardDate()
+        + "'"
+        + ", userTypeId='"
+        + getUserTypeId()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

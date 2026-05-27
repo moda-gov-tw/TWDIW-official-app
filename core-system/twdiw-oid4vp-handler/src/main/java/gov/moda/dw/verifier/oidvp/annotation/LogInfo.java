@@ -10,13 +10,15 @@ import org.springframework.core.annotation.AliasFor;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LogInfo {
 
-    @AliasFor("logType")
-    LogType value() default LogType.ALL;
+  @AliasFor("logType")
+  LogType value() default LogType.ALL;
 
-    @AliasFor("value")
-    LogType logType() default LogType.ALL;
+  @AliasFor("value")
+  LogType logType() default LogType.ALL;
 
-    enum LogType {
-        ALL, REQUEST, RESPONSE
-    }
+  enum LogType {
+    ALL,
+    REQUEST,
+    RESPONSE
+  }
 }

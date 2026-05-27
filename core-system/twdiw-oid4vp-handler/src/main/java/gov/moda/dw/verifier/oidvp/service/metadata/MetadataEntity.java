@@ -31,89 +31,94 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-@CacheConfig(cacheManager = CacheManagerConfig.METADATA_CACHE_MANAGER, cacheNames = CacheManagerConfig.METADATA_CACHE_NAME)
+@CacheConfig(
+    cacheManager = CacheManagerConfig.METADATA_CACHE_MANAGER,
+    cacheNames = CacheManagerConfig.METADATA_CACHE_NAME)
 public class MetadataEntity {
 
-    public static final String KEY_VALUE = "#root.caches[0].name";
+  public static final String KEY_VALUE = "#root.caches[0].name";
 
-    private final MetadataDAO metadataDAO;
-    private final MetadataHandlerClient metadataHandlerClient;
+  private final MetadataDAO metadataDAO;
+  private final MetadataHandlerClient metadataHandlerClient;
 
-    private final HashSet<ResponseType> responseTypes;
-    private final Map<FormatRegistry, FormatDescription> supportedFormat;
-    private final URI jwksURI;
-    private final List<PublicJWKProvider> publicJWKProviders;
+  private final HashSet<ResponseType> responseTypes;
+  private final Map<FormatRegistry, FormatDescription> supportedFormat;
+  private final URI jwksURI;
+  private final List<PublicJWKProvider> publicJWKProviders;
 
+  public MetadataEntity(
+      MetadataDAO metadataDAO,
+      MetadataHandlerClient metadataHandlerClient,
+      OidvpConfig oidvpConfig,
+      List<PublicJWKProvider> publicJWKProviders) {
+    this.metadataDAO = metadataDAO;
+    this.metadataHandlerClient = metadataHandlerClient;
+    this.publicJWKProviders = publicJWKProviders;
+    supportedFormat = getDefaultSupportedVpFormat();
+    jwksURI = oidvpConfig.getJwksURI();
+    responseTypes = new HashSet<>(Collections.singleton(OidvpResponseType.VPTOKEN));
+  }
 
-    public MetadataEntity(MetadataDAO metadataDAO, MetadataHandlerClient metadataHandlerClient, OidvpConfig oidvpConfig, List<PublicJWKProvider> publicJWKProviders) {
-        this.metadataDAO = metadataDAO;
-        this.metadataHandlerClient = metadataHandlerClient;
-        this.publicJWKProviders = publicJWKProviders;
-        supportedFormat = getDefaultSupportedVpFormat();
-        jwksURI = oidvpConfig.getJwksURI();
-        responseTypes = new HashSet<>(Collections.singleton(OidvpResponseType.VPTOKEN));
+  @Cacheable(key = KEY_VALUE)
+  public VerifierMetadata loadMetadata() throws SQLException {
+    List<MetadataJpa> fields = metadataDAO.getAllFields();
+    VerifierMetadata metadata = metadataHandlerClient.getVerifierMetadataByFields(fields);
+    metadata.setResponseTypes(responseTypes);
+    metadata.setVpFormats(supportedFormat);
+    JWKSet publicJWKSet = getPublicJWKSet();
+    metadata.setJWKSet((publicJWKSet.isEmpty()) ? null : publicJWKSet);
+    metadata.setJWKSetURI(jwksURI);
+    return metadata;
+  }
+
+  @CacheEvict(key = KEY_VALUE)
+  public void saveMetadataProperty(MetadataFieldsRequest request) throws SQLException {
+    List<MetadataJpa> toBeSavedList = metadataHandlerClient.collectUpdateFields(request);
+    metadataDAO.saveAll(toBeSavedList);
+  }
+
+  @CacheEvict(key = KEY_VALUE)
+  public void removeMetadataProperty(List<String> removeFields) throws SQLException {
+    if (removeFields == null || removeFields.isEmpty()) {
+      return;
     }
-
-    @Cacheable(key = KEY_VALUE)
-    public VerifierMetadata loadMetadata() throws SQLException {
-        List<MetadataJpa> fields = metadataDAO.getAllFields();
-        VerifierMetadata metadata = metadataHandlerClient.getVerifierMetadataByFields(fields);
-        metadata.setResponseTypes(responseTypes);
-        metadata.setVpFormats(supportedFormat);
-        JWKSet publicJWKSet = getPublicJWKSet();
-        metadata.setJWKSet((publicJWKSet.isEmpty()) ? null : publicJWKSet);
-        metadata.setJWKSetURI(jwksURI);
-        return metadata;
+    List<String> fieldNameList = removeFields.stream().map(String::trim).toList();
+    for (String name : fieldNameList) {
+      if (!FieldName.MODIFIABLE_FIELD_SET.contains(name)) {
+        throw new InvalidParameterException("unknown field to delete: " + name);
+      }
     }
+    metadataDAO.deleteFields(fieldNameList);
+  }
 
-    @CacheEvict(key = KEY_VALUE)
-    public void saveMetadataProperty(MetadataFieldsRequest request) throws SQLException {
-        List<MetadataJpa> toBeSavedList = metadataHandlerClient.collectUpdateFields(request);
-        metadataDAO.saveAll(toBeSavedList);
+  public JWKSet getPublicJWKSet() {
+    return new JWKSet(collectJWK(publicJWKProviders));
+  }
+
+  private List<JWK> collectJWK(List<PublicJWKProvider> publicJWKProviders) {
+    ArrayList<JWK> jwkList = new ArrayList<>();
+    for (PublicJWKProvider publicJWKProvider : publicJWKProviders) {
+      List<JWK> jwKs = publicJWKProvider.getPublicJWKs();
+      if (jwKs != null && !jwKs.isEmpty()) {
+        jwkList.addAll(jwKs);
+      }
     }
+    return jwkList;
+  }
 
-    @CacheEvict(key = KEY_VALUE)
-    public void removeMetadataProperty(List<String> removeFields) throws SQLException {
-        if (removeFields == null || removeFields.isEmpty()) {
-            return;
-        }
-        List<String> fieldNameList = removeFields.stream().map(String::trim).toList();
-        for (String name : fieldNameList) {
-            if (!FieldName.MODIFIABLE_FIELD_SET.contains(name)) {
-                throw new InvalidParameterException("unknown field to delete: " + name);
-            }
-        }
-        metadataDAO.deleteFields(fieldNameList);
-    }
+  private Map<FormatRegistry, FormatDescription> getDefaultSupportedVpFormat() {
+    HashMap<FormatRegistry, FormatDescription> defaultFormat = new HashMap<>();
 
-    public JWKSet getPublicJWKSet() {
-        return new JWKSet(collectJWK(publicJWKProviders));
-    }
+    // vp
+    HashSet<JwtAlgValue> vpAlg = new HashSet<>();
+    vpAlg.add(JwtAlgValue.ES256);
+    defaultFormat.put(FormatRegistry.JWT_VP, FormatDescription.alg(vpAlg));
 
-    private List<JWK> collectJWK(List<PublicJWKProvider> publicJWKProviders) {
-        ArrayList<JWK> jwkList = new ArrayList<>();
-        for (PublicJWKProvider publicJWKProvider : publicJWKProviders) {
-            List<JWK> jwKs = publicJWKProvider.getPublicJWKs();
-            if (jwKs != null && !jwKs.isEmpty()) {
-                jwkList.addAll(jwKs);
-            }
-        }
-        return jwkList;
-    }
+    // vc
+    HashSet<JwtAlgValue> vcAlg = new HashSet<>();
+    vcAlg.add(JwtAlgValue.ES256);
+    defaultFormat.put(FormatRegistry.JWT_VC, FormatDescription.alg(vcAlg));
 
-    private Map<FormatRegistry, FormatDescription> getDefaultSupportedVpFormat() {
-        HashMap<FormatRegistry, FormatDescription> defaultFormat = new HashMap<>();
-
-        // vp
-        HashSet<JwtAlgValue> vpAlg = new HashSet<>();
-        vpAlg.add(JwtAlgValue.ES256);
-        defaultFormat.put(FormatRegistry.JWT_VP, FormatDescription.alg(vpAlg));
-
-        // vc
-        HashSet<JwtAlgValue> vcAlg = new HashSet<>();
-        vcAlg.add(JwtAlgValue.ES256);
-        defaultFormat.put(FormatRegistry.JWT_VC, FormatDescription.alg(vcAlg));
-
-        return defaultFormat;
-    }
+    return defaultFormat;
+  }
 }

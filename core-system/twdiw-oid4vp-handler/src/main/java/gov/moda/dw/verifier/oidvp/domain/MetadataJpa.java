@@ -9,34 +9,33 @@ import jakarta.persistence.Table;
 @Table(name = "metadata")
 public class MetadataJpa {
 
-    @Id
-    @Column(name = "field_name")
-    private String fieldName;
+  @Id
+  @Column(name = "field_name")
+  private String fieldName;
 
-    @Column(name = "field_value")
-    private String fieldValue;
+  @Column(name = "field_value")
+  private String fieldValue;
 
-    public MetadataJpa() {
-    }
+  public MetadataJpa() {}
 
-    public MetadataJpa(String fieldName, String fieldValue) {
-        this.fieldName = fieldName;
-        this.fieldValue = fieldValue;
-    }
+  public MetadataJpa(String fieldName, String fieldValue) {
+    this.fieldName = fieldName;
+    this.fieldValue = fieldValue;
+  }
 
-    public String getFieldName() {
-        return fieldName;
-    }
+  public String getFieldName() {
+    return fieldName;
+  }
 
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
-    }
+  public void setFieldName(String fieldName) {
+    this.fieldName = fieldName;
+  }
 
-    public String getFieldValue() {
-        return fieldValue;
-    }
+  public String getFieldValue() {
+    return fieldValue;
+  }
 
-    public void setFieldValue(String fieldValue) {
-        this.fieldValue = fieldValue;
-    }
+  public void setFieldValue(String fieldValue) {
+    this.fieldValue = fieldValue;
+  }
 }

@@ -2,15 +2,12 @@ package gov.moda.dw.issuer.vc.service.dto;
 
 import gov.moda.dw.issuer.vc.domain.ApiTrack;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Lob;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ApiTrack} entity.
- */
+/** A DTO for the {@link ApiTrack} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ApiTrackDTO implements Serializable {
 
@@ -49,15 +46,15 @@ public class ApiTrackDTO implements Serializable {
   private String rtt;
 
   @Schema(description = "請求標頭")
-//  @Lob
+  //  @Lob
   private String requestHeader;
 
   @Schema(description = "請求參數")
-//  @Lob
+  //  @Lob
   private String requestParam;
 
   @Schema(description = "請求內容")
-//  @Lob
+  //  @Lob
   private String requestBody;
 
   @Size(max = 255)
@@ -65,11 +62,11 @@ public class ApiTrackDTO implements Serializable {
   private String requestMethod;
 
   @Schema(description = "回應標頭")
-//  @Lob
+  //  @Lob
   private String responseHeader;
 
   @Schema(description = "回應內容")
-//  @Lob
+  //  @Lob
   private String responseBody;
 
   @Size(max = 255)
@@ -298,31 +295,74 @@ public class ApiTrackDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ApiTrackDTO{" +
-            "id=" + getId() +
-            ", uuid='" + getUuid() + "'" +
-            ", timestamp='" + getTimestamp() + "'" +
-            ", source='" + getSource() + "'" +
-            ", serviceId='" + getServiceId() + "'" +
-            ", uri='" + getUri() + "'" +
-            ", url='" + getUrl() + "'" +
-            ", statusCode='" + getStatusCode() + "'" +
-            ", rtt='" + getRtt() + "'" +
-            ", requestHeader='" + getRequestHeader() + "'" +
-            ", requestParam='" + getRequestParam() + "'" +
-            ", requestBody='" + getRequestBody() + "'" +
-            ", requestMethod='" + getRequestMethod() + "'" +
-            ", responseHeader='" + getResponseHeader() + "'" +
-            ", responseBody='" + getResponseBody() + "'" +
-            ", accessToken1='" + getAccessToken1() + "'" +
-            ", accessToken2='" + getAccessToken2() + "'" +
-            ", jhiFrom='" + getJhiFrom() + "'" +
-            ", jhiTo='" + getJhiTo() + "'" +
-            ", cost='" + getCost() + "'" +
-            ", charged='" + getCharged() + "'" +
-            ", synced='" + getSynced() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ApiTrackDTO{"
+        + "id="
+        + getId()
+        + ", uuid='"
+        + getUuid()
+        + "'"
+        + ", timestamp='"
+        + getTimestamp()
+        + "'"
+        + ", source='"
+        + getSource()
+        + "'"
+        + ", serviceId='"
+        + getServiceId()
+        + "'"
+        + ", uri='"
+        + getUri()
+        + "'"
+        + ", url='"
+        + getUrl()
+        + "'"
+        + ", statusCode='"
+        + getStatusCode()
+        + "'"
+        + ", rtt='"
+        + getRtt()
+        + "'"
+        + ", requestHeader='"
+        + getRequestHeader()
+        + "'"
+        + ", requestParam='"
+        + getRequestParam()
+        + "'"
+        + ", requestBody='"
+        + getRequestBody()
+        + "'"
+        + ", requestMethod='"
+        + getRequestMethod()
+        + "'"
+        + ", responseHeader='"
+        + getResponseHeader()
+        + "'"
+        + ", responseBody='"
+        + getResponseBody()
+        + "'"
+        + ", accessToken1='"
+        + getAccessToken1()
+        + "'"
+        + ", accessToken2='"
+        + getAccessToken2()
+        + "'"
+        + ", jhiFrom='"
+        + getJhiFrom()
+        + "'"
+        + ", jhiTo='"
+        + getJhiTo()
+        + "'"
+        + ", cost='"
+        + getCost()
+        + "'"
+        + ", charged='"
+        + getCharged()
+        + "'"
+        + ", synced='"
+        + getSynced()
+        + "'"
+        + "}";
+  }
 }

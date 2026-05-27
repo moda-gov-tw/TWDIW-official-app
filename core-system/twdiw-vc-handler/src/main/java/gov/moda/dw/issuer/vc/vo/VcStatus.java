@@ -6,40 +6,39 @@ package gov.moda.dw.issuer.vc.vo;
  * @version 20240902
  */
 public enum VcStatus {
+  ACTIVE("0"),
+  SUSPENDED("1"),
+  REVOKED("2"),
+  UNKNOWN("-1");
 
-    ACTIVE ("0"),
-    SUSPENDED ("1"),
-    REVOKED ("2"),
-    UNKNOWN ("-1");
+  private final String value;
 
-    private final String value;
+  VcStatus(String value) {
+    this.value = value;
+  }
 
-    VcStatus(String value) {
-        this.value = value;
+  public static VcStatus getByValue(String value) {
+
+    VcStatus[] values = VcStatus.values();
+    for (VcStatus vcStatus : values) {
+      if (vcStatus.getValue().equalsIgnoreCase(value)) {
+        return vcStatus;
+      }
     }
 
-    public static VcStatus getByValue(String value) {
+    return UNKNOWN;
+  }
 
-        VcStatus[] values = VcStatus.values();
-        for (VcStatus vcStatus : values) {
-            if (vcStatus.getValue().equalsIgnoreCase(value)) {
-                return vcStatus;
-            }
-        }
+  public boolean equals(VcStatus vcStatus) {
 
-        return UNKNOWN;
+    if (vcStatus != null) {
+      return value.equalsIgnoreCase(vcStatus.getValue());
     }
 
-    public boolean equals(VcStatus vcStatus) {
+    return false;
+  }
 
-        if (vcStatus != null) {
-            return value.equalsIgnoreCase(vcStatus.getValue());
-        }
-
-        return false;
-    }
-
-    public String getValue() {
-        return value;
-    }
+  public String getValue() {
+    return value;
+  }
 }

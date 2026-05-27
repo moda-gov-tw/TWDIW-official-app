@@ -7,52 +7,54 @@ import java.util.Objects;
 
 public class AuthorizationRequestOpts {
 
-    private ResponseMode responseMode = OidvpResponseMode.DIRECT_POST;
-    private final ResponseType responseType;
-    private LocalDateTime expiredTime;
-    private String callbackUri;
+  private ResponseMode responseMode = OidvpResponseMode.DIRECT_POST;
+  private final ResponseType responseType;
+  private LocalDateTime expiredTime;
+  private String callbackUri;
 
-    public AuthorizationRequestOpts(ResponseType responseType) {
-        this.responseType = responseType;
-    }
+  public AuthorizationRequestOpts(ResponseType responseType) {
+    this.responseType = responseType;
+  }
 
-    public AuthorizationRequestOpts(ResponseType responseType, ResponseMode responseMode) {
-        this.responseType = Objects.requireNonNull(responseType);
-        this.responseMode = responseMode == null ? OidvpResponseMode.DIRECT_POST : responseMode;
-    }
+  public AuthorizationRequestOpts(ResponseType responseType, ResponseMode responseMode) {
+    this.responseType = Objects.requireNonNull(responseType);
+    this.responseMode = responseMode == null ? OidvpResponseMode.DIRECT_POST : responseMode;
+  }
 
-    public ResponseMode getResponseMode() {
-        return responseMode;
-    }
+  public ResponseMode getResponseMode() {
+    return responseMode;
+  }
 
-    public AuthorizationRequestOpts setResponseMode(ResponseMode responseMode) {
-        this.responseMode = responseMode;
-        return this;
-    }
+  public AuthorizationRequestOpts setResponseMode(ResponseMode responseMode) {
+    this.responseMode = responseMode;
+    return this;
+  }
 
-    public ResponseType getResponseType() {
-        return responseType;
-    }
+  public ResponseType getResponseType() {
+    return responseType;
+  }
 
-    public LocalDateTime getExpiredTime() {
-        return expiredTime;
-    }
+  public LocalDateTime getExpiredTime() {
+    return expiredTime;
+  }
 
-    public AuthorizationRequestOpts setExpiredTime(LocalDateTime expiredTime) {
-        this.expiredTime = expiredTime;
-        return this;
-    }
+  public AuthorizationRequestOpts setExpiredTime(LocalDateTime expiredTime) {
+    this.expiredTime = expiredTime;
+    return this;
+  }
 
-    public String getCallbackUri() {
-        return callbackUri;
-    }
+  public String getCallbackUri() {
+    return callbackUri;
+  }
 
-    public AuthorizationRequestOpts setCallbackUri(String callbackUri) {
-        this.callbackUri = callbackUri;
-        return this;
-    }
+  public AuthorizationRequestOpts setCallbackUri(String callbackUri) {
+    this.callbackUri = callbackUri;
+    return this;
+  }
 
-    public enum JARType {
-        NONE, VALUE, REFERENCE
-    }
+  public enum JARType {
+    NONE,
+    VALUE,
+    REFERENCE
+  }
 }

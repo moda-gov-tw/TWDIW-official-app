@@ -1,7 +1,5 @@
 package gov.moda.dw.issuer.vc.domain;
 
-import java.sql.Timestamp;
-
 import gov.moda.dw.issuer.vc.util.DateUtils.TimeUnit;
 import gov.moda.dw.issuer.vc.util.JsonUtils;
 import jakarta.persistence.Column;
@@ -10,140 +8,141 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.sql.Timestamp;
 
 /**
  * entity of credential_policy
  *
  * @version 20241016
  */
-@Entity //標示為實體類別
-@Table(name = "credential_policy") //DB_TABLE_NAME
+@Entity // 標示為實體類別
+@Table(name = "credential_policy") // DB_TABLE_NAME
 public class CredentialPolicyEntity {
 
-	@Id //標示何者為Primary Key
-	@Column(name="pid")
-	private String pid;
-	
-	@Column(name="credential_type")
-	private String credentialType;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name="effective_duration_time_unit")
-	private TimeUnit effectiveDurationTimeUnit;
-	
-	@Column(name="effective_duration_time_value")
-	private int effectiveDurationTimeValue;
-	
-	@Column(name="signature_alg")
-	private String signatureAlg;
-	
-	@Column(name="created_time")
-	private Timestamp createdTime;
-	
-	@Column(name="seq_name")
-	private String seqName;
-	
-	@Column(name="schema_id")
-	private String schemaId;
-	
-	@Column(name="vc_schema")
-	private String vcSchema;
-	
-	@Column(name="func_switch")
-	private String funcSwitch;
-	
-	public String getPid() {
-		return pid;
-	}
+  @Id // 標示何者為Primary Key
+  @Column(name = "pid")
+  private String pid;
 
-	public CredentialPolicyEntity setPid(String pid) {
-		this.pid = pid;
-		return this;
-	}
+  @Column(name = "credential_type")
+  private String credentialType;
 
-	public String getCredentialType() {
-		return credentialType;
-	}
+  @Enumerated(EnumType.STRING)
+  @Column(name = "effective_duration_time_unit")
+  private TimeUnit effectiveDurationTimeUnit;
 
-	public CredentialPolicyEntity setCredentialType(String credentialType) {
-		this.credentialType = credentialType;
-		return this;
-	}
+  @Column(name = "effective_duration_time_value")
+  private int effectiveDurationTimeValue;
 
-	public TimeUnit getEffectiveDurationTimeUnit() {
-		return effectiveDurationTimeUnit;
-	}
+  @Column(name = "signature_alg")
+  private String signatureAlg;
 
-	public CredentialPolicyEntity setEffectiveDurationTimeUnit(TimeUnit effectiveDurationTimeUnit) {
-		this.effectiveDurationTimeUnit = effectiveDurationTimeUnit;
-		return this;
-	}
+  @Column(name = "created_time")
+  private Timestamp createdTime;
 
-	public int getEffectiveDurationTimeValue() {
-		return effectiveDurationTimeValue;
-	}
+  @Column(name = "seq_name")
+  private String seqName;
 
-	public CredentialPolicyEntity setEffectiveDurationTimeValue(int effectiveDurationTimeValue) {
-		this.effectiveDurationTimeValue = effectiveDurationTimeValue;
-		return this;
-	}
+  @Column(name = "schema_id")
+  private String schemaId;
 
-	public String getSignatureAlg() {
-		return signatureAlg;
-	}
+  @Column(name = "vc_schema")
+  private String vcSchema;
 
-	public CredentialPolicyEntity setSignatureAlg(String signatureAlg) {
-		this.signatureAlg = signatureAlg;
-		return this;
-	}
+  @Column(name = "func_switch")
+  private String funcSwitch;
 
-	public Timestamp getCreatedTime() {
-		return createdTime;
-	}
+  public String getPid() {
+    return pid;
+  }
 
-	public CredentialPolicyEntity setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-		return this;
-	}
+  public CredentialPolicyEntity setPid(String pid) {
+    this.pid = pid;
+    return this;
+  }
 
-	public String getSeqName() {
-		return seqName;
-	}
+  public String getCredentialType() {
+    return credentialType;
+  }
 
-	public CredentialPolicyEntity setSeqName(String seqName) {
-		this.seqName = seqName;
-		return this;
-	}
+  public CredentialPolicyEntity setCredentialType(String credentialType) {
+    this.credentialType = credentialType;
+    return this;
+  }
 
-	public String getSchemaId() {
-		return schemaId;
-	}
+  public TimeUnit getEffectiveDurationTimeUnit() {
+    return effectiveDurationTimeUnit;
+  }
 
-	public CredentialPolicyEntity setSchemaId(String schemaId) {
-		this.schemaId = schemaId;
-		return this;
-	}
+  public CredentialPolicyEntity setEffectiveDurationTimeUnit(TimeUnit effectiveDurationTimeUnit) {
+    this.effectiveDurationTimeUnit = effectiveDurationTimeUnit;
+    return this;
+  }
 
-	public String getVcSchema() {
-		return vcSchema;
-	}
+  public int getEffectiveDurationTimeValue() {
+    return effectiveDurationTimeValue;
+  }
 
-	public CredentialPolicyEntity setVcSchema(String vcSchema) {
-		this.vcSchema = vcSchema;
-		return this;
-	}
+  public CredentialPolicyEntity setEffectiveDurationTimeValue(int effectiveDurationTimeValue) {
+    this.effectiveDurationTimeValue = effectiveDurationTimeValue;
+    return this;
+  }
 
-	public String getFuncSwitch() {
-		return funcSwitch;
-	}
+  public String getSignatureAlg() {
+    return signatureAlg;
+  }
 
-	public CredentialPolicyEntity setFuncSwitch(String funcSwitch) {
-		this.funcSwitch = funcSwitch;
-		return this;
-	}
+  public CredentialPolicyEntity setSignatureAlg(String signatureAlg) {
+    this.signatureAlg = signatureAlg;
+    return this;
+  }
 
-	@Override
-    public String toString() {
-        return JsonUtils.voToJs(this);
-    }
+  public Timestamp getCreatedTime() {
+    return createdTime;
+  }
+
+  public CredentialPolicyEntity setCreatedTime(Timestamp createdTime) {
+    this.createdTime = createdTime;
+    return this;
+  }
+
+  public String getSeqName() {
+    return seqName;
+  }
+
+  public CredentialPolicyEntity setSeqName(String seqName) {
+    this.seqName = seqName;
+    return this;
+  }
+
+  public String getSchemaId() {
+    return schemaId;
+  }
+
+  public CredentialPolicyEntity setSchemaId(String schemaId) {
+    this.schemaId = schemaId;
+    return this;
+  }
+
+  public String getVcSchema() {
+    return vcSchema;
+  }
+
+  public CredentialPolicyEntity setVcSchema(String vcSchema) {
+    this.vcSchema = vcSchema;
+    return this;
+  }
+
+  public String getFuncSwitch() {
+    return funcSwitch;
+  }
+
+  public CredentialPolicyEntity setFuncSwitch(String funcSwitch) {
+    this.funcSwitch = funcSwitch;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return JsonUtils.voToJs(this);
+  }
 }

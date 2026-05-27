@@ -1,18 +1,16 @@
 package gov.moda.dw.issuer.oidvci.service;
 
-import java.util.Optional;
 import gov.moda.dw.issuer.oidvci.domain.Res;
 import gov.moda.dw.issuer.oidvci.repository.ResRepository;
 import gov.moda.dw.issuer.oidvci.service.dto.ResDTO;
 import gov.moda.dw.issuer.oidvci.service.mapper.ResMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link Res}.
- */
+/** Service Implementation for managing {@link Res}. */
 @Service
 @Transactional
 public class ResService {
@@ -64,14 +62,15 @@ public class ResService {
     log.debug("Request to partially update Res : {}", resDTO);
 
     return resRepository
-      .findById(resDTO.getId())
-      .map(existingRes -> {
-        resMapper.partialUpdate(existingRes, resDTO);
+        .findById(resDTO.getId())
+        .map(
+            existingRes -> {
+              resMapper.partialUpdate(existingRes, resDTO);
 
-        return existingRes;
-      })
-      .map(resRepository::save)
-      .map(resMapper::toDto);
+              return existingRes;
+            })
+        .map(resRepository::save)
+        .map(resMapper::toDto);
   }
 
   /**

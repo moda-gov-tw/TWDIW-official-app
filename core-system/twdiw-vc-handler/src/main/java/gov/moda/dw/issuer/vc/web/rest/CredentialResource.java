@@ -29,216 +29,227 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class CredentialResource {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CredentialResource.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(CredentialResource.class);
 
-    private final CredentialService credentialService;
+  private final CredentialService credentialService;
 
-    public CredentialResource(CredentialService credentialService) {
-        this.credentialService = credentialService;
+  public CredentialResource(CredentialService credentialService) {
+    this.credentialService = credentialService;
+  }
+
+  /**
+   * generate credential
+   *
+   * @param credentialRequest credential generate request
+   * @return credential
+   */
+  @PostMapping(
+      path = "/credential",
+      consumes = MediaType.APPLICATION_JSON_VALUE,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  //    @PreAuthorize("hasAuthority('dwissuervc201i')")
+  public ResponseEntity<String> generate(@RequestBody CredentialRequestDTO credentialRequest) {
+
+    LOGGER.info("[credential generate request] received");
+
+    Tuple.Pair<String, HttpStatus> result = credentialService.generate(credentialRequest);
+
+    LOGGER.info("[credential generate result] HTTP status = {}", result.getB());
+
+    // with response content when http status = 201/400/404/500
+    if (result.getB() == HttpStatus.CREATED
+        || result.getB() == HttpStatus.BAD_REQUEST
+        || result.getB() == HttpStatus.NOT_FOUND
+        || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+      return new ResponseEntity<>(result.getA(), result.getB());
+    } else {
+      return new ResponseEntity<>(result.getB());
     }
+  }
 
-    /**
-     * generate credential
-     *
-     * @param credentialRequest credential generate request
-     * @return credential
-     */
-    @PostMapping(path = "/credential", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("hasAuthority('dwissuervc201i')")
-    public ResponseEntity<String> generate(@RequestBody CredentialRequestDTO credentialRequest) {
+  /**
+   * update credential status
+   *
+   * @param cid credential identifier, ex: 99928d83-f1c1-4eb8-935a-9a165e15d654
+   * @param action operation action, ex: revocation, suspension, recovery
+   * @return current credential status
+   */
+  @PutMapping(path = "/credential/{cid}/{action}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<String> updateStatus(
+      @PathVariable String cid, @PathVariable String action) {
 
-        LOGGER.info("[credential generate request] received");
+    String cleanCid = Jsoup.clean(cid, Safelist.none());
 
-        Tuple.Pair<String, HttpStatus> result = credentialService.generate(credentialRequest);
+    LOGGER.info("[credential status update request] received action = {}", action);
 
-        LOGGER.info("[credential generate result] HTTP status = {}", result.getB());
+    // TODO: handle other action
+    if ("revocation".equalsIgnoreCase(action)) {
 
-        // with response content when http status = 201/400/404/500
-        if (result.getB() == HttpStatus.CREATED ||
-            result.getB() == HttpStatus.BAD_REQUEST ||
-            result.getB() == HttpStatus.NOT_FOUND ||
-            result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-            return new ResponseEntity<>(result.getA(), result.getB());
-        } else {
-            return new ResponseEntity<>(result.getB());
-        }
+      Tuple.Pair<String, HttpStatus> result = credentialService.revoke(cleanCid);
+
+      LOGGER.info("[credential status update result] HTTP status = {}", result.getB());
+
+      // with response content when http status = 200/400/404/500
+      if (result.getB() == HttpStatus.OK
+          || result.getB() == HttpStatus.BAD_REQUEST
+          || result.getB() == HttpStatus.NOT_FOUND
+          || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+        return new ResponseEntity<>(result.getA(), result.getB());
+      } else {
+        return new ResponseEntity<>(result.getB());
+      }
+
+    } else if ("suspension".equalsIgnoreCase(action)) {
+
+      Tuple.Pair<String, HttpStatus> result = credentialService.suspend(cleanCid);
+
+      LOGGER.info("[credential status update result] HTTP status = {}", result.getB());
+
+      // with response content when http status = 200/400/404/500
+      if (result.getB() == HttpStatus.OK
+          || result.getB() == HttpStatus.BAD_REQUEST
+          || result.getB() == HttpStatus.NOT_FOUND
+          || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+        return new ResponseEntity<>(result.getA(), result.getB());
+      } else {
+        return new ResponseEntity<>(result.getB());
+      }
+
+    } else if ("recovery".equalsIgnoreCase(action)) {
+
+      Tuple.Pair<String, HttpStatus> result = credentialService.recover(cleanCid);
+
+      LOGGER.info("[credential status update result] HTTP status = {}", result.getB());
+
+      // with response content when http status = 200/400/404/500
+      if (result.getB() == HttpStatus.OK
+          || result.getB() == HttpStatus.BAD_REQUEST
+          || result.getB() == HttpStatus.NOT_FOUND
+          || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+        return new ResponseEntity<>(result.getA(), result.getB());
+      } else {
+        return new ResponseEntity<>(result.getB());
+      }
+
+    } else {
+      return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+  }
 
-    /**
-     * update credential status
-     *
-     * @param cid credential identifier, ex: 99928d83-f1c1-4eb8-935a-9a165e15d654
-     * @param action operation action, ex: revocation, suspension, recovery
-     * @return current credential status
-     */
-    @PutMapping(path = "/credential/{cid}/{action}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> updateStatus(@PathVariable String cid, @PathVariable String action) {
+  /**
+   * query credential
+   *
+   * @param cid credential identifier, ex: 99928d83-f1c1-4eb8-935a-9a165e15d654
+   * @return credential
+   */
+  @GetMapping(path = "/credential/{cid}", produces = MediaType.APPLICATION_JSON_VALUE)
+  //    @PreAuthorize("hasAuthority('dwissuervc403i')")
+  public ResponseEntity<String> query(@PathVariable String cid) {
 
-        String cleanCid = Jsoup.clean(cid, Safelist.none());
+    LOGGER.info("[credential query request] received");
 
-        LOGGER.info("[credential status update request] received action = {}", action);
+    Tuple.Pair<String, HttpStatus> result = credentialService.query(cid);
 
-        // TODO: handle other action
-        if ("revocation".equalsIgnoreCase(action)) {
+    LOGGER.info("[credential query result] HTTP status = {}", result.getB());
 
-            Tuple.Pair<String, HttpStatus> result = credentialService.revoke(cleanCid);
-
-            LOGGER.info("[credential status update result] HTTP status = {}", result.getB());
-
-            // with response content when http status = 200/400/404/500
-            if (result.getB() == HttpStatus.OK ||
-                result.getB() == HttpStatus.BAD_REQUEST ||
-                result.getB() == HttpStatus.NOT_FOUND ||
-                result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-                return new ResponseEntity<>(result.getA(), result.getB());
-            } else {
-                return new ResponseEntity<>(result.getB());
-            }
-
-        } else if ("suspension".equalsIgnoreCase(action)) {
-        	
-        	Tuple.Pair<String, HttpStatus> result = credentialService.suspend(cleanCid);
-        	
-        	LOGGER.info("[credential status update result] HTTP status = {}", result.getB());
-
-            // with response content when http status = 200/400/404/500
-            if (result.getB() == HttpStatus.OK ||
-                result.getB() == HttpStatus.BAD_REQUEST ||
-                result.getB() == HttpStatus.NOT_FOUND ||
-                result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-                return new ResponseEntity<>(result.getA(), result.getB());
-            } else {
-                return new ResponseEntity<>(result.getB());
-            }
-        	
-        } else if ("recovery".equalsIgnoreCase(action)) {
-        	
-        	Tuple.Pair<String, HttpStatus> result = credentialService.recover(cleanCid);
-        	
-        	LOGGER.info("[credential status update result] HTTP status = {}", result.getB());
-
-            // with response content when http status = 200/400/404/500
-            if (result.getB() == HttpStatus.OK ||
-                result.getB() == HttpStatus.BAD_REQUEST ||
-                result.getB() == HttpStatus.NOT_FOUND ||
-                result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-                return new ResponseEntity<>(result.getA(), result.getB());
-            } else {
-                return new ResponseEntity<>(result.getB());
-            }
-        	
-        } else  {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
+    // with response content when http status = 200/400/404/500
+    if (result.getB() == HttpStatus.OK
+        || result.getB() == HttpStatus.BAD_REQUEST
+        || result.getB() == HttpStatus.NOT_FOUND
+        || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+      return new ResponseEntity<>(result.getA(), result.getB());
+    } else {
+      return new ResponseEntity<>(result.getB());
     }
+  }
 
-    /**
-     * query credential
-     *
-     * @param cid credential identifier, ex: 99928d83-f1c1-4eb8-935a-9a165e15d654
-     * @return credential
-     */
-    @GetMapping(path = "/credential/{cid}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("hasAuthority('dwissuervc403i')")
-    public ResponseEntity<String> query(@PathVariable String cid) {
+  /**
+   * query credential by nonce
+   *
+   * @param nonce nonce value, ex: 3531dcd0-8e21-44c5-8908-98f3b6fd5e9f
+   * @return credential
+   */
+  @GetMapping(path = "/credential/nonce/{nonce}", produces = MediaType.APPLICATION_JSON_VALUE)
+  //    @PreAuthorize("hasAuthority('dwissuervc402i')")
+  public ResponseEntity<String> queryByNonce(@PathVariable String nonce) {
 
-        LOGGER.info("[credential query request] received");
+    LOGGER.info("[credential query by nonce request] received");
 
-        Tuple.Pair<String, HttpStatus> result = credentialService.query(cid);
+    Tuple.Pair<String, HttpStatus> result = credentialService.queryByNonce(nonce);
 
-        LOGGER.info("[credential query result] HTTP status = {}", result.getB());
+    LOGGER.info("[credential query by nonce result] HTTP status = {}", result.getB());
 
-        // with response content when http status = 200/400/404/500
-        if (result.getB() == HttpStatus.OK ||
-            result.getB() == HttpStatus.BAD_REQUEST ||
-            result.getB() == HttpStatus.NOT_FOUND ||
-            result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-            return new ResponseEntity<>(result.getA(), result.getB());
-        } else {
-            return new ResponseEntity<>(result.getB());
-        }
+    // with response content when http status = 200/400/404/500
+    if (result.getB() == HttpStatus.OK
+        || result.getB() == HttpStatus.BAD_REQUEST
+        || result.getB() == HttpStatus.NOT_FOUND
+        || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+      return new ResponseEntity<>(result.getA(), result.getB());
+    } else {
+      return new ResponseEntity<>(result.getB());
     }
+  }
 
-    /**
-     * query credential by nonce
-     *
-     * @param nonce nonce value, ex: 3531dcd0-8e21-44c5-8908-98f3b6fd5e9f
-     * @return credential
-     */
-    @GetMapping(path = "/credential/nonce/{nonce}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("hasAuthority('dwissuervc402i')")
-    public ResponseEntity<String> queryByNonce(@PathVariable String nonce) {
+  /**
+   * query all credentials
+   *
+   * @return all credentials
+   */
+  @GetMapping(path = "/credentials/{credentialType}", produces = MediaType.APPLICATION_JSON_VALUE)
+  //    @PreAuthorize("hasAuthority('dwissuervc401i')")
+  public ResponseEntity<String> queryAll(
+      @PathVariable String credentialType,
+      @RequestParam(defaultValue = "0") int page,
+      @RequestParam(defaultValue = "10") int size,
+      @RequestParam(defaultValue = "ASC") String direction) {
 
-        LOGGER.info("[credential query by nonce request] received");
+    LOGGER.info("[credential query all request] received");
 
-        Tuple.Pair<String, HttpStatus> result = credentialService.queryByNonce(nonce);
+    Tuple.Pair<String, HttpStatus> result =
+        credentialService.queryAll(credentialType, page, size, direction);
 
-        LOGGER.info("[credential query by nonce result] HTTP status = {}", result.getB());
+    LOGGER.info("[credential query all result] HTTP status = {}", result.getB());
 
-        // with response content when http status = 200/400/404/500
-        if (result.getB() == HttpStatus.OK ||
-            result.getB() == HttpStatus.BAD_REQUEST ||
-            result.getB() == HttpStatus.NOT_FOUND ||
-            result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-            return new ResponseEntity<>(result.getA(), result.getB());
-        } else {
-            return new ResponseEntity<>(result.getB());
-        }
+    // with response content when http status = 200/400/404/500
+    if (result.getB() == HttpStatus.OK
+        || result.getB() == HttpStatus.BAD_REQUEST
+        || result.getB() == HttpStatus.NOT_FOUND
+        || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+      return new ResponseEntity<>(result.getA(), result.getB());
+    } else {
+      return new ResponseEntity<>(result.getB());
     }
+  }
 
-    /**
-     * query all credentials
-     *
-     * @return all credentials
-     */
+  /**
+   * transfer credential
+   *
+   * @param VP
+   * @return QRCode
+   */
+  @PostMapping(
+      path = "/credential/{cid}/transfer",
+      consumes = MediaType.APPLICATION_JSON_VALUE,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<String> transfer(
+      @PathVariable String cid,
+      @RequestBody CredentialTransferRequestDTO credentialTransferRequest) {
 
-    @GetMapping(path = "/credentials/{credentialType}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("hasAuthority('dwissuervc401i')")
-    public ResponseEntity<String> queryAll(@PathVariable String credentialType,
-                                           @RequestParam(defaultValue = "0") int page,
-                                           @RequestParam(defaultValue = "10") int size,
-                                           @RequestParam(defaultValue = "ASC") String direction) {
+    LOGGER.info("[credential transfer request] received");
 
-        LOGGER.info("[credential query all request] received");
+    Tuple.Pair<String, HttpStatus> result =
+        credentialService.transfer(cid, credentialTransferRequest);
 
-        Tuple.Pair<String, HttpStatus> result = credentialService.queryAll(credentialType, page, size, direction);
+    LOGGER.info("[credential transfer result] HTTP status = {}", result.getB());
 
-        LOGGER.info("[credential query all result] HTTP status = {}", result.getB());
-
-        // with response content when http status = 200/400/404/500
-        if (result.getB() == HttpStatus.OK ||
-            result.getB() == HttpStatus.BAD_REQUEST ||
-            result.getB() == HttpStatus.NOT_FOUND ||
-            result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-            return new ResponseEntity<>(result.getA(), result.getB());
-        } else {
-            return new ResponseEntity<>(result.getB());
-        }
+    // with response content when http status = 200/400/404/500
+    if (result.getB() == HttpStatus.OK
+        || result.getB() == HttpStatus.BAD_REQUEST
+        || result.getB() == HttpStatus.NOT_FOUND
+        || result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
+      return new ResponseEntity<>(result.getA(), result.getB());
+    } else {
+      return new ResponseEntity<>(result.getB());
     }
-    
-    /**
-     * transfer credential
-     *
-     * @param VP
-     * @return QRCode
-     */
-    @PostMapping(path = "/credential/{cid}/transfer", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> transfer(@PathVariable String cid, @RequestBody CredentialTransferRequestDTO credentialTransferRequest) {
-
-        LOGGER.info("[credential transfer request] received");
-
-        Tuple.Pair<String, HttpStatus> result = credentialService.transfer(cid, credentialTransferRequest);
-
-        LOGGER.info("[credential transfer result] HTTP status = {}", result.getB());
-
-        // with response content when http status = 200/400/404/500
-        if (result.getB() == HttpStatus.OK ||
-            result.getB() == HttpStatus.BAD_REQUEST ||
-            result.getB() == HttpStatus.NOT_FOUND ||
-            result.getB() == HttpStatus.INTERNAL_SERVER_ERROR) {
-            return new ResponseEntity<>(result.getA(), result.getB());
-        } else {
-            return new ResponseEntity<>(result.getB());
-        }
-    }
+  }
 }

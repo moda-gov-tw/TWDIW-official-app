@@ -1,23 +1,21 @@
 package gov.moda.dw.issuer.oidvci.service.criteria;
 
+import gov.moda.dw.issuer.oidvci.domain.Res;
+import gov.moda.dw.issuer.oidvci.web.rest.ResResource;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
-
-import gov.moda.dw.issuer.oidvci.domain.Res;
-import gov.moda.dw.issuer.oidvci.web.rest.ResResource;
 import org.springdoc.core.annotations.ParameterObject;
 import tech.jhipster.service.Criteria;
 import tech.jhipster.service.filter.*;
 
 /**
- * Criteria class for the {@link Res} entity. This class is used
- * in {@link ResResource} to receive all the possible filtering options from
- * the Http GET request parameters.
- * For example the following could be a valid request:
- * {@code /res?id.greaterThan=5&attr1.contains=something&attr2.specified=false}
- * As Spring is unable to properly convert the types, unless specific {@link Filter} class are used, we need to use
- * fix type specific filters.
+ * Criteria class for the {@link Res} entity. This class is used in {@link ResResource} to receive
+ * all the possible filtering options from the Http GET request parameters. For example the
+ * following could be a valid request: {@code
+ * /res?id.greaterThan=5&attr1.contains=something&attr2.specified=false} As Spring is unable to
+ * properly convert the types, unless specific {@link Filter} class are used, we need to use fix
+ * type specific filters.
  */
 @ParameterObject
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -253,16 +251,16 @@ public class ResCriteria implements Serializable, Criteria {
     return Optional.ofNullable(dataRole1);
   }
 
-//  public StringFilter dataRole1() {
-//    if (dataRole1 == null) {
-//      setDataRole1(new StringFilter());
-//    }
-//    return dataRole1;
-//  }
+  //  public StringFilter dataRole1() {
+  //    if (dataRole1 == null) {
+  //      setDataRole1(new StringFilter());
+  //    }
+  //    return dataRole1;
+  //  }
 
-//  public void setDataRole1(StringFilter dataRole1) {
-//    this.dataRole1 = dataRole1;
-//  }
+  //  public void setDataRole1(StringFilter dataRole1) {
+  //    this.dataRole1 = dataRole1;
+  //  }
 
   public StringFilter getDataRole2() {
     return dataRole2;
@@ -330,45 +328,56 @@ public class ResCriteria implements Serializable, Criteria {
       return false;
     }
     final ResCriteria that = (ResCriteria) o;
-    return (
-      Objects.equals(id, that.id) &&
-      Objects.equals(typeId, that.typeId) &&
-      Objects.equals(resId, that.resId) &&
-      Objects.equals(resGrp, that.resGrp) &&
-      Objects.equals(resName, that.resName) &&
-      Objects.equals(description, that.description) &&
-      Objects.equals(state, that.state) &&
-      Objects.equals(apiUri, that.apiUri) &&
-      Objects.equals(webUrl, that.webUrl) &&
-      Objects.equals(dataRole1, that.dataRole1) &&
-      Objects.equals(dataRole2, that.dataRole2) &&
-      Objects.equals(createTime, that.createTime) &&
-      Objects.equals(distinct, that.distinct)
-    );
+    return (Objects.equals(id, that.id)
+        && Objects.equals(typeId, that.typeId)
+        && Objects.equals(resId, that.resId)
+        && Objects.equals(resGrp, that.resGrp)
+        && Objects.equals(resName, that.resName)
+        && Objects.equals(description, that.description)
+        && Objects.equals(state, that.state)
+        && Objects.equals(apiUri, that.apiUri)
+        && Objects.equals(webUrl, that.webUrl)
+        && Objects.equals(dataRole1, that.dataRole1)
+        && Objects.equals(dataRole2, that.dataRole2)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(distinct, that.distinct));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, typeId, resId, resGrp, resName, description, state, apiUri, webUrl, dataRole1, dataRole2, createTime, distinct);
+    return Objects.hash(
+        id,
+        typeId,
+        resId,
+        resGrp,
+        resName,
+        description,
+        state,
+        apiUri,
+        webUrl,
+        dataRole1,
+        dataRole2,
+        createTime,
+        distinct);
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalTypeId().map(f -> "typeId=" + f + ", ").orElse("") +
-            optionalResId().map(f -> "resId=" + f + ", ").orElse("") +
-            optionalResGrp().map(f -> "resGrp=" + f + ", ").orElse("") +
-            optionalResName().map(f -> "resName=" + f + ", ").orElse("") +
-            optionalDescription().map(f -> "description=" + f + ", ").orElse("") +
-            optionalState().map(f -> "state=" + f + ", ").orElse("") +
-            optionalApiUri().map(f -> "apiUri=" + f + ", ").orElse("") +
-            optionalWebUrl().map(f -> "webUrl=" + f + ", ").orElse("") +
-            optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("") +
-            optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-        "}";
-    }
+  @Override
+  public String toString() {
+    return "ResCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalTypeId().map(f -> "typeId=" + f + ", ").orElse("")
+        + optionalResId().map(f -> "resId=" + f + ", ").orElse("")
+        + optionalResGrp().map(f -> "resGrp=" + f + ", ").orElse("")
+        + optionalResName().map(f -> "resName=" + f + ", ").orElse("")
+        + optionalDescription().map(f -> "description=" + f + ", ").orElse("")
+        + optionalState().map(f -> "state=" + f + ", ").orElse("")
+        + optionalApiUri().map(f -> "apiUri=" + f + ", ").orElse("")
+        + optionalWebUrl().map(f -> "webUrl=" + f + ", ").orElse("")
+        + optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("")
+        + optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

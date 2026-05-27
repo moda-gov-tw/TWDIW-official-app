@@ -5,11 +5,9 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A Rel.
- */
+/** A Rel. */
 @Entity
-@Table(name = "rel",schema = "public")
+@Table(name = "rel", schema = "public")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class Rel implements Serializable {
 
@@ -21,82 +19,60 @@ public class Rel implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 左值table(Table 代碼) UK
-   */
+  /** 左值table(Table 代碼) UK */
   @NotNull
   @Size(max = 20)
   @Column(name = "left_tbl", length = 20, nullable = false)
   private String leftTbl;
 
-  /**
-   * 左值id(Table 的id) UK
-   */
+  /** 左值id(Table 的id) UK */
   @NotNull
   @Column(name = "left_id", nullable = false)
   private Long leftId;
 
-  /**
-   * 右值table(Table 代碼) UK
-   */
+  /** 右值table(Table 代碼) UK */
   @NotNull
   @Size(max = 20)
   @Column(name = "right_tbl", length = 20, nullable = false)
   private String rightTbl;
 
-  /**
-   * 右值id(Table 的id) UK
-   */
+  /** 右值id(Table 的id) UK */
   @NotNull
   @Column(name = "right_id", nullable = false)
   private Long rightId;
 
-  /**
-   * 左值代碼
-   */
+  /** 左值代碼 */
   @Size(max = 320)
   @Column(name = "left_code", length = 320)
   private String leftCode;
 
-  /**
-   * 右值代碼
-   */
+  /** 右值代碼 */
   @Size(max = 50)
   @Column(name = "right_code", length = 50)
   private String rightCode;
 
-  /**
-   * 狀態
-   */
+  /** 狀態 */
   @NotNull
   @Size(max = 10)
   @Column(name = "state", length = 10, nullable = false)
   private String state;
 
-  /**
-   * 預留欄位1
-   */
+  /** 預留欄位1 */
   @Size(max = 255)
   @Column(name = "data_role_1", length = 255)
   private String dataRole1;
 
-  /**
-   * 預留欄位2
-   */
+  /** 預留欄位2 */
   @Size(max = 255)
   @Column(name = "data_role_2", length = 255)
   private String dataRole2;
 
-  /**
-   * 受控項
-   */
+  /** 受控項 */
   @Size(max = 64)
   @Column(name = "data_auth", length = 64)
   private String dataAuth;
 
-  /**
-   * 建立日
-   */
+  /** 建立日 */
   @NotNull
   @Column(name = "create_time", nullable = false)
   private Instant createTime;
@@ -274,26 +250,48 @@ public class Rel implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "Rel{" +
-            "id=" + getId() +
-            ", leftTbl='" + getLeftTbl() + "'" +
-            ", leftId=" + getLeftId() +
-            ", rightTbl='" + getRightTbl() + "'" +
-            ", rightId=" + getRightId() +
-            ", leftCode='" + getLeftCode() + "'" +
-            ", rightCode='" + getRightCode() + "'" +
-            ", state='" + getState() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", dataAuth='" + getDataAuth() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "Rel{"
+        + "id="
+        + getId()
+        + ", leftTbl='"
+        + getLeftTbl()
+        + "'"
+        + ", leftId="
+        + getLeftId()
+        + ", rightTbl='"
+        + getRightTbl()
+        + "'"
+        + ", rightId="
+        + getRightId()
+        + ", leftCode='"
+        + getLeftCode()
+        + "'"
+        + ", rightCode='"
+        + getRightCode()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", dataAuth='"
+        + getDataAuth()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

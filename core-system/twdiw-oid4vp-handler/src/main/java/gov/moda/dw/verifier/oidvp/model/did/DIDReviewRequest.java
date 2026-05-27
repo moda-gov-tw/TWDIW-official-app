@@ -6,28 +6,28 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class DIDReviewRequest {
 
-    private String id;
+  private String id;
 
-    private boolean result;
+  private boolean result;
 
-    public DIDReviewRequest(String id, boolean result) {
-        this.id = id;
-        this.result = result;
-    }
+  public DIDReviewRequest(String id, boolean result) {
+    this.id = id;
+    this.result = result;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public boolean isResult() {
-        return result;
-    }
+  public boolean isResult() {
+    return result;
+  }
 
-    public void setResult(boolean result) {
-        this.result = result;
-    }
+  public void setResult(boolean result) {
+    this.result = result;
+  }
 }

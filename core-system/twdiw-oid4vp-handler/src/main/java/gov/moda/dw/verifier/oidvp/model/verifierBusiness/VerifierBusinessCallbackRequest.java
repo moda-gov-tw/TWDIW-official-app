@@ -9,89 +9,100 @@ import gov.moda.dw.verifier.oidvp.service.oidvp.customData.CustomData;
 @JsonInclude(Include.NON_NULL)
 public class VerifierBusinessCallbackRequest {
 
-    private final boolean verifyResult;
-    private final Integer code;
-    private final String resultDescription;
-    private final String transactionId;
-    private final String vpUid;
-    @JsonProperty("holder_did")
-    private final String holderDid;
-    private final Object data;
-    private final CustomData customData;
+  private final boolean verifyResult;
+  private final Integer code;
+  private final String resultDescription;
+  private final String transactionId;
+  private final String vpUid;
 
-    public VerifierBusinessCallbackRequest(Integer code, boolean verifyResult, String resultDescription, String transactionId, String vpUid, Object data, String holderDid, CustomData customData) {
-        this.code = code;
-        this.verifyResult = verifyResult;
-        this.resultDescription = resultDescription;
-        this.transactionId = transactionId;
-        this.vpUid = vpUid;
-        this.data = data;
-        this.holderDid = holderDid;
-        this.customData = customData;
-    }
+  @JsonProperty("holder_did")
+  private final String holderDid;
 
-    public VerifierBusinessCallbackRequest(String transactionId, VerifyResult verifyResult, String vpUid) {
-        if (verifyResult == null) {
-            throw new IllegalArgumentException("verifyResult must not be null");
-        }
-        this.verifyResult = verifyResult.getVerifyResult();
-        this.code = verifyResult.getErrorCode().getCode();
-        this.resultDescription = verifyResult.getResultDescription();
-        this.transactionId = transactionId;
-        this.vpUid = vpUid;
-        this.data = verifyResult.getVerifyResult() ? verifyResult.getVcClaims() : null;
-        this.holderDid = verifyResult.getHolderDid() == null ? "" : verifyResult.getHolderDid();
-        this.customData = verifyResult.getCustomData();
-    }
+  private final Object data;
+  private final CustomData customData;
 
-    public Integer getCode() {
-        return code;
-    }
+  public VerifierBusinessCallbackRequest(
+      Integer code,
+      boolean verifyResult,
+      String resultDescription,
+      String transactionId,
+      String vpUid,
+      Object data,
+      String holderDid,
+      CustomData customData) {
+    this.code = code;
+    this.verifyResult = verifyResult;
+    this.resultDescription = resultDescription;
+    this.transactionId = transactionId;
+    this.vpUid = vpUid;
+    this.data = data;
+    this.holderDid = holderDid;
+    this.customData = customData;
+  }
 
-    public Object getData() {
-        return data;
+  public VerifierBusinessCallbackRequest(
+      String transactionId, VerifyResult verifyResult, String vpUid) {
+    if (verifyResult == null) {
+      throw new IllegalArgumentException("verifyResult must not be null");
     }
+    this.verifyResult = verifyResult.getVerifyResult();
+    this.code = verifyResult.getErrorCode().getCode();
+    this.resultDescription = verifyResult.getResultDescription();
+    this.transactionId = transactionId;
+    this.vpUid = vpUid;
+    this.data = verifyResult.getVerifyResult() ? verifyResult.getVcClaims() : null;
+    this.holderDid = verifyResult.getHolderDid() == null ? "" : verifyResult.getHolderDid();
+    this.customData = verifyResult.getCustomData();
+  }
 
-    public String getHolderDid() {
-        return holderDid;
-    }
+  public Integer getCode() {
+    return code;
+  }
 
-    public String getResultDescription() {
-        return resultDescription;
-    }
+  public Object getData() {
+    return data;
+  }
 
-    public String getTransactionId() {
-        return transactionId;
-    }
+  public String getHolderDid() {
+    return holderDid;
+  }
 
-    public boolean isVerifyResult() {
-        return verifyResult;
-    }
+  public String getResultDescription() {
+    return resultDescription;
+  }
 
-    public String getVpUid() {
-        return vpUid;
-    }
+  public String getTransactionId() {
+    return transactionId;
+  }
 
-    public CustomData getCustomData() {
-        return customData;
-    }
+  public boolean isVerifyResult() {
+    return verifyResult;
+  }
 
-    public String toJson() {
-        StringBuilder sb = new StringBuilder("{");
-        sb.append("\"verifyResult\":").append(verifyResult);
-        sb.append(",\"code\":").append(code);
-        sb.append(",\"resultDescription\":\"").append(resultDescription).append('\"');
-        sb.append(",\"transactionId\":\"").append(transactionId).append('\"');
-        sb.append(",\"vpUid\":\"").append(vpUid).append('\"');
-        sb.append(",\"holder_did\":\"").append(holderDid).append('\"');
-        sb.append(",\"data\":").append(data);
-        sb.append(",\"customData\":").append(customData.getJsonValue());
-        sb.append("}");
-        return sb.toString();
-    }
+  public String getVpUid() {
+    return vpUid;
+  }
 
-    @Override
-    public String toString() {
-        return toJson();
-    }
+  public CustomData getCustomData() {
+    return customData;
+  }
+
+  public String toJson() {
+    StringBuilder sb = new StringBuilder("{");
+    sb.append("\"verifyResult\":").append(verifyResult);
+    sb.append(",\"code\":").append(code);
+    sb.append(",\"resultDescription\":\"").append(resultDescription).append('\"');
+    sb.append(",\"transactionId\":\"").append(transactionId).append('\"');
+    sb.append(",\"vpUid\":\"").append(vpUid).append('\"');
+    sb.append(",\"holder_did\":\"").append(holderDid).append('\"');
+    sb.append(",\"data\":").append(data);
+    sb.append(",\"customData\":").append(customData.getJsonValue());
+    sb.append("}");
+    return sb.toString();
+  }
+
+  @Override
+  public String toString() {
+    return toJson();
+  }
 }

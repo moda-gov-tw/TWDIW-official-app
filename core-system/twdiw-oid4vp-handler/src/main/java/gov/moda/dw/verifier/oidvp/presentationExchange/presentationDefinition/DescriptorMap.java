@@ -14,42 +14,40 @@ import gov.moda.dw.verifier.oidvp.presentationExchange.inputDescriptor.FormatReg
 @JsonInclude(value = Include.NON_NULL)
 public class DescriptorMap {
 
-    private String id;
+  private String id;
 
-    private FormatRegistry format;
+  private FormatRegistry format;
 
-    private String path;
+  private String path;
 
-    @JsonProperty("path_nested")
-    private DescriptorMap pathNested;
+  @JsonProperty("path_nested")
+  private DescriptorMap pathNested;
 
+  private DescriptorMap() {}
 
-    private DescriptorMap() {
-    }
+  public DescriptorMap(String id, FormatRegistry format, String path) {
+    this.id = id;
+    this.format = format;
+    this.path = path;
+  }
 
-    public DescriptorMap(String id, FormatRegistry format, String path) {
-        this.id = id;
-        this.format = format;
-        this.path = path;
-    }
+  public void setPathNested(DescriptorMap pathNested) {
+    this.pathNested = pathNested;
+  }
 
-    public void setPathNested(DescriptorMap pathNested) {
-        this.pathNested = pathNested;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public FormatRegistry getFormat() {
+    return format;
+  }
 
-    public FormatRegistry getFormat() {
-        return format;
-    }
+  public String getPath() {
+    return path;
+  }
 
-    public String getPath() {
-        return path;
-    }
-
-    public DescriptorMap getPathNested() {
-        return pathNested;
-    }
+  public DescriptorMap getPathNested() {
+    return pathNested;
+  }
 }

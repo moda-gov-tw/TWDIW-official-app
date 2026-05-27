@@ -1,23 +1,21 @@
 package gov.moda.dw.issuer.oidvci.service.criteria;
 
+import gov.moda.dw.issuer.oidvci.domain.AccessToken;
+import gov.moda.dw.issuer.oidvci.web.rest.AccessTokenResource;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
-
-import gov.moda.dw.issuer.oidvci.domain.AccessToken;
-import gov.moda.dw.issuer.oidvci.web.rest.AccessTokenResource;
 import org.springdoc.core.annotations.ParameterObject;
 import tech.jhipster.service.Criteria;
 import tech.jhipster.service.filter.*;
 
 /**
- * Criteria class for the {@link AccessToken} entity. This class is used
- * in {@link AccessTokenResource} to receive all the possible filtering options from
- * the Http GET request parameters.
- * For example the following could be a valid request:
- * {@code /access-tokens?id.greaterThan=5&attr1.contains=something&attr2.specified=false}
- * As Spring is unable to properly convert the types, unless specific {@link Filter} class are used, we need to use
- * fix type specific filters.
+ * Criteria class for the {@link AccessToken} entity. This class is used in {@link
+ * AccessTokenResource} to receive all the possible filtering options from the Http GET request
+ * parameters. For example the following could be a valid request: {@code
+ * /access-tokens?id.greaterThan=5&attr1.contains=something&attr2.specified=false} As Spring is
+ * unable to properly convert the types, unless specific {@link Filter} class are used, we need to
+ * use fix type specific filters.
  */
 @ParameterObject
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -107,16 +105,16 @@ public class AccessTokenCriteria implements Serializable, Criteria {
     return Optional.ofNullable(accessToken);
   }
 
-//  public StringFilter accessToken() {
-//    if (accessToken == null) {
-//      setAccessToken(new StringFilter());
-//    }
-//    return accessToken;
-//  }
+  //  public StringFilter accessToken() {
+  //    if (accessToken == null) {
+  //      setAccessToken(new StringFilter());
+  //    }
+  //    return accessToken;
+  //  }
 
-//  public void setAccessToken(StringFilter accessToken) {
-////    this.accessToken = accessToken;
-//  }
+  //  public void setAccessToken(StringFilter accessToken) {
+  ////    this.accessToken = accessToken;
+  //  }
 
   public StringFilter getAccessTokenName() {
     return accessTokenName;
@@ -126,16 +124,16 @@ public class AccessTokenCriteria implements Serializable, Criteria {
     return Optional.ofNullable(accessTokenName);
   }
 
-//  public StringFilter accessTokenName() {
-//    if (accessTokenName == null) {
-//      setAccessTokenName(new StringFilter());
-//    }
-//    return accessTokenName;
-//  }
+  //  public StringFilter accessTokenName() {
+  //    if (accessTokenName == null) {
+  //      setAccessTokenName(new StringFilter());
+  //    }
+  //    return accessTokenName;
+  //  }
 
-//  public void setAccessTokenName(StringFilter accessTokenName) {
-////    this.accessTokenName = accessTokenName;
-//  }
+  //  public void setAccessTokenName(StringFilter accessTokenName) {
+  ////    this.accessTokenName = accessTokenName;
+  //  }
 
   public StringFilter getOwner() {
     return owner;
@@ -259,16 +257,16 @@ public class AccessTokenCriteria implements Serializable, Criteria {
     return Optional.ofNullable(dataRole1);
   }
 
-//  public StringFilter dataRole1() {
-//    if (dataRole1 == null) {
-//      setDataRole1(new StringFilter());
-//    }
-//    return dataRole1;
-//  }
+  //  public StringFilter dataRole1() {
+  //    if (dataRole1 == null) {
+  //      setDataRole1(new StringFilter());
+  //    }
+  //    return dataRole1;
+  //  }
 
-//  public void setDataRole1(StringFilter dataRole1) {
-////    this.dataRole1 = dataRole1;
-//  }
+  //  public void setDataRole1(StringFilter dataRole1) {
+  ////    this.dataRole1 = dataRole1;
+  //  }
 
   public StringFilter getDataRole2() {
     return dataRole2;
@@ -286,7 +284,7 @@ public class AccessTokenCriteria implements Serializable, Criteria {
   }
 
   public void setDataRole2(StringFilter dataRole2) {
-//    this.dataRole2 = dataRole2;
+    //    this.dataRole2 = dataRole2;
   }
 
   public StringFilter getSecuLayer() {
@@ -374,65 +372,62 @@ public class AccessTokenCriteria implements Serializable, Criteria {
       return false;
     }
     final AccessTokenCriteria that = (AccessTokenCriteria) o;
-    return (
-      Objects.equals(id, that.id) &&
-      Objects.equals(accessToken, that.accessToken) &&
-      Objects.equals(accessTokenName, that.accessTokenName) &&
-      Objects.equals(owner, that.owner) &&
-      Objects.equals(ownerName, that.ownerName) &&
-      Objects.equals(orgId, that.orgId) &&
-      Objects.equals(orgName, that.orgName) &&
-      Objects.equals(state, that.state) &&
-      Objects.equals(actype, that.actype) &&
-      Objects.equals(dataRole1, that.dataRole1) &&
-      Objects.equals(dataRole2, that.dataRole2) &&
-      Objects.equals(secuLayer, that.secuLayer) &&
-      Objects.equals(expirationTime, that.expirationTime) &&
-      Objects.equals(createTime, that.createTime) &&
-      Objects.equals(distinct, that.distinct)
-    );
+    return (Objects.equals(id, that.id)
+        && Objects.equals(accessToken, that.accessToken)
+        && Objects.equals(accessTokenName, that.accessTokenName)
+        && Objects.equals(owner, that.owner)
+        && Objects.equals(ownerName, that.ownerName)
+        && Objects.equals(orgId, that.orgId)
+        && Objects.equals(orgName, that.orgName)
+        && Objects.equals(state, that.state)
+        && Objects.equals(actype, that.actype)
+        && Objects.equals(dataRole1, that.dataRole1)
+        && Objects.equals(dataRole2, that.dataRole2)
+        && Objects.equals(secuLayer, that.secuLayer)
+        && Objects.equals(expirationTime, that.expirationTime)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(distinct, that.distinct));
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-      id,
-      accessToken,
-      accessTokenName,
-      owner,
-      ownerName,
-      orgId,
-      orgName,
-      state,
-      actype,
-      dataRole1,
-      dataRole2,
-      secuLayer,
-      expirationTime,
-      createTime,
-      distinct
-    );
+        id,
+        accessToken,
+        accessTokenName,
+        owner,
+        ownerName,
+        orgId,
+        orgName,
+        state,
+        actype,
+        dataRole1,
+        dataRole2,
+        secuLayer,
+        expirationTime,
+        createTime,
+        distinct);
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "AccessTokenCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalAccessToken().map(f -> "accessToken=" + f + ", ").orElse("") +
-            optionalAccessTokenName().map(f -> "accessTokenName=" + f + ", ").orElse("") +
-            optionalOwner().map(f -> "owner=" + f + ", ").orElse("") +
-            optionalOwnerName().map(f -> "ownerName=" + f + ", ").orElse("") +
-            optionalOrgId().map(f -> "orgId=" + f + ", ").orElse("") +
-            optionalOrgName().map(f -> "orgName=" + f + ", ").orElse("") +
-            optionalState().map(f -> "state=" + f + ", ").orElse("") +
-            optionalActype().map(f -> "actype=" + f + ", ").orElse("") +
-            optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("") +
-            optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("") +
-            optionalSecuLayer().map(f -> "secuLayer=" + f + ", ").orElse("") +
-            optionalExpirationTime().map(f -> "expirationTime=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-        "}";
-    }
+  @Override
+  public String toString() {
+    return "AccessTokenCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalAccessToken().map(f -> "accessToken=" + f + ", ").orElse("")
+        + optionalAccessTokenName().map(f -> "accessTokenName=" + f + ", ").orElse("")
+        + optionalOwner().map(f -> "owner=" + f + ", ").orElse("")
+        + optionalOwnerName().map(f -> "ownerName=" + f + ", ").orElse("")
+        + optionalOrgId().map(f -> "orgId=" + f + ", ").orElse("")
+        + optionalOrgName().map(f -> "orgName=" + f + ", ").orElse("")
+        + optionalState().map(f -> "state=" + f + ", ").orElse("")
+        + optionalActype().map(f -> "actype=" + f + ", ").orElse("")
+        + optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("")
+        + optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("")
+        + optionalSecuLayer().map(f -> "secuLayer=" + f + ", ").orElse("")
+        + optionalExpirationTime().map(f -> "expirationTime=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }
