@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class VerifierOid4vp201iReqDTO {
 
-    private String transactionId;
-    private String responseCode;
+  private String transactionId;
+  private String responseCode;
 }

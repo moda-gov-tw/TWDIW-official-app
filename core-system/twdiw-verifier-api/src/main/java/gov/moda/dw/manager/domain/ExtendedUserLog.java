@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A ExtendedUserLog.
- */
+/** A ExtendedUserLog. */
 @Entity
 @Table(name = "extended_user_log")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,140 +19,100 @@ public class ExtendedUserLog implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 異動人
-   */
+  /** 異動人 */
   @NotNull
   @Size(max = 140)
   @Column(name = "actor", length = 140, nullable = false)
   private String actor;
 
-  /**
-   * 異動類型
-   */
+  /** 異動類型 */
   @NotNull
   @Size(max = 20)
   @Column(name = "log_type", length = 20, nullable = false)
   private String logType;
 
-  /**
-   * Log建立時間
-   */
+  /** Log建立時間 */
   @NotNull
   @Column(name = "log_time", nullable = false)
   private Instant logTime;
 
-  /**
-   * 組織
-   */
+  /** 組織 */
   @Size(max = 255)
   @Column(name = "org_id")
   private String orgId;
 
-  /**
-   * 帳號
-   */
+  /** 帳號 */
   @Size(max = 320)
   @Column(name = "user_id", length = 320)
   private String userId;
 
-  /**
-   * 姓名
-   */
+  /** 姓名 */
   @Size(max = 128)
   @Column(name = "user_name", length = 128)
   private String userName;
 
-  /**
-   * email
-   */
+  /** email */
   @Size(max = 320)
   @Column(name = "email", length = 320)
   private String email;
 
-  /**
-   * 手機
-   */
+  /** 手機 */
   @Size(max = 20)
   @Column(name = "phone", length = 20)
   private String phone;
 
-  /**
-   * 市話
-   */
+  /** 市話 */
   @Size(max = 20)
   @Column(name = "tel", length = 20)
   private String tel;
 
-  /**
-   * 員工編號
-   */
+  /** 員工編號 */
   @Size(max = 20)
   @Column(name = "employee_id", length = 20)
   private String employeeId;
 
-  /**
-   * 員工類型
-   */
+  /** 員工類型 */
   @Size(max = 10)
   @Column(name = "employee_type_id", length = 10)
   private String employeeTypeId;
 
-  /**
-   * 離職日
-   */
+  /** 離職日 */
   @Column(name = "left_date")
   private Instant leftDate;
 
-  /**
-   * 到職日
-   */
+  /** 到職日 */
   @Column(name = "onboard_date")
   private Instant onboardDate;
 
-  /**
-   * 帳號類型
-   */
+  /** 帳號類型 */
   @Size(max = 10)
   @Column(name = "user_type_id", length = 10)
   private String userTypeId;
 
-  /**
-   * 預留欄位1
-   */
+  /** 預留欄位1 */
   @Size(max = 255)
   @Column(name = "data_role_1", length = 255)
   private String dataRole1;
 
-  /**
-   * 預留欄位2
-   */
+  /** 預留欄位2 */
   @Size(max = 255)
   @Column(name = "data_role_2", length = 255)
   private String dataRole2;
 
-  /**
-   * 狀態
-   */
+  /** 狀態 */
   @Size(max = 10)
   @Column(name = "state", length = 10)
   private String state;
 
-  /**
-   * 帳號建立時間
-   */
+  /** 帳號建立時間 */
   @Column(name = "create_time")
   private Instant createTime;
 
-  /**
-   * 上次變更權限時間
-   */
+  /** 上次變更權限時間 */
   @Column(name = "auth_change_time")
   private Instant authChangeTime;
 
-  /**
-   * 上次重置密碼時間
-   */
+  /** 上次重置密碼時間 */
   @Column(name = "pwd_reset_time")
   private Instant pwdResetTime;
 
@@ -408,29 +366,29 @@ public class ExtendedUserLog implements Serializable {
   }
 
   public Instant getAuthChangeTime() {
-      return this.authChangeTime;
+    return this.authChangeTime;
   }
 
   public ExtendedUserLog authChangeTime(Instant authChangeTime) {
-      this.setAuthChangeTime(authChangeTime);
-      return this;
+    this.setAuthChangeTime(authChangeTime);
+    return this;
   }
 
   public void setAuthChangeTime(Instant authChangeTime) {
-      this.authChangeTime = authChangeTime;
+    this.authChangeTime = authChangeTime;
   }
 
   public Instant getPwdResetTime() {
-      return this.pwdResetTime;
+    return this.pwdResetTime;
   }
 
   public ExtendedUserLog pwdResetTime(Instant pwdResetTime) {
-      this.setPwdResetTime(pwdResetTime);
-      return this;
+    this.setPwdResetTime(pwdResetTime);
+    return this;
   }
 
   public void setPwdResetTime(Instant pwdResetTime) {
-      this.pwdResetTime = pwdResetTime;
+    this.pwdResetTime = pwdResetTime;
   }
 
   // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -448,35 +406,77 @@ public class ExtendedUserLog implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ExtendedUserLog{" +
-            "id=" + getId() +
-            ", actor='" + getActor() + "'" +
-            ", logType='" + getLogType() + "'" +
-            ", logTime='" + getLogTime() + "'" +
-            ", orgId='" + getOrgId() + "'" +
-            ", userId='" + getUserId() + "'" +
-            ", userName='" + getUserName() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", phone='" + getPhone() + "'" +
-            ", tel='" + getTel() + "'" +
-            ", employeeId='" + getEmployeeId() + "'" +
-            ", employeeTypeId='" + getEmployeeTypeId() + "'" +
-            ", leftDate='" + getLeftDate() + "'" +
-            ", onboardDate='" + getOnboardDate() + "'" +
-            ", userTypeId='" + getUserTypeId() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", state='" + getState() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", authChangeTime='" + getAuthChangeTime() + "'" +
-            ", pwdResetTime='" + getPwdResetTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ExtendedUserLog{"
+        + "id="
+        + getId()
+        + ", actor='"
+        + getActor()
+        + "'"
+        + ", logType='"
+        + getLogType()
+        + "'"
+        + ", logTime='"
+        + getLogTime()
+        + "'"
+        + ", orgId='"
+        + getOrgId()
+        + "'"
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", userName='"
+        + getUserName()
+        + "'"
+        + ", email='"
+        + getEmail()
+        + "'"
+        + ", phone='"
+        + getPhone()
+        + "'"
+        + ", tel='"
+        + getTel()
+        + "'"
+        + ", employeeId='"
+        + getEmployeeId()
+        + "'"
+        + ", employeeTypeId='"
+        + getEmployeeTypeId()
+        + "'"
+        + ", leftDate='"
+        + getLeftDate()
+        + "'"
+        + ", onboardDate='"
+        + getOnboardDate()
+        + "'"
+        + ", userTypeId='"
+        + getUserTypeId()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", authChangeTime='"
+        + getAuthChangeTime()
+        + "'"
+        + ", pwdResetTime='"
+        + getPwdResetTime()
+        + "'"
+        + "}";
+  }
 }

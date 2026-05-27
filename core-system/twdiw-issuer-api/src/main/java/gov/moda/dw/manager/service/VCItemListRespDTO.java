@@ -5,33 +5,33 @@ import java.util.List;
 
 public class VCItemListRespDTO {
 
-    public Long getVcSourceType() {
-        return vcSourceType;
-    }
+  public Long getVcSourceType() {
+    return vcSourceType;
+  }
 
-    public void setVcSourceType(Long vcSourceType) {
-        this.vcSourceType = vcSourceType;
-    }
+  public void setVcSourceType(Long vcSourceType) {
+    this.vcSourceType = vcSourceType;
+  }
 
-    public boolean isIssuerDID() {
-        return issuerDID;
-    }
+  public boolean isIssuerDID() {
+    return issuerDID;
+  }
 
-    public void setIssuerDID(boolean issuerDID) {
-        this.issuerDID = issuerDID;
-    }
+  public void setIssuerDID(boolean issuerDID) {
+    this.issuerDID = issuerDID;
+  }
 
-    public List<VCItemDTO> getData() {
-        return data;
-    }
+  public List<VCItemDTO> getData() {
+    return data;
+  }
 
-    public void setData(List<VCItemDTO> data) {
-        this.data = data;
-    }
+  public void setData(List<VCItemDTO> data) {
+    this.data = data;
+  }
 
-    private Long vcSourceType;
+  private Long vcSourceType;
 
-    private boolean issuerDID;
+  private boolean issuerDID;
 
-    private List<VCItemDTO> data;
+  private List<VCItemDTO> data;
 }

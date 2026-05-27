@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ExtendedUser} entity.
- */
+/** A DTO for the {@link ExtendedUser} entity. */
 @Schema(description = "ExtendedUser")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ExtendedUserDTO implements Serializable {
@@ -211,13 +209,21 @@ public class ExtendedUserDTO implements Serializable {
     this.createTime = createTime;
   }
 
-  public Instant getAuthChangeTime() { return authChangeTime; }
+  public Instant getAuthChangeTime() {
+    return authChangeTime;
+  }
 
-  public void setAuthChangeTime(Instant authChangeTime) { this.authChangeTime = authChangeTime; }
+  public void setAuthChangeTime(Instant authChangeTime) {
+    this.authChangeTime = authChangeTime;
+  }
 
-  public Instant getPwdResetTime() { return pwdResetTime; }
+  public Instant getPwdResetTime() {
+    return pwdResetTime;
+  }
 
-  public void setPwdResetTime(Instant pwdResetTime) { this.pwdResetTime = pwdResetTime; }
+  public void setPwdResetTime(Instant pwdResetTime) {
+    this.pwdResetTime = pwdResetTime;
+  }
 
   @Override
   public boolean equals(Object o) {
@@ -241,27 +247,62 @@ public class ExtendedUserDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ExtendedUserDTO{" +
-            "id=" + getId() +
-            ", orgId='" + getOrgId() + "'" +
-            ", userId='" + getUserId() + "'" +
-            ", userName='" + getUserName() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", phone='" + getPhone() + "'" +
-            ", tel='" + getTel() + "'" +
-            ", employeeId='" + getEmployeeId() + "'" +
-            ", employeeTypeId='" + getEmployeeTypeId() + "'" +
-            ", leftDate='" + getLeftDate() + "'" +
-            ", onboardDate='" + getOnboardDate() + "'" +
-            ", userTypeId='" + getUserTypeId() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", state='" + getState() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", authChangeTime='" + getAuthChangeTime() + "'" +
-            ", pwdResetTime='" + getPwdResetTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ExtendedUserDTO{"
+        + "id="
+        + getId()
+        + ", orgId='"
+        + getOrgId()
+        + "'"
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", userName='"
+        + getUserName()
+        + "'"
+        + ", email='"
+        + getEmail()
+        + "'"
+        + ", phone='"
+        + getPhone()
+        + "'"
+        + ", tel='"
+        + getTel()
+        + "'"
+        + ", employeeId='"
+        + getEmployeeId()
+        + "'"
+        + ", employeeTypeId='"
+        + getEmployeeTypeId()
+        + "'"
+        + ", leftDate='"
+        + getLeftDate()
+        + "'"
+        + ", onboardDate='"
+        + getOnboardDate()
+        + "'"
+        + ", userTypeId='"
+        + getUserTypeId()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", authChangeTime='"
+        + getAuthChangeTime()
+        + "'"
+        + ", pwdResetTime='"
+        + getPwdResetTime()
+        + "'"
+        + "}";
+  }
 }

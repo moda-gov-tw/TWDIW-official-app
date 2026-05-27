@@ -12,7 +12,10 @@ public class PageUtils {
 
   public static <T> Page<T> convertToPage(List<T> source, Pageable pageable) {
     int start = (int) pageable.getOffset();
-    int end = (start + pageable.getPageSize()) > source.size() ? source.size() : (start + pageable.getPageSize());
+    int end =
+        (start + pageable.getPageSize()) > source.size()
+            ? source.size()
+            : (start + pageable.getPageSize());
     Page<T> result = new PageImpl<>(source.subList(start, end), pageable, source.size());
     return result;
   }

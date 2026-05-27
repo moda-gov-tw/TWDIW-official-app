@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link Res} entity.
- */
+/** A DTO for the {@link Res} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ResDTO implements Serializable {
 
@@ -183,21 +181,44 @@ public class ResDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResDTO{" +
-            "id=" + getId() +
-            ", typeId='" + getTypeId() + "'" +
-            ", resId='" + getResId() + "'" +
-            ", resGrp='" + getResGrp() + "'" +
-            ", resName='" + getResName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", apiUri='" + getApiUri() + "'" +
-            ", webUrl='" + getWebUrl() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ResDTO{"
+        + "id="
+        + getId()
+        + ", typeId='"
+        + getTypeId()
+        + "'"
+        + ", resId='"
+        + getResId()
+        + "'"
+        + ", resGrp='"
+        + getResGrp()
+        + "'"
+        + ", resName='"
+        + getResName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", apiUri='"
+        + getApiUri()
+        + "'"
+        + ", webUrl='"
+        + getWebUrl()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MenuTreeDTO implements Serializable {
 
-    private List<String> tickedNodes;
-    private List<NodeDTO> resNodeDTO;
+  private List<String> tickedNodes;
+  private List<NodeDTO> resNodeDTO;
 }

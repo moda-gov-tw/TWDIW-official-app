@@ -11,11 +11,9 @@ public enum LogType {
 
   MOD("modify", "修改");
 
-  @Getter
-  private String code;
+  @Getter private String code;
 
-  @Getter
-  private String name;
+  @Getter private String name;
 
   public static LogType toLogType(String code) {
     for (LogType tmp : LogType.values()) {

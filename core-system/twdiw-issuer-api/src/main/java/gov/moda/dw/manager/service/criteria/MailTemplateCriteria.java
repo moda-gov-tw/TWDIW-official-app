@@ -13,256 +13,263 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class MailTemplateCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter mailType;
+  private StringFilter mailType;
 
-    private StringFilter description;
+  private StringFilter description;
 
-    private StringFilter recipientRole;
+  private StringFilter recipientRole;
 
-    private StringFilter subject;
+  private StringFilter subject;
 
-    private StringFilter htmlState;
+  private StringFilter htmlState;
 
-    private StringFilter activated;
+  private StringFilter activated;
 
-    private InstantFilter createTime;
+  private InstantFilter createTime;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public MailTemplateCriteria() {}
+  public MailTemplateCriteria() {}
 
-    public MailTemplateCriteria(MailTemplateCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.mailType = other.optionalMailType().map(StringFilter::copy).orElse(null);
-        this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
-        this.recipientRole = other.optionalRecipientRole().map(StringFilter::copy).orElse(null);
-        this.subject = other.optionalSubject().map(StringFilter::copy).orElse(null);
-        this.htmlState = other.optionalHtmlState().map(StringFilter::copy).orElse(null);
-        this.activated = other.optionalActivated().map(StringFilter::copy).orElse(null);
-        this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public MailTemplateCriteria(MailTemplateCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.mailType = other.optionalMailType().map(StringFilter::copy).orElse(null);
+    this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
+    this.recipientRole = other.optionalRecipientRole().map(StringFilter::copy).orElse(null);
+    this.subject = other.optionalSubject().map(StringFilter::copy).orElse(null);
+    this.htmlState = other.optionalHtmlState().map(StringFilter::copy).orElse(null);
+    this.activated = other.optionalActivated().map(StringFilter::copy).orElse(null);
+    this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public MailTemplateCriteria copy() {
+    return new MailTemplateCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public MailTemplateCriteria copy() {
-        return new MailTemplateCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getMailType() {
+    return mailType;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalMailType() {
+    return Optional.ofNullable(mailType);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter mailType() {
+    if (mailType == null) {
+      setMailType(new StringFilter());
     }
+    return mailType;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setMailType(StringFilter mailType) {
+    this.mailType = mailType;
+  }
 
-    public StringFilter getMailType() {
-        return mailType;
-    }
+  public StringFilter getDescription() {
+    return description;
+  }
 
-    public Optional<StringFilter> optionalMailType() {
-        return Optional.ofNullable(mailType);
-    }
+  public Optional<StringFilter> optionalDescription() {
+    return Optional.ofNullable(description);
+  }
 
-    public StringFilter mailType() {
-        if (mailType == null) {
-            setMailType(new StringFilter());
-        }
-        return mailType;
+  public StringFilter description() {
+    if (description == null) {
+      setDescription(new StringFilter());
     }
+    return description;
+  }
 
-    public void setMailType(StringFilter mailType) {
-        this.mailType = mailType;
-    }
+  public void setDescription(StringFilter description) {
+    this.description = description;
+  }
 
-    public StringFilter getDescription() {
-        return description;
-    }
+  public StringFilter getRecipientRole() {
+    return recipientRole;
+  }
 
-    public Optional<StringFilter> optionalDescription() {
-        return Optional.ofNullable(description);
-    }
+  public Optional<StringFilter> optionalRecipientRole() {
+    return Optional.ofNullable(recipientRole);
+  }
 
-    public StringFilter description() {
-        if (description == null) {
-            setDescription(new StringFilter());
-        }
-        return description;
+  public StringFilter recipientRole() {
+    if (recipientRole == null) {
+      setRecipientRole(new StringFilter());
     }
+    return recipientRole;
+  }
 
-    public void setDescription(StringFilter description) {
-        this.description = description;
-    }
+  public void setRecipientRole(StringFilter recipientRole) {
+    this.recipientRole = recipientRole;
+  }
 
-    public StringFilter getRecipientRole() {
-        return recipientRole;
-    }
+  public StringFilter getSubject() {
+    return subject;
+  }
 
-    public Optional<StringFilter> optionalRecipientRole() {
-        return Optional.ofNullable(recipientRole);
-    }
+  public Optional<StringFilter> optionalSubject() {
+    return Optional.ofNullable(subject);
+  }
 
-    public StringFilter recipientRole() {
-        if (recipientRole == null) {
-            setRecipientRole(new StringFilter());
-        }
-        return recipientRole;
+  public StringFilter subject() {
+    if (subject == null) {
+      setSubject(new StringFilter());
     }
+    return subject;
+  }
 
-    public void setRecipientRole(StringFilter recipientRole) {
-        this.recipientRole = recipientRole;
-    }
+  public void setSubject(StringFilter subject) {
+    this.subject = subject;
+  }
 
-    public StringFilter getSubject() {
-        return subject;
-    }
+  public StringFilter getHtmlState() {
+    return htmlState;
+  }
 
-    public Optional<StringFilter> optionalSubject() {
-        return Optional.ofNullable(subject);
-    }
+  public Optional<StringFilter> optionalHtmlState() {
+    return Optional.ofNullable(htmlState);
+  }
 
-    public StringFilter subject() {
-        if (subject == null) {
-            setSubject(new StringFilter());
-        }
-        return subject;
+  public StringFilter htmlState() {
+    if (htmlState == null) {
+      setHtmlState(new StringFilter());
     }
+    return htmlState;
+  }
 
-    public void setSubject(StringFilter subject) {
-        this.subject = subject;
-    }
+  public void setHtmlState(StringFilter htmlState) {
+    this.htmlState = htmlState;
+  }
 
-    public StringFilter getHtmlState() {
-        return htmlState;
-    }
+  public StringFilter getActivated() {
+    return activated;
+  }
 
-    public Optional<StringFilter> optionalHtmlState() {
-        return Optional.ofNullable(htmlState);
-    }
+  public Optional<StringFilter> optionalActivated() {
+    return Optional.ofNullable(activated);
+  }
 
-    public StringFilter htmlState() {
-        if (htmlState == null) {
-            setHtmlState(new StringFilter());
-        }
-        return htmlState;
+  public StringFilter activated() {
+    if (activated == null) {
+      setActivated(new StringFilter());
     }
+    return activated;
+  }
 
-    public void setHtmlState(StringFilter htmlState) {
-        this.htmlState = htmlState;
-    }
+  public void setActivated(StringFilter activated) {
+    this.activated = activated;
+  }
 
-    public StringFilter getActivated() {
-        return activated;
-    }
+  public InstantFilter getCreateTime() {
+    return createTime;
+  }
 
-    public Optional<StringFilter> optionalActivated() {
-        return Optional.ofNullable(activated);
-    }
+  public Optional<InstantFilter> optionalCreateTime() {
+    return Optional.ofNullable(createTime);
+  }
 
-    public StringFilter activated() {
-        if (activated == null) {
-            setActivated(new StringFilter());
-        }
-        return activated;
+  public InstantFilter createTime() {
+    if (createTime == null) {
+      setCreateTime(new InstantFilter());
     }
+    return createTime;
+  }
 
-    public void setActivated(StringFilter activated) {
-        this.activated = activated;
-    }
+  public void setCreateTime(InstantFilter createTime) {
+    this.createTime = createTime;
+  }
 
-    public InstantFilter getCreateTime() {
-        return createTime;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<InstantFilter> optionalCreateTime() {
-        return Optional.ofNullable(createTime);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public InstantFilter createTime() {
-        if (createTime == null) {
-            setCreateTime(new InstantFilter());
-        }
-        return createTime;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setCreateTime(InstantFilter createTime) {
-        this.createTime = createTime;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final MailTemplateCriteria that = (MailTemplateCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(mailType, that.mailType)
+        && Objects.equals(description, that.description)
+        && Objects.equals(recipientRole, that.recipientRole)
+        && Objects.equals(subject, that.subject)
+        && Objects.equals(htmlState, that.htmlState)
+        && Objects.equals(activated, that.activated)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        id,
+        mailType,
+        description,
+        recipientRole,
+        subject,
+        htmlState,
+        activated,
+        createTime,
+        distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final MailTemplateCriteria that = (MailTemplateCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(mailType, that.mailType) &&
-            Objects.equals(description, that.description) &&
-            Objects.equals(recipientRole, that.recipientRole) &&
-            Objects.equals(subject, that.subject) &&
-            Objects.equals(htmlState, that.htmlState) &&
-            Objects.equals(activated, that.activated) &&
-            Objects.equals(createTime, that.createTime) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, mailType, description, recipientRole, subject, htmlState, activated, createTime, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "MailTemplateCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalMailType().map(f -> "mailType=" + f + ", ").orElse("") +
-            optionalDescription().map(f -> "description=" + f + ", ").orElse("") +
-            optionalRecipientRole().map(f -> "recipientRole=" + f + ", ").orElse("") +
-            optionalSubject().map(f -> "subject=" + f + ", ").orElse("") +
-            optionalHtmlState().map(f -> "htmlState=" + f + ", ").orElse("") +
-            optionalActivated().map(f -> "activated=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "MailTemplateCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalMailType().map(f -> "mailType=" + f + ", ").orElse("")
+        + optionalDescription().map(f -> "description=" + f + ", ").orElse("")
+        + optionalRecipientRole().map(f -> "recipientRole=" + f + ", ").orElse("")
+        + optionalSubject().map(f -> "subject=" + f + ", ").orElse("")
+        + optionalHtmlState().map(f -> "htmlState=" + f + ", ").orElse("")
+        + optionalActivated().map(f -> "activated=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

@@ -10,7 +10,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 public class VerifyCertAndDidResDTO {
-    private String detailCode;
-    private String detailMessage;
-    private String OrgEnName;
+  private String detailCode;
+  private String detailMessage;
+  private String OrgEnName;
 }

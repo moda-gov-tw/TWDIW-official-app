@@ -1,4 +1,2 @@
-/**
- * Rest layer visual models.
- */
+/** Rest layer visual models. */
 package gov.moda.dw.manager.web.rest.vm;

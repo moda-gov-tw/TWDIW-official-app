@@ -20,11 +20,9 @@ public enum RoleType {
   // 預設角色
   DEFAULT_ROLE("default_role", "預設角色");
 
-  @Getter
-  private String code;
+  @Getter private String code;
 
-  @Getter
-  private String name;
+  @Getter private String name;
 
   public static RoleType toRoleType(String code) {
     for (RoleType tmp : RoleType.values()) {

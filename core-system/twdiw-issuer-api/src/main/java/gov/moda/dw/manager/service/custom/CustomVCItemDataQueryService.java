@@ -17,26 +17,25 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class CustomVCItemDataQueryService extends VCItemDataQueryService {
 
-    private static final Logger log = LoggerFactory.getLogger(VCItemDataQueryService.class);
+  private static final Logger log = LoggerFactory.getLogger(VCItemDataQueryService.class);
 
-    private final VCItemDataRepository vCItemDataRepository;
+  private final VCItemDataRepository vCItemDataRepository;
 
-    public CustomVCItemDataQueryService(
-        VCItemDataRepository vCItemDataRepository,
-        VCItemDataMapper vCItemDataMapper,
-        VCItemMapper vcItemMapper
-    ) {
-        super(vCItemDataRepository, vCItemDataMapper, vcItemMapper);
-        this.vCItemDataRepository = vCItemDataRepository;
-    }
+  public CustomVCItemDataQueryService(
+      VCItemDataRepository vCItemDataRepository,
+      VCItemDataMapper vCItemDataMapper,
+      VCItemMapper vcItemMapper) {
+    super(vCItemDataRepository, vCItemDataMapper, vcItemMapper);
+    this.vCItemDataRepository = vCItemDataRepository;
+  }
 
-    @Transactional(readOnly = true)
-    public Page<VCItemData> findByCriteriaReturnEntity(VCItemDataCriteria criteria, Pageable page) {
-        log.debug("find by criteria : {}, page: {}", criteria, page);
-        final Specification<VCItemData> specification = createSpecification(criteria);
+  @Transactional(readOnly = true)
+  public Page<VCItemData> findByCriteriaReturnEntity(VCItemDataCriteria criteria, Pageable page) {
+    log.debug("find by criteria : {}, page: {}", criteria, page);
+    final Specification<VCItemData> specification = createSpecification(criteria);
 
-        Page<VCItemData> vcItemDataPages = vCItemDataRepository.findAll(specification, page);
+    Page<VCItemData> vcItemDataPages = vCItemDataRepository.findAll(specification, page);
 
-        return vcItemDataPages;
-    }
+    return vcItemDataPages;
+  }
 }

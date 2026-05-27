@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Ams105iResDTO {
 
-    private String orderType;
-    private String orderPlatform;
-    private String userType;
-    private String payPlatform;
-    private String checkoutFunc;
-    private String invOrRecType;
+  private String orderType;
+  private String orderPlatform;
+  private String userType;
+  private String payPlatform;
+  private String checkoutFunc;
+  private String invOrRecType;
 }

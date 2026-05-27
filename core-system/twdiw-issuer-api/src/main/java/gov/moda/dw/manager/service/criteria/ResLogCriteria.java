@@ -13,441 +13,438 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ResLogCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter actor;
+  private StringFilter actor;
 
-    private StringFilter logType;
+  private StringFilter logType;
 
-    private InstantFilter logTime;
+  private InstantFilter logTime;
 
-    private StringFilter typeId;
+  private StringFilter typeId;
 
-    private StringFilter resId;
+  private StringFilter resId;
 
-    private StringFilter resGrp;
+  private StringFilter resGrp;
 
-    private StringFilter resName;
+  private StringFilter resName;
 
-    private StringFilter description;
+  private StringFilter description;
 
-    private StringFilter state;
+  private StringFilter state;
 
-    private StringFilter apiUri;
+  private StringFilter apiUri;
 
-    private StringFilter webUrl;
+  private StringFilter webUrl;
 
-    private StringFilter dataRole1;
+  private StringFilter dataRole1;
 
-    private StringFilter dataRole2;
+  private StringFilter dataRole2;
 
-    private InstantFilter createTime;
+  private InstantFilter createTime;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public ResLogCriteria() {}
+  public ResLogCriteria() {}
 
-    public ResLogCriteria(ResLogCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.actor = other.optionalActor().map(StringFilter::copy).orElse(null);
-        this.logType = other.optionalLogType().map(StringFilter::copy).orElse(null);
-        this.logTime = other.optionalLogTime().map(InstantFilter::copy).orElse(null);
-        this.typeId = other.optionalTypeId().map(StringFilter::copy).orElse(null);
-        this.resId = other.optionalResId().map(StringFilter::copy).orElse(null);
-        this.resGrp = other.optionalResGrp().map(StringFilter::copy).orElse(null);
-        this.resName = other.optionalResName().map(StringFilter::copy).orElse(null);
-        this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
-        this.state = other.optionalState().map(StringFilter::copy).orElse(null);
-        this.apiUri = other.optionalApiUri().map(StringFilter::copy).orElse(null);
-        this.webUrl = other.optionalWebUrl().map(StringFilter::copy).orElse(null);
-        this.dataRole1 = other.optionalDataRole1().map(StringFilter::copy).orElse(null);
-        this.dataRole2 = other.optionalDataRole2().map(StringFilter::copy).orElse(null);
-        this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
-        this.distinct = other.distinct;
-    }
-
-    @Override
-    public ResLogCriteria copy() {
-        return new ResLogCriteria(this);
-    }
-
-    public LongFilter getId() {
-        return id;
-    }
-
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
-
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
-    }
-
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
-
-    public StringFilter getActor() {
-        return actor;
-    }
-
-    public Optional<StringFilter> optionalActor() {
-        return Optional.ofNullable(actor);
-    }
-
-    public StringFilter actor() {
-        if (actor == null) {
-            setActor(new StringFilter());
-        }
-        return actor;
-    }
-
-    public void setActor(StringFilter actor) {
-        this.actor = actor;
-    }
-
-    public StringFilter getLogType() {
-        return logType;
-    }
-
-    public Optional<StringFilter> optionalLogType() {
-        return Optional.ofNullable(logType);
-    }
-
-    public StringFilter logType() {
-        if (logType == null) {
-            setLogType(new StringFilter());
-        }
-        return logType;
-    }
-
-    public void setLogType(StringFilter logType) {
-        this.logType = logType;
-    }
+  public ResLogCriteria(ResLogCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.actor = other.optionalActor().map(StringFilter::copy).orElse(null);
+    this.logType = other.optionalLogType().map(StringFilter::copy).orElse(null);
+    this.logTime = other.optionalLogTime().map(InstantFilter::copy).orElse(null);
+    this.typeId = other.optionalTypeId().map(StringFilter::copy).orElse(null);
+    this.resId = other.optionalResId().map(StringFilter::copy).orElse(null);
+    this.resGrp = other.optionalResGrp().map(StringFilter::copy).orElse(null);
+    this.resName = other.optionalResName().map(StringFilter::copy).orElse(null);
+    this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
+    this.state = other.optionalState().map(StringFilter::copy).orElse(null);
+    this.apiUri = other.optionalApiUri().map(StringFilter::copy).orElse(null);
+    this.webUrl = other.optionalWebUrl().map(StringFilter::copy).orElse(null);
+    this.dataRole1 = other.optionalDataRole1().map(StringFilter::copy).orElse(null);
+    this.dataRole2 = other.optionalDataRole2().map(StringFilter::copy).orElse(null);
+    this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
 
-    public InstantFilter getLogTime() {
-        return logTime;
-    }
-
-    public Optional<InstantFilter> optionalLogTime() {
-        return Optional.ofNullable(logTime);
-    }
-
-    public InstantFilter logTime() {
-        if (logTime == null) {
-            setLogTime(new InstantFilter());
-        }
-        return logTime;
-    }
+  @Override
+  public ResLogCriteria copy() {
+    return new ResLogCriteria(this);
+  }
 
-    public void setLogTime(InstantFilter logTime) {
-        this.logTime = logTime;
-    }
-
-    public StringFilter getTypeId() {
-        return typeId;
-    }
-
-    public Optional<StringFilter> optionalTypeId() {
-        return Optional.ofNullable(typeId);
-    }
+  public LongFilter getId() {
+    return id;
+  }
 
-    public StringFilter typeId() {
-        if (typeId == null) {
-            setTypeId(new StringFilter());
-        }
-        return typeId;
-    }
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
 
-    public void setTypeId(StringFilter typeId) {
-        this.typeId = typeId;
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    public StringFilter getResId() {
-        return resId;
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public Optional<StringFilter> optionalResId() {
-        return Optional.ofNullable(resId);
-    }
+  public StringFilter getActor() {
+    return actor;
+  }
 
-    public StringFilter resId() {
-        if (resId == null) {
-            setResId(new StringFilter());
-        }
-        return resId;
-    }
+  public Optional<StringFilter> optionalActor() {
+    return Optional.ofNullable(actor);
+  }
 
-    public void setResId(StringFilter resId) {
-        this.resId = resId;
+  public StringFilter actor() {
+    if (actor == null) {
+      setActor(new StringFilter());
     }
+    return actor;
+  }
 
-    public StringFilter getResGrp() {
-        return resGrp;
-    }
+  public void setActor(StringFilter actor) {
+    this.actor = actor;
+  }
 
-    public Optional<StringFilter> optionalResGrp() {
-        return Optional.ofNullable(resGrp);
-    }
+  public StringFilter getLogType() {
+    return logType;
+  }
 
-    public StringFilter resGrp() {
-        if (resGrp == null) {
-            setResGrp(new StringFilter());
-        }
-        return resGrp;
-    }
+  public Optional<StringFilter> optionalLogType() {
+    return Optional.ofNullable(logType);
+  }
 
-    public void setResGrp(StringFilter resGrp) {
-        this.resGrp = resGrp;
+  public StringFilter logType() {
+    if (logType == null) {
+      setLogType(new StringFilter());
     }
+    return logType;
+  }
 
-    public StringFilter getResName() {
-        return resName;
-    }
+  public void setLogType(StringFilter logType) {
+    this.logType = logType;
+  }
 
-    public Optional<StringFilter> optionalResName() {
-        return Optional.ofNullable(resName);
-    }
+  public InstantFilter getLogTime() {
+    return logTime;
+  }
 
-    public StringFilter resName() {
-        if (resName == null) {
-            setResName(new StringFilter());
-        }
-        return resName;
-    }
+  public Optional<InstantFilter> optionalLogTime() {
+    return Optional.ofNullable(logTime);
+  }
 
-    public void setResName(StringFilter resName) {
-        this.resName = resName;
+  public InstantFilter logTime() {
+    if (logTime == null) {
+      setLogTime(new InstantFilter());
     }
+    return logTime;
+  }
 
-    public StringFilter getDescription() {
-        return description;
-    }
+  public void setLogTime(InstantFilter logTime) {
+    this.logTime = logTime;
+  }
 
-    public Optional<StringFilter> optionalDescription() {
-        return Optional.ofNullable(description);
-    }
+  public StringFilter getTypeId() {
+    return typeId;
+  }
 
-    public StringFilter description() {
-        if (description == null) {
-            setDescription(new StringFilter());
-        }
-        return description;
-    }
+  public Optional<StringFilter> optionalTypeId() {
+    return Optional.ofNullable(typeId);
+  }
 
-    public void setDescription(StringFilter description) {
-        this.description = description;
+  public StringFilter typeId() {
+    if (typeId == null) {
+      setTypeId(new StringFilter());
     }
+    return typeId;
+  }
 
-    public StringFilter getState() {
-        return state;
-    }
+  public void setTypeId(StringFilter typeId) {
+    this.typeId = typeId;
+  }
 
-    public Optional<StringFilter> optionalState() {
-        return Optional.ofNullable(state);
-    }
+  public StringFilter getResId() {
+    return resId;
+  }
 
-    public StringFilter state() {
-        if (state == null) {
-            setState(new StringFilter());
-        }
-        return state;
-    }
+  public Optional<StringFilter> optionalResId() {
+    return Optional.ofNullable(resId);
+  }
 
-    public void setState(StringFilter state) {
-        this.state = state;
+  public StringFilter resId() {
+    if (resId == null) {
+      setResId(new StringFilter());
     }
+    return resId;
+  }
 
-    public StringFilter getApiUri() {
-        return apiUri;
-    }
+  public void setResId(StringFilter resId) {
+    this.resId = resId;
+  }
 
-    public Optional<StringFilter> optionalApiUri() {
-        return Optional.ofNullable(apiUri);
-    }
+  public StringFilter getResGrp() {
+    return resGrp;
+  }
 
-    public StringFilter apiUri() {
-        if (apiUri == null) {
-            setApiUri(new StringFilter());
-        }
-        return apiUri;
-    }
+  public Optional<StringFilter> optionalResGrp() {
+    return Optional.ofNullable(resGrp);
+  }
 
-    public void setApiUri(StringFilter apiUri) {
-        this.apiUri = apiUri;
+  public StringFilter resGrp() {
+    if (resGrp == null) {
+      setResGrp(new StringFilter());
     }
+    return resGrp;
+  }
 
-    public StringFilter getWebUrl() {
-        return webUrl;
-    }
+  public void setResGrp(StringFilter resGrp) {
+    this.resGrp = resGrp;
+  }
 
-    public Optional<StringFilter> optionalWebUrl() {
-        return Optional.ofNullable(webUrl);
-    }
+  public StringFilter getResName() {
+    return resName;
+  }
 
-    public StringFilter webUrl() {
-        if (webUrl == null) {
-            setWebUrl(new StringFilter());
-        }
-        return webUrl;
-    }
+  public Optional<StringFilter> optionalResName() {
+    return Optional.ofNullable(resName);
+  }
 
-    public void setWebUrl(StringFilter webUrl) {
-        this.webUrl = webUrl;
+  public StringFilter resName() {
+    if (resName == null) {
+      setResName(new StringFilter());
     }
+    return resName;
+  }
 
-    public StringFilter getDataRole1() {
-        return dataRole1;
-    }
+  public void setResName(StringFilter resName) {
+    this.resName = resName;
+  }
 
-    public Optional<StringFilter> optionalDataRole1() {
-        return Optional.ofNullable(dataRole1);
-    }
+  public StringFilter getDescription() {
+    return description;
+  }
 
-    public StringFilter dataRole1() {
-        if (dataRole1 == null) {
-            setDataRole1(new StringFilter());
-        }
-        return dataRole1;
-    }
+  public Optional<StringFilter> optionalDescription() {
+    return Optional.ofNullable(description);
+  }
 
-    public void setDataRole1(StringFilter dataRole1) {
-        this.dataRole1 = dataRole1;
+  public StringFilter description() {
+    if (description == null) {
+      setDescription(new StringFilter());
     }
+    return description;
+  }
 
-    public StringFilter getDataRole2() {
-        return dataRole2;
-    }
+  public void setDescription(StringFilter description) {
+    this.description = description;
+  }
 
-    public Optional<StringFilter> optionalDataRole2() {
-        return Optional.ofNullable(dataRole2);
-    }
+  public StringFilter getState() {
+    return state;
+  }
 
-    public StringFilter dataRole2() {
-        if (dataRole2 == null) {
-            setDataRole2(new StringFilter());
-        }
-        return dataRole2;
-    }
+  public Optional<StringFilter> optionalState() {
+    return Optional.ofNullable(state);
+  }
 
-    public void setDataRole2(StringFilter dataRole2) {
-        this.dataRole2 = dataRole2;
+  public StringFilter state() {
+    if (state == null) {
+      setState(new StringFilter());
     }
+    return state;
+  }
 
-    public InstantFilter getCreateTime() {
-        return createTime;
-    }
+  public void setState(StringFilter state) {
+    this.state = state;
+  }
 
-    public Optional<InstantFilter> optionalCreateTime() {
-        return Optional.ofNullable(createTime);
-    }
+  public StringFilter getApiUri() {
+    return apiUri;
+  }
 
-    public InstantFilter createTime() {
-        if (createTime == null) {
-            setCreateTime(new InstantFilter());
-        }
-        return createTime;
-    }
+  public Optional<StringFilter> optionalApiUri() {
+    return Optional.ofNullable(apiUri);
+  }
 
-    public void setCreateTime(InstantFilter createTime) {
-        this.createTime = createTime;
+  public StringFilter apiUri() {
+    if (apiUri == null) {
+      setApiUri(new StringFilter());
     }
+    return apiUri;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
-    }
+  public void setApiUri(StringFilter apiUri) {
+    this.apiUri = apiUri;
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  public StringFilter getWebUrl() {
+    return webUrl;
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
+  public Optional<StringFilter> optionalWebUrl() {
+    return Optional.ofNullable(webUrl);
+  }
 
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
+  public StringFilter webUrl() {
+    if (webUrl == null) {
+      setWebUrl(new StringFilter());
     }
+    return webUrl;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final ResLogCriteria that = (ResLogCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(actor, that.actor) &&
-            Objects.equals(logType, that.logType) &&
-            Objects.equals(logTime, that.logTime) &&
-            Objects.equals(typeId, that.typeId) &&
-            Objects.equals(resId, that.resId) &&
-            Objects.equals(resGrp, that.resGrp) &&
-            Objects.equals(resName, that.resName) &&
-            Objects.equals(description, that.description) &&
-            Objects.equals(state, that.state) &&
-            Objects.equals(apiUri, that.apiUri) &&
-            Objects.equals(webUrl, that.webUrl) &&
-            Objects.equals(dataRole1, that.dataRole1) &&
-            Objects.equals(dataRole2, that.dataRole2) &&
-            Objects.equals(createTime, that.createTime) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
+  public void setWebUrl(StringFilter webUrl) {
+    this.webUrl = webUrl;
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-            id,
-            actor,
-            logType,
-            logTime,
-            typeId,
-            resId,
-            resGrp,
-            resName,
-            description,
-            state,
-            apiUri,
-            webUrl,
-            dataRole1,
-            dataRole2,
-            createTime,
-            distinct
-        );
-    }
+  public StringFilter getDataRole1() {
+    return dataRole1;
+  }
 
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResLogCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalActor().map(f -> "actor=" + f + ", ").orElse("") +
-            optionalLogType().map(f -> "logType=" + f + ", ").orElse("") +
-            optionalLogTime().map(f -> "logTime=" + f + ", ").orElse("") +
-            optionalTypeId().map(f -> "typeId=" + f + ", ").orElse("") +
-            optionalResId().map(f -> "resId=" + f + ", ").orElse("") +
-            optionalResGrp().map(f -> "resGrp=" + f + ", ").orElse("") +
-            optionalResName().map(f -> "resName=" + f + ", ").orElse("") +
-            optionalDescription().map(f -> "description=" + f + ", ").orElse("") +
-            optionalState().map(f -> "state=" + f + ", ").orElse("") +
-            optionalApiUri().map(f -> "apiUri=" + f + ", ").orElse("") +
-            optionalWebUrl().map(f -> "webUrl=" + f + ", ").orElse("") +
-            optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("") +
-            optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  public Optional<StringFilter> optionalDataRole1() {
+    return Optional.ofNullable(dataRole1);
+  }
+
+  public StringFilter dataRole1() {
+    if (dataRole1 == null) {
+      setDataRole1(new StringFilter());
+    }
+    return dataRole1;
+  }
+
+  public void setDataRole1(StringFilter dataRole1) {
+    this.dataRole1 = dataRole1;
+  }
+
+  public StringFilter getDataRole2() {
+    return dataRole2;
+  }
+
+  public Optional<StringFilter> optionalDataRole2() {
+    return Optional.ofNullable(dataRole2);
+  }
+
+  public StringFilter dataRole2() {
+    if (dataRole2 == null) {
+      setDataRole2(new StringFilter());
+    }
+    return dataRole2;
+  }
+
+  public void setDataRole2(StringFilter dataRole2) {
+    this.dataRole2 = dataRole2;
+  }
+
+  public InstantFilter getCreateTime() {
+    return createTime;
+  }
+
+  public Optional<InstantFilter> optionalCreateTime() {
+    return Optional.ofNullable(createTime);
+  }
+
+  public InstantFilter createTime() {
+    if (createTime == null) {
+      setCreateTime(new InstantFilter());
+    }
+    return createTime;
+  }
+
+  public void setCreateTime(InstantFilter createTime) {
+    this.createTime = createTime;
+  }
+
+  public Boolean getDistinct() {
+    return distinct;
+  }
+
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
+
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
+    }
+    return distinct;
+  }
+
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final ResLogCriteria that = (ResLogCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(actor, that.actor)
+        && Objects.equals(logType, that.logType)
+        && Objects.equals(logTime, that.logTime)
+        && Objects.equals(typeId, that.typeId)
+        && Objects.equals(resId, that.resId)
+        && Objects.equals(resGrp, that.resGrp)
+        && Objects.equals(resName, that.resName)
+        && Objects.equals(description, that.description)
+        && Objects.equals(state, that.state)
+        && Objects.equals(apiUri, that.apiUri)
+        && Objects.equals(webUrl, that.webUrl)
+        && Objects.equals(dataRole1, that.dataRole1)
+        && Objects.equals(dataRole2, that.dataRole2)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(distinct, that.distinct));
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        id,
+        actor,
+        logType,
+        logTime,
+        typeId,
+        resId,
+        resGrp,
+        resName,
+        description,
+        state,
+        apiUri,
+        webUrl,
+        dataRole1,
+        dataRole2,
+        createTime,
+        distinct);
+  }
+
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "ResLogCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalActor().map(f -> "actor=" + f + ", ").orElse("")
+        + optionalLogType().map(f -> "logType=" + f + ", ").orElse("")
+        + optionalLogTime().map(f -> "logTime=" + f + ", ").orElse("")
+        + optionalTypeId().map(f -> "typeId=" + f + ", ").orElse("")
+        + optionalResId().map(f -> "resId=" + f + ", ").orElse("")
+        + optionalResGrp().map(f -> "resGrp=" + f + ", ").orElse("")
+        + optionalResName().map(f -> "resName=" + f + ", ").orElse("")
+        + optionalDescription().map(f -> "description=" + f + ", ").orElse("")
+        + optionalState().map(f -> "state=" + f + ", ").orElse("")
+        + optionalApiUri().map(f -> "apiUri=" + f + ", ").orElse("")
+        + optionalWebUrl().map(f -> "webUrl=" + f + ", ").orElse("")
+        + optionalDataRole1().map(f -> "dataRole1=" + f + ", ").orElse("")
+        + optionalDataRole2().map(f -> "dataRole2=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

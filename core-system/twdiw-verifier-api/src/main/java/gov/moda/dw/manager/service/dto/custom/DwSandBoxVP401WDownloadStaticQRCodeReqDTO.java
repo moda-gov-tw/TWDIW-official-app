@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class DwSandBoxVP401WDownloadStaticQRCodeReqDTO {
 
-    private String base64;
+  private String base64;
 }

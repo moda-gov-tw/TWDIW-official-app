@@ -1,9 +1,7 @@
 package gov.moda.dw.manager.service.dto.custom;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,31 +9,29 @@ import lombok.Setter;
 @Setter
 public class DwIssuerOidVci101iRes {
 
-    @JsonProperty("resp_message")
-    private String respMessage;
+  @JsonProperty("resp_message")
+  private String respMessage;
 
-    @JsonProperty("resp_code")
-    public String respCode;
+  @JsonProperty("resp_code")
+  public String respCode;
 
-    @JsonProperty("link")
-    public String link;
+  @JsonProperty("link")
+  public String link;
 
-    @JsonProperty("qr_code")
-    public String qrCode;
+  @JsonProperty("qr_code")
+  public String qrCode;
 
-    @JsonProperty("warnings")
-    public DwIssuerOidVci101iWarningsRes warnings;
+  @JsonProperty("warnings")
+  public DwIssuerOidVci101iWarningsRes warnings;
 
-    @Getter
-    @Setter
-    public static class DwIssuerOidVci101iWarningsRes {
+  @Getter
+  @Setter
+  public static class DwIssuerOidVci101iWarningsRes {
 
-        @JsonProperty("status_revoke")
-        public List<String> statusRevoke;
+    @JsonProperty("status_revoke")
+    public List<String> statusRevoke;
 
-        @JsonProperty("cid_not_found")
-        public List<String> cidNotFound;
-
-    }
-
+    @JsonProperty("cid_not_found")
+    public List<String> cidNotFound;
+  }
 }

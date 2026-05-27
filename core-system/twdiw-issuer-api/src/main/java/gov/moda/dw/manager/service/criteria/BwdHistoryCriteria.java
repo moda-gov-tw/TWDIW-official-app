@@ -13,184 +13,182 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class BwdHistoryCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter userId;
+  private StringFilter userId;
 
-    private InstantFilter createTime;
+  private InstantFilter createTime;
 
-    private StringFilter bwdHash;
+  private StringFilter bwdHash;
 
-    private StringFilter bwdCode;
+  private StringFilter bwdCode;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public BwdHistoryCriteria() {}
+  public BwdHistoryCriteria() {}
 
-    public BwdHistoryCriteria(BwdHistoryCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
-        this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
-        this.bwdHash = other.optionalBwdHash().map(StringFilter::copy).orElse(null);
-        this.bwdCode = other.optionalBwdCode().map(StringFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public BwdHistoryCriteria(BwdHistoryCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
+    this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
+    this.bwdHash = other.optionalBwdHash().map(StringFilter::copy).orElse(null);
+    this.bwdCode = other.optionalBwdCode().map(StringFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public BwdHistoryCriteria copy() {
+    return new BwdHistoryCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public BwdHistoryCriteria copy() {
-        return new BwdHistoryCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getUserId() {
+    return userId;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalUserId() {
+    return Optional.ofNullable(userId);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter userId() {
+    if (userId == null) {
+      setUserId(new StringFilter());
     }
+    return userId;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setUserId(StringFilter userId) {
+    this.userId = userId;
+  }
 
-    public StringFilter getUserId() {
-        return userId;
-    }
+  public InstantFilter getCreateTime() {
+    return createTime;
+  }
 
-    public Optional<StringFilter> optionalUserId() {
-        return Optional.ofNullable(userId);
-    }
+  public Optional<InstantFilter> optionalCreateTime() {
+    return Optional.ofNullable(createTime);
+  }
 
-    public StringFilter userId() {
-        if (userId == null) {
-            setUserId(new StringFilter());
-        }
-        return userId;
+  public InstantFilter createTime() {
+    if (createTime == null) {
+      setCreateTime(new InstantFilter());
     }
+    return createTime;
+  }
 
-    public void setUserId(StringFilter userId) {
-        this.userId = userId;
-    }
+  public void setCreateTime(InstantFilter createTime) {
+    this.createTime = createTime;
+  }
 
-    public InstantFilter getCreateTime() {
-        return createTime;
-    }
+  public StringFilter getBwdHash() {
+    return bwdHash;
+  }
 
-    public Optional<InstantFilter> optionalCreateTime() {
-        return Optional.ofNullable(createTime);
-    }
+  public Optional<StringFilter> optionalBwdHash() {
+    return Optional.ofNullable(bwdHash);
+  }
 
-    public InstantFilter createTime() {
-        if (createTime == null) {
-            setCreateTime(new InstantFilter());
-        }
-        return createTime;
+  public StringFilter bwdHash() {
+    if (bwdHash == null) {
+      setBwdHash(new StringFilter());
     }
+    return bwdHash;
+  }
 
-    public void setCreateTime(InstantFilter createTime) {
-        this.createTime = createTime;
-    }
+  public void setBwdHash(StringFilter bwdHash) {
+    this.bwdHash = bwdHash;
+  }
 
-    public StringFilter getBwdHash() {
-        return bwdHash;
-    }
+  public StringFilter getBwdCode() {
+    return bwdCode;
+  }
 
-    public Optional<StringFilter> optionalBwdHash() {
-        return Optional.ofNullable(bwdHash);
-    }
+  public Optional<StringFilter> optionalBwdCode() {
+    return Optional.ofNullable(bwdCode);
+  }
 
-    public StringFilter bwdHash() {
-        if (bwdHash == null) {
-            setBwdHash(new StringFilter());
-        }
-        return bwdHash;
+  public StringFilter bwdCode() {
+    if (bwdCode == null) {
+      setBwdCode(new StringFilter());
     }
+    return bwdCode;
+  }
 
-    public void setBwdHash(StringFilter bwdHash) {
-        this.bwdHash = bwdHash;
-    }
+  public void setBwdCode(StringFilter bwdCode) {
+    this.bwdCode = bwdCode;
+  }
 
-    public StringFilter getBwdCode() {
-        return bwdCode;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<StringFilter> optionalBwdCode() {
-        return Optional.ofNullable(bwdCode);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public StringFilter bwdCode() {
-        if (bwdCode == null) {
-            setBwdCode(new StringFilter());
-        }
-        return bwdCode;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setBwdCode(StringFilter bwdCode) {
-        this.bwdCode = bwdCode;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final BwdHistoryCriteria that = (BwdHistoryCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(userId, that.userId)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(bwdHash, that.bwdHash)
+        && Objects.equals(bwdCode, that.bwdCode)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, userId, createTime, bwdHash, bwdCode, distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final BwdHistoryCriteria that = (BwdHistoryCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(userId, that.userId) &&
-            Objects.equals(createTime, that.createTime) &&
-            Objects.equals(bwdHash, that.bwdHash) &&
-            Objects.equals(bwdCode, that.bwdCode) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, userId, createTime, bwdHash, bwdCode, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "BwdHistoryCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalUserId().map(f -> "userId=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalBwdHash().map(f -> "bwdHash=" + f + ", ").orElse("") +
-            optionalBwdCode().map(f -> "bwdCode=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "BwdHistoryCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalUserId().map(f -> "userId=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalBwdHash().map(f -> "bwdHash=" + f + ", ").orElse("")
+        + optionalBwdCode().map(f -> "bwdCode=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

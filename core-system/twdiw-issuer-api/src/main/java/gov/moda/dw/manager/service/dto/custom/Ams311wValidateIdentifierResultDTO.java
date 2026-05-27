@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Ams311wValidateIdentifierResultDTO {
 
-    private Ams311wValidateIdentifierResDTO ams311wValidateIdentifierResDTO;
-    
-    private StatusCode statusCode;
+  private Ams311wValidateIdentifierResDTO ams311wValidateIdentifierResDTO;
+
+  private StatusCode statusCode;
 }

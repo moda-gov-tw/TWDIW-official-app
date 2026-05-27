@@ -5,6 +5,5 @@ import lombok.Data;
 @Data
 public class DwSandBoxVC201WDownloadReqDTO {
 
-	private String base64;
-
+  private String base64;
 }

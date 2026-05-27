@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.AuthObj;
 import gov.moda.dw.manager.repository.AuthObjRepository;
 import gov.moda.dw.manager.service.dto.AuthObjDTO;
 import gov.moda.dw.manager.service.mapper.AuthObjMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link AuthObj}.
- */
+/** Service Implementation for managing {@link AuthObj}. */
 @Service
 @Transactional
 public class AuthObjService {
@@ -64,14 +62,15 @@ public class AuthObjService {
     log.debug("Request to partially update AuthObj : {}", authObjDTO);
 
     return authObjRepository
-      .findById(authObjDTO.getId())
-      .map(existingAuthObj -> {
-        authObjMapper.partialUpdate(existingAuthObj, authObjDTO);
+        .findById(authObjDTO.getId())
+        .map(
+            existingAuthObj -> {
+              authObjMapper.partialUpdate(existingAuthObj, authObjDTO);
 
-        return existingAuthObj;
-      })
-      .map(authObjRepository::save)
-      .map(authObjMapper::toDto);
+              return existingAuthObj;
+            })
+        .map(authObjRepository::save)
+        .map(authObjMapper::toDto);
   }
 
   /**

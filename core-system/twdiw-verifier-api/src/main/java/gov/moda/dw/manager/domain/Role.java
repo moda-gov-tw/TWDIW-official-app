@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A Role.
- */
+/** A Role. */
 @Entity
 @Table(name = "role")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,61 +19,45 @@ public class Role implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 角色代碼
-   */
+  /** 角色代碼 */
   @NotNull
   @Size(max = 20)
   @Column(name = "role_id", length = 20, nullable = false, unique = true)
   private String roleId;
 
-  /**
-   * 角色名稱
-   */
+  /** 角色名稱 */
   @NotNull
   @Size(max = 50)
   @Column(name = "role_name", length = 50, nullable = false)
   private String roleName;
 
-  /**
-   * 描述
-   */
+  /** 描述 */
   @Size(max = 255)
   @Column(name = "description", length = 255)
   private String description;
 
-  /**
-   * 狀態
-   */
+  /** 狀態 */
   @NotNull
   @Size(max = 10)
   @Column(name = "state", length = 10, nullable = false)
   private String state;
 
-  /**
-   * 預留欄位1
-   */
+  /** 預留欄位1 */
   @Size(max = 255)
   @Column(name = "data_role_1", length = 255)
   private String dataRole1;
 
-  /**
-   * 預留欄位2
-   */
+  /** 預留欄位2 */
   @Size(max = 255)
   @Column(name = "data_role_2", length = 255)
   private String dataRole2;
 
-  /**
-   * 建立日
-   */
+  /** 建立日 */
   @NotNull
   @Column(name = "create_time", nullable = false)
   private Instant createTime;
 
-  /**
-   * 上次變更權限時間
-   */
+  /** 上次變更權限時間 */
   @Column(name = "auth_change_time")
   private Instant authChangeTime;
 
@@ -186,17 +168,17 @@ public class Role implements Serializable {
   }
 
   public Instant getAuthChangeTime() {
-      return this.authChangeTime;
+    return this.authChangeTime;
   }
 
   public Role authChangeTime(Instant authChangeTime) {
-      this.setAuthChangeTime(authChangeTime);
-      return this;
+    this.setAuthChangeTime(authChangeTime);
+    return this;
   }
 
   public void setAuthChangeTime(Instant authChangeTime) {
-        this.authChangeTime = authChangeTime;
-    }
+    this.authChangeTime = authChangeTime;
+  }
 
   // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -213,23 +195,41 @@ public class Role implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "Role{" +
-            "id=" + getId() +
-            ", roleId='" + getRoleId() + "'" +
-            ", roleName='" + getRoleName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", authChangeTime='" + getAuthChangeTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "Role{"
+        + "id="
+        + getId()
+        + ", roleId='"
+        + getRoleId()
+        + "'"
+        + ", roleName='"
+        + getRoleName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", authChangeTime='"
+        + getAuthChangeTime()
+        + "'"
+        + "}";
+  }
 }

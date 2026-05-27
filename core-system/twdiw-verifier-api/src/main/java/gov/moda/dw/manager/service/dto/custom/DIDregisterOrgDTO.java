@@ -8,12 +8,12 @@ import lombok.ToString;
 @Setter
 @ToString
 public class DIDregisterOrgDTO {
-    private String name;
-    private String name_en;
-    private String info;
-    private String taxId;
-    private String serviceBaseURL;
-    private String x509_subject;
-    private String x509_serial;
-    private String x509_type;
+  private String name;
+  private String name_en;
+  private String info;
+  private String taxId;
+  private String serviceBaseURL;
+  private String x509_subject;
+  private String x509_serial;
+  private String x509_type;
 }

@@ -9,9 +9,9 @@ import org.springframework.http.HttpHeaders;
 @Data
 public class Ams341wApiTrackResDTO {
 
-    private List<ApiTrackDTO> apiTrackDTOList;
+  private List<ApiTrackDTO> apiTrackDTOList;
 
-    private HttpHeaders headers;
+  private HttpHeaders headers;
 
-    private StatusCode statusCode;
+  private StatusCode statusCode;
 }

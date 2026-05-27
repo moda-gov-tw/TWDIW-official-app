@@ -4,16 +4,15 @@ import java.time.Instant;
 
 public interface GetVcItemDataDTO {
 
-    String getDataTag();
+  String getDataTag();
 
-    String getCid();
+  String getCid();
 
-    String getCredentialType();
+  String getCredentialType();
 
-    Instant getIssuanceDate();
+  Instant getIssuanceDate();
 
-    Instant getExpirationDate();
+  Instant getExpirationDate();
 
-    String getCredentialStatus();
-
+  String getCredentialStatus();
 }

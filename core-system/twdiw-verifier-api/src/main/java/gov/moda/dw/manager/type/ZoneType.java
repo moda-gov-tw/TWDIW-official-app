@@ -10,9 +10,7 @@ public enum ZoneType {
 
   TAIPEI(ZoneId.of("Asia/Taipei"), "台北");
 
-  @Getter
-  private ZoneId zoneId;
+  @Getter private ZoneId zoneId;
 
-  @Getter
-  private String name;
+  @Getter private String name;
 }

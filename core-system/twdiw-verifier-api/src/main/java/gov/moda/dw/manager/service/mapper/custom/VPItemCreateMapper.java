@@ -6,8 +6,6 @@ import gov.moda.dw.manager.service.dto.custom.VPItemCreateDTO;
 import gov.moda.dw.manager.service.mapper.EntityMapper;
 import org.mapstruct.Mapper;
 
-/**
- * Mapper for the entity {@link VPItem} and its DTO {@link VPItemDTO}.
- */
+/** Mapper for the entity {@link VPItem} and its DTO {@link VPItemDTO}. */
 @Mapper(componentModel = "spring")
 public interface VPItemCreateMapper extends EntityMapper<VPItemCreateDTO, VPItem> {}

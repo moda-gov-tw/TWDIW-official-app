@@ -23,9 +23,10 @@ import org.springframework.util.ReflectionUtils;
 public class JsonUtils {
 
   /** The object mapper. */
-  private static ObjectMapper objectMapper = new ObjectMapper()
-    .setSerializationInclusion(Include.NON_NULL)
-    .registerModule(new JavaTimeModule());
+  private static ObjectMapper objectMapper =
+      new ObjectMapper()
+          .setSerializationInclusion(Include.NON_NULL)
+          .registerModule(new JavaTimeModule());
 
   /**
    * Gets the object by key.
@@ -38,7 +39,8 @@ public class JsonUtils {
    * @throws JsonProcessingException the json processing exception
    * @throws IOException Signals that an I/O exception has occurred.
    */
-  public static <T> T getObjectByKey(Class<T> clazz, String jsonString, String key) throws JsonProcessingException, IOException {
+  public static <T> T getObjectByKey(Class<T> clazz, String jsonString, String key)
+      throws JsonProcessingException, IOException {
     JsonNode rootNode = objectMapper.readTree(new StringReader(jsonString));
     JsonNode innerNode = rootNode.get(key);
     return objectMapper.treeToValue(innerNode, clazz);
@@ -53,7 +55,8 @@ public class JsonUtils {
    * @throws JsonProcessingException the json processing exception
    * @throws IOException Signals that an I/O exception has occurred.
    */
-  public static boolean isArrayofObjectsByKey(String jsonString, String key) throws JsonProcessingException, IOException {
+  public static boolean isArrayofObjectsByKey(String jsonString, String key)
+      throws JsonProcessingException, IOException {
     JsonNode rootNode = objectMapper.readTree(new StringReader(jsonString));
     JsonNode innerNode = rootNode.get(key);
 
@@ -71,7 +74,8 @@ public class JsonUtils {
    * @throws JsonProcessingException the json processing exception
    * @throws IOException Signals that an I/O exception has occurred.
    */
-  public static <T> List<T> getObjectsByKey(Class<T> clazz, String jsonString, String key) throws JsonProcessingException, IOException {
+  public static <T> List<T> getObjectsByKey(Class<T> clazz, String jsonString, String key)
+      throws JsonProcessingException, IOException {
     JsonNode rootNode = objectMapper.readTree(new StringReader(jsonString));
     JsonNode innerNode = rootNode.get(key);
 
@@ -159,7 +163,8 @@ public class JsonUtils {
   }
 
   public static <T> T to(Class<T> clazz, Object obj) {
-    return toObjectNoThrows(clazz, obj instanceof String ? obj.toString() : JsonUtils.toJsonNoThrows(obj));
+    return toObjectNoThrows(
+        clazz, obj instanceof String ? obj.toString() : JsonUtils.toJsonNoThrows(obj));
   }
 
   /**
@@ -197,7 +202,8 @@ public class JsonUtils {
    * @throws JsonMappingException the json mapping exception
    * @throws IOException Signals that an I/O exception has occurred.
    */
-  public static <T> T toObject(Class<T> clazz, String jsonString) throws JsonParseException, JsonMappingException, IOException {
+  public static <T> T toObject(Class<T> clazz, String jsonString)
+      throws JsonParseException, JsonMappingException, IOException {
     objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     return objectMapper.readValue(jsonString, clazz);
   }
@@ -213,7 +219,7 @@ public class JsonUtils {
    */
   public static <T> T parsing(Class<T> t, String jsonString, int depth) {
     depth -= 1;
-    final T[] classT = (T[]) new Object[] { null };
+    final T[] classT = (T[]) new Object[] {null};
 
     JsonNode node = null;
     try {
@@ -224,12 +230,13 @@ public class JsonUtils {
       }
       return JsonUtils.toObject(t, jsonString);
     } catch (Exception e) {
-      //            log.debug(e.getMessage().length()>0?e.getMessage():"Json string to Object failure.");
+      //            log.debug(e.getMessage().length()>0?e.getMessage():"Json string to Object
+      // failure.");
 
       if (depth > 0) {
         int finalDepth = depth;
 
-        for (Iterator<Map.Entry<String, JsonNode>> it = node.fields(); it.hasNext();) {
+        for (Iterator<Map.Entry<String, JsonNode>> it = node.fields(); it.hasNext(); ) {
           Map.Entry<String, JsonNode> x = it.next();
           String value = x.getValue().toString();
           //                    log.info("\"{}\":{}",x.getKey(),value);

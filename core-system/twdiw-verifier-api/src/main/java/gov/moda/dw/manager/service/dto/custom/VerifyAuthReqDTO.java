@@ -8,6 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class VerifyAuthReqDTO {
-    private String pid;
-    private String b64Data;
+  private String pid;
+  private String b64Data;
 }

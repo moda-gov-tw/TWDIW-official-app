@@ -8,8 +8,7 @@ public enum LoginSourceType {
   WEB("web"),
   API("api");
 
-  @Getter
-  private String code;
+  @Getter private String code;
 
   public static LoginSourceType toLoginType(String code) {
     for (LoginSourceType tmp : LoginSourceType.values()) {

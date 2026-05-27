@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A AccessToken.
- */
+/** A AccessToken. */
 @Entity
 @Table(name = "access_token")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -276,28 +274,56 @@ public class AccessToken implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "AccessToken{" +
-            "id=" + getId() +
-            ", accessToken='" + getAccessToken() + "'" +
-            ", accessTokenName='" + getAccessTokenName() + "'" +
-            ", owner='" + getOwner() + "'" +
-            ", ownerName='" + getOwnerName() + "'" +
-            ", orgId='" + getOrgId() + "'" +
-            ", orgName='" + getOrgName() + "'" +
-            ", state='" + getState() + "'" +
-            ", actype='" + getActype() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", secuLayer='" + getSecuLayer() + "'" +
-            ", expirationTime='" + getExpirationTime() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "AccessToken{"
+        + "id="
+        + getId()
+        + ", accessToken='"
+        + getAccessToken()
+        + "'"
+        + ", accessTokenName='"
+        + getAccessTokenName()
+        + "'"
+        + ", owner='"
+        + getOwner()
+        + "'"
+        + ", ownerName='"
+        + getOwnerName()
+        + "'"
+        + ", orgId='"
+        + getOrgId()
+        + "'"
+        + ", orgName='"
+        + getOrgName()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", actype='"
+        + getActype()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", secuLayer='"
+        + getSecuLayer()
+        + "'"
+        + ", expirationTime='"
+        + getExpirationTime()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

@@ -7,8 +7,7 @@ import lombok.Getter;
 public enum BwdProfileType {
   DEFAULT("default");
 
-  @Getter
-  private String code;
+  @Getter private String code;
 
   public static BwdProfileType byCode(String code) {
     for (BwdProfileType tmp : BwdProfileType.values()) {

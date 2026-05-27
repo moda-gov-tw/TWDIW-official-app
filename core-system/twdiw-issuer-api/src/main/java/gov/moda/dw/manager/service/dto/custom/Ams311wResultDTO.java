@@ -1,8 +1,8 @@
 package gov.moda.dw.manager.service.dto.custom;
 
+import gov.moda.dw.manager.type.StatusCode;
 import java.io.Serializable;
 import lombok.Data;
-import gov.moda.dw.manager.type.StatusCode;
 
 @Data
 public class Ams311wResultDTO implements Serializable {

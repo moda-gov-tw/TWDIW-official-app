@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A ImgVerifyCode.
- */
+/** A ImgVerifyCode. */
 @Entity
 @Table(name = "img_verify_code")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -20,27 +18,19 @@ public class ImgVerifyCode implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 圖形驗證碼
-   */
+  /** 圖形驗證碼 */
   @Column(name = "verify_code")
   private String verifyCode;
 
-  /**
-   * 圖形驗證碼唯一碼
-   */
+  /** 圖形驗證碼唯一碼 */
   @Column(name = "verify_uni_id")
   private String verifyUniId;
 
-  /**
-   * 創建時間
-   */
+  /** 創建時間 */
   @Column(name = "create_time")
   private Instant createTime;
 
-  /**
-   * 過期時間
-   */
+  /** 過期時間 */
   @Column(name = "expire_time")
   private Instant expireTime;
 
@@ -126,19 +116,29 @@ public class ImgVerifyCode implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ImgVerifyCode{" +
-            "id=" + getId() +
-            ", verifyCode='" + getVerifyCode() + "'" +
-            ", verifyUniId='" + getVerifyUniId() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", expireTime='" + getExpireTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ImgVerifyCode{"
+        + "id="
+        + getId()
+        + ", verifyCode='"
+        + getVerifyCode()
+        + "'"
+        + ", verifyUniId='"
+        + getVerifyUniId()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", expireTime='"
+        + getExpireTime()
+        + "'"
+        + "}";
+  }
 }

@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class Ams105iReqDTO {
 
-    //訂單類型
-    private String orderType;
+  // 訂單類型
+  private String orderType;
 }

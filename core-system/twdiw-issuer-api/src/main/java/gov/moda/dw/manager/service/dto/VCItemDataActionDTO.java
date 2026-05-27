@@ -7,11 +7,10 @@ import lombok.Setter;
 @Setter
 public class VCItemDataActionDTO {
 
-    private Long id;
+  private Long id;
 
-    private String encryptedVcCid;
+  private String encryptedVcCid;
 
-    // 狀態 [0: ACTIVE(有效)、1: SUSPENDED(停用)、2: REVOKED(撤銷)]
-    private String action;
-
+  // 狀態 [0: ACTIVE(有效)、1: SUSPENDED(停用)、2: REVOKED(撤銷)]
+  private String action;
 }

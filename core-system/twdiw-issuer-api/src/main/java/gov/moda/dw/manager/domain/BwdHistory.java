@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * BwdHistory 密碼歷史
- */
+/** BwdHistory 密碼歷史 */
 @Entity
 @Table(name = "bwd_history")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,31 +19,23 @@ public class BwdHistory implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 帳號
-   */
+  /** 帳號 */
   @NotNull
   @Size(max = 320)
   @Column(name = "user_id", length = 320, nullable = false)
   private String userId;
 
-  /**
-   * 建立時間
-   */
+  /** 建立時間 */
   @NotNull
   @Column(name = "create_time", nullable = false)
   private Instant createTime;
 
-  /**
-   * 密碼Hash
-   */
+  /** 密碼Hash */
   @NotNull
   @Column(name = "bwd_hash", nullable = false)
   private String bwdHash;
 
-  /**
-   * 密碼Code
-   */
+  /** 密碼Code */
   @Size(max = 500)
   @Column(name = "bwd_code", length = 500)
   private String bwdCode;
@@ -132,19 +122,29 @@ public class BwdHistory implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "BwdHistory{" +
-            "id=" + getId() +
-            ", userId='" + getUserId() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", bwdHash='" + getBwdHash() + "'" +
-            ", bwdCode='" + getBwdCode() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "BwdHistory{"
+        + "id="
+        + getId()
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", bwdHash='"
+        + getBwdHash()
+        + "'"
+        + ", bwdCode='"
+        + getBwdCode()
+        + "'"
+        + "}";
+  }
 }

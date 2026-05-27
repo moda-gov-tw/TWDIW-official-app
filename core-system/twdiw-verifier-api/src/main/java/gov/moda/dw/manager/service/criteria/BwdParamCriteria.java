@@ -14,391 +14,388 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class BwdParamCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter bwdProfileId;
+  private StringFilter bwdProfileId;
 
-    private StringFilter ruleId;
+  private StringFilter ruleId;
 
-    private StringFilter ruleName;
+  private StringFilter ruleName;
 
-    private StringFilter description;
+  private StringFilter description;
 
-    private BooleanFilter state;
+  private BooleanFilter state;
 
-    private StringFilter strRegular;
+  private StringFilter strRegular;
 
-    private StringFilter paramValue;
+  private StringFilter paramValue;
 
-    private StringFilter actionType;
+  private StringFilter actionType;
 
-    private StringFilter checkType;
+  private StringFilter checkType;
 
-    private StringFilter errorMessage;
+  private StringFilter errorMessage;
 
-    private InstantFilter createTime;
+  private InstantFilter createTime;
 
-    private InstantFilter updateTime;
+  private InstantFilter updateTime;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public BwdParamCriteria() {}
+  public BwdParamCriteria() {}
 
-    public BwdParamCriteria(BwdParamCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.bwdProfileId = other.optionalBwdProfileId().map(StringFilter::copy).orElse(null);
-        this.ruleId = other.optionalRuleId().map(StringFilter::copy).orElse(null);
-        this.ruleName = other.optionalRuleName().map(StringFilter::copy).orElse(null);
-        this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
-        this.state = other.optionalState().map(BooleanFilter::copy).orElse(null);
-        this.strRegular = other.optionalStrRegular().map(StringFilter::copy).orElse(null);
-        this.paramValue = other.optionalParamValue().map(StringFilter::copy).orElse(null);
-        this.actionType = other.optionalActionType().map(StringFilter::copy).orElse(null);
-        this.checkType = other.optionalCheckType().map(StringFilter::copy).orElse(null);
-        this.errorMessage = other.optionalErrorMessage().map(StringFilter::copy).orElse(null);
-        this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
-        this.updateTime = other.optionalUpdateTime().map(InstantFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public BwdParamCriteria(BwdParamCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.bwdProfileId = other.optionalBwdProfileId().map(StringFilter::copy).orElse(null);
+    this.ruleId = other.optionalRuleId().map(StringFilter::copy).orElse(null);
+    this.ruleName = other.optionalRuleName().map(StringFilter::copy).orElse(null);
+    this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
+    this.state = other.optionalState().map(BooleanFilter::copy).orElse(null);
+    this.strRegular = other.optionalStrRegular().map(StringFilter::copy).orElse(null);
+    this.paramValue = other.optionalParamValue().map(StringFilter::copy).orElse(null);
+    this.actionType = other.optionalActionType().map(StringFilter::copy).orElse(null);
+    this.checkType = other.optionalCheckType().map(StringFilter::copy).orElse(null);
+    this.errorMessage = other.optionalErrorMessage().map(StringFilter::copy).orElse(null);
+    this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
+    this.updateTime = other.optionalUpdateTime().map(InstantFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public BwdParamCriteria copy() {
+    return new BwdParamCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public BwdParamCriteria copy() {
-        return new BwdParamCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getBwdProfileId() {
+    return bwdProfileId;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalBwdProfileId() {
+    return Optional.ofNullable(bwdProfileId);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter bwdProfileId() {
+    if (bwdProfileId == null) {
+      setBwdProfileId(new StringFilter());
     }
+    return bwdProfileId;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setBwdProfileId(StringFilter bwdProfileId) {
+    this.bwdProfileId = bwdProfileId;
+  }
 
-    public StringFilter getBwdProfileId() {
-        return bwdProfileId;
-    }
+  public StringFilter getRuleId() {
+    return ruleId;
+  }
 
-    public Optional<StringFilter> optionalBwdProfileId() {
-        return Optional.ofNullable(bwdProfileId);
-    }
+  public Optional<StringFilter> optionalRuleId() {
+    return Optional.ofNullable(ruleId);
+  }
 
-    public StringFilter bwdProfileId() {
-        if (bwdProfileId == null) {
-            setBwdProfileId(new StringFilter());
-        }
-        return bwdProfileId;
+  public StringFilter ruleId() {
+    if (ruleId == null) {
+      setRuleId(new StringFilter());
     }
+    return ruleId;
+  }
 
-    public void setBwdProfileId(StringFilter bwdProfileId) {
-        this.bwdProfileId = bwdProfileId;
-    }
+  public void setRuleId(StringFilter ruleId) {
+    this.ruleId = ruleId;
+  }
 
-    public StringFilter getRuleId() {
-        return ruleId;
-    }
+  public StringFilter getRuleName() {
+    return ruleName;
+  }
 
-    public Optional<StringFilter> optionalRuleId() {
-        return Optional.ofNullable(ruleId);
-    }
+  public Optional<StringFilter> optionalRuleName() {
+    return Optional.ofNullable(ruleName);
+  }
 
-    public StringFilter ruleId() {
-        if (ruleId == null) {
-            setRuleId(new StringFilter());
-        }
-        return ruleId;
+  public StringFilter ruleName() {
+    if (ruleName == null) {
+      setRuleName(new StringFilter());
     }
+    return ruleName;
+  }
 
-    public void setRuleId(StringFilter ruleId) {
-        this.ruleId = ruleId;
-    }
+  public void setRuleName(StringFilter ruleName) {
+    this.ruleName = ruleName;
+  }
 
-    public StringFilter getRuleName() {
-        return ruleName;
-    }
+  public StringFilter getDescription() {
+    return description;
+  }
 
-    public Optional<StringFilter> optionalRuleName() {
-        return Optional.ofNullable(ruleName);
-    }
+  public Optional<StringFilter> optionalDescription() {
+    return Optional.ofNullable(description);
+  }
 
-    public StringFilter ruleName() {
-        if (ruleName == null) {
-            setRuleName(new StringFilter());
-        }
-        return ruleName;
+  public StringFilter description() {
+    if (description == null) {
+      setDescription(new StringFilter());
     }
+    return description;
+  }
 
-    public void setRuleName(StringFilter ruleName) {
-        this.ruleName = ruleName;
-    }
+  public void setDescription(StringFilter description) {
+    this.description = description;
+  }
 
-    public StringFilter getDescription() {
-        return description;
-    }
+  public BooleanFilter getState() {
+    return state;
+  }
 
-    public Optional<StringFilter> optionalDescription() {
-        return Optional.ofNullable(description);
-    }
+  public Optional<BooleanFilter> optionalState() {
+    return Optional.ofNullable(state);
+  }
 
-    public StringFilter description() {
-        if (description == null) {
-            setDescription(new StringFilter());
-        }
-        return description;
+  public BooleanFilter state() {
+    if (state == null) {
+      setState(new BooleanFilter());
     }
+    return state;
+  }
 
-    public void setDescription(StringFilter description) {
-        this.description = description;
-    }
+  public void setState(BooleanFilter state) {
+    this.state = state;
+  }
 
-    public BooleanFilter getState() {
-        return state;
-    }
+  public StringFilter getStrRegular() {
+    return strRegular;
+  }
 
-    public Optional<BooleanFilter> optionalState() {
-        return Optional.ofNullable(state);
-    }
+  public Optional<StringFilter> optionalStrRegular() {
+    return Optional.ofNullable(strRegular);
+  }
 
-    public BooleanFilter state() {
-        if (state == null) {
-            setState(new BooleanFilter());
-        }
-        return state;
+  public StringFilter strRegular() {
+    if (strRegular == null) {
+      setStrRegular(new StringFilter());
     }
+    return strRegular;
+  }
 
-    public void setState(BooleanFilter state) {
-        this.state = state;
-    }
+  public void setStrRegular(StringFilter strRegular) {
+    this.strRegular = strRegular;
+  }
 
-    public StringFilter getStrRegular() {
-        return strRegular;
-    }
+  public StringFilter getParamValue() {
+    return paramValue;
+  }
 
-    public Optional<StringFilter> optionalStrRegular() {
-        return Optional.ofNullable(strRegular);
-    }
+  public Optional<StringFilter> optionalParamValue() {
+    return Optional.ofNullable(paramValue);
+  }
 
-    public StringFilter strRegular() {
-        if (strRegular == null) {
-            setStrRegular(new StringFilter());
-        }
-        return strRegular;
+  public StringFilter paramValue() {
+    if (paramValue == null) {
+      setParamValue(new StringFilter());
     }
+    return paramValue;
+  }
 
-    public void setStrRegular(StringFilter strRegular) {
-        this.strRegular = strRegular;
-    }
+  public void setParamValue(StringFilter paramValue) {
+    this.paramValue = paramValue;
+  }
 
-    public StringFilter getParamValue() {
-        return paramValue;
-    }
+  public StringFilter getActionType() {
+    return actionType;
+  }
 
-    public Optional<StringFilter> optionalParamValue() {
-        return Optional.ofNullable(paramValue);
-    }
+  public Optional<StringFilter> optionalActionType() {
+    return Optional.ofNullable(actionType);
+  }
 
-    public StringFilter paramValue() {
-        if (paramValue == null) {
-            setParamValue(new StringFilter());
-        }
-        return paramValue;
+  public StringFilter actionType() {
+    if (actionType == null) {
+      setActionType(new StringFilter());
     }
+    return actionType;
+  }
 
-    public void setParamValue(StringFilter paramValue) {
-        this.paramValue = paramValue;
-    }
+  public void setActionType(StringFilter actionType) {
+    this.actionType = actionType;
+  }
 
-    public StringFilter getActionType() {
-        return actionType;
-    }
+  public StringFilter getCheckType() {
+    return checkType;
+  }
 
-    public Optional<StringFilter> optionalActionType() {
-        return Optional.ofNullable(actionType);
-    }
+  public Optional<StringFilter> optionalCheckType() {
+    return Optional.ofNullable(checkType);
+  }
 
-    public StringFilter actionType() {
-        if (actionType == null) {
-            setActionType(new StringFilter());
-        }
-        return actionType;
+  public StringFilter checkType() {
+    if (checkType == null) {
+      setCheckType(new StringFilter());
     }
+    return checkType;
+  }
 
-    public void setActionType(StringFilter actionType) {
-        this.actionType = actionType;
-    }
+  public void setCheckType(StringFilter checkType) {
+    this.checkType = checkType;
+  }
 
-    public StringFilter getCheckType() {
-        return checkType;
-    }
+  public StringFilter getErrorMessage() {
+    return errorMessage;
+  }
 
-    public Optional<StringFilter> optionalCheckType() {
-        return Optional.ofNullable(checkType);
-    }
+  public Optional<StringFilter> optionalErrorMessage() {
+    return Optional.ofNullable(errorMessage);
+  }
 
-    public StringFilter checkType() {
-        if (checkType == null) {
-            setCheckType(new StringFilter());
-        }
-        return checkType;
+  public StringFilter errorMessage() {
+    if (errorMessage == null) {
+      setErrorMessage(new StringFilter());
     }
+    return errorMessage;
+  }
 
-    public void setCheckType(StringFilter checkType) {
-        this.checkType = checkType;
-    }
+  public void setErrorMessage(StringFilter errorMessage) {
+    this.errorMessage = errorMessage;
+  }
 
-    public StringFilter getErrorMessage() {
-        return errorMessage;
-    }
+  public InstantFilter getCreateTime() {
+    return createTime;
+  }
 
-    public Optional<StringFilter> optionalErrorMessage() {
-        return Optional.ofNullable(errorMessage);
-    }
+  public Optional<InstantFilter> optionalCreateTime() {
+    return Optional.ofNullable(createTime);
+  }
 
-    public StringFilter errorMessage() {
-        if (errorMessage == null) {
-            setErrorMessage(new StringFilter());
-        }
-        return errorMessage;
+  public InstantFilter createTime() {
+    if (createTime == null) {
+      setCreateTime(new InstantFilter());
     }
+    return createTime;
+  }
 
-    public void setErrorMessage(StringFilter errorMessage) {
-        this.errorMessage = errorMessage;
-    }
+  public void setCreateTime(InstantFilter createTime) {
+    this.createTime = createTime;
+  }
 
-    public InstantFilter getCreateTime() {
-        return createTime;
-    }
+  public InstantFilter getUpdateTime() {
+    return updateTime;
+  }
 
-    public Optional<InstantFilter> optionalCreateTime() {
-        return Optional.ofNullable(createTime);
-    }
+  public Optional<InstantFilter> optionalUpdateTime() {
+    return Optional.ofNullable(updateTime);
+  }
 
-    public InstantFilter createTime() {
-        if (createTime == null) {
-            setCreateTime(new InstantFilter());
-        }
-        return createTime;
+  public InstantFilter updateTime() {
+    if (updateTime == null) {
+      setUpdateTime(new InstantFilter());
     }
+    return updateTime;
+  }
 
-    public void setCreateTime(InstantFilter createTime) {
-        this.createTime = createTime;
-    }
+  public void setUpdateTime(InstantFilter updateTime) {
+    this.updateTime = updateTime;
+  }
 
-    public InstantFilter getUpdateTime() {
-        return updateTime;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<InstantFilter> optionalUpdateTime() {
-        return Optional.ofNullable(updateTime);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public InstantFilter updateTime() {
-        if (updateTime == null) {
-            setUpdateTime(new InstantFilter());
-        }
-        return updateTime;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setUpdateTime(InstantFilter updateTime) {
-        this.updateTime = updateTime;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final BwdParamCriteria that = (BwdParamCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(bwdProfileId, that.bwdProfileId)
+        && Objects.equals(ruleId, that.ruleId)
+        && Objects.equals(ruleName, that.ruleName)
+        && Objects.equals(description, that.description)
+        && Objects.equals(state, that.state)
+        && Objects.equals(strRegular, that.strRegular)
+        && Objects.equals(paramValue, that.paramValue)
+        && Objects.equals(actionType, that.actionType)
+        && Objects.equals(checkType, that.checkType)
+        && Objects.equals(errorMessage, that.errorMessage)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(updateTime, that.updateTime)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        id,
+        bwdProfileId,
+        ruleId,
+        ruleName,
+        description,
+        state,
+        strRegular,
+        paramValue,
+        actionType,
+        checkType,
+        errorMessage,
+        createTime,
+        updateTime,
+        distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final BwdParamCriteria that = (BwdParamCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(bwdProfileId, that.bwdProfileId) &&
-            Objects.equals(ruleId, that.ruleId) &&
-            Objects.equals(ruleName, that.ruleName) &&
-            Objects.equals(description, that.description) &&
-            Objects.equals(state, that.state) &&
-            Objects.equals(strRegular, that.strRegular) &&
-            Objects.equals(paramValue, that.paramValue) &&
-            Objects.equals(actionType, that.actionType) &&
-            Objects.equals(checkType, that.checkType) &&
-            Objects.equals(errorMessage, that.errorMessage) &&
-            Objects.equals(createTime, that.createTime) &&
-            Objects.equals(updateTime, that.updateTime) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-            id,
-            bwdProfileId,
-            ruleId,
-            ruleName,
-            description,
-            state,
-            strRegular,
-            paramValue,
-            actionType,
-            checkType,
-            errorMessage,
-            createTime,
-            updateTime,
-            distinct
-        );
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "BwdParamCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalBwdProfileId().map(f -> "bwdProfileId=" + f + ", ").orElse("") +
-            optionalRuleId().map(f -> "ruleId=" + f + ", ").orElse("") +
-            optionalRuleName().map(f -> "ruleName=" + f + ", ").orElse("") +
-            optionalDescription().map(f -> "description=" + f + ", ").orElse("") +
-            optionalState().map(f -> "state=" + f + ", ").orElse("") +
-            optionalStrRegular().map(f -> "strRegular=" + f + ", ").orElse("") +
-            optionalParamValue().map(f -> "paramValue=" + f + ", ").orElse("") +
-            optionalActionType().map(f -> "actionType=" + f + ", ").orElse("") +
-            optionalCheckType().map(f -> "checkType=" + f + ", ").orElse("") +
-            optionalErrorMessage().map(f -> "errorMessage=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalUpdateTime().map(f -> "updateTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "BwdParamCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalBwdProfileId().map(f -> "bwdProfileId=" + f + ", ").orElse("")
+        + optionalRuleId().map(f -> "ruleId=" + f + ", ").orElse("")
+        + optionalRuleName().map(f -> "ruleName=" + f + ", ").orElse("")
+        + optionalDescription().map(f -> "description=" + f + ", ").orElse("")
+        + optionalState().map(f -> "state=" + f + ", ").orElse("")
+        + optionalStrRegular().map(f -> "strRegular=" + f + ", ").orElse("")
+        + optionalParamValue().map(f -> "paramValue=" + f + ", ").orElse("")
+        + optionalActionType().map(f -> "actionType=" + f + ", ").orElse("")
+        + optionalCheckType().map(f -> "checkType=" + f + ", ").orElse("")
+        + optionalErrorMessage().map(f -> "errorMessage=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalUpdateTime().map(f -> "updateTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

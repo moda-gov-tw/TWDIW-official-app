@@ -5,10 +5,10 @@ import lombok.Getter;
 @Getter
 public class JwtUserObject {
 
-  //登入帳號
+  // 登入帳號
   private String userId;
 
-  //所屬組織
+  // 所屬組織
   private String orgId;
 
   public JwtUserObject() {}

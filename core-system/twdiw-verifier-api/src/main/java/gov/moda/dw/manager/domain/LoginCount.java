@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * LoginCount 登入失敗次數
- */
+/** LoginCount 登入失敗次數 */
 @Entity
 @Table(name = "login_count")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,24 +19,18 @@ public class LoginCount implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 帳號
-   */
+  /** 帳號 */
   @NotNull
   @Size(max = 320)
   @Column(name = "user_id", length = 320, nullable = false)
   private String userId;
 
-  /**
-   * 登入失敗次數(-1:強制重置密碼、n:失敗次數)
-   */
+  /** 登入失敗次數(-1:強制重置密碼、n:失敗次數) */
   @NotNull
   @Column(name = "fail_count", nullable = false)
   private Integer failCount;
 
-  /**
-   * 修改時間
-   */
+  /** 修改時間 */
   @NotNull
   @Column(name = "update_time", nullable = false)
   private Instant updateTime;
@@ -112,18 +104,25 @@ public class LoginCount implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "LoginCount{" +
-            "id=" + getId() +
-            ", userId='" + getUserId() + "'" +
-            ", failCount=" + getFailCount() +
-            ", updateTime='" + getUpdateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "LoginCount{"
+        + "id="
+        + getId()
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", failCount="
+        + getFailCount()
+        + ", updateTime='"
+        + getUpdateTime()
+        + "'"
+        + "}";
+  }
 }

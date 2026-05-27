@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OrgResDTO {
 
-    private Long id; // 組織table id
-    private String orgId; //組織代碼
-    private String orgTwName; //中文名稱
-    private String orgEnName; //英文名稱
-    private Instant createTime; //建立日期
-    private Instant updateTime; //更新日期
-    private Long vcDataSource; //組織VC資料來源
-    private Boolean isDidOrg; // 是否為註冊DID之組織
+  private Long id; // 組織table id
+  private String orgId; // 組織代碼
+  private String orgTwName; // 中文名稱
+  private String orgEnName; // 英文名稱
+  private Instant createTime; // 建立日期
+  private Instant updateTime; // 更新日期
+  private Long vcDataSource; // 組織VC資料來源
+  private Boolean isDidOrg; // 是否為註冊DID之組織
 }

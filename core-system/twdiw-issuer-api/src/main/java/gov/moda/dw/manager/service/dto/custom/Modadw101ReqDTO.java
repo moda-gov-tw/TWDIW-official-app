@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class Modadw101ReqDTO {
 
-    private DIDregisterOrgDTO org;
+  private DIDregisterOrgDTO org;
 
-    private String signature;
+  private String signature;
 }

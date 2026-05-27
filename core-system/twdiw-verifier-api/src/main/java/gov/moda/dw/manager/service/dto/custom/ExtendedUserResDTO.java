@@ -2,8 +2,7 @@ package gov.moda.dw.manager.service.dto.custom;
 
 public interface ExtendedUserResDTO {
 
-    String getUserId();
+  String getUserId();
 
-    String getUserName();
-
+  String getUserName();
 }

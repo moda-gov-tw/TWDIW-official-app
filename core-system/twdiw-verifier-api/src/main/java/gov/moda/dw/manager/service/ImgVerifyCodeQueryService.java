@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link ImgVerifyCode} entities in the database.
- * The main input is a {@link ImgVerifyCodeCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link ImgVerifyCodeDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link ImgVerifyCode} entities in the database. The
+ * main input is a {@link ImgVerifyCodeCriteria} which gets converted to {@link Specification}, in a
+ * way that all the filters must apply. It returns a {@link Page} of {@link ImgVerifyCodeDTO} which
+ * fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,15 @@ public class ImgVerifyCodeQueryService extends QueryService<ImgVerifyCode> {
 
   private final ImgVerifyCodeMapper imgVerifyCodeMapper;
 
-  public ImgVerifyCodeQueryService(ImgVerifyCodeRepository imgVerifyCodeRepository, ImgVerifyCodeMapper imgVerifyCodeMapper) {
+  public ImgVerifyCodeQueryService(
+      ImgVerifyCodeRepository imgVerifyCodeRepository, ImgVerifyCodeMapper imgVerifyCodeMapper) {
     this.imgVerifyCodeRepository = imgVerifyCodeRepository;
     this.imgVerifyCodeMapper = imgVerifyCodeMapper;
   }
 
   /**
    * Return a {@link Page} of {@link ImgVerifyCodeDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +53,7 @@ public class ImgVerifyCodeQueryService extends QueryService<ImgVerifyCode> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +66,7 @@ public class ImgVerifyCodeQueryService extends QueryService<ImgVerifyCode> {
 
   /**
    * Function to convert {@link ImgVerifyCodeCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -74,19 +78,28 @@ public class ImgVerifyCodeQueryService extends QueryService<ImgVerifyCode> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), ImgVerifyCode_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), ImgVerifyCode_.id));
       }
       if (criteria.getVerifyCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getVerifyCode(), ImgVerifyCode_.verifyCode));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getVerifyCode(), ImgVerifyCode_.verifyCode));
       }
       if (criteria.getVerifyUniId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getVerifyUniId(), ImgVerifyCode_.verifyUniId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getVerifyUniId(), ImgVerifyCode_.verifyUniId));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), ImgVerifyCode_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), ImgVerifyCode_.createTime));
       }
       if (criteria.getExpireTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getExpireTime(), ImgVerifyCode_.expireTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getExpireTime(), ImgVerifyCode_.expireTime));
       }
     }
     return specification;

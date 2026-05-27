@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ResLog} entity.
- */
+/** A DTO for the {@link ResLog} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ResLogDTO implements Serializable {
 
@@ -221,24 +219,53 @@ public class ResLogDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResLogDTO{" +
-            "id=" + getId() +
-            ", actor='" + getActor() + "'" +
-            ", logType='" + getLogType() + "'" +
-            ", logTime='" + getLogTime() + "'" +
-            ", typeId='" + getTypeId() + "'" +
-            ", resId='" + getResId() + "'" +
-            ", resGrp='" + getResGrp() + "'" +
-            ", resName='" + getResName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", apiUri='" + getApiUri() + "'" +
-            ", webUrl='" + getWebUrl() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ResLogDTO{"
+        + "id="
+        + getId()
+        + ", actor='"
+        + getActor()
+        + "'"
+        + ", logType='"
+        + getLogType()
+        + "'"
+        + ", logTime='"
+        + getLogTime()
+        + "'"
+        + ", typeId='"
+        + getTypeId()
+        + "'"
+        + ", resId='"
+        + getResId()
+        + "'"
+        + ", resGrp='"
+        + getResGrp()
+        + "'"
+        + ", resName='"
+        + getResName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", apiUri='"
+        + getApiUri()
+        + "'"
+        + ", webUrl='"
+        + getWebUrl()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

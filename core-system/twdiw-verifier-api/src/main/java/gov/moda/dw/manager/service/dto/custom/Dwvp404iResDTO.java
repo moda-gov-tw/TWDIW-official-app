@@ -8,7 +8,6 @@ import lombok.Setter;
 @Setter
 public class Dwvp404iResDTO {
 
-    @JsonProperty("decryptionData")
-    private Object decryptionData;
-
+  @JsonProperty("decryptionData")
+  private Object decryptionData;
 }

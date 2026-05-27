@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.LoginView;
 import gov.moda.dw.manager.repository.LoginViewRepository;
 import gov.moda.dw.manager.service.dto.LoginViewDTO;
 import gov.moda.dw.manager.service.mapper.LoginViewMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link LoginView}.
- */
+/** Service Implementation for managing {@link LoginView}. */
 @Service
 @Transactional
 public class LoginViewService {
@@ -23,7 +21,8 @@ public class LoginViewService {
 
   private final LoginViewMapper loginViewMapper;
 
-  public LoginViewService(LoginViewRepository loginViewRepository, LoginViewMapper loginViewMapper) {
+  public LoginViewService(
+      LoginViewRepository loginViewRepository, LoginViewMapper loginViewMapper) {
     this.loginViewRepository = loginViewRepository;
     this.loginViewMapper = loginViewMapper;
   }
@@ -64,14 +63,15 @@ public class LoginViewService {
     log.debug("Request to partially update LoginView : {}", loginViewDTO);
 
     return loginViewRepository
-      .findById(loginViewDTO.getId())
-      .map(existingLoginView -> {
-        loginViewMapper.partialUpdate(existingLoginView, loginViewDTO);
+        .findById(loginViewDTO.getId())
+        .map(
+            existingLoginView -> {
+              loginViewMapper.partialUpdate(existingLoginView, loginViewDTO);
 
-        return existingLoginView;
-      })
-      .map(loginViewRepository::save)
-      .map(loginViewMapper::toDto);
+              return existingLoginView;
+            })
+        .map(loginViewRepository::save)
+        .map(loginViewMapper::toDto);
   }
 
   /**

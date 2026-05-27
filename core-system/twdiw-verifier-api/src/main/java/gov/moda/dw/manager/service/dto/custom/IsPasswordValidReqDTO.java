@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class IsPasswordValidReqDTO {
 
-    private String login;
+  private String login;
 }

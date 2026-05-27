@@ -1,12 +1,12 @@
 package gov.moda.dw.manager.service;
 
-import java.util.List;
 import gov.moda.dw.manager.domain.*; // for static metamodels
 import gov.moda.dw.manager.domain.AccessToken;
 import gov.moda.dw.manager.repository.AccessTokenRepository;
 import gov.moda.dw.manager.service.criteria.AccessTokenCriteria;
 import gov.moda.dw.manager.service.dto.AccessTokenDTO;
 import gov.moda.dw.manager.service.mapper.AccessTokenMapper;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -17,10 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link AccessToken} entities in the database.
- * The main input is a {@link AccessTokenCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link AccessTokenDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link AccessToken} entities in the database. The main
+ * input is a {@link AccessTokenCriteria} which gets converted to {@link Specification}, in a way
+ * that all the filters must apply. It returns a {@link Page} of {@link AccessTokenDTO} which
+ * fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -32,13 +32,15 @@ public class AccessTokenQueryService extends QueryService<AccessToken> {
 
   private final AccessTokenMapper accessTokenMapper;
 
-  public AccessTokenQueryService(AccessTokenRepository accessTokenRepository, AccessTokenMapper accessTokenMapper) {
+  public AccessTokenQueryService(
+      AccessTokenRepository accessTokenRepository, AccessTokenMapper accessTokenMapper) {
     this.accessTokenRepository = accessTokenRepository;
     this.accessTokenMapper = accessTokenMapper;
   }
 
   /**
    * Return a {@link Page} of {@link AccessTokenDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -52,6 +54,7 @@ public class AccessTokenQueryService extends QueryService<AccessToken> {
 
   /**
    * Return a {@link List} of {@link AccessTokenDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching entities.
    */
@@ -64,6 +67,7 @@ public class AccessTokenQueryService extends QueryService<AccessToken> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -76,6 +80,7 @@ public class AccessTokenQueryService extends QueryService<AccessToken> {
 
   /**
    * Function to convert {@link AccessTokenCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -87,46 +92,70 @@ public class AccessTokenQueryService extends QueryService<AccessToken> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), AccessToken_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), AccessToken_.id));
       }
       if (criteria.getAccessToken() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getAccessToken(), AccessToken_.accessToken));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getAccessToken(), AccessToken_.accessToken));
       }
       if (criteria.getAccessTokenName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getAccessTokenName(), AccessToken_.accessTokenName));
+        specification =
+            specification.and(
+                buildStringSpecification(
+                    criteria.getAccessTokenName(), AccessToken_.accessTokenName));
       }
       if (criteria.getOwner() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOwner(), AccessToken_.owner));
+        specification =
+            specification.and(buildStringSpecification(criteria.getOwner(), AccessToken_.owner));
       }
       if (criteria.getOwnerName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOwnerName(), AccessToken_.ownerName));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getOwnerName(), AccessToken_.ownerName));
       }
       if (criteria.getOrgId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOrgId(), AccessToken_.orgId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getOrgId(), AccessToken_.orgId));
       }
       if (criteria.getOrgName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOrgName(), AccessToken_.orgName));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getOrgName(), AccessToken_.orgName));
       }
       if (criteria.getState() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getState(), AccessToken_.state));
+        specification =
+            specification.and(buildStringSpecification(criteria.getState(), AccessToken_.state));
       }
       if (criteria.getActype() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getActype(), AccessToken_.actype));
+        specification =
+            specification.and(buildStringSpecification(criteria.getActype(), AccessToken_.actype));
       }
       if (criteria.getDataRole1() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole1(), AccessToken_.dataRole1));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDataRole1(), AccessToken_.dataRole1));
       }
       if (criteria.getDataRole2() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole2(), AccessToken_.dataRole2));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDataRole2(), AccessToken_.dataRole2));
       }
       if (criteria.getSecuLayer() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getSecuLayer(), AccessToken_.secuLayer));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getSecuLayer(), AccessToken_.secuLayer));
       }
       if (criteria.getExpirationTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getExpirationTime(), AccessToken_.expirationTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getExpirationTime(), AccessToken_.expirationTime));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), AccessToken_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), AccessToken_.createTime));
       }
     }
     return specification;

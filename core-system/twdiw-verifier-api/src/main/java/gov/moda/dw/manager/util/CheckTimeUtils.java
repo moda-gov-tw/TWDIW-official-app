@@ -1,13 +1,10 @@
 package gov.moda.dw.manager.util;
 
-import java.time.Instant;
 import gov.moda.dw.manager.type.ZoneType;
 import gov.moda.dw.manager.web.rest.errors.BadRequestAlertException;
+import java.time.Instant;
 
-/**
- * 檢查時間共用
- *
- */
+/** 檢查時間共用 */
 public abstract class CheckTimeUtils {
 
   /**
@@ -18,7 +15,8 @@ public abstract class CheckTimeUtils {
    * @param endDate 結束時間
    * @throws BadRequestAlertException 檢查時間錯誤資訊
    */
-  public CheckTimeUtils(String ENTITY_NAME, Instant beginDate, Instant endDate) throws BadRequestAlertException {
+  public CheckTimeUtils(String ENTITY_NAME, Instant beginDate, Instant endDate)
+      throws BadRequestAlertException {
     boolean haveBeginDate = null != beginDate;
     boolean haveEndDate = null != endDate;
 
@@ -45,8 +43,9 @@ public abstract class CheckTimeUtils {
    * @param dateFormat 日期編排格式
    * @throws BadRequestAlertException 檢查時間錯誤資訊
    */
-  public CheckTimeUtils(String ENTITY_NAME, String beginDateString, String endDateString, String dateFormat)
-    throws BadRequestAlertException {
+  public CheckTimeUtils(
+      String ENTITY_NAME, String beginDateString, String endDateString, String dateFormat)
+      throws BadRequestAlertException {
     boolean haveBeginDate = null != beginDateString && !beginDateString.isEmpty();
     boolean haveEndDate = null != endDateString && !endDateString.isEmpty();
 

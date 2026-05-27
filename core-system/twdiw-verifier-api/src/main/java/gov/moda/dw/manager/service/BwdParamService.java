@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.BwdParam;
 import gov.moda.dw.manager.repository.BwdParamRepository;
 import gov.moda.dw.manager.service.dto.BwdParamDTO;
 import gov.moda.dw.manager.service.mapper.BwdParamMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link BwdParam}.
- */
+/** Service Implementation for managing {@link BwdParam}. */
 @Service
 @Transactional
 public class BwdParamService {
@@ -64,14 +62,15 @@ public class BwdParamService {
     log.debug("Request to partially update BwdParam : {}", bwdParamDTO);
 
     return bwdParamRepository
-      .findById(bwdParamDTO.getId())
-      .map(existingBwdParam -> {
-        bwdParamMapper.partialUpdate(existingBwdParam, bwdParamDTO);
+        .findById(bwdParamDTO.getId())
+        .map(
+            existingBwdParam -> {
+              bwdParamMapper.partialUpdate(existingBwdParam, bwdParamDTO);
 
-        return existingBwdParam;
-      })
-      .map(bwdParamRepository::save)
-      .map(bwdParamMapper::toDto);
+              return existingBwdParam;
+            })
+        .map(bwdParamRepository::save)
+        .map(bwdParamMapper::toDto);
   }
 
   /**

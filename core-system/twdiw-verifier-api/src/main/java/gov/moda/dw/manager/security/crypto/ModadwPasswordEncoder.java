@@ -1,7 +1,7 @@
 package gov.moda.dw.manager.security.crypto;
 
-import lombok.extern.slf4j.Slf4j;
 import gov.moda.dw.manager.util.EncryptUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Slf4j
@@ -15,11 +15,11 @@ public class ModadwPasswordEncoder implements PasswordEncoder {
   @Override
   public boolean matches(CharSequence charSequence, String s) {
 
-      // 檢查 charSequence 是否已經是 SHA-512 加密後的值
-      if(charSequence.toString().equals(s)){
-          return true;
-      }
-      return charSequence.equals(EncryptUtils.gainSHA512(s));
+    // 檢查 charSequence 是否已經是 SHA-512 加密後的值
+    if (charSequence.toString().equals(s)) {
+      return true;
+    }
+    return charSequence.equals(EncryptUtils.gainSHA512(s));
   }
 
   public boolean matchesNewBwd(CharSequence charSequence, String s) {

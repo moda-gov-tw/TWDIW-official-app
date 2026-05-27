@@ -1,14 +1,11 @@
 package gov.moda.dw.manager.service.dto;
 
 import gov.moda.dw.manager.domain.Nonce;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link Nonce} entity.
- */
+/** A DTO for the {@link Nonce} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class NonceDTO implements Serializable {
 
@@ -94,15 +91,26 @@ public class NonceDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "NonceDTO{" +
-            "id=" + getId() +
-            ", sId='" + getsId() + "'" +
-            ", nonceId='" + getNonceId() + "'" +
-            ", userId='" + getUserId() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", captchaCode='" + getCaptchaCode() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "NonceDTO{"
+        + "id="
+        + getId()
+        + ", sId='"
+        + getsId()
+        + "'"
+        + ", nonceId='"
+        + getNonceId()
+        + "'"
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", captchaCode='"
+        + getCaptchaCode()
+        + "'"
+        + "}";
+  }
 }

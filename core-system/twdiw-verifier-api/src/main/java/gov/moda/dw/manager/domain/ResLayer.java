@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A ResLayer.
- */
+/** A ResLayer. */
 @Entity
 @Table(name = "res_layer")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,43 +19,31 @@ public class ResLayer implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 父id
-   */
+  /** 父id */
   @Column(name = "parent_id")
   private Long parentId;
 
-  /**
-   * 子id
-   */
+  /** 子id */
   @NotNull
   @Column(name = "child_id", nullable = false)
   private Long childId;
 
-  /**
-   * 父代碼
-   */
+  /** 父代碼 */
   @Size(max = 50)
   @Column(name = "parent_code", length = 50)
   private String parentCode;
 
-  /**
-   * 子代碼
-   */
+  /** 子代碼 */
   @Size(max = 50)
   @Column(name = "child_code", length = 50)
   private String childCode;
 
-  /**
-   * 建立日期時間
-   */
+  /** 建立日期時間 */
   @NotNull
   @Column(name = "create_time", nullable = false)
   private Instant createTime;
 
-  /**
-   * 排序
-   */
+  /** 排序 */
   @Size(max = 10)
   @Column(name = "orderval", length = 10)
   private String orderval;
@@ -170,21 +156,33 @@ public class ResLayer implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResLayer{" +
-            "id=" + getId() +
-            ", parentId=" + getParentId() +
-            ", childId=" + getChildId() +
-            ", parentCode='" + getParentCode() + "'" +
-            ", childCode='" + getChildCode() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", orderval='" + getOrderval() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ResLayer{"
+        + "id="
+        + getId()
+        + ", parentId="
+        + getParentId()
+        + ", childId="
+        + getChildId()
+        + ", parentCode='"
+        + getParentCode()
+        + "'"
+        + ", childCode='"
+        + getChildCode()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", orderval='"
+        + getOrderval()
+        + "'"
+        + "}";
+  }
 }

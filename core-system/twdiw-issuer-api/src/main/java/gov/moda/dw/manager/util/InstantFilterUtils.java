@@ -3,13 +3,11 @@ package gov.moda.dw.manager.util;
 import java.time.Instant;
 import tech.jhipster.service.filter.InstantFilter;
 
-/**
- * 時間條件篩選
- *
- */
+/** 時間條件篩選 */
 public class InstantFilterUtils {
 
-  public static InstantFilter toInstantFilter(String ENTITY_NAME, Instant beginDate, Instant endDate) {
+  public static InstantFilter toInstantFilter(
+      String ENTITY_NAME, Instant beginDate, Instant endDate) {
     InstantFilter dateFilter = new InstantFilter();
     new CheckTimeUtils(ENTITY_NAME, beginDate, endDate) {
       @Override
@@ -31,7 +29,8 @@ public class InstantFilterUtils {
     return dateFilter;
   }
 
-  public static InstantFilter toInstantFilterBetween(String ENTITY_NAME, Instant beginDate, Instant endDate) {
+  public static InstantFilter toInstantFilterBetween(
+      String ENTITY_NAME, Instant beginDate, Instant endDate) {
     InstantFilter dateFilter = new InstantFilter();
     new CheckTimeUtils(ENTITY_NAME, beginDate, endDate) {
       @Override

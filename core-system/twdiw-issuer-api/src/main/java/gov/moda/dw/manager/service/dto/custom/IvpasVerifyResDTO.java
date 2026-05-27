@@ -8,21 +8,21 @@ import lombok.ToString;
 @Setter
 @ToString
 public class IvpasVerifyResDTO {
-    private Header header;
-    private Body body;
+  private Header header;
+  private Body body;
 
-    @Getter
-    @Setter
-    @ToString
-    public static class Header {
-        private String returnCode;
-        private String returnDesc;
-    }
+  @Getter
+  @Setter
+  @ToString
+  public static class Header {
+    private String returnCode;
+    private String returnDesc;
+  }
 
-    @Getter
-    @Setter
-    @ToString
-    public static class Body {
-        private String orgEnName;
-    }
+  @Getter
+  @Setter
+  @ToString
+  public static class Body {
+    private String orgEnName;
+  }
 }

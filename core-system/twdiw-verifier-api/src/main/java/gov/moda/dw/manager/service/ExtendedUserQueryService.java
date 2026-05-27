@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link ExtendedUser} entities in the database.
- * The main input is a {@link ExtendedUserCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link ExtendedUserDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link ExtendedUser} entities in the database. The main
+ * input is a {@link ExtendedUserCriteria} which gets converted to {@link Specification}, in a way
+ * that all the filters must apply. It returns a {@link Page} of {@link ExtendedUserDTO} which
+ * fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,15 @@ public class ExtendedUserQueryService extends QueryService<ExtendedUser> {
 
   private final ExtendedUserMapper extendedUserMapper;
 
-  public ExtendedUserQueryService(ExtendedUserRepository extendedUserRepository, ExtendedUserMapper extendedUserMapper) {
+  public ExtendedUserQueryService(
+      ExtendedUserRepository extendedUserRepository, ExtendedUserMapper extendedUserMapper) {
     this.extendedUserRepository = extendedUserRepository;
     this.extendedUserMapper = extendedUserMapper;
   }
 
   /**
    * Return a {@link Page} of {@link ExtendedUserDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +53,7 @@ public class ExtendedUserQueryService extends QueryService<ExtendedUser> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +66,7 @@ public class ExtendedUserQueryService extends QueryService<ExtendedUser> {
 
   /**
    * Function to convert {@link ExtendedUserCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -74,58 +78,89 @@ public class ExtendedUserQueryService extends QueryService<ExtendedUser> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), ExtendedUser_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), ExtendedUser_.id));
       }
       if (criteria.getOrgId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOrgId(), ExtendedUser_.orgId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getOrgId(), ExtendedUser_.orgId));
       }
       if (criteria.getUserId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserId(), ExtendedUser_.userId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getUserId(), ExtendedUser_.userId));
       }
       if (criteria.getUserName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserName(), ExtendedUser_.userName));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getUserName(), ExtendedUser_.userName));
       }
       if (criteria.getEmail() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getEmail(), ExtendedUser_.email));
+        specification =
+            specification.and(buildStringSpecification(criteria.getEmail(), ExtendedUser_.email));
       }
       if (criteria.getPhone() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getPhone(), ExtendedUser_.phone));
+        specification =
+            specification.and(buildStringSpecification(criteria.getPhone(), ExtendedUser_.phone));
       }
       if (criteria.getTel() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getTel(), ExtendedUser_.tel));
+        specification =
+            specification.and(buildStringSpecification(criteria.getTel(), ExtendedUser_.tel));
       }
       if (criteria.getEmployeeId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getEmployeeId(), ExtendedUser_.employeeId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getEmployeeId(), ExtendedUser_.employeeId));
       }
       if (criteria.getEmployeeTypeId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getEmployeeTypeId(), ExtendedUser_.employeeTypeId));
+        specification =
+            specification.and(
+                buildStringSpecification(
+                    criteria.getEmployeeTypeId(), ExtendedUser_.employeeTypeId));
       }
       if (criteria.getLeftDate() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getLeftDate(), ExtendedUser_.leftDate));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getLeftDate(), ExtendedUser_.leftDate));
       }
       if (criteria.getOnboardDate() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getOnboardDate(), ExtendedUser_.onboardDate));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getOnboardDate(), ExtendedUser_.onboardDate));
       }
       if (criteria.getUserTypeId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserTypeId(), ExtendedUser_.userTypeId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getUserTypeId(), ExtendedUser_.userTypeId));
       }
       if (criteria.getDataRole1() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole1(), ExtendedUser_.dataRole1));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDataRole1(), ExtendedUser_.dataRole1));
       }
       if (criteria.getDataRole2() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole2(), ExtendedUser_.dataRole2));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDataRole2(), ExtendedUser_.dataRole2));
       }
       if (criteria.getState() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getState(), ExtendedUser_.state));
+        specification =
+            specification.and(buildStringSpecification(criteria.getState(), ExtendedUser_.state));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), ExtendedUser_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), ExtendedUser_.createTime));
       }
       if (criteria.getAuthChangeTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getAuthChangeTime(), ExtendedUser_.authChangeTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(
+                    criteria.getAuthChangeTime(), ExtendedUser_.authChangeTime));
       }
       if (criteria.getPwdResetTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getPwdResetTime(), ExtendedUser_.pwdResetTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getPwdResetTime(), ExtendedUser_.pwdResetTime));
       }
     }
     return specification;

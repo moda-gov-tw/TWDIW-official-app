@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.CookiesMsg;
 import gov.moda.dw.manager.repository.CookiesMsgRepository;
 import gov.moda.dw.manager.service.dto.CookiesMsgDTO;
 import gov.moda.dw.manager.service.mapper.CookiesMsgMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link CookiesMsg}.
- */
+/** Service Implementation for managing {@link CookiesMsg}. */
 @Service
 @Transactional
 public class CookiesMsgService {
@@ -23,7 +21,8 @@ public class CookiesMsgService {
 
   private final CookiesMsgMapper cookiesMsgMapper;
 
-  public CookiesMsgService(CookiesMsgRepository cookiesMsgRepository, CookiesMsgMapper cookiesMsgMapper) {
+  public CookiesMsgService(
+      CookiesMsgRepository cookiesMsgRepository, CookiesMsgMapper cookiesMsgMapper) {
     this.cookiesMsgRepository = cookiesMsgRepository;
     this.cookiesMsgMapper = cookiesMsgMapper;
   }
@@ -64,14 +63,15 @@ public class CookiesMsgService {
     log.debug("Request to partially update CookiesMsg : {}", cookiesMsgDTO);
 
     return cookiesMsgRepository
-      .findById(cookiesMsgDTO.getId())
-      .map(existingCookiesMsg -> {
-        cookiesMsgMapper.partialUpdate(existingCookiesMsg, cookiesMsgDTO);
+        .findById(cookiesMsgDTO.getId())
+        .map(
+            existingCookiesMsg -> {
+              cookiesMsgMapper.partialUpdate(existingCookiesMsg, cookiesMsgDTO);
 
-        return existingCookiesMsg;
-      })
-      .map(cookiesMsgRepository::save)
-      .map(cookiesMsgMapper::toDto);
+              return existingCookiesMsg;
+            })
+        .map(cookiesMsgRepository::save)
+        .map(cookiesMsgMapper::toDto);
   }
 
   /**

@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class OrgLogoUploadResultDTO {
 
-    private OrgLogoResDTO orgLogoResDTO;
+  private OrgLogoResDTO orgLogoResDTO;
 
-    private StatusCode statusCode;
+  private StatusCode statusCode;
 }

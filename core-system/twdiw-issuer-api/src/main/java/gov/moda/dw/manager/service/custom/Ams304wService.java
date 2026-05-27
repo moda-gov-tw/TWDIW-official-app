@@ -1,18 +1,18 @@
 package gov.moda.dw.manager.service.custom;
 
 // import javax.servlet.http.HttpServletRequest;
-import java.time.Instant;
-import java.util.List;
-import lombok.extern.slf4j.Slf4j;
-        import gov.moda.dw.manager.service.ImgVerifyCodeQueryService;
+import gov.moda.dw.manager.service.ImgVerifyCodeQueryService;
 import gov.moda.dw.manager.service.ImgVerifyCodeService;
 import gov.moda.dw.manager.service.criteria.ImgVerifyCodeCriteria;
 import gov.moda.dw.manager.service.dto.ImgVerifyCodeDTO;
-        import gov.moda.dw.manager.util.PageUtils;
+import gov.moda.dw.manager.util.PageUtils;
 import gov.moda.dw.manager.util.StringFilterUtils;
+import java.time.Instant;
+import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-        import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
@@ -20,11 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class Ams304wService {
 
-  @Autowired
-  private ImgVerifyCodeQueryService imgVerifyCodeQueryService;
+  @Autowired private ImgVerifyCodeQueryService imgVerifyCodeQueryService;
 
-  @Autowired
-  private ImgVerifyCodeService imgVerifyCodeService;
+  @Autowired private ImgVerifyCodeService imgVerifyCodeService;
 
   @Value("${etd.manage.pdf.url:xxx}")
   private String url;
@@ -34,6 +32,7 @@ public class Ams304wService {
 
   /**
    * 新增 或 更新 隨機碼紀錄
+   *
    * @param uuid
    * @param rand
    */
@@ -66,7 +65,8 @@ public class Ams304wService {
   //         result = resEntity.getBody();
   //         return result;
   //     } catch (Exception e) {
-  //         log.error(StatusCode.ETD3101W_GET_BASE64_FAIL.getMsg() + "，帶入參數：{}，錯誤原因為:{}",reqDTO, ExceptionUtils.getStackTrace(e));
+  //         log.error(StatusCode.ETD3101W_GET_BASE64_FAIL.getMsg() + "，帶入參數：{}，錯誤原因為:{}",reqDTO,
+  // ExceptionUtils.getStackTrace(e));
   //         result.setMessage(StatusCode.GETDATA_FAIL.getMsg()); // 取得檔案發生錯誤
   //         result.setCode(StatusCode.FAIL.getCode());
   //         return result;
@@ -99,10 +99,12 @@ public class Ams304wService {
   //         && StringUtils.isNotBlank(reqDTO.getUuid())
   //     ) {
   //         ImgVerifyCodeCriteria criteria = new ImgVerifyCodeCriteria();
-  //         criteria.setVerifyCode(StringFilterUtils.toEqualStringFilter(reqDTO.getVerifyCode().toUpperCase()));
+  //
+  // criteria.setVerifyCode(StringFilterUtils.toEqualStringFilter(reqDTO.getVerifyCode().toUpperCase()));
   //         criteria.setVerifyUniId(StringFilterUtils.toEqualStringFilter(reqDTO.getUuid()));
   //         criteria.setExpireTime(new InstantFilter().setGreaterThanOrEqual(Instant.now()));
-  //         List<ImgVerifyCodeDTO> codeDTOS = imgVerifyCodeQueryService.findByCriteria(criteria, PageUtils.MAX_CONTENT).getContent();
+  //         List<ImgVerifyCodeDTO> codeDTOS = imgVerifyCodeQueryService.findByCriteria(criteria,
+  // PageUtils.MAX_CONTENT).getContent();
 
   //         if(codeDTOS.size() > 0) {
   //             imgVerifyCodeService.delete(codeDTOS.get(0).getId());
@@ -120,7 +122,8 @@ public class Ams304wService {
     ImgVerifyCodeCriteria criteria = new ImgVerifyCodeCriteria();
     criteria.setVerifyUniId(StringFilterUtils.toEqualStringFilter(uuid));
 
-    List<ImgVerifyCodeDTO> codeDTOS = imgVerifyCodeQueryService.findByCriteria(criteria, PageUtils.MAX_CONTENT).getContent();
+    List<ImgVerifyCodeDTO> codeDTOS =
+        imgVerifyCodeQueryService.findByCriteria(criteria, PageUtils.MAX_CONTENT).getContent();
     if (codeDTOS.size() > 0) {
       result = codeDTOS.get(0);
     } else {
@@ -132,7 +135,8 @@ public class Ams304wService {
   //    public void removeExpireVerifyCode() {
   //        ImgVerifyCodeCriteria criteria = new ImgVerifyCodeCriteria();
   //        criteria.setExpireTime(new InstantFilter().setLessThan(Instant.now()));
-  //        List<ImgVerifyCodeDTO> verifyCodeDTOS = imgVerifyCodeQueryService.findByCriteria(criteria, PageUtils.MAX_CONTENT).getContent();
+  //        List<ImgVerifyCodeDTO> verifyCodeDTOS =
+  // imgVerifyCodeQueryService.findByCriteria(criteria, PageUtils.MAX_CONTENT).getContent();
   //        if(verifyCodeDTOS.size() > 0) {
   //            verifyCodeDTOS.forEach(x -> imgVerifyCodeService.delete(x.getId()));
   //        }

@@ -3,9 +3,7 @@ package gov.moda.dw.manager.domain;
 import jakarta.persistence.*;
 import java.io.Serializable;
 
-/**
- * A AuthObj.
- */
+/** A AuthObj. */
 @Entity
 @Table(name = "auth_obj")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -19,39 +17,27 @@ public class AuthObj implements Serializable {
   @Column(name = "id")
   private String id;
 
-  /**
-   * user id
-   */
+  /** user id */
   @Column(name = "user_id")
   private Long userId;
 
-  /**
-   * 功能代碼
-   */
+  /** 功能代碼 */
   @Column(name = "res_code")
   private String resCode;
 
-  /**
-   * 帳號
-   */
+  /** 帳號 */
   @Column(name = "login")
   private String login;
 
-  /**
-   * 角色 id
-   */
+  /** 角色 id */
   @Column(name = "role_id")
   private Long roleId;
 
-  /**
-   * 角色代碼
-   */
+  /** 角色代碼 */
   @Column(name = "role_code")
   private String roleCode;
 
-  /**
-   * 角色名稱
-   */
+  /** 角色名稱 */
   @Column(name = "role_name")
   private String roleName;
 
@@ -163,21 +149,33 @@ public class AuthObj implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "AuthObj{" +
-            "id=" + getId() +
-            ", userId=" + getUserId() +
-            ", resCode='" + getResCode() + "'" +
-            ", login='" + getLogin() + "'" +
-            ", roleId=" + getRoleId() +
-            ", roleCode='" + getRoleCode() + "'" +
-            ", roleName='" + getRoleName() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "AuthObj{"
+        + "id="
+        + getId()
+        + ", userId="
+        + getUserId()
+        + ", resCode='"
+        + getResCode()
+        + "'"
+        + ", login='"
+        + getLogin()
+        + "'"
+        + ", roleId="
+        + getRoleId()
+        + ", roleCode='"
+        + getRoleCode()
+        + "'"
+        + ", roleName='"
+        + getRoleName()
+        + "'"
+        + "}";
+  }
 }

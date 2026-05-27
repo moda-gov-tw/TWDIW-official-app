@@ -4,42 +4,41 @@ import java.time.Instant;
 
 public interface ClearVcItemDataDTO {
 
-    String getSerialNo();
+  String getSerialNo();
 
-    String getName();
+  String getName();
 
-    String getCid();
+  String getCid();
 
-    Instant getIssuanceDate();
+  Instant getIssuanceDate();
 
-    Long getId();
+  Long getId();
 
-    String getContent();
+  String getContent();
 
-    String getPureContent();
+  String getPureContent();
 
-    Long getCrUser();
+  Long getCrUser();
 
-    Instant getCrDatetime();
+  Instant getCrDatetime();
 
-    Integer getValid();
+  Integer getValid();
 
-    Long getClearScheduleId();
+  Long getClearScheduleId();
 
-    Instant getClearScheduleDatetime();
+  Instant getClearScheduleDatetime();
 
-    String getVcCid();
+  String getVcCid();
 
-    String getTransactionId();
+  String getTransactionId();
 
-    String getBusinessId();
+  String getBusinessId();
 
-    String getVcItemName();
+  String getVcItemName();
 
-    String getQrCode();
+  String getQrCode();
 
-    Instant getExpired();
+  Instant getExpired();
 
-    String getScheduleRevokeMessage();
-
+  String getScheduleRevokeMessage();
 }

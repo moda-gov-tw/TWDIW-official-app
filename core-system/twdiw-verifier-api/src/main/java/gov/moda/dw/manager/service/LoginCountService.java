@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.LoginCount;
 import gov.moda.dw.manager.repository.LoginCountRepository;
 import gov.moda.dw.manager.service.dto.LoginCountDTO;
 import gov.moda.dw.manager.service.mapper.LoginCountMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link LoginCount}.
- */
+/** Service Implementation for managing {@link LoginCount}. */
 @Service
 @Transactional
 public class LoginCountService {
@@ -23,7 +21,8 @@ public class LoginCountService {
 
   private final LoginCountMapper loginCountMapper;
 
-  public LoginCountService(LoginCountRepository loginCountRepository, LoginCountMapper loginCountMapper) {
+  public LoginCountService(
+      LoginCountRepository loginCountRepository, LoginCountMapper loginCountMapper) {
     this.loginCountRepository = loginCountRepository;
     this.loginCountMapper = loginCountMapper;
   }
@@ -64,14 +63,15 @@ public class LoginCountService {
     log.debug("Request to partially update LoginCount : {}", loginCountDTO);
 
     return loginCountRepository
-      .findById(loginCountDTO.getId())
-      .map(existingLoginCount -> {
-        loginCountMapper.partialUpdate(existingLoginCount, loginCountDTO);
+        .findById(loginCountDTO.getId())
+        .map(
+            existingLoginCount -> {
+              loginCountMapper.partialUpdate(existingLoginCount, loginCountDTO);
 
-        return existingLoginCount;
-      })
-      .map(loginCountRepository::save)
-      .map(loginCountMapper::toDto);
+              return existingLoginCount;
+            })
+        .map(loginCountRepository::save)
+        .map(loginCountMapper::toDto);
   }
 
   /**

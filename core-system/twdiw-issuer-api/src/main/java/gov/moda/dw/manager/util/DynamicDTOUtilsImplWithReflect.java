@@ -21,83 +21,88 @@ import org.springframework.stereotype.Component;
 @Component
 public class DynamicDTOUtilsImplWithReflect implements DynamicDtoUtils, InitializingBean {
 
-    private final GenericApplicationContext applicationContext;
+  private final GenericApplicationContext applicationContext;
 
-    private static final ConcurrentHashMap<Class<?>, Map<String, Function<Object, Object>>> classCache = new ConcurrentHashMap<>();
+  private static final ConcurrentHashMap<Class<?>, Map<String, Function<Object, Object>>>
+      classCache = new ConcurrentHashMap<>();
 
-    public DynamicDTOUtilsImplWithReflect(GenericApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
+  public DynamicDTOUtilsImplWithReflect(GenericApplicationContext applicationContext) {
+    this.applicationContext = applicationContext;
+  }
+
+  @Override
+  public void afterPropertiesSet() {
+    for (Class<?> clazz : BeanUtils.getClassesWithAnnotation(applicationContext, ToMapDTO.class)) {
+      log.info("[debug]this dto is cached :{}", clazz.getName());
+      // TODO: 將 加入 cache 的方法與實際取得cache 抽離
+      var ignored = this.retrieveGetters(clazz);
     }
+  }
 
-    @Override
-    public void afterPropertiesSet() {
-        for (Class<?> clazz : BeanUtils.getClassesWithAnnotation(applicationContext, ToMapDTO.class)) {
-            log.info("[debug]this dto is cached :{}", clazz.getName());
-            //TODO: 將 加入 cache 的方法與實際取得cache 抽離
-            var ignored = this.retrieveGetters(clazz);
+  public <T> List<Map<String, Object>> dtoToMapList(List<T> entities) {
+    return entities.stream().map(this::dtoToMap).toList();
+  }
+
+  public <T> List<Map<String, Object>> dtoToMapList(List<T> entities, List<String> fields) {
+    return entities.stream().map(e -> this.dtoToMap(e, fields)).toList();
+  }
+
+  public <T> Map<String, Object> dtoToMap(T entity) {
+    Map<String, Object> map = new HashMap<>();
+    Map<String, Function<Object, Object>> getters = retrieveGetters(entity.getClass());
+
+    for (Map.Entry<String, Function<Object, Object>> entry : getters.entrySet()) {
+      try {
+        map.put(entry.getKey(), entry.getValue().apply(entity));
+      } catch (Throwable e) {
+        log.warn("Error converting DTO to Map: {}", e.getMessage());
+      }
+    }
+    return map;
+  }
+
+  public <T> Map<String, Object> dtoToMap(T entity, List<String> fields) {
+    Map<String, Object> map = new HashMap<>();
+    Map<String, Function<Object, Object>> getters = retrieveGetters(entity.getClass());
+
+    for (String field : fields) {
+      try {
+        Function<Object, Object> getter = getters.get(field);
+        if (getter != null) {
+          map.put(field, getter.apply(entity));
+        } else {
+          log.warn("No getter found for field: {}", field);
         }
+      } catch (Throwable e) {
+        log.warn("Error converting DTO to Map with specified fields: {}", e.getMessage());
+      }
     }
+    return map;
+  }
 
-    public <T> List<Map<String, Object>> dtoToMapList(List<T> entities) {
-        return entities.stream().map(this::dtoToMap).toList();
-    }
-
-    public <T> List<Map<String, Object>> dtoToMapList(List<T> entities, List<String> fields) {
-        return entities.stream().map(e -> this.dtoToMap(e, fields)).toList();
-    }
-
-    public <T> Map<String, Object> dtoToMap(T entity) {
-        Map<String, Object> map = new HashMap<>();
-        Map<String, Function<Object, Object>> getters = retrieveGetters(entity.getClass());
-
-        for (Map.Entry<String, Function<Object, Object>> entry : getters.entrySet()) {
-            try {
-                map.put(entry.getKey(), entry.getValue().apply(entity));
-            } catch (Throwable e) {
-                log.warn("Error converting DTO to Map: {}", e.getMessage());
+  private Map<String, Function<Object, Object>> retrieveGetters(Class<?> entityClass) {
+    return classCache.computeIfAbsent(
+        entityClass,
+        clazz -> {
+          Map<String, Function<Object, Object>> getters = new HashMap<>();
+          for (Field field : clazz.getDeclaredFields()) {
+            boolean accessible = field.trySetAccessible(); // 嘗試設置為可訪問
+            if (accessible) {
+              getters.put(
+                  field.getName(),
+                  obj -> {
+                    try {
+                      return field.get(obj);
+                    } catch (IllegalAccessException e) {
+                      throw new RuntimeException(e);
+                    }
+                  });
+            } else {
+              // 若無法設置為可訪問，可根據需求處理，例如記錄警告訊息
+              throw new RuntimeException("Unable to access field: " + field.getName());
             }
-        }
-        return map;
-    }
-
-    public <T> Map<String, Object> dtoToMap(T entity, List<String> fields) {
-        Map<String, Object> map = new HashMap<>();
-        Map<String, Function<Object, Object>> getters = retrieveGetters(entity.getClass());
-
-        for (String field : fields) {
-            try {
-                Function<Object, Object> getter = getters.get(field);
-                if (getter != null) {
-                    map.put(field, getter.apply(entity));
-                } else {
-                    log.warn("No getter found for field: {}", field);
-                }
-            } catch (Throwable e) {
-                log.warn("Error converting DTO to Map with specified fields: {}", e.getMessage());
-            }
-        }
-        return map;
-    }
-
-    private Map<String, Function<Object, Object>> retrieveGetters(Class<?> entityClass) {
-        return classCache.computeIfAbsent(entityClass, clazz -> {
-            Map<String, Function<Object, Object>> getters = new HashMap<>();
-            for (Field field : clazz.getDeclaredFields()) {
-                boolean accessible = field.trySetAccessible(); // 嘗試設置為可訪問
-                if (accessible) {
-                    getters.put(field.getName(), obj -> {
-                        try {
-                            return field.get(obj);
-                        } catch (IllegalAccessException e) {
-                            throw new RuntimeException(e);
-                        }
-                    });
-                } else {
-                    // 若無法設置為可訪問，可根據需求處理，例如記錄警告訊息
-                    throw new RuntimeException("Unable to access field: " + field.getName());
-                }
-            }
-            return getters;
+          }
+          return getters;
         });
-    }
+  }
 }

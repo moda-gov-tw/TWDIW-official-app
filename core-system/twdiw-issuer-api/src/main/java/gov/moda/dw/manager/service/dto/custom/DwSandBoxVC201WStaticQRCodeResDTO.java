@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DwSandBoxVC201WStaticQRCodeResDTO {
 
-    private String base64;
-    
-    private String url;
+  private String base64;
 
+  private String url;
 }

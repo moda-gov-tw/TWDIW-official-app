@@ -16,10 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link Nonce} entities in the database.
- * The main input is a {@link NonceCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link NonceDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link Nonce} entities in the database. The main input
+ * is a {@link NonceCriteria} which gets converted to {@link Specification}, in a way that all the
+ * filters must apply. It returns a {@link Page} of {@link NonceDTO} which fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -38,6 +37,7 @@ public class NonceQueryService extends QueryService<Nonce> {
 
   /**
    * Return a {@link Page} of {@link NonceDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +51,7 @@ public class NonceQueryService extends QueryService<Nonce> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +64,7 @@ public class NonceQueryService extends QueryService<Nonce> {
 
   /**
    * Function to convert {@link NonceCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -80,16 +82,21 @@ public class NonceQueryService extends QueryService<Nonce> {
         specification = specification.and(buildStringSpecification(criteria.getsId(), Nonce_.sId));
       }
       if (criteria.getNonceId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getNonceId(), Nonce_.nonceId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getNonceId(), Nonce_.nonceId));
       }
       if (criteria.getUserId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserId(), Nonce_.userId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getUserId(), Nonce_.userId));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), Nonce_.createTime));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getCreateTime(), Nonce_.createTime));
       }
       if (criteria.getCaptchaCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getCaptchaCode(), Nonce_.captchaCode));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getCaptchaCode(), Nonce_.captchaCode));
       }
     }
     return specification;

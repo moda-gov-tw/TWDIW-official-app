@@ -15,7 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Modadw101wEnvTestResDTO {
 
-    boolean frontendSuccess;
+  boolean frontendSuccess;
 
-    boolean ivpasSuccess;
+  boolean ivpasSuccess;
 }

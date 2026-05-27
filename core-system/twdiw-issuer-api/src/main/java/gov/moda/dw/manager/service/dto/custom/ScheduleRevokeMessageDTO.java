@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ScheduleRevokeMessageDTO {
 
-    private Boolean success;
-    private String message;
-    private Instant executeTimestamp;
+  private Boolean success;
+  private String message;
+  private Instant executeTimestamp;
 }

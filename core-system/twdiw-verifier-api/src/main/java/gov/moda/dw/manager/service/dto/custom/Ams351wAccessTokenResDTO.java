@@ -1,12 +1,12 @@
 package gov.moda.dw.manager.service.dto.custom;
 
+import gov.moda.dw.manager.domain.AccessToken;
+import gov.moda.dw.manager.service.dto.AccessTokenDTO;
 import java.io.Serializable;
 import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import gov.moda.dw.manager.domain.AccessToken;
-import gov.moda.dw.manager.service.dto.AccessTokenDTO;
 
 @Data
 @AllArgsConstructor

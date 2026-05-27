@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link BwdHistory} entity.
- */
+/** A DTO for the {@link BwdHistory} entity. */
 @Schema(description = "BwdHistory 密碼歷史")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class BwdHistoryDTO implements Serializable {
@@ -95,14 +93,23 @@ public class BwdHistoryDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "BwdHistoryDTO{" +
-            "id=" + getId() +
-            ", userId='" + getUserId() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", bwdHash='" + getBwdHash() + "'" +
-            ", bwdCode='" + getBwdCode() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "BwdHistoryDTO{"
+        + "id="
+        + getId()
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", bwdHash='"
+        + getBwdHash()
+        + "'"
+        + ", bwdCode='"
+        + getBwdCode()
+        + "'"
+        + "}";
+  }
 }

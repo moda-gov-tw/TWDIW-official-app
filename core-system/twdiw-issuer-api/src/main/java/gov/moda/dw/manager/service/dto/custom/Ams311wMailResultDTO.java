@@ -1,9 +1,9 @@
 package gov.moda.dw.manager.service.dto.custom;
 
-import java.io.Serializable;
-import lombok.Data;
 import gov.moda.dw.manager.service.dto.MailTemplateDTO;
 import gov.moda.dw.manager.type.StatusCode;
+import java.io.Serializable;
+import lombok.Data;
 
 @Data
 public class Ams311wMailResultDTO implements Serializable {

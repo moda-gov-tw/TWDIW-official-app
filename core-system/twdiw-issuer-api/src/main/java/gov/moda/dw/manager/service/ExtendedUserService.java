@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.ExtendedUser;
 import gov.moda.dw.manager.repository.ExtendedUserRepository;
 import gov.moda.dw.manager.service.dto.ExtendedUserDTO;
 import gov.moda.dw.manager.service.mapper.ExtendedUserMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link ExtendedUser}.
- */
+/** Service Implementation for managing {@link ExtendedUser}. */
 @Service
 @Transactional
 public class ExtendedUserService {
@@ -23,7 +21,8 @@ public class ExtendedUserService {
 
   private final ExtendedUserMapper extendedUserMapper;
 
-  public ExtendedUserService(ExtendedUserRepository extendedUserRepository, ExtendedUserMapper extendedUserMapper) {
+  public ExtendedUserService(
+      ExtendedUserRepository extendedUserRepository, ExtendedUserMapper extendedUserMapper) {
     this.extendedUserRepository = extendedUserRepository;
     this.extendedUserMapper = extendedUserMapper;
   }
@@ -64,14 +63,15 @@ public class ExtendedUserService {
     log.debug("Request to partially update ExtendedUser : {}", extendedUserDTO);
 
     return extendedUserRepository
-      .findById(extendedUserDTO.getId())
-      .map(existingExtendedUser -> {
-        extendedUserMapper.partialUpdate(existingExtendedUser, extendedUserDTO);
+        .findById(extendedUserDTO.getId())
+        .map(
+            existingExtendedUser -> {
+              extendedUserMapper.partialUpdate(existingExtendedUser, extendedUserDTO);
 
-        return existingExtendedUser;
-      })
-      .map(extendedUserRepository::save)
-      .map(extendedUserMapper::toDto);
+              return existingExtendedUser;
+            })
+        .map(extendedUserRepository::save)
+        .map(extendedUserMapper::toDto);
   }
 
   /**

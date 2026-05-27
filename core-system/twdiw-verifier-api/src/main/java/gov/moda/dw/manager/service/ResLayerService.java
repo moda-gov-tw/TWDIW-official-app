@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.ResLayer;
 import gov.moda.dw.manager.repository.ResLayerRepository;
 import gov.moda.dw.manager.service.dto.ResLayerDTO;
 import gov.moda.dw.manager.service.mapper.ResLayerMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link ResLayer}.
- */
+/** Service Implementation for managing {@link ResLayer}. */
 @Service
 @Transactional
 public class ResLayerService {
@@ -64,14 +62,15 @@ public class ResLayerService {
     log.debug("Request to partially update ResLayer : {}", resLayerDTO);
 
     return resLayerRepository
-      .findById(resLayerDTO.getId())
-      .map(existingResLayer -> {
-        resLayerMapper.partialUpdate(existingResLayer, resLayerDTO);
+        .findById(resLayerDTO.getId())
+        .map(
+            existingResLayer -> {
+              resLayerMapper.partialUpdate(existingResLayer, resLayerDTO);
 
-        return existingResLayer;
-      })
-      .map(resLayerRepository::save)
-      .map(resLayerMapper::toDto);
+              return existingResLayer;
+            })
+        .map(resLayerRepository::save)
+        .map(resLayerMapper::toDto);
   }
 
   /**

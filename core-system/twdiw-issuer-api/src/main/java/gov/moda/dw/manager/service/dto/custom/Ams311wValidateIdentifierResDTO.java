@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Ams311wValidateIdentifierResDTO {
 
-    private String userId; // 帳號
-    
-    private String userName; // 暱稱
+  private String userId; // 帳號
+
+  private String userName; // 暱稱
 }

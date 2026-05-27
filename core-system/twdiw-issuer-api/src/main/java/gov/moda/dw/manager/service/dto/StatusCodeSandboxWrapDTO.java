@@ -4,13 +4,13 @@ import gov.moda.dw.manager.type.StatusCodeSandbox;
 
 public class StatusCodeSandboxWrapDTO {
 
-    StatusCodeSandbox statusCode;
+  StatusCodeSandbox statusCode;
 
-    public StatusCodeSandbox getStatusCode() {
-        return statusCode;
-    }
+  public StatusCodeSandbox getStatusCode() {
+    return statusCode;
+  }
 
-    public void setStatusCode(StatusCodeSandbox statusCode) {
-        this.statusCode = statusCode;
-    }
+  public void setStatusCode(StatusCodeSandbox statusCode) {
+    this.statusCode = statusCode;
+  }
 }

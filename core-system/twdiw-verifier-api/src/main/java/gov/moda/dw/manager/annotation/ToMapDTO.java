@@ -9,5 +9,4 @@ import java.lang.annotation.RetentionPolicy;
  * @description
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ToMapDTO {
-}
+public @interface ToMapDTO {}

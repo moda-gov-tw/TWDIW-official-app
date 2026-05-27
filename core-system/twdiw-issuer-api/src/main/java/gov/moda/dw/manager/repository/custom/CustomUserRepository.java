@@ -1,14 +1,12 @@
 package gov.moda.dw.manager.repository.custom;
 
-import java.util.List;
-import java.util.Optional;
 import gov.moda.dw.manager.domain.User;
 import gov.moda.dw.manager.repository.UserRepository;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
-/**
- * Spring Data JPA repository for the Res entity.
- */
+/** Spring Data JPA repository for the Res entity. */
 @SuppressWarnings("unused")
 @Repository
 public interface CustomUserRepository extends UserRepository {
