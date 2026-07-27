@@ -58,7 +58,7 @@
 1. 使用 ECC 解密
    - 使用提供的私鑰解密 encryptedData
    - 解密失敗時回傳適當的錯誤訊息
-   - 請參考 [ECC_Service_Specification.md 規格文件](../ECC_Service_Specification.md)
+   - 請參考 [ECC_Service_Specification.md 規格文件](./ECC_Service_Specification.md)
 
 2. 解析解密後的內容
    - 解析 JSON 格式的解密內容
@@ -70,7 +70,7 @@
    - 檢查解密內容中的時間戳記
    - 驗證時間戳記是否在有效期限內(QRCode有效60秒、時間偏移量30秒)
    - 過期的時間戳記視為無效
-   - 請參考 [TOTP_Service_Specification.md 規格文件](../TOTP_Service_Specification.md)
+   - 請參考 [TOTP_Service_Specification.md 規格文件](./TOTP_Service_Specification.md)
   
 
 2. 內容完整性驗證
@@ -78,7 +78,7 @@
    - 驗證所有必要欄位
    - 檢查資料格式是否符合預期
    - 驗證 HMAC 訊息驗證碼是否正確
-   - 請參考 [HMAC_Service_Specification.md 規格文件](../HMAC_Service_Specification.md)
+   - 請參考 [HMAC_Service_Specification.md 規格文件](./HMAC_Service_Specification.md)
 
 
 ## 4. 安全性考量
