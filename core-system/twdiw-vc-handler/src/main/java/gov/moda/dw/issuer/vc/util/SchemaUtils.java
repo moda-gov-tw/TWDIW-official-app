@@ -9,9 +9,6 @@ import com.saasquatch.jsonschemainferrer.RequiredPolicies;
 import com.saasquatch.jsonschemainferrer.SpecVersion;
 import com.saasquatch.jsonschemainferrer.TitleDescriptionGenerators;
 import gov.moda.dw.issuer.vc.vo.VcException;
-//import net.jimblackler.jsonschemafriend.Schema;
-//import net.jimblackler.jsonschemafriend.SchemaStore;
-//import net.jimblackler.jsonschemafriend.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

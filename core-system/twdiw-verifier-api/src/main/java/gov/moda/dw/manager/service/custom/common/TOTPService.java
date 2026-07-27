@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import gov.moda.dw.manager.config.AppConfiguration;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
-// 引入 Java 加密相關類別
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.crypto.KeyGenerator;

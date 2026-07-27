@@ -2,8 +2,6 @@ package gov.moda.dw.manager.util;
 
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
-// import javax.servlet.ServletOutputStream;
-// import javax.servlet.http.HttpServletResponse;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;

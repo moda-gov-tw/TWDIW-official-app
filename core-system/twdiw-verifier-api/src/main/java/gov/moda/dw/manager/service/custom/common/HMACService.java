@@ -3,7 +3,6 @@ package gov.moda.dw.manager.service.custom.common;
 // 引入 Spring 框架相關類別
 import org.springframework.stereotype.Service;
 
-// 引入 Java 加密相關類別
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.crypto.KeyGenerator;
@@ -12,8 +11,6 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.nio.charset.StandardCharsets;
-
-// 引入日誌相關類別
 import lombok.extern.slf4j.Slf4j;
 
 /**

@@ -3,12 +3,8 @@ package gov.moda.dw.issuer.vc.config;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import gov.moda.dw.issuer.vc.security.*;
-//import gov.moda.dw.issuer.vc.security.accessToken.AccessTokenFilter;
-//import gov.moda.dw.issuer.vc.security.accessToken.AccessTokenProvider;
 import gov.moda.dw.issuer.vc.security.auth.AmsAuthenticationProvider;
 import gov.moda.dw.issuer.vc.security.crypto.ModadwPasswordEncoder;
-//import gov.moda.dw.issuer.vc.security.jwt.CustomAuthenticationEntryPoint;
-//import gov.moda.dw.issuer.vc.service.custom.track.ExceptionTrackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
