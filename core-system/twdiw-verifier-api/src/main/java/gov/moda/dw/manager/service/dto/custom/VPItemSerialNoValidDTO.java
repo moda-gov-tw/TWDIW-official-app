@@ -6,14 +6,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Schema(description = "VPItem SerialNo")
 public class VPItemSerialNoValidDTO {
 
-    @NotNull
-    String serialNo;
+  @NotNull String serialNo;
 
-    public String getSerialNo() {
-        return serialNo;
-    }
+  public String getSerialNo() {
+    return serialNo;
+  }
 
-    public void setSerialNo(String serialNo) {
-        this.serialNo = serialNo;
-    }
+  public void setSerialNo(String serialNo) {
+    this.serialNo = serialNo;
+  }
 }

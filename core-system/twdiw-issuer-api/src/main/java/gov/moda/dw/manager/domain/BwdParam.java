@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * BwdParam 密碼規則
- */
+/** BwdParam 密碼規則 */
 @Entity
 @Table(name = "bwd_param")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,40 +19,30 @@ public class BwdParam implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 密碼設定檔
-   */
+  /** 密碼設定檔 */
   @NotNull
   @Size(max = 40)
   @Column(name = "bwd_profile_id", length = 40, nullable = false)
   private String bwdProfileId;
 
-  /**
-   * 規則ID
-   */
+  /** 規則ID */
   @NotNull
   @Size(max = 40)
   @Column(name = "rule_id", length = 40, nullable = false)
   private String ruleId;
 
-  /**
-   * 規則名稱
-   */
+  /** 規則名稱 */
   @NotNull
   @Size(max = 100)
   @Column(name = "rule_name", length = 100, nullable = false)
   private String ruleName;
 
-  /**
-   * 規則描述
-   */
+  /** 規則描述 */
   @Size(max = 500)
   @Column(name = "description", length = 500)
   private String description;
 
-  /**
-   * 狀態
-   */
+  /** 狀態 */
   @NotNull
   @Column(name = "state", nullable = false)
   private Boolean state;
@@ -63,9 +51,7 @@ public class BwdParam implements Serializable {
   @Column(name = "str_regular", length = 200)
   private String strRegular;
 
-  /**
-   * 參數值
-   */
+  /** 參數值 */
   @Size(max = 500)
   @Column(name = "param_value", length = 500)
   private String paramValue;
@@ -78,22 +64,16 @@ public class BwdParam implements Serializable {
   @Column(name = "check_type", length = 10)
   private String checkType;
 
-  /**
-   * 錯誤訊息
-   */
+  /** 錯誤訊息 */
   @Size(max = 500)
   @Column(name = "error_message", length = 500)
   private String errorMessage;
 
-  /**
-   * 建立時間
-   */
+  /** 建立時間 */
   @Column(name = "create_time")
   private Instant createTime;
 
-  /**
-   * 更新時間
-   */
+  /** 更新時間 */
   @Column(name = "update_time")
   private Instant updateTime;
 
@@ -283,27 +263,53 @@ public class BwdParam implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "BwdParam{" +
-            "id=" + getId() +
-            ", bwdProfileId='" + getBwdProfileId() + "'" +
-            ", ruleId='" + getRuleId() + "'" +
-            ", ruleName='" + getRuleName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", strRegular='" + getStrRegular() + "'" +
-            ", paramValue='" + getParamValue() + "'" +
-            ", actionType='" + getActionType() + "'" +
-            ", checkType='" + getCheckType() + "'" +
-            ", errorMessage='" + getErrorMessage() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", updateTime='" + getUpdateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "BwdParam{"
+        + "id="
+        + getId()
+        + ", bwdProfileId='"
+        + getBwdProfileId()
+        + "'"
+        + ", ruleId='"
+        + getRuleId()
+        + "'"
+        + ", ruleName='"
+        + getRuleName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", strRegular='"
+        + getStrRegular()
+        + "'"
+        + ", paramValue='"
+        + getParamValue()
+        + "'"
+        + ", actionType='"
+        + getActionType()
+        + "'"
+        + ", checkType='"
+        + getCheckType()
+        + "'"
+        + ", errorMessage='"
+        + getErrorMessage()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", updateTime='"
+        + getUpdateTime()
+        + "'"
+        + "}";
+  }
 }

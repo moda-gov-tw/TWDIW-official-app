@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * A Nonce.
- */
+/** A Nonce. */
 @Entity
 @Table(name = "nonce")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -130,20 +128,32 @@ public class Nonce implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "Nonce{" +
-            "id=" + getId() +
-            ", sId='" + getsId() + "'" +
-            ", nonceId='" + getNonceId() + "'" +
-            ", userId='" + getUserId() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", captchaCode='" + getCaptchaCode() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "Nonce{"
+        + "id="
+        + getId()
+        + ", sId='"
+        + getsId()
+        + "'"
+        + ", nonceId='"
+        + getNonceId()
+        + "'"
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", captchaCode='"
+        + getCaptchaCode()
+        + "'"
+        + "}";
+  }
 }

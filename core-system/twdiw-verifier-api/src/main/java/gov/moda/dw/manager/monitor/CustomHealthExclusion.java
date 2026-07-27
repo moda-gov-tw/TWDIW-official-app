@@ -8,15 +8,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CustomHealthExclusion {
 
-    @Bean
-    public static BeanFactoryPostProcessor removeCommonHealthExtension() {
-        return (beanFactory) -> {
-            if (beanFactory instanceof DefaultListableBeanFactory defaultFactory) {
-                for (String beanName : defaultFactory.getBeanNamesForType(
-                    gov.moda.dw.monitor.health.CustomHealthWebExtension.class)) {
-                    defaultFactory.removeBeanDefinition(beanName);
-                }
-            }
-        };
-    }
+  @Bean
+  public static BeanFactoryPostProcessor removeCommonHealthExtension() {
+    return (beanFactory) -> {
+      if (beanFactory instanceof DefaultListableBeanFactory defaultFactory) {
+        for (String beanName :
+            defaultFactory.getBeanNamesForType(
+                gov.moda.dw.monitor.health.CustomHealthWebExtension.class)) {
+          defaultFactory.removeBeanDefinition(beanName);
+        }
+      }
+    };
+  }
 }

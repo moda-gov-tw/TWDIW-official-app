@@ -13,8 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class WhitelistRequestDto {
 
-    private String method;
+  private String method;
 
-    private String uri;
-
+  private String uri;
 }

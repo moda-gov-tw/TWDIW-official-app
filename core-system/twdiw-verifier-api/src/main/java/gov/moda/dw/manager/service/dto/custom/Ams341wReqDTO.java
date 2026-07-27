@@ -10,19 +10,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Ams341wReqDTO implements Serializable {
 
-    private String source;
+  private String source;
 
-    private String serviceId;
+  private String serviceId;
 
-    private String uri;
+  private String uri;
 
-    private String statusCode;
+  private String statusCode;
 
-    private String jhiFrom;
+  private String jhiFrom;
 
-    private String jhiTo;
+  private String jhiTo;
 
-    private String beginDate;
+  private String beginDate;
 
-    private String endDate;
+  private String endDate;
 }

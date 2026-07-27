@@ -8,7 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class VerifyDidReqDTO {
-    private String b64Data;
-    private String baseUrl;
-    private String token;
+  private String b64Data;
+  private String baseUrl;
+  private String token;
 }

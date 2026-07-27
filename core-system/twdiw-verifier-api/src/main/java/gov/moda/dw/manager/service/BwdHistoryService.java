@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.BwdHistory;
 import gov.moda.dw.manager.repository.BwdHistoryRepository;
 import gov.moda.dw.manager.service.dto.BwdHistoryDTO;
 import gov.moda.dw.manager.service.mapper.BwdHistoryMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link BwdHistory}.
- */
+/** Service Implementation for managing {@link BwdHistory}. */
 @Service
 @Transactional
 public class BwdHistoryService {
@@ -23,7 +21,8 @@ public class BwdHistoryService {
 
   private final BwdHistoryMapper bwdHistoryMapper;
 
-  public BwdHistoryService(BwdHistoryRepository bwdHistoryRepository, BwdHistoryMapper bwdHistoryMapper) {
+  public BwdHistoryService(
+      BwdHistoryRepository bwdHistoryRepository, BwdHistoryMapper bwdHistoryMapper) {
     this.bwdHistoryRepository = bwdHistoryRepository;
     this.bwdHistoryMapper = bwdHistoryMapper;
   }
@@ -64,14 +63,15 @@ public class BwdHistoryService {
     log.debug("Request to partially update BwdHistory : {}", bwdHistoryDTO);
 
     return bwdHistoryRepository
-      .findById(bwdHistoryDTO.getId())
-      .map(existingBwdHistory -> {
-        bwdHistoryMapper.partialUpdate(existingBwdHistory, bwdHistoryDTO);
+        .findById(bwdHistoryDTO.getId())
+        .map(
+            existingBwdHistory -> {
+              bwdHistoryMapper.partialUpdate(existingBwdHistory, bwdHistoryDTO);
 
-        return existingBwdHistory;
-      })
-      .map(bwdHistoryRepository::save)
-      .map(bwdHistoryMapper::toDto);
+              return existingBwdHistory;
+            })
+        .map(bwdHistoryRepository::save)
+        .map(bwdHistoryMapper::toDto);
   }
 
   /**

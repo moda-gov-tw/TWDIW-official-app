@@ -1,5 +1,10 @@
 package gov.moda.dw.manager.service.custom;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.mail.AuthenticationFailedException;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.charset.StandardCharsets;
@@ -7,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +27,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ResourceUtils;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.mail.AuthenticationFailedException;
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeMessage;
-import lombok.extern.slf4j.Slf4j;
-
-/**
- * Service Implementation for mail.
- */
+/** Service Implementation for mail. */
 @Slf4j
 @Service
 @Transactional
@@ -41,8 +37,7 @@ public class AmsMailService {
 
   private AmsMailService mailService;
 
-  @Autowired
-  private JavaMailSender javaMailSender;
+  @Autowired private JavaMailSender javaMailSender;
 
   @Value("${spring.mail.username:}")
   public String username;
@@ -62,6 +57,7 @@ public class AmsMailService {
 
   /**
    * 簡單 郵件 (純文字訊息)
+   *
    * @param subject 主旨
    * @param message 訊息
    * @param to 收件人
@@ -71,7 +67,7 @@ public class AmsMailService {
     SimpleMailMessage mail = new SimpleMailMessage();
     String mailFrom = this.fromAddress;
     if (StringUtils.isBlank(mailFrom)) {
-        mailFrom = this.username;
+      mailFrom = this.username;
     }
 
     log.debug("[{}] " + "送件人:{}", ENTITY_NAME, mailFrom);
@@ -106,6 +102,7 @@ public class AmsMailService {
 
   /**
    * Mime 格式 郵件 (html、附件)
+   *
    * @param subject 主旨
    * @param message 訊息
    * @param to 收件人
@@ -115,13 +112,12 @@ public class AmsMailService {
    * @return true:成功、false:失敗
    */
   public Boolean sendAttachment(
-    String subject,
-    String message,
-    Collection<? extends String> to,
-    Boolean html,
-    Collection<? extends String> file,
-    Map<String, String> imagePaths
-  ) {
+      String subject,
+      String message,
+      Collection<? extends String> to,
+      Boolean html,
+      Collection<? extends String> file,
+      Map<String, String> imagePaths) {
     List<Boolean> issue = new ArrayList<>();
     MimeMessage mail = javaMailSender.createMimeMessage();
 
@@ -129,7 +125,7 @@ public class AmsMailService {
       MimeMessageHelper helper = new MimeMessageHelper(mail, true, StandardCharsets.UTF_8.name());
       String mailFrom = this.fromAddress;
       if (StringUtils.isBlank(mailFrom)) {
-          mailFrom = this.username;
+        mailFrom = this.username;
       }
 
       log.debug("[{}] " + "送件人:{}/{}", ENTITY_NAME, this.nickname, mailFrom);
@@ -140,36 +136,37 @@ public class AmsMailService {
       log.debug("[{}] " + "附件:{}", ENTITY_NAME, file);
 
       if (StringUtils.isBlank(this.nickname)) {
-          helper.setFrom(mailFrom);
+        helper.setFrom(mailFrom);
       } else {
-          helper.setFrom(new InternetAddress(mailFrom, this.nickname, StandardCharsets.UTF_8.name()));
+        helper.setFrom(new InternetAddress(mailFrom, this.nickname, StandardCharsets.UTF_8.name()));
       }
       helper.setTo(to.stream().toArray(String[]::new));
       helper.setSubject(sanitizeSubject(subject));
       helper.setText(message, html);
       /* attachment start */
-      file.forEach(x -> {
-        try {
-          File attachment = ResourceUtils.getFile(x);
-          String fileName = x.substring(x.lastIndexOf(File.separator) + 1);
-          helper.addAttachment(fileName, attachment);
-        } catch (FileNotFoundException | NullPointerException e) {
-          log.error("[{}] " + ExceptionUtils.getStackTrace(e), ENTITY_NAME);
-          log.error("[{}] " + "找不到檔案:{}", ENTITY_NAME, x);
-          issue.add(true);
-        } catch (MessagingException e) {
-          log.error("[{}] " + ExceptionUtils.getStackTrace(e), ENTITY_NAME);
-          log.error("[{}] " + "夾帶檔案失敗:{}", ENTITY_NAME, x);
-          issue.add(true);
-        }
-      });
+      file.forEach(
+          x -> {
+            try {
+              File attachment = ResourceUtils.getFile(x);
+              String fileName = x.substring(x.lastIndexOf(File.separator) + 1);
+              helper.addAttachment(fileName, attachment);
+            } catch (FileNotFoundException | NullPointerException e) {
+              log.error("[{}] " + ExceptionUtils.getStackTrace(e), ENTITY_NAME);
+              log.error("[{}] " + "找不到檔案:{}", ENTITY_NAME, x);
+              issue.add(true);
+            } catch (MessagingException e) {
+              log.error("[{}] " + ExceptionUtils.getStackTrace(e), ENTITY_NAME);
+              log.error("[{}] " + "夾帶檔案失敗:{}", ENTITY_NAME, x);
+              issue.add(true);
+            }
+          });
 
       // 內嵌圖片處理
       for (Map.Entry<String, String> entry : imagePaths.entrySet()) {
-          String cid = entry.getKey();
-          String imgPath = entry.getValue();
+        String cid = entry.getKey();
+        String imgPath = entry.getValue();
 
-          helper.addInline(cid, new ClassPathResource(imgPath));
+        helper.addInline(cid, new ClassPathResource(imgPath));
       }
 
       log.debug("[{}] " + "issue.size() = {}", ENTITY_NAME, issue.size());
@@ -196,16 +193,15 @@ public class AmsMailService {
 
   /**
    * 移除 CR/LF，避免 Header Injection
-   * 
+   *
    * @param subject
    * @return
    */
   private String sanitizeSubject(String subject) {
-      if (StringUtils.isBlank(subject)) {
-          return "";
-      }
+    if (StringUtils.isBlank(subject)) {
+      return "";
+    }
 
-      return subject.replaceAll("[\\r\\n]", "");
+    return subject.replaceAll("[\\r\\n]", "");
   }
-
 }

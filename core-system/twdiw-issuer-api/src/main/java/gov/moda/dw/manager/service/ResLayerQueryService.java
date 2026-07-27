@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link ResLayer} entities in the database.
- * The main input is a {@link ResLayerCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link ResLayerDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link ResLayer} entities in the database. The main
+ * input is a {@link ResLayerCriteria} which gets converted to {@link Specification}, in a way that
+ * all the filters must apply. It returns a {@link Page} of {@link ResLayerDTO} which fulfills the
+ * criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,15 @@ public class ResLayerQueryService extends QueryService<ResLayer> {
 
   private final ResLayerMapper resLayerMapper;
 
-  public ResLayerQueryService(ResLayerRepository resLayerRepository, ResLayerMapper resLayerMapper) {
+  public ResLayerQueryService(
+      ResLayerRepository resLayerRepository, ResLayerMapper resLayerMapper) {
     this.resLayerRepository = resLayerRepository;
     this.resLayerMapper = resLayerMapper;
   }
 
   /**
    * Return a {@link Page} of {@link ResLayerDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +53,7 @@ public class ResLayerQueryService extends QueryService<ResLayer> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +66,7 @@ public class ResLayerQueryService extends QueryService<ResLayer> {
 
   /**
    * Function to convert {@link ResLayerCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -77,22 +81,31 @@ public class ResLayerQueryService extends QueryService<ResLayer> {
         specification = specification.and(buildRangeSpecification(criteria.getId(), ResLayer_.id));
       }
       if (criteria.getParentId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getParentId(), ResLayer_.parentId));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getParentId(), ResLayer_.parentId));
       }
       if (criteria.getChildId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getChildId(), ResLayer_.childId));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getChildId(), ResLayer_.childId));
       }
       if (criteria.getParentCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getParentCode(), ResLayer_.parentCode));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getParentCode(), ResLayer_.parentCode));
       }
       if (criteria.getChildCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getChildCode(), ResLayer_.childCode));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getChildCode(), ResLayer_.childCode));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), ResLayer_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), ResLayer_.createTime));
       }
       if (criteria.getOrderval() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOrderval(), ResLayer_.orderval));
+        specification =
+            specification.and(buildStringSpecification(criteria.getOrderval(), ResLayer_.orderval));
       }
     }
     return specification;

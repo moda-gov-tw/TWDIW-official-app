@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomBwdHistoryRepository extends JpaRepository<BwdHistory, Long>, JpaSpecificationExecutor<BwdHistory> {
-    List<BwdHistory> findAllByUserIdOrderByCreateTimeDesc(String userId);
+public interface CustomBwdHistoryRepository
+    extends JpaRepository<BwdHistory, Long>, JpaSpecificationExecutor<BwdHistory> {
+  List<BwdHistory> findAllByUserIdOrderByCreateTimeDesc(String userId);
 }

@@ -1,22 +1,19 @@
 package gov.moda.dw.manager.service.dto;
 
+import gov.moda.dw.manager.annotation.RequiredField;
+import gov.moda.dw.manager.annotation.ToMapDTO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
-import gov.moda.dw.manager.annotation.RequiredField;
-import gov.moda.dw.manager.annotation.ToMapDTO;
 
-/**
- * A DTO for the {@link gov.moda.dw.manager.domain.Receipt} entity.
- */
+/** A DTO for the {@link gov.moda.dw.manager.domain.Receipt} entity. */
 @ToMapDTO
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ReceiptDTO implements Serializable {
 
-  @RequiredField
-  private Long id;
+  @RequiredField private Long id;
 
   @NotNull
   @Schema(description = "收據案件編號", requiredMode = Schema.RequiredMode.REQUIRED)
@@ -214,25 +211,55 @@ public class ReceiptDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ReceiptDTO{" +
-            "id=" + getId() +
-            ", caseId='" + getCaseId() + "'" +
-            ", uid='" + getUid() + "'" +
-            ", orderCaseId='" + getOrderCaseId() + "'" +
-            ", orderType='" + getOrderType() + "'" +
-            ", amount=" + getAmount() +
-            ", monthlyOrderCaseId='" + getMonthlyOrderCaseId() + "'" +
-            ", nameType='" + getNameType() + "'" +
-            ", content='" + getContent() + "'" +
-            ", status='" + getStatus() + "'" +
-            ", applicant='" + getApplicant() + "'" +
-            ", nextAudit='" + getNextAudit() + "'" +
-            ", modifyTime='" + getModifyTime() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", pdfCreateTime='" + getPdfCreateTime() + "'" +
-            ", contact='" + getContact() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ReceiptDTO{"
+        + "id="
+        + getId()
+        + ", caseId='"
+        + getCaseId()
+        + "'"
+        + ", uid='"
+        + getUid()
+        + "'"
+        + ", orderCaseId='"
+        + getOrderCaseId()
+        + "'"
+        + ", orderType='"
+        + getOrderType()
+        + "'"
+        + ", amount="
+        + getAmount()
+        + ", monthlyOrderCaseId='"
+        + getMonthlyOrderCaseId()
+        + "'"
+        + ", nameType='"
+        + getNameType()
+        + "'"
+        + ", content='"
+        + getContent()
+        + "'"
+        + ", status='"
+        + getStatus()
+        + "'"
+        + ", applicant='"
+        + getApplicant()
+        + "'"
+        + ", nextAudit='"
+        + getNextAudit()
+        + "'"
+        + ", modifyTime='"
+        + getModifyTime()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", pdfCreateTime='"
+        + getPdfCreateTime()
+        + "'"
+        + ", contact='"
+        + getContact()
+        + "'"
+        + "}";
+  }
 }

@@ -8,8 +8,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class VerifyAuthResDTO {
-    private String transactionValue;
-    private String resultMSG;
-    private String resultException;
-    private int resultErrorCode;
+  private String transactionValue;
+  private String resultMSG;
+  private String resultException;
+  private int resultErrorCode;
 }

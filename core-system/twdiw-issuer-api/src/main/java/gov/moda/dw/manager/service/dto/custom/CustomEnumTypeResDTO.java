@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class CustomEnumTypeResDTO {
 
-    private String label;
-    private String value;
+  private String label;
+  private String value;
 }

@@ -7,14 +7,13 @@ import lombok.Setter;
 @Setter
 public class CustomVersionInfoResDTO {
 
-    private CustomVersionInfoDetailResDTO verifiermgr;
-    
-    private CustomVersionInfoDetailResDTO oid4vp;
-    
-    private CustomVersionInfoDetailResDTO vp;
-    
-    private String env;
-    
-    private String appDownloadDate;
+  private CustomVersionInfoDetailResDTO verifiermgr;
 
+  private CustomVersionInfoDetailResDTO oid4vp;
+
+  private CustomVersionInfoDetailResDTO vp;
+
+  private String env;
+
+  private String appDownloadDate;
 }

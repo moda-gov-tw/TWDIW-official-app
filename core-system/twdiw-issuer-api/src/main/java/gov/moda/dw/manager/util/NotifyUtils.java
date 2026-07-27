@@ -1,5 +1,6 @@
 package gov.moda.dw.manager.util;
 
+import gov.moda.dw.manager.service.custom.AmsMailService;
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
-import gov.moda.dw.manager.service.custom.AmsMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class NotifyUtils {
 
-  @Autowired
-  private AmsMailService mail;
+  @Autowired private AmsMailService mail;
 
   public static NotifyUtils notifyUtils;
 
@@ -31,6 +30,7 @@ public class NotifyUtils {
 
   /**
    * 寄送內容 by mail
+   *
    * @param msg 訊息內容
    * @return 新郵件
    */
@@ -40,15 +40,14 @@ public class NotifyUtils {
 
   /**
    * 寄送內容 by mail
+   *
    * @return 新郵件
    */
   public static MailBuilder mail() {
     return new MailBuilder();
   }
 
-  /**
-   * E-mail Builder 郵件與發送
-   */
+  /** E-mail Builder 郵件與發送 */
   public static class MailBuilder {
 
     private String message;
@@ -58,9 +57,7 @@ public class NotifyUtils {
     private List<String> file;
     private Map<String, String> imagePaths;
 
-    /**
-     * 初始化新郵件
-     */
+    /** 初始化新郵件 */
     public MailBuilder() {
       this.message = "";
       this.subject = "";
@@ -72,6 +69,7 @@ public class NotifyUtils {
 
     /**
      * 初始化新郵件
+     *
      * @param message 設定訊息
      */
     public MailBuilder(String message) {
@@ -85,6 +83,7 @@ public class NotifyUtils {
 
     /**
      * 設定 訊息
+     *
      * @param message 訊息
      * @return 郵件
      */
@@ -95,6 +94,7 @@ public class NotifyUtils {
 
     /**
      * 設定 主旨/標題
+     *
      * @param subject 主旨/標題
      * @return 郵件
      */
@@ -105,6 +105,7 @@ public class NotifyUtils {
 
     /**
      * 加入 聯絡地址
+     *
      * @param mailAddress 聯絡地址
      * @return 郵件
      */
@@ -115,6 +116,7 @@ public class NotifyUtils {
 
     /**
      * 加入 多個聯絡地址
+     *
      * @param mailAddress 聯絡地址
      * @return 郵件
      */
@@ -125,6 +127,7 @@ public class NotifyUtils {
 
     /**
      * 加入 所有聯絡地址
+     *
      * @param mailAddresses 聯絡地址
      * @return 郵件
      */
@@ -135,6 +138,7 @@ public class NotifyUtils {
 
     /**
      * 改訊息為 html 格式
+     *
      * @return 郵件
      */
     public MailBuilder html() {
@@ -153,6 +157,7 @@ public class NotifyUtils {
 
     /**
      * 加入 附件
+     *
      * @param file 附件
      * @return 郵件
      */
@@ -163,6 +168,7 @@ public class NotifyUtils {
 
     /**
      * 加入 多個附件
+     *
      * @param file 附件
      * @return 郵件
      */
@@ -173,6 +179,7 @@ public class NotifyUtils {
 
     /**
      * 加入 所有附件
+     *
      * @param files 附件
      * @return 郵件
      */
@@ -183,6 +190,7 @@ public class NotifyUtils {
 
     /**
      * 加入 所有內嵌圖片
+     *
      * @param imagePaths 內嵌圖片
      * @return 郵件
      */
@@ -193,6 +201,7 @@ public class NotifyUtils {
 
     /**
      * 寄送郵件
+     *
      * @return true:成功、false:失敗
      */
     public Boolean send() {
@@ -202,7 +211,8 @@ public class NotifyUtils {
       }
 
       if (this.html || (null != this.file && 0 != this.file.size())) { // Mime msg
-        return notifyUtils.mail.sendAttachment(this.subject, this.message, this.to, this.html, this.file, this.imagePaths);
+        return notifyUtils.mail.sendAttachment(
+            this.subject, this.message, this.to, this.html, this.file, this.imagePaths);
       } else { // simple msg
         return notifyUtils.mail.send(this.subject, this.message, this.to);
       }

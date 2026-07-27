@@ -14,232 +14,230 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class LoginViewCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter userId;
+  private StringFilter userId;
 
-    private IntegerFilter failCount;
+  private IntegerFilter failCount;
 
-    private InstantFilter lastLogin;
+  private InstantFilter lastLogin;
 
-    private StringFilter bwdHash;
+  private StringFilter bwdHash;
 
-    private InstantFilter bwdDate;
+  private InstantFilter bwdDate;
 
-    private StringFilter loginIdState;
+  private StringFilter loginIdState;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public LoginViewCriteria() {}
+  public LoginViewCriteria() {}
 
-    public LoginViewCriteria(LoginViewCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
-        this.failCount = other.optionalFailCount().map(IntegerFilter::copy).orElse(null);
-        this.lastLogin = other.optionalLastLogin().map(InstantFilter::copy).orElse(null);
-        this.bwdHash = other.optionalBwdHash().map(StringFilter::copy).orElse(null);
-        this.bwdDate = other.optionalBwdDate().map(InstantFilter::copy).orElse(null);
-        this.loginIdState = other.optionalLoginIdState().map(StringFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public LoginViewCriteria(LoginViewCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
+    this.failCount = other.optionalFailCount().map(IntegerFilter::copy).orElse(null);
+    this.lastLogin = other.optionalLastLogin().map(InstantFilter::copy).orElse(null);
+    this.bwdHash = other.optionalBwdHash().map(StringFilter::copy).orElse(null);
+    this.bwdDate = other.optionalBwdDate().map(InstantFilter::copy).orElse(null);
+    this.loginIdState = other.optionalLoginIdState().map(StringFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public LoginViewCriteria copy() {
+    return new LoginViewCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public LoginViewCriteria copy() {
-        return new LoginViewCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getUserId() {
+    return userId;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalUserId() {
+    return Optional.ofNullable(userId);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter userId() {
+    if (userId == null) {
+      setUserId(new StringFilter());
     }
+    return userId;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setUserId(StringFilter userId) {
+    this.userId = userId;
+  }
 
-    public StringFilter getUserId() {
-        return userId;
-    }
+  public IntegerFilter getFailCount() {
+    return failCount;
+  }
 
-    public Optional<StringFilter> optionalUserId() {
-        return Optional.ofNullable(userId);
-    }
+  public Optional<IntegerFilter> optionalFailCount() {
+    return Optional.ofNullable(failCount);
+  }
 
-    public StringFilter userId() {
-        if (userId == null) {
-            setUserId(new StringFilter());
-        }
-        return userId;
+  public IntegerFilter failCount() {
+    if (failCount == null) {
+      setFailCount(new IntegerFilter());
     }
+    return failCount;
+  }
 
-    public void setUserId(StringFilter userId) {
-        this.userId = userId;
-    }
+  public void setFailCount(IntegerFilter failCount) {
+    this.failCount = failCount;
+  }
 
-    public IntegerFilter getFailCount() {
-        return failCount;
-    }
+  public InstantFilter getLastLogin() {
+    return lastLogin;
+  }
 
-    public Optional<IntegerFilter> optionalFailCount() {
-        return Optional.ofNullable(failCount);
-    }
+  public Optional<InstantFilter> optionalLastLogin() {
+    return Optional.ofNullable(lastLogin);
+  }
 
-    public IntegerFilter failCount() {
-        if (failCount == null) {
-            setFailCount(new IntegerFilter());
-        }
-        return failCount;
+  public InstantFilter lastLogin() {
+    if (lastLogin == null) {
+      setLastLogin(new InstantFilter());
     }
+    return lastLogin;
+  }
 
-    public void setFailCount(IntegerFilter failCount) {
-        this.failCount = failCount;
-    }
+  public void setLastLogin(InstantFilter lastLogin) {
+    this.lastLogin = lastLogin;
+  }
 
-    public InstantFilter getLastLogin() {
-        return lastLogin;
-    }
+  public StringFilter getBwdHash() {
+    return bwdHash;
+  }
 
-    public Optional<InstantFilter> optionalLastLogin() {
-        return Optional.ofNullable(lastLogin);
-    }
+  public Optional<StringFilter> optionalBwdHash() {
+    return Optional.ofNullable(bwdHash);
+  }
 
-    public InstantFilter lastLogin() {
-        if (lastLogin == null) {
-            setLastLogin(new InstantFilter());
-        }
-        return lastLogin;
+  public StringFilter bwdHash() {
+    if (bwdHash == null) {
+      setBwdHash(new StringFilter());
     }
+    return bwdHash;
+  }
 
-    public void setLastLogin(InstantFilter lastLogin) {
-        this.lastLogin = lastLogin;
-    }
+  public void setBwdHash(StringFilter bwdHash) {
+    this.bwdHash = bwdHash;
+  }
 
-    public StringFilter getBwdHash() {
-        return bwdHash;
-    }
+  public InstantFilter getBwdDate() {
+    return bwdDate;
+  }
 
-    public Optional<StringFilter> optionalBwdHash() {
-        return Optional.ofNullable(bwdHash);
-    }
+  public Optional<InstantFilter> optionalBwdDate() {
+    return Optional.ofNullable(bwdDate);
+  }
 
-    public StringFilter bwdHash() {
-        if (bwdHash == null) {
-            setBwdHash(new StringFilter());
-        }
-        return bwdHash;
+  public InstantFilter bwdDate() {
+    if (bwdDate == null) {
+      setBwdDate(new InstantFilter());
     }
+    return bwdDate;
+  }
 
-    public void setBwdHash(StringFilter bwdHash) {
-        this.bwdHash = bwdHash;
-    }
+  public void setBwdDate(InstantFilter bwdDate) {
+    this.bwdDate = bwdDate;
+  }
 
-    public InstantFilter getBwdDate() {
-        return bwdDate;
-    }
+  public StringFilter getLoginIdState() {
+    return loginIdState;
+  }
 
-    public Optional<InstantFilter> optionalBwdDate() {
-        return Optional.ofNullable(bwdDate);
-    }
+  public Optional<StringFilter> optionalLoginIdState() {
+    return Optional.ofNullable(loginIdState);
+  }
 
-    public InstantFilter bwdDate() {
-        if (bwdDate == null) {
-            setBwdDate(new InstantFilter());
-        }
-        return bwdDate;
+  public StringFilter loginIdState() {
+    if (loginIdState == null) {
+      setLoginIdState(new StringFilter());
     }
+    return loginIdState;
+  }
 
-    public void setBwdDate(InstantFilter bwdDate) {
-        this.bwdDate = bwdDate;
-    }
+  public void setLoginIdState(StringFilter loginIdState) {
+    this.loginIdState = loginIdState;
+  }
 
-    public StringFilter getLoginIdState() {
-        return loginIdState;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<StringFilter> optionalLoginIdState() {
-        return Optional.ofNullable(loginIdState);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public StringFilter loginIdState() {
-        if (loginIdState == null) {
-            setLoginIdState(new StringFilter());
-        }
-        return loginIdState;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setLoginIdState(StringFilter loginIdState) {
-        this.loginIdState = loginIdState;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final LoginViewCriteria that = (LoginViewCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(userId, that.userId)
+        && Objects.equals(failCount, that.failCount)
+        && Objects.equals(lastLogin, that.lastLogin)
+        && Objects.equals(bwdHash, that.bwdHash)
+        && Objects.equals(bwdDate, that.bwdDate)
+        && Objects.equals(loginIdState, that.loginIdState)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, userId, failCount, lastLogin, bwdHash, bwdDate, loginIdState, distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final LoginViewCriteria that = (LoginViewCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(userId, that.userId) &&
-            Objects.equals(failCount, that.failCount) &&
-            Objects.equals(lastLogin, that.lastLogin) &&
-            Objects.equals(bwdHash, that.bwdHash) &&
-            Objects.equals(bwdDate, that.bwdDate) &&
-            Objects.equals(loginIdState, that.loginIdState) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, userId, failCount, lastLogin, bwdHash, bwdDate, loginIdState, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "LoginViewCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalUserId().map(f -> "userId=" + f + ", ").orElse("") +
-            optionalFailCount().map(f -> "failCount=" + f + ", ").orElse("") +
-            optionalLastLogin().map(f -> "lastLogin=" + f + ", ").orElse("") +
-            optionalBwdHash().map(f -> "bwdHash=" + f + ", ").orElse("") +
-            optionalBwdDate().map(f -> "bwdDate=" + f + ", ").orElse("") +
-            optionalLoginIdState().map(f -> "loginIdState=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "LoginViewCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalUserId().map(f -> "userId=" + f + ", ").orElse("")
+        + optionalFailCount().map(f -> "failCount=" + f + ", ").orElse("")
+        + optionalLastLogin().map(f -> "lastLogin=" + f + ", ").orElse("")
+        + optionalBwdHash().map(f -> "bwdHash=" + f + ", ").orElse("")
+        + optionalBwdDate().map(f -> "bwdDate=" + f + ", ").orElse("")
+        + optionalLoginIdState().map(f -> "loginIdState=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

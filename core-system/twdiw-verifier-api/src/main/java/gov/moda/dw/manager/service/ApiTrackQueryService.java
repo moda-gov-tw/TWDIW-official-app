@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link ApiTrack} entities in the database.
- * The main input is a {@link ApiTrackCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link ApiTrackDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link ApiTrack} entities in the database. The main
+ * input is a {@link ApiTrackCriteria} which gets converted to {@link Specification}, in a way that
+ * all the filters must apply. It returns a {@link Page} of {@link ApiTrackDTO} which fulfills the
+ * criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,15 @@ public class ApiTrackQueryService extends QueryService<ApiTrack> {
 
   private final ApiTrackMapper apiTrackMapper;
 
-  public ApiTrackQueryService(ApiTrackRepository apiTrackRepository, ApiTrackMapper apiTrackMapper) {
+  public ApiTrackQueryService(
+      ApiTrackRepository apiTrackRepository, ApiTrackMapper apiTrackMapper) {
     this.apiTrackRepository = apiTrackRepository;
     this.apiTrackMapper = apiTrackMapper;
   }
 
   /**
    * Return a {@link Page} of {@link ApiTrackDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +53,7 @@ public class ApiTrackQueryService extends QueryService<ApiTrack> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +66,7 @@ public class ApiTrackQueryService extends QueryService<ApiTrack> {
 
   /**
    * Function to convert {@link ApiTrackCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -77,52 +81,74 @@ public class ApiTrackQueryService extends QueryService<ApiTrack> {
         specification = specification.and(buildRangeSpecification(criteria.getId(), ApiTrack_.id));
       }
       if (criteria.getUuid() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUuid(), ApiTrack_.uuid));
+        specification =
+            specification.and(buildStringSpecification(criteria.getUuid(), ApiTrack_.uuid));
       }
       if (criteria.getTimestamp() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getTimestamp(), ApiTrack_.timestamp));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getTimestamp(), ApiTrack_.timestamp));
       }
       if (criteria.getSource() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getSource(), ApiTrack_.source));
+        specification =
+            specification.and(buildStringSpecification(criteria.getSource(), ApiTrack_.source));
       }
       if (criteria.getServiceId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getServiceId(), ApiTrack_.serviceId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getServiceId(), ApiTrack_.serviceId));
       }
       if (criteria.getUri() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUri(), ApiTrack_.uri));
+        specification =
+            specification.and(buildStringSpecification(criteria.getUri(), ApiTrack_.uri));
       }
       if (criteria.getUrl() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUrl(), ApiTrack_.url));
+        specification =
+            specification.and(buildStringSpecification(criteria.getUrl(), ApiTrack_.url));
       }
       if (criteria.getStatusCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getStatusCode(), ApiTrack_.statusCode));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getStatusCode(), ApiTrack_.statusCode));
       }
       if (criteria.getRtt() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRtt(), ApiTrack_.rtt));
+        specification =
+            specification.and(buildStringSpecification(criteria.getRtt(), ApiTrack_.rtt));
       }
       if (criteria.getRequestMethod() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRequestMethod(), ApiTrack_.requestMethod));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getRequestMethod(), ApiTrack_.requestMethod));
       }
       if (criteria.getAccessToken1() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getAccessToken1(), ApiTrack_.accessToken1));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getAccessToken1(), ApiTrack_.accessToken1));
       }
       if (criteria.getAccessToken2() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getAccessToken2(), ApiTrack_.accessToken2));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getAccessToken2(), ApiTrack_.accessToken2));
       }
       if (criteria.getJhiFrom() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getJhiFrom(), ApiTrack_.jhiFrom));
+        specification =
+            specification.and(buildStringSpecification(criteria.getJhiFrom(), ApiTrack_.jhiFrom));
       }
       if (criteria.getJhiTo() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getJhiTo(), ApiTrack_.jhiTo));
+        specification =
+            specification.and(buildStringSpecification(criteria.getJhiTo(), ApiTrack_.jhiTo));
       }
       if (criteria.getCost() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getCost(), ApiTrack_.cost));
+        specification =
+            specification.and(buildStringSpecification(criteria.getCost(), ApiTrack_.cost));
       }
       if (criteria.getCharged() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getCharged(), ApiTrack_.charged));
+        specification =
+            specification.and(buildStringSpecification(criteria.getCharged(), ApiTrack_.charged));
       }
       if (criteria.getSynced() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getSynced(), ApiTrack_.synced));
+        specification =
+            specification.and(buildStringSpecification(criteria.getSynced(), ApiTrack_.synced));
       }
     }
     return specification;

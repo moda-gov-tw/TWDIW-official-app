@@ -16,10 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link Role} entities in the database.
- * The main input is a {@link RoleCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link RoleDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link Role} entities in the database. The main input
+ * is a {@link RoleCriteria} which gets converted to {@link Specification}, in a way that all the
+ * filters must apply. It returns a {@link Page} of {@link RoleDTO} which fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -38,6 +37,7 @@ public class RoleQueryService extends QueryService<Role> {
 
   /**
    * Return a {@link Page} of {@link RoleDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +51,7 @@ public class RoleQueryService extends QueryService<Role> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +64,7 @@ public class RoleQueryService extends QueryService<Role> {
 
   /**
    * Function to convert {@link RoleCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -77,28 +79,38 @@ public class RoleQueryService extends QueryService<Role> {
         specification = specification.and(buildRangeSpecification(criteria.getId(), Role_.id));
       }
       if (criteria.getRoleId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRoleId(), Role_.roleId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getRoleId(), Role_.roleId));
       }
       if (criteria.getRoleName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRoleName(), Role_.roleName));
+        specification =
+            specification.and(buildStringSpecification(criteria.getRoleName(), Role_.roleName));
       }
       if (criteria.getDescription() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDescription(), Role_.description));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDescription(), Role_.description));
       }
       if (criteria.getState() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getState(), Role_.state));
+        specification =
+            specification.and(buildStringSpecification(criteria.getState(), Role_.state));
       }
       if (criteria.getDataRole1() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole1(), Role_.dataRole1));
+        specification =
+            specification.and(buildStringSpecification(criteria.getDataRole1(), Role_.dataRole1));
       }
       if (criteria.getDataRole2() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole2(), Role_.dataRole2));
+        specification =
+            specification.and(buildStringSpecification(criteria.getDataRole2(), Role_.dataRole2));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), Role_.createTime));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getCreateTime(), Role_.createTime));
       }
       if (criteria.getAuthChangeTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getAuthChangeTime(), Role_.authChangeTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getAuthChangeTime(), Role_.authChangeTime));
       }
     }
     return specification;

@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link BwdParam} entity.
- */
+/** A DTO for the {@link BwdParam} entity. */
 @Schema(description = "BwdParam 密碼規則")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class BwdParamDTO implements Serializable {
@@ -188,22 +186,47 @@ public class BwdParamDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "BwdParamDTO{" +
-            "id=" + getId() +
-            ", bwdProfileId='" + getBwdProfileId() + "'" +
-            ", ruleId='" + getRuleId() + "'" +
-            ", ruleName='" + getRuleName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", strRegular='" + getStrRegular() + "'" +
-            ", paramValue='" + getParamValue() + "'" +
-            ", actionType='" + getActionType() + "'" +
-            ", checkType='" + getCheckType() + "'" +
-            ", errorMessage='" + getErrorMessage() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", updateTime='" + getUpdateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "BwdParamDTO{"
+        + "id="
+        + getId()
+        + ", bwdProfileId='"
+        + getBwdProfileId()
+        + "'"
+        + ", ruleId='"
+        + getRuleId()
+        + "'"
+        + ", ruleName='"
+        + getRuleName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", strRegular='"
+        + getStrRegular()
+        + "'"
+        + ", paramValue='"
+        + getParamValue()
+        + "'"
+        + ", actionType='"
+        + getActionType()
+        + "'"
+        + ", checkType='"
+        + getCheckType()
+        + "'"
+        + ", errorMessage='"
+        + getErrorMessage()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", updateTime='"
+        + getUpdateTime()
+        + "'"
+        + "}";
+  }
 }

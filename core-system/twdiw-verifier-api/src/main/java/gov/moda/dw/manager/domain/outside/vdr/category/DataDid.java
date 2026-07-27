@@ -1,79 +1,66 @@
-
 package gov.moda.dw.manager.domain.outside.vdr.category;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataDid {
 
-    @JsonProperty
-    private Long createdAt;
-    @JsonProperty
-    private String did;
-    @JsonProperty
-    private String orgType;
-    @JsonProperty
-    private Org org;
-    @JsonProperty
-    /**
-     * 0: 待審核
-     * 1: 有效
-     * 2: 已註銷
-     */
-    private Long status;
-    @JsonProperty
-    private Long updatedAt;
+  @JsonProperty private Long createdAt;
+  @JsonProperty private String did;
+  @JsonProperty private String orgType;
+  @JsonProperty private Org org;
 
-    public Long getCreatedAt() {
-        return createdAt;
-    }
+  @JsonProperty
+  /** 0: 待審核 1: 有效 2: 已註銷 */
+  private Long status;
 
-    public void setCreatedAt(Long createdAt) {
-        this.createdAt = createdAt;
-    }
+  @JsonProperty private Long updatedAt;
 
-    public String getDid() {
-        return did;
-    }
+  public Long getCreatedAt() {
+    return createdAt;
+  }
 
-    public void setDid(String did) {
-        this.did = did;
-    }
+  public void setCreatedAt(Long createdAt) {
+    this.createdAt = createdAt;
+  }
 
-    public Org getOrg() {
-        return org;
-    }
+  public String getDid() {
+    return did;
+  }
 
-    public void setOrg(Org org) {
-        this.org = org;
-    }
+  public void setDid(String did) {
+    this.did = did;
+  }
 
-    /**
-     * 0: 待審核
-     * 1: 有效
-     * 2: 已註銷
-     */
-    public Long getStatus() {
-        return status;
-    }
+  public Org getOrg() {
+    return org;
+  }
 
-    public void setStatus(Long status) {
-        this.status = status;
-    }
+  public void setOrg(Org org) {
+    this.org = org;
+  }
 
-    public Long getUpdatedAt() {
-        return updatedAt;
-    }
+  /** 0: 待審核 1: 有效 2: 已註銷 */
+  public Long getStatus() {
+    return status;
+  }
 
-    public void setUpdatedAt(Long updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+  public void setStatus(Long status) {
+    this.status = status;
+  }
 
-    public String getOrgType() {
-        return orgType;
-    }
+  public Long getUpdatedAt() {
+    return updatedAt;
+  }
 
-    public void setOrgType(String orgType) {
-        this.orgType = orgType;
-    }
+  public void setUpdatedAt(Long updatedAt) {
+    this.updatedAt = updatedAt;
+  }
 
+  public String getOrgType() {
+    return orgType;
+  }
+
+  public void setOrgType(String orgType) {
+    this.orgType = orgType;
+  }
 }

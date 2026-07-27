@@ -8,16 +8,15 @@ import lombok.Setter;
 @Setter
 public class Dwvp404iReqDTO {
 
-    @JsonProperty("t")
-    private String tag;
+  @JsonProperty("t")
+  private String tag;
 
-    @JsonProperty("d")
-    private String data;
+  @JsonProperty("d")
+  private String data;
 
-    @JsonProperty("h")
-    private String hmac;
+  @JsonProperty("h")
+  private String hmac;
 
-    @JsonProperty("k")
-    private String keyId;
-
+  @JsonProperty("k")
+  private String keyId;
 }

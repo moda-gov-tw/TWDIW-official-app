@@ -9,11 +9,11 @@ import java.util.Map;
  * @description
  */
 public interface DynamicDtoUtils {
-    <T> Map<String, Object> dtoToMap(T entities);
+  <T> Map<String, Object> dtoToMap(T entities);
 
-    <T> Map<String, Object> dtoToMap(T entities, List<String> fields);
+  <T> Map<String, Object> dtoToMap(T entities, List<String> fields);
 
-    <T> List<Map<String, Object>> dtoToMapList(List<T> entities);
+  <T> List<Map<String, Object>> dtoToMapList(List<T> entities);
 
-    <T> List<Map<String, Object>> dtoToMapList(List<T> entities, List<String> fields);
+  <T> List<Map<String, Object>> dtoToMapList(List<T> entities, List<String> fields);
 }

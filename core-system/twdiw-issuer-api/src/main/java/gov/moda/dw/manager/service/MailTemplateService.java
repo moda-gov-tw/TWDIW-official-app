@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.MailTemplate;
 import gov.moda.dw.manager.repository.MailTemplateRepository;
 import gov.moda.dw.manager.service.dto.MailTemplateDTO;
 import gov.moda.dw.manager.service.mapper.MailTemplateMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link MailTemplate}.
- */
+/** Service Implementation for managing {@link MailTemplate}. */
 @Service
 @Transactional
 public class MailTemplateService {
@@ -23,7 +21,8 @@ public class MailTemplateService {
 
   private final MailTemplateMapper mailTemplateMapper;
 
-  public MailTemplateService(MailTemplateRepository mailTemplateRepository, MailTemplateMapper mailTemplateMapper) {
+  public MailTemplateService(
+      MailTemplateRepository mailTemplateRepository, MailTemplateMapper mailTemplateMapper) {
     this.mailTemplateRepository = mailTemplateRepository;
     this.mailTemplateMapper = mailTemplateMapper;
   }
@@ -64,14 +63,15 @@ public class MailTemplateService {
     log.debug("Request to partially update MailTemplate : {}", mailTemplateDTO);
 
     return mailTemplateRepository
-      .findById(mailTemplateDTO.getId())
-      .map(existingMailTemplate -> {
-        mailTemplateMapper.partialUpdate(existingMailTemplate, mailTemplateDTO);
+        .findById(mailTemplateDTO.getId())
+        .map(
+            existingMailTemplate -> {
+              mailTemplateMapper.partialUpdate(existingMailTemplate, mailTemplateDTO);
 
-        return existingMailTemplate;
-      })
-      .map(mailTemplateRepository::save)
-      .map(mailTemplateMapper::toDto);
+              return existingMailTemplate;
+            })
+        .map(mailTemplateRepository::save)
+        .map(mailTemplateMapper::toDto);
   }
 
   /**

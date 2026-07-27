@@ -5,16 +5,13 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link CookiesMsg} entity.
- */
+/** A DTO for the {@link CookiesMsg} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class CookiesMsgDTO implements Serializable {
 
   private Long id;
 
-  @NotNull
-  private String cid;
+  @NotNull private String cid;
 
   private String msg;
 
@@ -64,12 +61,17 @@ public class CookiesMsgDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "CookiesMsgDTO{" +
-            "id=" + getId() +
-            ", cid='" + getCid() + "'" +
-            ", msg='" + getMsg() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "CookiesMsgDTO{"
+        + "id="
+        + getId()
+        + ", cid='"
+        + getCid()
+        + "'"
+        + ", msg='"
+        + getMsg()
+        + "'"
+        + "}";
+  }
 }

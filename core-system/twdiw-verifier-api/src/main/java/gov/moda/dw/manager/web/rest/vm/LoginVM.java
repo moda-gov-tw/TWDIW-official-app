@@ -1,18 +1,14 @@
 package gov.moda.dw.manager.web.rest.vm;
 
-import jakarta.validation.constraints.NotNull;
 import gov.moda.dw.manager.service.dto.NonceDTO;
+import jakarta.validation.constraints.NotNull;
 
-/**
- * View Model object for storing a user's credentials.
- */
+/** View Model object for storing a user's credentials. */
 public class LoginVM {
 
-  @NotNull
-  private String username;
+  @NotNull private String username;
 
-  @NotNull
-  private String password;
+  @NotNull private String password;
 
   private Boolean rememberMe;
 
@@ -62,24 +58,22 @@ public class LoginVM {
 
   @Override
   public String toString() {
-    return (
-      "LoginVM{" +
-      "username='" +
-      username +
-      '\'' +
-      ", password='" +
-      password +
-      '\'' +
-      ", rememberMe='" +
-      rememberMe +
-      '\'' +
-      ", nonce='" +
-      nonce +
-      '\'' +
-      ", captcha='" +
-      captcha +
-      '\'' +
-      '}'
-    );
+    return ("LoginVM{"
+        + "username='"
+        + username
+        + '\''
+        + ", password='"
+        + password
+        + '\''
+        + ", rememberMe='"
+        + rememberMe
+        + '\''
+        + ", nonce='"
+        + nonce
+        + '\''
+        + ", captcha='"
+        + captcha
+        + '\''
+        + '}');
   }
 }

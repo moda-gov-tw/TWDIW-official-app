@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class JwtUserDTO {
 
-    private String userId;
-    private String orgId;
+  private String userId;
+  private String orgId;
 }

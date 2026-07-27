@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.ImgVerifyCode;
 import gov.moda.dw.manager.repository.ImgVerifyCodeRepository;
 import gov.moda.dw.manager.service.dto.ImgVerifyCodeDTO;
 import gov.moda.dw.manager.service.mapper.ImgVerifyCodeMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link ImgVerifyCode}.
- */
+/** Service Implementation for managing {@link ImgVerifyCode}. */
 @Service
 @Transactional
 public class ImgVerifyCodeService {
@@ -23,7 +21,8 @@ public class ImgVerifyCodeService {
 
   private final ImgVerifyCodeMapper imgVerifyCodeMapper;
 
-  public ImgVerifyCodeService(ImgVerifyCodeRepository imgVerifyCodeRepository, ImgVerifyCodeMapper imgVerifyCodeMapper) {
+  public ImgVerifyCodeService(
+      ImgVerifyCodeRepository imgVerifyCodeRepository, ImgVerifyCodeMapper imgVerifyCodeMapper) {
     this.imgVerifyCodeRepository = imgVerifyCodeRepository;
     this.imgVerifyCodeMapper = imgVerifyCodeMapper;
   }
@@ -64,14 +63,15 @@ public class ImgVerifyCodeService {
     log.debug("Request to partially update ImgVerifyCode : {}", imgVerifyCodeDTO);
 
     return imgVerifyCodeRepository
-      .findById(imgVerifyCodeDTO.getId())
-      .map(existingImgVerifyCode -> {
-        imgVerifyCodeMapper.partialUpdate(existingImgVerifyCode, imgVerifyCodeDTO);
+        .findById(imgVerifyCodeDTO.getId())
+        .map(
+            existingImgVerifyCode -> {
+              imgVerifyCodeMapper.partialUpdate(existingImgVerifyCode, imgVerifyCodeDTO);
 
-        return existingImgVerifyCode;
-      })
-      .map(imgVerifyCodeRepository::save)
-      .map(imgVerifyCodeMapper::toDto);
+              return existingImgVerifyCode;
+            })
+        .map(imgVerifyCodeRepository::save)
+        .map(imgVerifyCodeMapper::toDto);
   }
 
   /**

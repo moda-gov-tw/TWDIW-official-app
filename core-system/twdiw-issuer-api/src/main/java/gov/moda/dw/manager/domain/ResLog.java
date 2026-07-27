@@ -5,9 +5,7 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A ResLog.
- */
+/** A ResLog. */
 @Entity
 @Table(name = "res_log")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -21,108 +19,80 @@ public class ResLog implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 異動人
-   */
+  /** 異動人 */
   @NotNull
   @Size(max = 140)
   @Column(name = "actor", length = 140, nullable = false)
   private String actor;
 
-  /**
-   * 異動類型
-   */
+  /** 異動類型 */
   @NotNull
   @Size(max = 20)
   @Column(name = "log_type", length = 20, nullable = false)
   private String logType;
 
-  /**
-   * Log建立時間
-   */
+  /** Log建立時間 */
   @NotNull
   @Column(name = "log_time", nullable = false)
   private Instant logTime;
 
-  /**
-   * 功能類型
-   */
+  /** 功能類型 */
   @NotNull
   @Size(max = 20)
   @Column(name = "type_id", length = 20, nullable = false)
   private String typeId;
 
-  /**
-   * 功能代碼
-   */
+  /** 功能代碼 */
   @NotNull
   @Size(max = 20)
   @Column(name = "res_id", length = 20, nullable = false)
   private String resId;
 
-  /**
-   * 功能群組
-   */
+  /** 功能群組 */
   @NotNull
   @Size(max = 20)
   @Column(name = "res_grp", length = 20, nullable = false)
   private String resGrp;
 
-  /**
-   * 功能名稱
-   */
+  /** 功能名稱 */
   @NotNull
   @Size(max = 50)
   @Column(name = "res_name", length = 50, nullable = false)
   private String resName;
 
-  /**
-   * 功能描述
-   */
+  /** 功能描述 */
   @Size(max = 255)
   @Column(name = "description", length = 255)
   private String description;
 
-  /**
-   * 是否啟用
-   */
+  /** 是否啟用 */
   @NotNull
   @Size(max = 10)
   @Column(name = "state", length = 10, nullable = false)
   private String state;
 
-  /**
-   * URI
-   */
+  /** URI */
   @NotNull
   @Size(max = 2048)
   @Column(name = "api_uri", length = 2048, nullable = false)
   private String apiUri;
 
-  /**
-   * URL
-   */
+  /** URL */
   @Size(max = 2048)
   @Column(name = "web_url", length = 2048)
   private String webUrl;
 
-  /**
-   * 預留欄位1
-   */
+  /** 預留欄位1 */
   @Size(max = 255)
   @Column(name = "data_role_1", length = 255)
   private String dataRole1;
 
-  /**
-   * 預留欄位2
-   */
+  /** 預留欄位2 */
   @Size(max = 255)
   @Column(name = "data_role_2", length = 255)
   private String dataRole2;
 
-  /**
-   * 功能建立時間
-   */
+  /** 功能建立時間 */
   @NotNull
   @Column(name = "create_time", nullable = false)
   private Instant createTime;
@@ -339,29 +309,59 @@ public class ResLog implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResLog{" +
-            "id=" + getId() +
-            ", actor='" + getActor() + "'" +
-            ", logType='" + getLogType() + "'" +
-            ", logTime='" + getLogTime() + "'" +
-            ", typeId='" + getTypeId() + "'" +
-            ", resId='" + getResId() + "'" +
-            ", resGrp='" + getResGrp() + "'" +
-            ", resName='" + getResName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", apiUri='" + getApiUri() + "'" +
-            ", webUrl='" + getWebUrl() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ResLog{"
+        + "id="
+        + getId()
+        + ", actor='"
+        + getActor()
+        + "'"
+        + ", logType='"
+        + getLogType()
+        + "'"
+        + ", logTime='"
+        + getLogTime()
+        + "'"
+        + ", typeId='"
+        + getTypeId()
+        + "'"
+        + ", resId='"
+        + getResId()
+        + "'"
+        + ", resGrp='"
+        + getResGrp()
+        + "'"
+        + ", resName='"
+        + getResName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", apiUri='"
+        + getApiUri()
+        + "'"
+        + ", webUrl='"
+        + getWebUrl()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

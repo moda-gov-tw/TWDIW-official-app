@@ -13,208 +13,206 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class NonceCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter sId;
+  private StringFilter sId;
 
-    private StringFilter nonceId;
+  private StringFilter nonceId;
 
-    private StringFilter userId;
+  private StringFilter userId;
 
-    private LocalDateFilter createTime;
+  private LocalDateFilter createTime;
 
-    private StringFilter captchaCode;
+  private StringFilter captchaCode;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public NonceCriteria() {}
+  public NonceCriteria() {}
 
-    public NonceCriteria(NonceCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.sId = other.optionalsId().map(StringFilter::copy).orElse(null);
-        this.nonceId = other.optionalNonceId().map(StringFilter::copy).orElse(null);
-        this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
-        this.createTime = other.optionalCreateTime().map(LocalDateFilter::copy).orElse(null);
-        this.captchaCode = other.optionalCaptchaCode().map(StringFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public NonceCriteria(NonceCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.sId = other.optionalsId().map(StringFilter::copy).orElse(null);
+    this.nonceId = other.optionalNonceId().map(StringFilter::copy).orElse(null);
+    this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
+    this.createTime = other.optionalCreateTime().map(LocalDateFilter::copy).orElse(null);
+    this.captchaCode = other.optionalCaptchaCode().map(StringFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public NonceCriteria copy() {
+    return new NonceCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public NonceCriteria copy() {
-        return new NonceCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getsId() {
+    return sId;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalsId() {
+    return Optional.ofNullable(sId);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter sId() {
+    if (sId == null) {
+      setsId(new StringFilter());
     }
+    return sId;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setsId(StringFilter sId) {
+    this.sId = sId;
+  }
 
-    public StringFilter getsId() {
-        return sId;
-    }
+  public StringFilter getNonceId() {
+    return nonceId;
+  }
 
-    public Optional<StringFilter> optionalsId() {
-        return Optional.ofNullable(sId);
-    }
+  public Optional<StringFilter> optionalNonceId() {
+    return Optional.ofNullable(nonceId);
+  }
 
-    public StringFilter sId() {
-        if (sId == null) {
-            setsId(new StringFilter());
-        }
-        return sId;
+  public StringFilter nonceId() {
+    if (nonceId == null) {
+      setNonceId(new StringFilter());
     }
+    return nonceId;
+  }
 
-    public void setsId(StringFilter sId) {
-        this.sId = sId;
-    }
+  public void setNonceId(StringFilter nonceId) {
+    this.nonceId = nonceId;
+  }
 
-    public StringFilter getNonceId() {
-        return nonceId;
-    }
+  public StringFilter getUserId() {
+    return userId;
+  }
 
-    public Optional<StringFilter> optionalNonceId() {
-        return Optional.ofNullable(nonceId);
-    }
+  public Optional<StringFilter> optionalUserId() {
+    return Optional.ofNullable(userId);
+  }
 
-    public StringFilter nonceId() {
-        if (nonceId == null) {
-            setNonceId(new StringFilter());
-        }
-        return nonceId;
+  public StringFilter userId() {
+    if (userId == null) {
+      setUserId(new StringFilter());
     }
+    return userId;
+  }
 
-    public void setNonceId(StringFilter nonceId) {
-        this.nonceId = nonceId;
-    }
+  public void setUserId(StringFilter userId) {
+    this.userId = userId;
+  }
 
-    public StringFilter getUserId() {
-        return userId;
-    }
+  public LocalDateFilter getCreateTime() {
+    return createTime;
+  }
 
-    public Optional<StringFilter> optionalUserId() {
-        return Optional.ofNullable(userId);
-    }
+  public Optional<LocalDateFilter> optionalCreateTime() {
+    return Optional.ofNullable(createTime);
+  }
 
-    public StringFilter userId() {
-        if (userId == null) {
-            setUserId(new StringFilter());
-        }
-        return userId;
+  public LocalDateFilter createTime() {
+    if (createTime == null) {
+      setCreateTime(new LocalDateFilter());
     }
+    return createTime;
+  }
 
-    public void setUserId(StringFilter userId) {
-        this.userId = userId;
-    }
+  public void setCreateTime(LocalDateFilter createTime) {
+    this.createTime = createTime;
+  }
 
-    public LocalDateFilter getCreateTime() {
-        return createTime;
-    }
+  public StringFilter getCaptchaCode() {
+    return captchaCode;
+  }
 
-    public Optional<LocalDateFilter> optionalCreateTime() {
-        return Optional.ofNullable(createTime);
-    }
+  public Optional<StringFilter> optionalCaptchaCode() {
+    return Optional.ofNullable(captchaCode);
+  }
 
-    public LocalDateFilter createTime() {
-        if (createTime == null) {
-            setCreateTime(new LocalDateFilter());
-        }
-        return createTime;
+  public StringFilter captchaCode() {
+    if (captchaCode == null) {
+      setCaptchaCode(new StringFilter());
     }
+    return captchaCode;
+  }
 
-    public void setCreateTime(LocalDateFilter createTime) {
-        this.createTime = createTime;
-    }
+  public void setCaptchaCode(StringFilter captchaCode) {
+    this.captchaCode = captchaCode;
+  }
 
-    public StringFilter getCaptchaCode() {
-        return captchaCode;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<StringFilter> optionalCaptchaCode() {
-        return Optional.ofNullable(captchaCode);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public StringFilter captchaCode() {
-        if (captchaCode == null) {
-            setCaptchaCode(new StringFilter());
-        }
-        return captchaCode;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setCaptchaCode(StringFilter captchaCode) {
-        this.captchaCode = captchaCode;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final NonceCriteria that = (NonceCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(sId, that.sId)
+        && Objects.equals(nonceId, that.nonceId)
+        && Objects.equals(userId, that.userId)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(captchaCode, that.captchaCode)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, sId, nonceId, userId, createTime, captchaCode, distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final NonceCriteria that = (NonceCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(sId, that.sId) &&
-            Objects.equals(nonceId, that.nonceId) &&
-            Objects.equals(userId, that.userId) &&
-            Objects.equals(createTime, that.createTime) &&
-            Objects.equals(captchaCode, that.captchaCode) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, sId, nonceId, userId, createTime, captchaCode, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "NonceCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalsId().map(f -> "sId=" + f + ", ").orElse("") +
-            optionalNonceId().map(f -> "nonceId=" + f + ", ").orElse("") +
-            optionalUserId().map(f -> "userId=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalCaptchaCode().map(f -> "captchaCode=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "NonceCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalsId().map(f -> "sId=" + f + ", ").orElse("")
+        + optionalNonceId().map(f -> "nonceId=" + f + ", ").orElse("")
+        + optionalUserId().map(f -> "userId=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalCaptchaCode().map(f -> "captchaCode=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

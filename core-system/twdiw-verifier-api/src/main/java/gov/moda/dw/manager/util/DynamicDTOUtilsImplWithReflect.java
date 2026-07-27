@@ -1,5 +1,6 @@
 package gov.moda.dw.manager.util;
 
+import gov.moda.dw.manager.annotation.ToMapDTO;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +8,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import lombok.extern.slf4j.Slf4j;
-import gov.moda.dw.manager.annotation.ToMapDTO;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,8 @@ public class DynamicDTOUtilsImplWithReflect implements DynamicDtoUtils, Initiali
 
   private final GenericApplicationContext applicationContext;
 
-  private static final ConcurrentHashMap<Class<?>, Map<String, Function<Object, Object>>> classCache = new ConcurrentHashMap<>();
+  private static final ConcurrentHashMap<Class<?>, Map<String, Function<Object, Object>>>
+      classCache = new ConcurrentHashMap<>();
 
   public DynamicDTOUtilsImplWithReflect(GenericApplicationContext applicationContext) {
     this.applicationContext = applicationContext;
@@ -34,7 +35,7 @@ public class DynamicDTOUtilsImplWithReflect implements DynamicDtoUtils, Initiali
   public void afterPropertiesSet() {
     for (Class<?> clazz : BeanUtils.getClassesWithAnnotation(applicationContext, ToMapDTO.class)) {
       log.info("[debug]this dto is cached :{}", clazz.getName());
-      //TODO: 將 加入 cache 的方法與實際取得cache 抽離
+      // TODO: 將 加入 cache 的方法與實際取得cache 抽離
       var ignored = this.retrieveGetters(clazz);
     }
   }
@@ -81,19 +82,23 @@ public class DynamicDTOUtilsImplWithReflect implements DynamicDtoUtils, Initiali
   }
 
   private Map<String, Function<Object, Object>> retrieveGetters(Class<?> entityClass) {
-    return classCache.computeIfAbsent(entityClass, clazz -> {
-      Map<String, Function<Object, Object>> getters = new HashMap<>();
-      for (Field field : clazz.getDeclaredFields()) {
-        ReflectionUtils.makeAccessible(field);
-        getters.put(field.getName(), obj -> {
-          try {
-            return field.get(obj);
-          } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+    return classCache.computeIfAbsent(
+        entityClass,
+        clazz -> {
+          Map<String, Function<Object, Object>> getters = new HashMap<>();
+          for (Field field : clazz.getDeclaredFields()) {
+            ReflectionUtils.makeAccessible(field);
+            getters.put(
+                field.getName(),
+                obj -> {
+                  try {
+                    return field.get(obj);
+                  } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                  }
+                });
           }
+          return getters;
         });
-      }
-      return getters;
-    });
   }
 }

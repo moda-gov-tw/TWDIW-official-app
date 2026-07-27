@@ -1,18 +1,5 @@
 package gov.moda.dw.manager.service.custom;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import gov.moda.dw.manager.domain.BwdParam;
 import gov.moda.dw.manager.domain.ExtendedUser;
 import gov.moda.dw.manager.domain.LoginCount;
@@ -27,62 +14,68 @@ import gov.moda.dw.manager.service.dto.custom.Ams302wValidateResetKetResDTO;
 import gov.moda.dw.manager.service.mapper.ExtendedUserMapper;
 import gov.moda.dw.manager.type.BwdProfileType;
 import gov.moda.dw.manager.web.rest.vm.ManagedUserVM;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
 @Transactional
 public class Ams302wService {
 
-  @Autowired
-  private LoginCountRepository loginCountRepository;
+  @Autowired private LoginCountRepository loginCountRepository;
 
-  @Autowired
-  private BwdParamCustomService bwdParamCustomService;
+  @Autowired private BwdParamCustomService bwdParamCustomService;
 
-  @Autowired
-  private PasswordEncoder passwordEncoder;
+  @Autowired private PasswordEncoder passwordEncoder;
 
-  @Autowired
-  private UserRepository userRepository;
+  @Autowired private UserRepository userRepository;
 
-  @Autowired
-  private ExtendedUserRepository extendedUserRepository;
+  @Autowired private ExtendedUserRepository extendedUserRepository;
 
-  @Autowired
-  private BwdHistoryService bwdHistoryService;
+  @Autowired private BwdHistoryService bwdHistoryService;
 
-  @Autowired
-  private ExtendedUserMapper extendedUserMapper;
+  @Autowired private ExtendedUserMapper extendedUserMapper;
 
   /**
    * 取得 UserId、UserName 資訊
+   *
    * @param resetKey 重置key
    * @return
    */
   public Ams302wValidateResetKetResDTO getUserIdAndName(String resetKey) {
-      Ams302wValidateResetKetResDTO ams302wValidateResetKetResDTO = null;
-      Optional<User> optionalUser = this.getResetUser(resetKey);
-      if (optionalUser.isPresent()) {
-          Optional<ExtendedUser> extendedUserOp = extendedUserRepository
-                  .findOneByUserId(optionalUser.get().getLogin());
-          if (extendedUserOp.isEmpty()) {
-              log.info("Ams302wService-getExtendedUser Extended User table 找不到該筆資料");
-              return ams302wValidateResetKetResDTO;
-          }
-          ExtendedUserDTO extendedUserDTO = extendedUserMapper.toDto(extendedUserOp.get());
-          ams302wValidateResetKetResDTO = new Ams302wValidateResetKetResDTO();
-          ams302wValidateResetKetResDTO.setUserId(extendedUserDTO.getUserId());
-          ams302wValidateResetKetResDTO.setUserName(extendedUserDTO.getUserName());
-      } else {
-          log.info("Ams302wService-getExtendedUser User table 找不到該筆資料 resetKey={}", resetKey);
+    Ams302wValidateResetKetResDTO ams302wValidateResetKetResDTO = null;
+    Optional<User> optionalUser = this.getResetUser(resetKey);
+    if (optionalUser.isPresent()) {
+      Optional<ExtendedUser> extendedUserOp =
+          extendedUserRepository.findOneByUserId(optionalUser.get().getLogin());
+      if (extendedUserOp.isEmpty()) {
+        log.info("Ams302wService-getExtendedUser Extended User table 找不到該筆資料");
+        return ams302wValidateResetKetResDTO;
       }
+      ExtendedUserDTO extendedUserDTO = extendedUserMapper.toDto(extendedUserOp.get());
+      ams302wValidateResetKetResDTO = new Ams302wValidateResetKetResDTO();
+      ams302wValidateResetKetResDTO.setUserId(extendedUserDTO.getUserId());
+      ams302wValidateResetKetResDTO.setUserName(extendedUserDTO.getUserName());
+    } else {
+      log.info("Ams302wService-getExtendedUser User table 找不到該筆資料 resetKey={}", resetKey);
+    }
 
-      return ams302wValidateResetKetResDTO;
+    return ams302wValidateResetKetResDTO;
   }
 
   /**
    * 重置key 的合法性
+   *
    * @param resetKey 重置key
    * @return
    */
@@ -91,8 +84,8 @@ public class Ams302wService {
   }
 
   /**
-   * 檢查 重置key 時間有效性
-   * (一日內)
+   * 檢查 重置key 時間有效性 (一日內)
+   *
    * @param user
    * @return
    */
@@ -104,7 +97,8 @@ public class Ams302wService {
   public void finishResetBwd(String newBwd, String resetKey) {
     log.info("完成重設user密碼，由重置key: {}", resetKey);
 
-    User user = this.getResetUser(resetKey).orElseThrow(() -> new RuntimeException("沒有根據重置key找到對應使用者"));
+    User user =
+        this.getResetUser(resetKey).orElseThrow(() -> new RuntimeException("沒有根據重置key找到對應使用者"));
 
     // 重置 使用者登入失敗次數
     String login = user.getLogin();
@@ -145,6 +139,7 @@ public class Ams302wService {
 
   /**
    * 存到密碼紀錄當log
+   *
    * @param userId
    * @param encodeBwd
    */
@@ -158,13 +153,16 @@ public class Ams302wService {
 
   /**
    * 重置 使用者登入失敗次數(loginCount, failCount)
+   *
    * @param userId
    * @param isForce (是否強制導頁至「更改密碼」)
    * @return
    */
   public LoginCount resetLoginCount(String userId, boolean isForce) {
     LoginCount loginCount =
-      this.loginCountRepository.findOneByUserId(userId).orElse(new LoginCount().userId(userId).failCount(0).updateTime(Instant.now()));
+        this.loginCountRepository
+            .findOneByUserId(userId)
+            .orElse(new LoginCount().userId(userId).failCount(0).updateTime(Instant.now()));
 
     loginCount.setFailCount(isForce ? -1 : 0);
     return this.loginCountRepository.save(loginCount);
@@ -172,17 +170,19 @@ public class Ams302wService {
 
   /**
    * 檢查 密碼 長度
+   *
    * @param bwd
    * @return
    */
   public boolean checkBwdLength(String bwd) {
-    return (
-      StringUtils.isNotEmpty(bwd) && bwd.length() >= ManagedUserVM.PASSWORD_MIN_LENGTH && bwd.length() <= ManagedUserVM.PASSWORD_MAX_LENGTH
-    );
+    return (StringUtils.isNotEmpty(bwd)
+        && bwd.length() >= ManagedUserVM.PASSWORD_MIN_LENGTH
+        && bwd.length() <= ManagedUserVM.PASSWORD_MAX_LENGTH);
   }
 
   public User getChangeUser(String currentBwd, String login) {
-    User user = this.userRepository.findOneByLogin(login).orElseThrow(() -> new RuntimeException("帳號密碼錯誤"));
+    User user =
+        this.userRepository.findOneByLogin(login).orElseThrow(() -> new RuntimeException("帳號密碼錯誤"));
     if (!this.passwordEncoder.matches(user.getPassword(), currentBwd)) {
       throw new RuntimeException("密碼輸入不正確");
     }
@@ -192,6 +192,7 @@ public class Ams302wService {
 
   /**
    * 完成 變更 密碼
+   *
    * @param user
    * @param newBwd
    */

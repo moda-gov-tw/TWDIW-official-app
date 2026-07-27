@@ -2,15 +2,14 @@ package gov.moda.dw.manager.repository.custom;
 
 import gov.moda.dw.manager.domain.Setting;
 import gov.moda.dw.manager.repository.SettingRepository;
-import org.springframework.stereotype.Repository;
-
 import java.util.Optional;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomSettingRepository extends SettingRepository {
-    Optional<Setting> findByPropName(String propName);
+  Optional<Setting> findByPropName(String propName);
 
-    void deleteByPropName(String propName);
+  void deleteByPropName(String propName);
 
-    boolean existsByPropName(String propName);
+  boolean existsByPropName(String propName);
 }

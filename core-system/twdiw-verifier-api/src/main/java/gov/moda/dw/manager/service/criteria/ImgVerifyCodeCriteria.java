@@ -13,184 +13,182 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ImgVerifyCodeCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter verifyCode;
+  private StringFilter verifyCode;
 
-    private StringFilter verifyUniId;
+  private StringFilter verifyUniId;
 
-    private InstantFilter createTime;
+  private InstantFilter createTime;
 
-    private InstantFilter expireTime;
+  private InstantFilter expireTime;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public ImgVerifyCodeCriteria() {}
+  public ImgVerifyCodeCriteria() {}
 
-    public ImgVerifyCodeCriteria(ImgVerifyCodeCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.verifyCode = other.optionalVerifyCode().map(StringFilter::copy).orElse(null);
-        this.verifyUniId = other.optionalVerifyUniId().map(StringFilter::copy).orElse(null);
-        this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
-        this.expireTime = other.optionalExpireTime().map(InstantFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public ImgVerifyCodeCriteria(ImgVerifyCodeCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.verifyCode = other.optionalVerifyCode().map(StringFilter::copy).orElse(null);
+    this.verifyUniId = other.optionalVerifyUniId().map(StringFilter::copy).orElse(null);
+    this.createTime = other.optionalCreateTime().map(InstantFilter::copy).orElse(null);
+    this.expireTime = other.optionalExpireTime().map(InstantFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public ImgVerifyCodeCriteria copy() {
+    return new ImgVerifyCodeCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public ImgVerifyCodeCriteria copy() {
-        return new ImgVerifyCodeCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getVerifyCode() {
+    return verifyCode;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalVerifyCode() {
+    return Optional.ofNullable(verifyCode);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter verifyCode() {
+    if (verifyCode == null) {
+      setVerifyCode(new StringFilter());
     }
+    return verifyCode;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setVerifyCode(StringFilter verifyCode) {
+    this.verifyCode = verifyCode;
+  }
 
-    public StringFilter getVerifyCode() {
-        return verifyCode;
-    }
+  public StringFilter getVerifyUniId() {
+    return verifyUniId;
+  }
 
-    public Optional<StringFilter> optionalVerifyCode() {
-        return Optional.ofNullable(verifyCode);
-    }
+  public Optional<StringFilter> optionalVerifyUniId() {
+    return Optional.ofNullable(verifyUniId);
+  }
 
-    public StringFilter verifyCode() {
-        if (verifyCode == null) {
-            setVerifyCode(new StringFilter());
-        }
-        return verifyCode;
+  public StringFilter verifyUniId() {
+    if (verifyUniId == null) {
+      setVerifyUniId(new StringFilter());
     }
+    return verifyUniId;
+  }
 
-    public void setVerifyCode(StringFilter verifyCode) {
-        this.verifyCode = verifyCode;
-    }
+  public void setVerifyUniId(StringFilter verifyUniId) {
+    this.verifyUniId = verifyUniId;
+  }
 
-    public StringFilter getVerifyUniId() {
-        return verifyUniId;
-    }
+  public InstantFilter getCreateTime() {
+    return createTime;
+  }
 
-    public Optional<StringFilter> optionalVerifyUniId() {
-        return Optional.ofNullable(verifyUniId);
-    }
+  public Optional<InstantFilter> optionalCreateTime() {
+    return Optional.ofNullable(createTime);
+  }
 
-    public StringFilter verifyUniId() {
-        if (verifyUniId == null) {
-            setVerifyUniId(new StringFilter());
-        }
-        return verifyUniId;
+  public InstantFilter createTime() {
+    if (createTime == null) {
+      setCreateTime(new InstantFilter());
     }
+    return createTime;
+  }
 
-    public void setVerifyUniId(StringFilter verifyUniId) {
-        this.verifyUniId = verifyUniId;
-    }
+  public void setCreateTime(InstantFilter createTime) {
+    this.createTime = createTime;
+  }
 
-    public InstantFilter getCreateTime() {
-        return createTime;
-    }
+  public InstantFilter getExpireTime() {
+    return expireTime;
+  }
 
-    public Optional<InstantFilter> optionalCreateTime() {
-        return Optional.ofNullable(createTime);
-    }
+  public Optional<InstantFilter> optionalExpireTime() {
+    return Optional.ofNullable(expireTime);
+  }
 
-    public InstantFilter createTime() {
-        if (createTime == null) {
-            setCreateTime(new InstantFilter());
-        }
-        return createTime;
+  public InstantFilter expireTime() {
+    if (expireTime == null) {
+      setExpireTime(new InstantFilter());
     }
+    return expireTime;
+  }
 
-    public void setCreateTime(InstantFilter createTime) {
-        this.createTime = createTime;
-    }
+  public void setExpireTime(InstantFilter expireTime) {
+    this.expireTime = expireTime;
+  }
 
-    public InstantFilter getExpireTime() {
-        return expireTime;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<InstantFilter> optionalExpireTime() {
-        return Optional.ofNullable(expireTime);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public InstantFilter expireTime() {
-        if (expireTime == null) {
-            setExpireTime(new InstantFilter());
-        }
-        return expireTime;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setExpireTime(InstantFilter expireTime) {
-        this.expireTime = expireTime;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final ImgVerifyCodeCriteria that = (ImgVerifyCodeCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(verifyCode, that.verifyCode)
+        && Objects.equals(verifyUniId, that.verifyUniId)
+        && Objects.equals(createTime, that.createTime)
+        && Objects.equals(expireTime, that.expireTime)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, verifyCode, verifyUniId, createTime, expireTime, distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final ImgVerifyCodeCriteria that = (ImgVerifyCodeCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(verifyCode, that.verifyCode) &&
-            Objects.equals(verifyUniId, that.verifyUniId) &&
-            Objects.equals(createTime, that.createTime) &&
-            Objects.equals(expireTime, that.expireTime) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, verifyCode, verifyUniId, createTime, expireTime, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "ImgVerifyCodeCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalVerifyCode().map(f -> "verifyCode=" + f + ", ").orElse("") +
-            optionalVerifyUniId().map(f -> "verifyUniId=" + f + ", ").orElse("") +
-            optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("") +
-            optionalExpireTime().map(f -> "expireTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "ImgVerifyCodeCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalVerifyCode().map(f -> "verifyCode=" + f + ", ").orElse("")
+        + optionalVerifyUniId().map(f -> "verifyUniId=" + f + ", ").orElse("")
+        + optionalCreateTime().map(f -> "createTime=" + f + ", ").orElse("")
+        + optionalExpireTime().map(f -> "expireTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

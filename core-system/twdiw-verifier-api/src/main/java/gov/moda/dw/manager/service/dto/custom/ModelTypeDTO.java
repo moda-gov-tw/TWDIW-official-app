@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ModelTypeDTO {
-    
-    // 值
-    private String value;
-    
-    // 名稱
-    private String label;
+
+  // 值
+  private String value;
+
+  // 名稱
+  private String label;
 }

@@ -1,13 +1,13 @@
 package gov.moda.dw.manager.service.custom;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import gov.moda.dw.manager.domain.MailTemplate;
 import gov.moda.dw.manager.domain.MailTemplate_;
 import gov.moda.dw.manager.repository.MailTemplateRepository;
 import gov.moda.dw.manager.service.criteria.MailTemplateCriteria;
 import gov.moda.dw.manager.service.dto.MailTemplateDTO;
 import gov.moda.dw.manager.service.mapper.MailTemplateMapper;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.domain.Specification;
@@ -25,7 +25,8 @@ public class CustomMailTemplateQueryService extends QueryService<MailTemplate> {
 
   private final MailTemplateMapper mailTemplateMapper;
 
-  public CustomMailTemplateQueryService(MailTemplateRepository mailTemplateRepository, MailTemplateMapper mailTemplateMapper) {
+  public CustomMailTemplateQueryService(
+      MailTemplateRepository mailTemplateRepository, MailTemplateMapper mailTemplateMapper) {
     this.mailTemplateRepository = mailTemplateRepository;
     this.mailTemplateMapper = mailTemplateMapper;
   }
@@ -34,7 +35,9 @@ public class CustomMailTemplateQueryService extends QueryService<MailTemplate> {
   public List<MailTemplateDTO> findByCriteria(MailTemplateCriteria criteria) {
     log.debug("find by criteria : {}", criteria);
     final Specification<MailTemplate> specification = createSpecification(criteria);
-    return mailTemplateRepository.findAll(specification).stream().map(mailTemplateMapper::toDto).collect(Collectors.toList());
+    return mailTemplateRepository.findAll(specification).stream()
+        .map(mailTemplateMapper::toDto)
+        .collect(Collectors.toList());
   }
 
   /**
@@ -51,28 +54,43 @@ public class CustomMailTemplateQueryService extends QueryService<MailTemplate> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), MailTemplate_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), MailTemplate_.id));
       }
       if (criteria.getMailType() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getMailType(), MailTemplate_.mailType));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getMailType(), MailTemplate_.mailType));
       }
       if (criteria.getDescription() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDescription(), MailTemplate_.description));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDescription(), MailTemplate_.description));
       }
       if (criteria.getRecipientRole() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRecipientRole(), MailTemplate_.recipientRole));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getRecipientRole(), MailTemplate_.recipientRole));
       }
       if (criteria.getSubject() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getSubject(), MailTemplate_.subject));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getSubject(), MailTemplate_.subject));
       }
       if (criteria.getHtmlState() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getHtmlState(), MailTemplate_.htmlState));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getHtmlState(), MailTemplate_.htmlState));
       }
       if (criteria.getActivated() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getActivated(), MailTemplate_.activated));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getActivated(), MailTemplate_.activated));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), MailTemplate_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), MailTemplate_.createTime));
       }
     }
     return specification;

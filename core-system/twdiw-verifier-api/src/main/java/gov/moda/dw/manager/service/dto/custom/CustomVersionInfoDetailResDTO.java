@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class CustomVersionInfoDetailResDTO {
 
-    private String version;
-    
-    private String apiVersion;
-    
-    private String abbrev;
+  private String version;
+
+  private String apiVersion;
+
+  private String abbrev;
 }

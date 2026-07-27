@@ -6,9 +6,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ImgVerifyCode} entity.
- */
+/** A DTO for the {@link ImgVerifyCode} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ImgVerifyCodeDTO implements Serializable {
 
@@ -88,14 +86,23 @@ public class ImgVerifyCodeDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ImgVerifyCodeDTO{" +
-            "id=" + getId() +
-            ", verifyCode='" + getVerifyCode() + "'" +
-            ", verifyUniId='" + getVerifyUniId() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", expireTime='" + getExpireTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ImgVerifyCodeDTO{"
+        + "id="
+        + getId()
+        + ", verifyCode='"
+        + getVerifyCode()
+        + "'"
+        + ", verifyUniId='"
+        + getVerifyUniId()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", expireTime='"
+        + getExpireTime()
+        + "'"
+        + "}";
+  }
 }

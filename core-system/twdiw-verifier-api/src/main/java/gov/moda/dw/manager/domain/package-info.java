@@ -1,4 +1,2 @@
-/**
- * Domain objects.
- */
+/** Domain objects. */
 package gov.moda.dw.manager.domain;

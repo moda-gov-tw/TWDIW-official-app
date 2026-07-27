@@ -10,19 +10,19 @@ import lombok.ToString;
 @ToString
 public class FindIssuerResDTO {
 
-    private DataDTO data;
-    private int code;
-    private String msg;
+  private DataDTO data;
+  private int code;
+  private String msg;
 
-    @Getter
-    @Setter
-    @ToString
-    public static class DataDTO {
+  @Getter
+  @Setter
+  @ToString
+  public static class DataDTO {
 
-        private String did;
-        private DIDregisterOrgDTO org;
-        private String status;
-        private Instant createdAt;
-        private Instant updatedAt;
-    }
+    private String did;
+    private DIDregisterOrgDTO org;
+    private String status;
+    private Instant createdAt;
+    private Instant updatedAt;
+  }
 }

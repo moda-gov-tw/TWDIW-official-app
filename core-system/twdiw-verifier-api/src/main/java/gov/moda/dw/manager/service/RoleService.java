@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.Role;
 import gov.moda.dw.manager.repository.RoleRepository;
 import gov.moda.dw.manager.service.dto.RoleDTO;
 import gov.moda.dw.manager.service.mapper.RoleMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link Role}.
- */
+/** Service Implementation for managing {@link Role}. */
 @Service
 @Transactional
 public class RoleService {
@@ -64,14 +62,15 @@ public class RoleService {
     log.debug("Request to partially update Role : {}", roleDTO);
 
     return roleRepository
-      .findById(roleDTO.getId())
-      .map(existingRole -> {
-        roleMapper.partialUpdate(existingRole, roleDTO);
+        .findById(roleDTO.getId())
+        .map(
+            existingRole -> {
+              roleMapper.partialUpdate(existingRole, roleDTO);
 
-        return existingRole;
-      })
-      .map(roleRepository::save)
-      .map(roleMapper::toDto);
+              return existingRole;
+            })
+        .map(roleRepository::save)
+        .map(roleMapper::toDto);
   }
 
   /**

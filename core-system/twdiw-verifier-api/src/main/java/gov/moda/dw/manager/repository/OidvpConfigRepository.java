@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OidvpConfigRepository extends JpaRepository<OidvpConfig, Long>, JpaSpecificationExecutor<OidvpConfig> {
-}
+public interface OidvpConfigRepository
+    extends JpaRepository<OidvpConfig, Long>, JpaSpecificationExecutor<OidvpConfig> {}

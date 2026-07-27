@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.AccessToken;
 import gov.moda.dw.manager.repository.AccessTokenRepository;
 import gov.moda.dw.manager.service.dto.AccessTokenDTO;
 import gov.moda.dw.manager.service.mapper.AccessTokenMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link AccessToken}.
- */
+/** Service Implementation for managing {@link AccessToken}. */
 @Service
 @Transactional
 public class AccessTokenService {
@@ -23,7 +21,8 @@ public class AccessTokenService {
 
   private final AccessTokenMapper accessTokenMapper;
 
-  public AccessTokenService(AccessTokenRepository accessTokenRepository, AccessTokenMapper accessTokenMapper) {
+  public AccessTokenService(
+      AccessTokenRepository accessTokenRepository, AccessTokenMapper accessTokenMapper) {
     this.accessTokenRepository = accessTokenRepository;
     this.accessTokenMapper = accessTokenMapper;
   }
@@ -64,14 +63,15 @@ public class AccessTokenService {
     log.debug("Request to partially update AccessToken : {}", accessTokenDTO);
 
     return accessTokenRepository
-      .findById(accessTokenDTO.getId())
-      .map(existingAccessToken -> {
-        accessTokenMapper.partialUpdate(existingAccessToken, accessTokenDTO);
+        .findById(accessTokenDTO.getId())
+        .map(
+            existingAccessToken -> {
+              accessTokenMapper.partialUpdate(existingAccessToken, accessTokenDTO);
 
-        return existingAccessToken;
-      })
-      .map(accessTokenRepository::save)
-      .map(accessTokenMapper::toDto);
+              return existingAccessToken;
+            })
+        .map(accessTokenRepository::save)
+        .map(accessTokenMapper::toDto);
   }
 
   /**

@@ -16,13 +16,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserAuthorityId implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    @Column(name = "user_id")
-    private Long userId;
+  @Column(name = "user_id")
+  private Long userId;
 
-    @NotNull
-    @Size(max = 50)
-    @Column(name = "authority_name", length = 50)
-    private String authorityName;
+  @NotNull
+  @Size(max = 50)
+  @Column(name = "authority_name", length = 50)
+  private String authorityName;
 }

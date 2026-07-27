@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface VcManagerOrgRepository extends JpaRepository<VcManagerOrg, Long>, JpaSpecificationExecutor<VcManagerOrg> {}
+public interface VcManagerOrgRepository
+    extends JpaRepository<VcManagerOrg, Long>, JpaSpecificationExecutor<VcManagerOrg> {}

@@ -2,15 +2,14 @@ package gov.moda.dw.manager.security;
 
 import static gov.moda.dw.manager.web.rest.custom.CustomAuthenticateController.JWTUSER_KEY;
 
+import gov.moda.dw.manager.security.accessToken.AccessTokenUserObject;
+import gov.moda.dw.manager.security.jwt.JwtUserObject;
+import gov.moda.dw.manager.util.JsonUtils;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-
-import gov.moda.dw.manager.security.accessToken.AccessTokenUserObject;
 import lombok.extern.slf4j.Slf4j;
-import gov.moda.dw.manager.security.jwt.JwtUserObject;
-import gov.moda.dw.manager.util.JsonUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
@@ -19,9 +18,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.Jwt;
 
-/**
- * Utility class for Spring Security.
- */
+/** Utility class for Spring Security. */
 @Slf4j
 public final class SecurityUtils {
 
@@ -50,7 +47,8 @@ public final class SecurityUtils {
       return jwt.getSubject();
     } else if (authentication.getPrincipal() instanceof String s) {
       return s;
-    } else if (authentication.getPrincipal() instanceof AccessTokenUserObject accessTokenUserObject) {
+    } else if (authentication.getPrincipal()
+        instanceof AccessTokenUserObject accessTokenUserObject) {
       return accessTokenUserObject.getOwner();
     }
     return null;
@@ -64,12 +62,13 @@ public final class SecurityUtils {
   public static Optional<String> getCurrentUserJWT() {
     SecurityContext securityContext = SecurityContextHolder.getContext();
     return Optional.ofNullable(securityContext.getAuthentication())
-      .filter(authentication -> authentication.getCredentials() instanceof String)
-      .map(authentication -> (String) authentication.getCredentials());
+        .filter(authentication -> authentication.getCredentials() instanceof String)
+        .map(authentication -> (String) authentication.getCredentials());
   }
 
   /**
    * 取得當前登入者的 JWT tokenValue
+   *
    * @return
    */
   public static Optional<String> getCurrentUserJWT2() {
@@ -85,6 +84,7 @@ public final class SecurityUtils {
 
   /**
    * 取得登入的使用者物件
+   *
    * @return
    */
   public static List<JwtUserObject> getJwtUserObject() {
@@ -95,15 +95,18 @@ public final class SecurityUtils {
       log.debug("JwtUserObject authentication == null");
       return null;
     } else if (authentication.getPrincipal() instanceof Jwt jwt) {
-      List<JwtUserObject> jwtUserObject = JsonUtils.toObjects(JwtUserObject.class, jwt.getClaim(JWTUSER_KEY));
+      List<JwtUserObject> jwtUserObject =
+          JsonUtils.toObjects(JwtUserObject.class, jwt.getClaim(JWTUSER_KEY));
       return jwtUserObject;
     } else if (authentication.getPrincipal() instanceof JwtUserObject) {
-        List<JwtUserObject> jwtUserObject = List.of((JwtUserObject) authentication.getPrincipal());
-        return jwtUserObject;
+      List<JwtUserObject> jwtUserObject = List.of((JwtUserObject) authentication.getPrincipal());
+      return jwtUserObject;
     } else if (authentication.getPrincipal() instanceof AccessTokenUserObject) {
-        AccessTokenUserObject accessTokenUserObject = (AccessTokenUserObject) authentication.getPrincipal();
-        JwtUserObject jwtUserObject = new JwtUserObject(accessTokenUserObject.getOwner(), accessTokenUserObject.getOrgId());
-        return List.of(jwtUserObject);
+      AccessTokenUserObject accessTokenUserObject =
+          (AccessTokenUserObject) authentication.getPrincipal();
+      JwtUserObject jwtUserObject =
+          new JwtUserObject(accessTokenUserObject.getOwner(), accessTokenUserObject.getOrgId());
+      return List.of(jwtUserObject);
     }
 
     log.debug("authentication.getPrincipal() instanceof Jwt FAIL");
@@ -118,7 +121,8 @@ public final class SecurityUtils {
    */
   public static boolean isAuthenticated() {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    return authentication != null && getAuthorities(authentication).noneMatch(AuthoritiesConstants.ANONYMOUS::equals);
+    return authentication != null
+        && getAuthorities(authentication).noneMatch(AuthoritiesConstants.ANONYMOUS::equals);
   }
 
   /**
@@ -129,7 +133,9 @@ public final class SecurityUtils {
    */
   public static boolean hasCurrentUserAnyOfAuthorities(String... authorities) {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    return (authentication != null && getAuthorities(authentication).anyMatch(authority -> Arrays.asList(authorities).contains(authority)));
+    return (authentication != null
+        && getAuthorities(authentication)
+            .anyMatch(authority -> Arrays.asList(authorities).contains(authority)));
   }
 
   /**

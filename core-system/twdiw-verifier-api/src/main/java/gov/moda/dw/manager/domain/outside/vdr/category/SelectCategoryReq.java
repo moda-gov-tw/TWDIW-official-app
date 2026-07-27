@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SelectCategoryReq {
 
-    @JsonProperty("taxId")
-    String taxId;
-
+  @JsonProperty("taxId")
+  String taxId;
 }

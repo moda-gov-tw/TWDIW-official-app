@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
-/**
- * A LoginView.
- */
+/** A LoginView. */
 @Entity
 @Table(name = "login_view")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -20,39 +18,27 @@ public class LoginView implements Serializable {
   @Column(name = "id")
   private Long id;
 
-  /**
-   * 帳號
-   */
+  /** 帳號 */
   @Column(name = "user_id")
   private String userId;
 
-  /**
-   * 登入失敗數
-   */
+  /** 登入失敗數 */
   @Column(name = "fail_count")
   private Integer failCount;
 
-  /**
-   * 最後登入時間
-   */
+  /** 最後登入時間 */
   @Column(name = "last_login")
   private Instant lastLogin;
 
-  /**
-   * 密碼Hash
-   */
+  /** 密碼Hash */
   @Column(name = "bwd_hash")
   private String bwdHash;
 
-  /**
-   * 密碼異動時間
-   */
+  /** 密碼異動時間 */
   @Column(name = "bwd_date")
   private Instant bwdDate;
 
-  /**
-   * 帳號狀態
-   */
+  /** 帳號狀態 */
   @Column(name = "login_id_state")
   private String loginIdState;
 
@@ -164,21 +150,34 @@ public class LoginView implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "LoginView{" +
-            "id=" + getId() +
-            ", userId='" + getUserId() + "'" +
-            ", failCount=" + getFailCount() +
-            ", lastLogin='" + getLastLogin() + "'" +
-            ", bwdHash='" + getBwdHash() + "'" +
-            ", bwdDate='" + getBwdDate() + "'" +
-            ", loginIdState='" + getLoginIdState() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "LoginView{"
+        + "id="
+        + getId()
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", failCount="
+        + getFailCount()
+        + ", lastLogin='"
+        + getLastLogin()
+        + "'"
+        + ", bwdHash='"
+        + getBwdHash()
+        + "'"
+        + ", bwdDate='"
+        + getBwdDate()
+        + "'"
+        + ", loginIdState='"
+        + getLoginIdState()
+        + "'"
+        + "}";
+  }
 }

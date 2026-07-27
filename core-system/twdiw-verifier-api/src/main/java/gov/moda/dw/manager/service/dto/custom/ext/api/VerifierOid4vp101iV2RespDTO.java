@@ -10,19 +10,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class VerifierOid4vp101iV2RespDTO {
 
-    @JsonProperty("transactionId")
-    private String transactionId;
+  @JsonProperty("transactionId")
+  private String transactionId;
 
-    @JsonProperty("qrcodeImage")
-    private String qrcodeImage;
+  @JsonProperty("qrcodeImage")
+  private String qrcodeImage;
 
-    @JsonProperty("authUri")
-    private String authUri;
+  @JsonProperty("authUri")
+  private String authUri;
 
-    // private String code;
+  // private String code;
 
-    // private String message;
+  // private String message;
 
-    // private JsonObject info;
+  // private JsonObject info;
 
 }

@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link LoginCount} entities in the database.
- * The main input is a {@link LoginCountCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link LoginCountDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link LoginCount} entities in the database. The main
+ * input is a {@link LoginCountCriteria} which gets converted to {@link Specification}, in a way
+ * that all the filters must apply. It returns a {@link Page} of {@link LoginCountDTO} which
+ * fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,15 @@ public class LoginCountQueryService extends QueryService<LoginCount> {
 
   private final LoginCountMapper loginCountMapper;
 
-  public LoginCountQueryService(LoginCountRepository loginCountRepository, LoginCountMapper loginCountMapper) {
+  public LoginCountQueryService(
+      LoginCountRepository loginCountRepository, LoginCountMapper loginCountMapper) {
     this.loginCountRepository = loginCountRepository;
     this.loginCountMapper = loginCountMapper;
   }
 
   /**
    * Return a {@link Page} of {@link LoginCountDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +53,7 @@ public class LoginCountQueryService extends QueryService<LoginCount> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +66,7 @@ public class LoginCountQueryService extends QueryService<LoginCount> {
 
   /**
    * Function to convert {@link LoginCountCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -74,16 +78,22 @@ public class LoginCountQueryService extends QueryService<LoginCount> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), LoginCount_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), LoginCount_.id));
       }
       if (criteria.getUserId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserId(), LoginCount_.userId));
+        specification =
+            specification.and(buildStringSpecification(criteria.getUserId(), LoginCount_.userId));
       }
       if (criteria.getFailCount() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getFailCount(), LoginCount_.failCount));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getFailCount(), LoginCount_.failCount));
       }
       if (criteria.getUpdateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getUpdateTime(), LoginCount_.updateTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getUpdateTime(), LoginCount_.updateTime));
       }
     }
     return specification;

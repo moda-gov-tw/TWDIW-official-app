@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 public class Ams301ReqDTO {
 
-    String mail;
-    String tel;
-    NonceDTO nonce;
+  String mail;
+  String tel;
+  NonceDTO nonce;
 }

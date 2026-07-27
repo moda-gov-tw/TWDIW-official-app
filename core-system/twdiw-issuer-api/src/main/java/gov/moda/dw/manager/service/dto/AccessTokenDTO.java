@@ -1,16 +1,13 @@
 package gov.moda.dw.manager.service.dto;
 
+import gov.moda.dw.manager.domain.AccessToken;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-import gov.moda.dw.manager.domain.AccessToken;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-
-/**
- * A DTO for the {@link AccessToken} entity.
- */
+/** A DTO for the {@link AccessToken} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class AccessTokenDTO implements Serializable {
 
@@ -56,8 +53,7 @@ public class AccessTokenDTO implements Serializable {
 
   private Instant expirationTime;
 
-  @NotNull
-  private Instant createTime;
+  @NotNull private Instant createTime;
 
   public Long getId() {
     return id;
@@ -193,23 +189,50 @@ public class AccessTokenDTO implements Serializable {
   }
 
   // prettierignore
-    @Override
-    public String toString() {
-        return "AccessTokenDTO{" +
-            "id=" + getId() +
-            ", accessToken='" + getAccessToken() + "'" +
-            ", accessTokenName='" + getAccessTokenName() + "'" +
-            ", owner='" + getOwner() + "'" +
-            ", ownerName='" + getOwnerName() + "'" +
-            ", orgId='" + getOrgId() + "'" +
-            ", orgName='" + getOrgName() + "'" +
-            ", state='" + getState() + "'" +
-            ", actype='" + getActype() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", secuLayer='" + getSecuLayer() + "'" +
-            ", expirationTime='" + getExpirationTime() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "AccessTokenDTO{"
+        + "id="
+        + getId()
+        + ", accessToken='"
+        + getAccessToken()
+        + "'"
+        + ", accessTokenName='"
+        + getAccessTokenName()
+        + "'"
+        + ", owner='"
+        + getOwner()
+        + "'"
+        + ", ownerName='"
+        + getOwnerName()
+        + "'"
+        + ", orgId='"
+        + getOrgId()
+        + "'"
+        + ", orgName='"
+        + getOrgName()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", actype='"
+        + getActype()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", secuLayer='"
+        + getSecuLayer()
+        + "'"
+        + ", expirationTime='"
+        + getExpirationTime()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + "}";
+  }
 }

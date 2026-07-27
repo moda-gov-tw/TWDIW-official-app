@@ -7,31 +7,29 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public enum CheckoutFuncType {
-    singleCheckout("singleCheckout", "單次結帳"), //二聯式
-    monthCheckout("monthCheckout", "月結"),
-    twoMonthCheckout("twoMonthCheckout", "雙月結"),
-    seasonCheckout("seasonCheckout", "季結");
+  singleCheckout("singleCheckout", "單次結帳"), // 二聯式
+  monthCheckout("monthCheckout", "月結"),
+  twoMonthCheckout("twoMonthCheckout", "雙月結"),
+  seasonCheckout("seasonCheckout", "季結");
 
-    @Getter
-    private String code;
+  @Getter private String code;
 
-    @Getter
-    private String name;
+  @Getter private String name;
 
-    public static CheckoutFuncType toCheckoutFuncType(String code) {
-        for (CheckoutFuncType tmp : CheckoutFuncType.values()) {
-            if (tmp.getCode().equals(code)) {
-                return tmp;
-            }
-        }
-        return null;
+  public static CheckoutFuncType toCheckoutFuncType(String code) {
+    for (CheckoutFuncType tmp : CheckoutFuncType.values()) {
+      if (tmp.getCode().equals(code)) {
+        return tmp;
+      }
     }
+    return null;
+  }
 
-    public static List<CheckoutFuncType> genCheckoutFuncList() {
-        List<CheckoutFuncType> checkoutFuncList = new ArrayList<>();
-        for (CheckoutFuncType tmp : CheckoutFuncType.values()) {
-            checkoutFuncList.add(tmp);
-        }
-        return checkoutFuncList;
+  public static List<CheckoutFuncType> genCheckoutFuncList() {
+    List<CheckoutFuncType> checkoutFuncList = new ArrayList<>();
+    for (CheckoutFuncType tmp : CheckoutFuncType.values()) {
+      checkoutFuncList.add(tmp);
     }
+    return checkoutFuncList;
+  }
 }

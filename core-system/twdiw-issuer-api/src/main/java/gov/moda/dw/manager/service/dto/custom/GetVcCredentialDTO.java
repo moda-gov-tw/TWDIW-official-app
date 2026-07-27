@@ -4,14 +4,13 @@ import java.time.Instant;
 
 public interface GetVcCredentialDTO {
 
-    String getCid();
+  String getCid();
 
-    String getCredentialType();
+  String getCredentialType();
 
-    Instant getIssuanceDate();
+  Instant getIssuanceDate();
 
-    Instant getExpirationDate();
+  Instant getExpirationDate();
 
-    String getCredentialStatus();
-
+  String getCredentialStatus();
 }

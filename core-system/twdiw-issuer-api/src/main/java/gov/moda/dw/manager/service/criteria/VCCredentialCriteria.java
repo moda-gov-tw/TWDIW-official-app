@@ -11,93 +11,94 @@ import tech.jhipster.service.filter.*;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class VCCredentialCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private StringFilter credentialType;
+  private StringFilter credentialType;
 
-    private InstantFilter issuanceDate;
+  private InstantFilter issuanceDate;
 
-    private StringFilter credentialStatus;
+  private StringFilter credentialStatus;
 
-    public VCCredentialCriteria() {}
+  public VCCredentialCriteria() {}
 
-    public VCCredentialCriteria(VCCredentialCriteria other) {
-        this.credentialType = other.optionalCredentialType().map(StringFilter::copy).orElse(null);
-        this.issuanceDate = other.optionalIssuanceDate().map(InstantFilter::copy).orElse(null);
-        this.credentialStatus = other.optionalCredentialStatus().map(StringFilter::copy).orElse(null);
+  public VCCredentialCriteria(VCCredentialCriteria other) {
+    this.credentialType = other.optionalCredentialType().map(StringFilter::copy).orElse(null);
+    this.issuanceDate = other.optionalIssuanceDate().map(InstantFilter::copy).orElse(null);
+    this.credentialStatus = other.optionalCredentialStatus().map(StringFilter::copy).orElse(null);
+  }
+
+  public StringFilter getCredentialType() {
+    return credentialType;
+  }
+
+  public void setCredentialType(StringFilter credentialType) {
+    this.credentialType = credentialType;
+  }
+
+  public Optional<StringFilter> optionalCredentialType() {
+    return Optional.ofNullable(credentialType);
+  }
+
+  public StringFilter credentialType() {
+    if (credentialType == null) {
+      setCredentialType(new StringFilter());
     }
+    return credentialType;
+  }
 
-    public StringFilter getCredentialType() {
-        return credentialType;
-    }
+  public InstantFilter getIssuanceDate() {
+    return issuanceDate;
+  }
 
-    public void setCredentialType(StringFilter credentialType) {
-        this.credentialType = credentialType;
-    }
+  public void setIssuanceDate(InstantFilter issuanceDate) {
+    this.issuanceDate = issuanceDate;
+  }
 
-    public Optional<StringFilter> optionalCredentialType() {
-        return Optional.ofNullable(credentialType);
-    }
+  public Optional<InstantFilter> optionalIssuanceDate() {
+    return Optional.ofNullable(issuanceDate);
+  }
 
-    public StringFilter credentialType() {
-        if (credentialType == null) {
-            setCredentialType(new StringFilter());
-        }
-        return credentialType;
+  public InstantFilter issuanceDate() {
+    if (issuanceDate == null) {
+      setIssuanceDate(new InstantFilter());
     }
+    return issuanceDate;
+  }
 
-    public InstantFilter getIssuanceDate() {
-        return issuanceDate;
-    }
+  public StringFilter getCredentialStatus() {
+    return credentialStatus;
+  }
 
-    public void setIssuanceDate(InstantFilter issuanceDate) {
-        this.issuanceDate = issuanceDate;
-    }
+  public void setCredentialStatus(StringFilter credentialStatus) {
+    this.credentialStatus = credentialStatus;
+  }
 
-    public Optional<InstantFilter> optionalIssuanceDate() {
-        return Optional.ofNullable(issuanceDate);
-    }
+  public Optional<StringFilter> optionalCredentialStatus() {
+    return Optional.ofNullable(credentialStatus);
+  }
 
-    public InstantFilter issuanceDate() {
-        if (issuanceDate == null) {
-            setIssuanceDate(new InstantFilter());
-        }
-        return issuanceDate;
+  public StringFilter credentialStatus() {
+    if (credentialStatus == null) {
+      setCredentialStatus(new StringFilter());
     }
+    return credentialStatus;
+  }
 
-    public StringFilter getCredentialStatus() {
-        return credentialStatus;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final VCCredentialCriteria that = (VCCredentialCriteria) o;
+    return (Objects.equals(credentialType, that.credentialStatus)
+        && Objects.equals(credentialStatus, that.credentialStatus));
+  }
 
-    public void setCredentialStatus(StringFilter credentialStatus) {
-        this.credentialStatus = credentialStatus;
-    }
-
-    public Optional<StringFilter> optionalCredentialStatus() {
-        return Optional.ofNullable(credentialStatus);
-    }
-
-    public StringFilter credentialStatus() {
-        if (credentialStatus == null) {
-            setCredentialStatus(new StringFilter());
-        }
-        return credentialStatus;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final VCCredentialCriteria that = (VCCredentialCriteria) o;
-        return (Objects.equals(credentialType, that.credentialStatus) && Objects.equals(credentialStatus, that.credentialStatus));
-    }
-
-    @Override
-    public VCCredentialCriteria copy() {
-        return new VCCredentialCriteria(this);
-    }
+  @Override
+  public VCCredentialCriteria copy() {
+    return new VCCredentialCriteria(this);
+  }
 }

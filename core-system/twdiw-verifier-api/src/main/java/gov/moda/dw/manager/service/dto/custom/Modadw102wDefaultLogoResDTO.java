@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class Modadw102wDefaultLogoResDTO {
 
-    String defaultRectangleLogo;
+  String defaultRectangleLogo;
 }

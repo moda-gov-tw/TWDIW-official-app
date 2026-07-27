@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.ResLog;
 import gov.moda.dw.manager.repository.ResLogRepository;
 import gov.moda.dw.manager.service.dto.ResLogDTO;
 import gov.moda.dw.manager.service.mapper.ResLogMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link ResLog}.
- */
+/** Service Implementation for managing {@link ResLog}. */
 @Service
 @Transactional
 public class ResLogService {
@@ -64,14 +62,15 @@ public class ResLogService {
     log.debug("Request to partially update ResLog : {}", resLogDTO);
 
     return resLogRepository
-      .findById(resLogDTO.getId())
-      .map(existingResLog -> {
-        resLogMapper.partialUpdate(existingResLog, resLogDTO);
+        .findById(resLogDTO.getId())
+        .map(
+            existingResLog -> {
+              resLogMapper.partialUpdate(existingResLog, resLogDTO);
 
-        return existingResLog;
-      })
-      .map(resLogRepository::save)
-      .map(resLogMapper::toDto);
+              return existingResLog;
+            })
+        .map(resLogRepository::save)
+        .map(resLogMapper::toDto);
   }
 
   /**

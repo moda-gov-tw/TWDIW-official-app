@@ -1,7 +1,6 @@
 package gov.moda.dw.manager.service.dto.custom;
 
 import java.time.Instant;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,17 +8,17 @@ import lombok.Setter;
 @Setter
 public class OrgKeySettingResDTO {
 
-    private Long id;
+  private Long id;
 
-    private String orgId;
+  private String orgId;
 
-    private String keyId;
+  private String keyId;
 
-    private String description;
+  private String description;
 
-    private Boolean isActive;
+  private Boolean isActive;
 
-    private Instant crDatetime;
+  private Instant crDatetime;
 
-    private Instant upDatetime;
+  private Instant upDatetime;
 }

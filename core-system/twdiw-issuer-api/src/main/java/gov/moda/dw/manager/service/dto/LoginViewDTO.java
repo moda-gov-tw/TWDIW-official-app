@@ -6,9 +6,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link LoginView} entity.
- */
+/** A DTO for the {@link LoginView} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class LoginViewDTO implements Serializable {
 
@@ -110,16 +108,28 @@ public class LoginViewDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "LoginViewDTO{" +
-            "id=" + getId() +
-            ", userId='" + getUserId() + "'" +
-            ", failCount=" + getFailCount() +
-            ", lastLogin='" + getLastLogin() + "'" +
-            ", bwdHash='" + getBwdHash() + "'" +
-            ", bwdDate='" + getBwdDate() + "'" +
-            ", loginIdState='" + getLoginIdState() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "LoginViewDTO{"
+        + "id="
+        + getId()
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", failCount="
+        + getFailCount()
+        + ", lastLogin='"
+        + getLastLogin()
+        + "'"
+        + ", bwdHash='"
+        + getBwdHash()
+        + "'"
+        + ", bwdDate='"
+        + getBwdDate()
+        + "'"
+        + ", loginIdState='"
+        + getLoginIdState()
+        + "'"
+        + "}";
+  }
 }

@@ -1,8 +1,7 @@
 package gov.moda.dw.manager.service.dto.custom;
 
-import java.util.List;
-
 import gov.moda.dw.manager.service.dto.VCItemDataFieldDTO;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,12 +9,11 @@ import lombok.Setter;
 @Setter
 public class VcItemDataFieldDataResDTO {
 
-    private List<VCItemDataFieldDTO> content;
+  private List<VCItemDataFieldDTO> content;
 
-    private String serialNo;
+  private String serialNo;
 
-    private String name;
+  private String name;
 
-    private List<CustomVcDataStatusLogDTO> statusLogList;
-
+  private List<CustomVcDataStatusLogDTO> statusLogList;
 }

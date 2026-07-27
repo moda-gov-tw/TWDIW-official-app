@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.Nonce;
 import gov.moda.dw.manager.repository.NonceRepository;
 import gov.moda.dw.manager.service.dto.NonceDTO;
 import gov.moda.dw.manager.service.mapper.NonceMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link Nonce}.
- */
+/** Service Implementation for managing {@link Nonce}. */
 @Service
 @Transactional
 public class NonceService {
@@ -64,14 +62,15 @@ public class NonceService {
     log.debug("Request to partially update Nonce : {}", nonceDTO);
 
     return nonceRepository
-      .findById(nonceDTO.getId())
-      .map(existingNonce -> {
-        nonceMapper.partialUpdate(existingNonce, nonceDTO);
+        .findById(nonceDTO.getId())
+        .map(
+            existingNonce -> {
+              nonceMapper.partialUpdate(existingNonce, nonceDTO);
 
-        return existingNonce;
-      })
-      .map(nonceRepository::save)
-      .map(nonceMapper::toDto);
+              return existingNonce;
+            })
+        .map(nonceRepository::save)
+        .map(nonceMapper::toDto);
   }
 
   /**

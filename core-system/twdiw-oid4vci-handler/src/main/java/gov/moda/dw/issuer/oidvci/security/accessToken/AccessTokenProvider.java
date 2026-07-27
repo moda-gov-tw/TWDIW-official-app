@@ -6,7 +6,6 @@ import java.security.SecureRandom;
 import java.util.*;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-//import gov.moda.dw.issuer.oidvci.security.jwt.CustomJwtDecoder;
 import gov.moda.dw.issuer.oidvci.service.AccessTokenQueryService;
 import gov.moda.dw.issuer.oidvci.service.criteria.AccessTokenCriteria;
 import gov.moda.dw.issuer.oidvci.service.criteria.ResCriteria;

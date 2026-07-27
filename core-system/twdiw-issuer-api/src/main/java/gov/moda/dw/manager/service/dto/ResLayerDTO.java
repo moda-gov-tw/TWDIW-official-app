@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ResLayer} entity.
- */
+/** A DTO for the {@link ResLayer} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ResLayerDTO implements Serializable {
 
@@ -116,16 +114,27 @@ public class ResLayerDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ResLayerDTO{" +
-            "id=" + getId() +
-            ", parentId=" + getParentId() +
-            ", childId=" + getChildId() +
-            ", parentCode='" + getParentCode() + "'" +
-            ", childCode='" + getChildCode() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", orderval='" + getOrderval() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ResLayerDTO{"
+        + "id="
+        + getId()
+        + ", parentId="
+        + getParentId()
+        + ", childId="
+        + getChildId()
+        + ", parentCode='"
+        + getParentCode()
+        + "'"
+        + ", childCode='"
+        + getChildCode()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", orderval='"
+        + getOrderval()
+        + "'"
+        + "}";
+  }
 }

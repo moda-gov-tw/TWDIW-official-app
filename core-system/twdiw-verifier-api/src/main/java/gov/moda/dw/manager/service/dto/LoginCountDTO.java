@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link LoginCount} entity.
- */
+/** A DTO for the {@link LoginCount} entity. */
 @Schema(description = "LoginCount 登入失敗次數")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class LoginCountDTO implements Serializable {
@@ -83,13 +81,19 @@ public class LoginCountDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "LoginCountDTO{" +
-            "id=" + getId() +
-            ", userId='" + getUserId() + "'" +
-            ", failCount=" + getFailCount() +
-            ", updateTime='" + getUpdateTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "LoginCountDTO{"
+        + "id="
+        + getId()
+        + ", userId='"
+        + getUserId()
+        + "'"
+        + ", failCount="
+        + getFailCount()
+        + ", updateTime='"
+        + getUpdateTime()
+        + "'"
+        + "}";
+  }
 }

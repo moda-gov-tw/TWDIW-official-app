@@ -5,7 +5,6 @@ package gov.moda.dw.manager.type;
 
 import java.io.Serializable;
 import lombok.Getter;
-import lombok.Setter;
 
 /** 密碼規則類型 */
 public enum BwdRuleType implements Serializable {
@@ -111,7 +110,7 @@ public enum BwdRuleType implements Serializable {
   // BwdGrammar_Symbol_isEndWithSymbol("26", "是否允許密碼以特殊符號結尾", false, Boolean.class),
 
   /** 密碼最少包含N個符號 */
-   BwdGrammar_Symbol_IncludeMimSymbol("27", "密碼最少包含N個符號", false, Integer.class),
+  BwdGrammar_Symbol_IncludeMimSymbol("27", "密碼最少包含N個符號", false, Integer.class),
 
   /** 密碼最多包含N個符號 */
   // BwdGrammar_Symbol_IncludeMaxSymbol("28", "密碼最多包含N個符號", false, Integer.class),
@@ -121,17 +120,16 @@ public enum BwdRuleType implements Serializable {
 
   /** 密碼最多N個字元 */
   BwdGrammar_Symbol_MaxLength("30", "密碼最多N個字元", false, Integer.class)
-  /** 指定的弱密碼清單 */
-  // BwdBlockList("31", "弱密碼清單", false, String.class),
-  ;
+/** 指定的弱密碼清單 */
+// BwdBlockList("31", "弱密碼清單", false, String.class),
+;
 
   private String ruleId;
   private String ruleName;
   private boolean addBwdRuleData;
   private Class<?> valueClass;
 
-  @Getter
-  private String msg;
+  @Getter private String msg;
 
   BwdRuleType(String ruleId, String ruleName, boolean addBwdRuleData, Class<?> valueClass) {
     this.ruleId = ruleId;
@@ -140,12 +138,16 @@ public enum BwdRuleType implements Serializable {
     this.addBwdRuleData = addBwdRuleData;
   }
 
-  /** @return the ruleId */
+  /**
+   * @return the ruleId
+   */
   public String getRuleId() {
     return ruleId;
   }
 
-  /** @return the ruleName */
+  /**
+   * @return the ruleName
+   */
   public String getRuleName() {
     return ruleName;
   }
@@ -160,7 +162,9 @@ public enum BwdRuleType implements Serializable {
     return null;
   }
 
-  /** @return the valueClass */
+  /**
+   * @return the valueClass
+   */
   public Class<?> getValueClass() {
     return valueClass;
   }

@@ -5,9 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link AuthObj} entity.
- */
+/** A DTO for the {@link AuthObj} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class AuthObjDTO implements Serializable {
 
@@ -109,16 +107,27 @@ public class AuthObjDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "AuthObjDTO{" +
-            "id=" + getId() +
-            ", userId=" + getUserId() +
-            ", resCode='" + getResCode() + "'" +
-            ", login='" + getLogin() + "'" +
-            ", roleId=" + getRoleId() +
-            ", roleCode='" + getRoleCode() + "'" +
-            ", roleName='" + getRoleName() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "AuthObjDTO{"
+        + "id="
+        + getId()
+        + ", userId="
+        + getUserId()
+        + ", resCode='"
+        + getResCode()
+        + "'"
+        + ", login='"
+        + getLogin()
+        + "'"
+        + ", roleId="
+        + getRoleId()
+        + ", roleCode='"
+        + getRoleCode()
+        + "'"
+        + ", roleName='"
+        + getRoleName()
+        + "'"
+        + "}";
+  }
 }

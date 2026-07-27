@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BwdChangeDTO {
 
-    private String currentBwd;
-    private String newBwd;
-    private String userId;
+  private String currentBwd;
+  private String newBwd;
+  private String userId;
 }

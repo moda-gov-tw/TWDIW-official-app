@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link AuthObj} entities in the database.
- * The main input is a {@link AuthObjCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link AuthObjDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link AuthObj} entities in the database. The main
+ * input is a {@link AuthObjCriteria} which gets converted to {@link Specification}, in a way that
+ * all the filters must apply. It returns a {@link Page} of {@link AuthObjDTO} which fulfills the
+ * criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -38,6 +38,7 @@ public class AuthObjQueryService extends QueryService<AuthObj> {
 
   /**
    * Return a {@link Page} of {@link AuthObjDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +52,7 @@ public class AuthObjQueryService extends QueryService<AuthObj> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +65,7 @@ public class AuthObjQueryService extends QueryService<AuthObj> {
 
   /**
    * Function to convert {@link AuthObjCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -77,22 +80,28 @@ public class AuthObjQueryService extends QueryService<AuthObj> {
         specification = specification.and(buildStringSpecification(criteria.getId(), AuthObj_.id));
       }
       if (criteria.getUserId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getUserId(), AuthObj_.userId));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getUserId(), AuthObj_.userId));
       }
       if (criteria.getResCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getResCode(), AuthObj_.resCode));
+        specification =
+            specification.and(buildStringSpecification(criteria.getResCode(), AuthObj_.resCode));
       }
       if (criteria.getLogin() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getLogin(), AuthObj_.login));
+        specification =
+            specification.and(buildStringSpecification(criteria.getLogin(), AuthObj_.login));
       }
       if (criteria.getRoleId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getRoleId(), AuthObj_.roleId));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getRoleId(), AuthObj_.roleId));
       }
       if (criteria.getRoleCode() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRoleCode(), AuthObj_.roleCode));
+        specification =
+            specification.and(buildStringSpecification(criteria.getRoleCode(), AuthObj_.roleCode));
       }
       if (criteria.getRoleName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRoleName(), AuthObj_.roleName));
+        specification =
+            specification.and(buildStringSpecification(criteria.getRoleName(), AuthObj_.roleName));
       }
     }
     return specification;

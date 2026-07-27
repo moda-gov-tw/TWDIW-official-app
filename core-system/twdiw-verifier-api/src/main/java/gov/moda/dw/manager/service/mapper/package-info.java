@@ -1,4 +1,2 @@
-/**
- * Data transfer objects mappers.
- */
+/** Data transfer objects mappers. */
 package gov.moda.dw.manager.service.mapper;

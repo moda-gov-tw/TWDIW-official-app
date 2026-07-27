@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link ExtendedUserLog} entities in the database.
- * The main input is a {@link ExtendedUserLogCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link ExtendedUserLogDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link ExtendedUserLog} entities in the database. The
+ * main input is a {@link ExtendedUserLogCriteria} which gets converted to {@link Specification}, in
+ * a way that all the filters must apply. It returns a {@link Page} of {@link ExtendedUserLogDTO}
+ * which fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,17 @@ public class ExtendedUserLogQueryService extends QueryService<ExtendedUserLog> {
 
   private final ExtendedUserLogMapper extendedUserLogMapper;
 
-  public ExtendedUserLogQueryService(ExtendedUserLogRepository extendedUserLogRepository, ExtendedUserLogMapper extendedUserLogMapper) {
+  public ExtendedUserLogQueryService(
+      ExtendedUserLogRepository extendedUserLogRepository,
+      ExtendedUserLogMapper extendedUserLogMapper) {
     this.extendedUserLogRepository = extendedUserLogRepository;
     this.extendedUserLogMapper = extendedUserLogMapper;
   }
 
   /**
-   * Return a {@link Page} of {@link ExtendedUserLogDTO} which matches the criteria from the database.
+   * Return a {@link Page} of {@link ExtendedUserLogDTO} which matches the criteria from the
+   * database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +55,7 @@ public class ExtendedUserLogQueryService extends QueryService<ExtendedUserLog> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +68,7 @@ public class ExtendedUserLogQueryService extends QueryService<ExtendedUserLog> {
 
   /**
    * Function to convert {@link ExtendedUserLogCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -74,67 +80,109 @@ public class ExtendedUserLogQueryService extends QueryService<ExtendedUserLog> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), ExtendedUserLog_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), ExtendedUserLog_.id));
       }
       if (criteria.getActor() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getActor(), ExtendedUserLog_.actor));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getActor(), ExtendedUserLog_.actor));
       }
       if (criteria.getLogType() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getLogType(), ExtendedUserLog_.logType));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getLogType(), ExtendedUserLog_.logType));
       }
       if (criteria.getLogTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getLogTime(), ExtendedUserLog_.logTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getLogTime(), ExtendedUserLog_.logTime));
       }
       if (criteria.getOrgId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getOrgId(), ExtendedUserLog_.orgId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getOrgId(), ExtendedUserLog_.orgId));
       }
       if (criteria.getUserId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserId(), ExtendedUserLog_.userId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getUserId(), ExtendedUserLog_.userId));
       }
       if (criteria.getUserName() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserName(), ExtendedUserLog_.userName));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getUserName(), ExtendedUserLog_.userName));
       }
       if (criteria.getEmail() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getEmail(), ExtendedUserLog_.email));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getEmail(), ExtendedUserLog_.email));
       }
       if (criteria.getPhone() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getPhone(), ExtendedUserLog_.phone));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getPhone(), ExtendedUserLog_.phone));
       }
       if (criteria.getTel() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getTel(), ExtendedUserLog_.tel));
+        specification =
+            specification.and(buildStringSpecification(criteria.getTel(), ExtendedUserLog_.tel));
       }
       if (criteria.getEmployeeId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getEmployeeId(), ExtendedUserLog_.employeeId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getEmployeeId(), ExtendedUserLog_.employeeId));
       }
       if (criteria.getEmployeeTypeId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getEmployeeTypeId(), ExtendedUserLog_.employeeTypeId));
+        specification =
+            specification.and(
+                buildStringSpecification(
+                    criteria.getEmployeeTypeId(), ExtendedUserLog_.employeeTypeId));
       }
       if (criteria.getLeftDate() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getLeftDate(), ExtendedUserLog_.leftDate));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getLeftDate(), ExtendedUserLog_.leftDate));
       }
       if (criteria.getOnboardDate() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getOnboardDate(), ExtendedUserLog_.onboardDate));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getOnboardDate(), ExtendedUserLog_.onboardDate));
       }
       if (criteria.getUserTypeId() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getUserTypeId(), ExtendedUserLog_.userTypeId));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getUserTypeId(), ExtendedUserLog_.userTypeId));
       }
       if (criteria.getDataRole1() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole1(), ExtendedUserLog_.dataRole1));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDataRole1(), ExtendedUserLog_.dataRole1));
       }
       if (criteria.getDataRole2() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDataRole2(), ExtendedUserLog_.dataRole2));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDataRole2(), ExtendedUserLog_.dataRole2));
       }
       if (criteria.getState() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getState(), ExtendedUserLog_.state));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getState(), ExtendedUserLog_.state));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), ExtendedUserLog_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), ExtendedUserLog_.createTime));
       }
       if (criteria.getAuthChangeTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getAuthChangeTime(), ExtendedUserLog_.authChangeTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(
+                    criteria.getAuthChangeTime(), ExtendedUserLog_.authChangeTime));
       }
       if (criteria.getPwdResetTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getPwdResetTime(), ExtendedUserLog_.pwdResetTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getPwdResetTime(), ExtendedUserLog_.pwdResetTime));
       }
     }
     return specification;

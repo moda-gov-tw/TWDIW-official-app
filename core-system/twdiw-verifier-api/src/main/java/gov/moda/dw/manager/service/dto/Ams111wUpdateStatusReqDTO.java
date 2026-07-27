@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class Ams111wUpdateStatusReqDTO {
 
-    private String orderType; // 訂單類型代碼
-    private String status; // 狀態
+  private String orderType; // 訂單類型代碼
+  private String status; // 狀態
 }

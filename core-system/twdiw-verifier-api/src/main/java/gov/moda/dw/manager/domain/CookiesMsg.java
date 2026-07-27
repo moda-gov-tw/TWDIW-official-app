@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 
-/**
- * A CookiesMsg.
- */
+/** A CookiesMsg. */
 @Entity
 @Table(name = "cookies_msg")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -83,17 +81,23 @@ public class CookiesMsg implements Serializable {
 
   @Override
   public int hashCode() {
-    // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+    // see
+    // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
     return getClass().hashCode();
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "CookiesMsg{" +
-            "id=" + getId() +
-            ", cid='" + getCid() + "'" +
-            ", msg='" + getMsg() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "CookiesMsg{"
+        + "id="
+        + getId()
+        + ", cid='"
+        + getCid()
+        + "'"
+        + ", msg='"
+        + getMsg()
+        + "'"
+        + "}";
+  }
 }

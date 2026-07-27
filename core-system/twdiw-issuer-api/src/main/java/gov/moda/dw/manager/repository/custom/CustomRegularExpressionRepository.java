@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomRegularExpressionRepository extends RegularExpressionRepository {
-    List<RegularExpression> findByType(String require);
+  List<RegularExpression> findByType(String require);
 }

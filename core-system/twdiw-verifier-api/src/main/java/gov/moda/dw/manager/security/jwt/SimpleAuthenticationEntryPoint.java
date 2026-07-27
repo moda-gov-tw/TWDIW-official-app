@@ -16,10 +16,13 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 @Slf4j
 public class SimpleAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
-    @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
-        throws IOException, ServletException {
-        log.info("enter simple entryPoint");
-        response.sendRedirect("/customError");
-    }
+  @Override
+  public void commence(
+      HttpServletRequest request,
+      HttpServletResponse response,
+      AuthenticationException authException)
+      throws IOException, ServletException {
+    log.info("enter simple entryPoint");
+    response.sendRedirect("/customError");
+  }
 }

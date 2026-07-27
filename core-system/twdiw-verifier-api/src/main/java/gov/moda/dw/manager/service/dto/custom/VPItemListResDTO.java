@@ -1,7 +1,6 @@
 package gov.moda.dw.manager.service.dto.custom;
 
 import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,8 +8,7 @@ import lombok.Setter;
 @Setter
 public class VPItemListResDTO {
 
-    private boolean verifierDID;
+  private boolean verifierDID;
 
-    private List<VPItemSearchAllResDTO> data;
-
+  private List<VPItemSearchAllResDTO> data;
 }

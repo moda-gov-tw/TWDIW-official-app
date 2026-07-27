@@ -1,11 +1,11 @@
 package gov.moda.dw.manager.service.dto.custom;
 
+import gov.moda.dw.manager.service.dto.ResDTO;
+import gov.moda.dw.manager.type.StatusCode;
 import java.io.Serializable;
 import java.util.List;
 import lombok.Data;
 import lombok.Getter;
-import gov.moda.dw.manager.service.dto.ResDTO;
-import gov.moda.dw.manager.type.StatusCode;
 
 @Getter
 @Data

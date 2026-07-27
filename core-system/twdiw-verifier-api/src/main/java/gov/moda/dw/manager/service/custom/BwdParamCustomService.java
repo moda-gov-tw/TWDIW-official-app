@@ -1,19 +1,5 @@
 package gov.moda.dw.manager.service.custom;
 
-import java.time.Instant;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import gov.moda.dw.manager.domain.BwdHistory;
 import gov.moda.dw.manager.domain.BwdParam;
 import gov.moda.dw.manager.domain.LoginCount;
@@ -25,30 +11,36 @@ import gov.moda.dw.manager.repository.UserRepository;
 import gov.moda.dw.manager.security.crypto.ModadwPasswordEncoder;
 import gov.moda.dw.manager.type.BwdProfileType;
 import gov.moda.dw.manager.type.BwdRuleType;
+import java.time.Instant;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
 @Transactional
 public class BwdParamCustomService {
 
-  @Autowired
-  private PasswordEncoder passwordEncoder;
+  @Autowired private PasswordEncoder passwordEncoder;
 
-  @Autowired
-  private BwdParamRepository bwdParamRepository;
+  @Autowired private BwdParamRepository bwdParamRepository;
 
-  @Autowired
-  private BwdHistoryRepository bwdHistoryRepository;
+  @Autowired private BwdHistoryRepository bwdHistoryRepository;
 
-  @Autowired
-  private LoginCountRepository loginCountRepository;
+  @Autowired private LoginCountRepository loginCountRepository;
 
-  @Autowired
-  private UserRepository userRepository;
+  @Autowired private UserRepository userRepository;
 
-  @Autowired
-  private ModadwPasswordEncoder modadwPasswordEncoder;
+  @Autowired private ModadwPasswordEncoder modadwPasswordEncoder;
 
   public List<BwdParam> getBwdRule(BwdProfileType bwdProfileType, boolean isForLogin) {
     BwdParam probe = new BwdParam().bwdProfileId(bwdProfileType.getCode()).state(true);
@@ -62,23 +54,31 @@ public class BwdParamCustomService {
 
   /**
    * 密碼規則檢查
+   *
    * <pre>web進入:
    * 最短期效
    * </pre>
+   *
    * <pre>
    * N代不相同
    * </pre>
    *
-   * @param userId      帳號
-   * @param newBwd      新密碼
+   * @param userId 帳號
+   * @param newBwd 新密碼
    * @param bwdParamMap 密碼規則
-   * @param isUrl  是否從 url 進入的
+   * @param isUrl 是否從 url 進入的
    * @return
    */
-  public String ruleCheck(String userId, String newBwd, Map<String, BwdParam> bwdParamMap, boolean isUrl, boolean isCreate) {
+  public String ruleCheck(
+      String userId,
+      String newBwd,
+      Map<String, BwdParam> bwdParamMap,
+      boolean isUrl,
+      boolean isCreate) {
     final Instant now = Instant.now();
     final String cipher = this.passwordEncoder.encode(newBwd);
-    final List<BwdHistory> bwdHistoryList = this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
+    final List<BwdHistory> bwdHistoryList =
+        this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
 
     if (!isCreate && CollectionUtils.isNotEmpty(bwdHistoryList)) {
       // * N 代密碼不可重複。
@@ -116,7 +116,7 @@ public class BwdParamCustomService {
       int value = Integer.parseInt(shortestLife.getParamValue());
       Instant deadline = bwdHistoryList.get(0).getCreateTime().plusSeconds(60 * value);
       if (now.isBefore(deadline)) {
-          return "密碼於1天(24小時)內不可重複變更";
+        return "密碼於1天(24小時)內不可重複變更";
       }
     }
 
@@ -158,7 +158,8 @@ public class BwdParamCustomService {
     }
 
     // * 密碼最少包含 N 個大寫字母
-    final BwdParam maxUpperCase = bwdParamMap.get(BwdRuleType.BwdGrammar_Letter_IncludeMimUpCase.getRuleId());
+    final BwdParam maxUpperCase =
+        bwdParamMap.get(BwdRuleType.BwdGrammar_Letter_IncludeMimUpCase.getRuleId());
     if (null != maxUpperCase) {
       int value = Integer.parseInt(maxUpperCase.getParamValue());
       boolean result = countUpperCaseLetters(newBwd) >= value;
@@ -168,7 +169,8 @@ public class BwdParamCustomService {
     }
 
     // * 密碼最少包含 N 個小寫字母
-    final BwdParam maxLowerCase = bwdParamMap.get(BwdRuleType.BwdGrammar_Letter_IncludeMimLowCase.getRuleId());
+    final BwdParam maxLowerCase =
+        bwdParamMap.get(BwdRuleType.BwdGrammar_Letter_IncludeMimLowCase.getRuleId());
     if (null != maxLowerCase) {
       int value = Integer.parseInt(maxLowerCase.getParamValue());
       boolean result = countLowerCaseLetters(newBwd) >= value;
@@ -178,7 +180,8 @@ public class BwdParamCustomService {
     }
 
     // 密碼最少包含 N 個符號
-    final BwdParam minSymbols = bwdParamMap.get(BwdRuleType.BwdGrammar_Symbol_IncludeMimSymbol.getRuleId());
+    final BwdParam minSymbols =
+        bwdParamMap.get(BwdRuleType.BwdGrammar_Symbol_IncludeMimSymbol.getRuleId());
     if (null != minSymbols) {
       int value = Integer.parseInt(minSymbols.getParamValue());
       boolean result = countSymbols(newBwd) >= value;
@@ -194,19 +197,21 @@ public class BwdParamCustomService {
 
   /**
    * 密碼規則檢查 (登入時)
+   *
    * <pre>
    * 密碼錯誤 N 次鎖定
    * N 分鐘後自動解鎖
    * </pre>
    *
-   * @param userId      帳號
+   * @param userId 帳號
    * @param bwdParamMap 密碼規則
    * @return
    */
   public BwdRuleType preRuleCheckForLogin(String userId, Map<String, BwdParam> bwdParamMap) {
     final Instant now = Instant.now();
 
-    final List<BwdHistory> bwdHistoryList = this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
+    final List<BwdHistory> bwdHistoryList =
+        this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
     final Optional<LoginCount> loginCount = this.loginCountRepository.findOneByUserId(userId);
     // // N 代密碼不可重複。
     // // 首次登入強迫更改密碼
@@ -226,13 +231,16 @@ public class BwdParamCustomService {
           int sub_value = Integer.parseInt(unlock.getParamValue());
           Instant deadline = loginCount.get().getUpdateTime().plusSeconds(60 * sub_value);
           if (now.isBefore(deadline)) {
-            BwdRuleType ruleType = BwdRuleType.BwdLocked_AutoUnlock.setMsg(
-              this.toBwdGrammarCheckMessage(loginFailCount) + "，" + this.toBwdGrammarCheckMessage(unlock)
-            );
+            BwdRuleType ruleType =
+                BwdRuleType.BwdLocked_AutoUnlock.setMsg(
+                    this.toBwdGrammarCheckMessage(loginFailCount)
+                        + "，"
+                        + this.toBwdGrammarCheckMessage(unlock));
             return ruleType;
           }
         } else {
-          BwdRuleType ruleType = BwdRuleType.BwdLocked.setMsg(this.toBwdGrammarCheckMessage(loginFailCount));
+          BwdRuleType ruleType =
+              BwdRuleType.BwdLocked.setMsg(this.toBwdGrammarCheckMessage(loginFailCount));
           return ruleType;
         }
       }
@@ -271,19 +279,21 @@ public class BwdParamCustomService {
 
   /**
    * 密碼規則檢查 (登入時)
+   *
    * <pre>
    * 首次登入強迫更改密碼
    * 密碼最長有效期 (分鐘)
    * </pre>
    *
-   * @param userId      帳號
+   * @param userId 帳號
    * @param bwdParamMap 密碼規則
    * @return
    */
   public BwdRuleType postRuleCheckForLogin(String userId, Map<String, BwdParam> bwdParamMap) {
     final Instant now = Instant.now();
 
-    final List<BwdHistory> bwdHistoryList = this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
+    final List<BwdHistory> bwdHistoryList =
+        this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
     final Optional<LoginCount> loginCount = this.loginCountRepository.findOneByUserId(userId);
     // // N 代密碼不可重複。
 
@@ -291,9 +301,10 @@ public class BwdParamCustomService {
     final BwdParam forceChange = bwdParamMap.get(BwdRuleType.ForceToChangeBwd.getRuleId());
 
     if (null != forceChange) {
-      Object[] target = { null, -1 };
+      Object[] target = {null, -1};
       if (ArrayUtils.contains(target, loginCount.orElse(new LoginCount()).getFailCount())) {
-        BwdRuleType ruleType = BwdRuleType.ForceToChangeBwd.setMsg(this.toBwdGrammarCheckMessage(forceChange));
+        BwdRuleType ruleType =
+            BwdRuleType.ForceToChangeBwd.setMsg(this.toBwdGrammarCheckMessage(forceChange));
         return ruleType;
       }
     }
@@ -311,7 +322,8 @@ public class BwdParamCustomService {
         deadline = user.get().getCreatedDate().plusSeconds(60 * value);
       }
       if (now.isAfter(deadline)) {
-        BwdRuleType ruleType = BwdRuleType.BwdMaximumAge.setMsg(this.toBwdGrammarCheckMessage(longestLife));
+        BwdRuleType ruleType =
+            BwdRuleType.BwdMaximumAge.setMsg(this.toBwdGrammarCheckMessage(longestLife));
         return ruleType;
       }
     }
@@ -365,7 +377,9 @@ public class BwdParamCustomService {
       if (StringUtils.contains(rule, "N")) {
         message = StringUtils.replaceOnce(rule, "N", value);
       } else if (StringUtils.equalsAnyIgnoreCase(value, "true", "false")) {
-        message = (StringUtils.equalsIgnoreCase("false", value) ? "不" : "") + StringUtils.replaceOnce(rule, "是否", "");
+        message =
+            (StringUtils.equalsIgnoreCase("false", value) ? "不" : "")
+                + StringUtils.replaceOnce(rule, "是否", "");
       }
     }
 
@@ -395,7 +409,8 @@ public class BwdParamCustomService {
   }
 
   public void keepBwd(String userId) {
-    List<BwdHistory> bwdHistoryList = this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
+    List<BwdHistory> bwdHistoryList =
+        this.bwdHistoryRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
     Optional<User> userO = this.userRepository.findOneByLogin(userId);
     if (CollectionUtils.isNotEmpty(bwdHistoryList) && userO.isPresent()) {
       BwdHistory record = bwdHistoryList.get(0);
@@ -408,7 +423,9 @@ public class BwdParamCustomService {
       this.userRepository.save(user);
     } else {
       String msg =
-        "使用者({userId})或Bwd歷史(size={size})找不到".replace("{userId}", userId).replace("{size}", String.valueOf(bwdHistoryList.size()));
+          "使用者({userId})或Bwd歷史(size={size})找不到"
+              .replace("{userId}", userId)
+              .replace("{size}", String.valueOf(bwdHistoryList.size()));
       log.error("沿用密碼失敗: {}", msg);
       throw new RuntimeException("沿用密碼失敗");
     }
@@ -436,6 +453,7 @@ public class BwdParamCustomService {
 
   /**
    * 計算字串中包含的符號數量
+   *
    * @param input 密碼字串
    * @return 符號數量
    */

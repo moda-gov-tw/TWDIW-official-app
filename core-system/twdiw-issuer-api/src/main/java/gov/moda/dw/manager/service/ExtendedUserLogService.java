@@ -1,18 +1,16 @@
 package gov.moda.dw.manager.service;
 
-import java.util.Optional;
 import gov.moda.dw.manager.domain.ExtendedUserLog;
 import gov.moda.dw.manager.repository.ExtendedUserLogRepository;
 import gov.moda.dw.manager.service.dto.ExtendedUserLogDTO;
 import gov.moda.dw.manager.service.mapper.ExtendedUserLogMapper;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Service Implementation for managing {@link ExtendedUserLog}.
- */
+/** Service Implementation for managing {@link ExtendedUserLog}. */
 @Service
 @Transactional
 public class ExtendedUserLogService {
@@ -23,7 +21,9 @@ public class ExtendedUserLogService {
 
   private final ExtendedUserLogMapper extendedUserLogMapper;
 
-  public ExtendedUserLogService(ExtendedUserLogRepository extendedUserLogRepository, ExtendedUserLogMapper extendedUserLogMapper) {
+  public ExtendedUserLogService(
+      ExtendedUserLogRepository extendedUserLogRepository,
+      ExtendedUserLogMapper extendedUserLogMapper) {
     this.extendedUserLogRepository = extendedUserLogRepository;
     this.extendedUserLogMapper = extendedUserLogMapper;
   }
@@ -64,14 +64,15 @@ public class ExtendedUserLogService {
     log.debug("Request to partially update ExtendedUserLog : {}", extendedUserLogDTO);
 
     return extendedUserLogRepository
-      .findById(extendedUserLogDTO.getId())
-      .map(existingExtendedUserLog -> {
-        extendedUserLogMapper.partialUpdate(existingExtendedUserLog, extendedUserLogDTO);
+        .findById(extendedUserLogDTO.getId())
+        .map(
+            existingExtendedUserLog -> {
+              extendedUserLogMapper.partialUpdate(existingExtendedUserLog, extendedUserLogDTO);
 
-        return existingExtendedUserLog;
-      })
-      .map(extendedUserLogRepository::save)
-      .map(extendedUserLogMapper::toDto);
+              return existingExtendedUserLog;
+            })
+        .map(extendedUserLogRepository::save)
+        .map(extendedUserLogMapper::toDto);
   }
 
   /**

@@ -12,232 +12,230 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class AuthObjCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private StringFilter id;
+  private StringFilter id;
 
-    private LongFilter userId;
+  private LongFilter userId;
 
-    private StringFilter resCode;
+  private StringFilter resCode;
 
-    private StringFilter login;
+  private StringFilter login;
 
-    private LongFilter roleId;
+  private LongFilter roleId;
 
-    private StringFilter roleCode;
+  private StringFilter roleCode;
 
-    private StringFilter roleName;
+  private StringFilter roleName;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public AuthObjCriteria() {}
+  public AuthObjCriteria() {}
 
-    public AuthObjCriteria(AuthObjCriteria other) {
-        this.id = other.optionalId().map(StringFilter::copy).orElse(null);
-        this.userId = other.optionalUserId().map(LongFilter::copy).orElse(null);
-        this.resCode = other.optionalResCode().map(StringFilter::copy).orElse(null);
-        this.login = other.optionalLogin().map(StringFilter::copy).orElse(null);
-        this.roleId = other.optionalRoleId().map(LongFilter::copy).orElse(null);
-        this.roleCode = other.optionalRoleCode().map(StringFilter::copy).orElse(null);
-        this.roleName = other.optionalRoleName().map(StringFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public AuthObjCriteria(AuthObjCriteria other) {
+    this.id = other.optionalId().map(StringFilter::copy).orElse(null);
+    this.userId = other.optionalUserId().map(LongFilter::copy).orElse(null);
+    this.resCode = other.optionalResCode().map(StringFilter::copy).orElse(null);
+    this.login = other.optionalLogin().map(StringFilter::copy).orElse(null);
+    this.roleId = other.optionalRoleId().map(LongFilter::copy).orElse(null);
+    this.roleCode = other.optionalRoleCode().map(StringFilter::copy).orElse(null);
+    this.roleName = other.optionalRoleName().map(StringFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public AuthObjCriteria copy() {
+    return new AuthObjCriteria(this);
+  }
+
+  public StringFilter getId() {
+    return id;
+  }
+
+  public Optional<StringFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public StringFilter id() {
+    if (id == null) {
+      setId(new StringFilter());
     }
+    return id;
+  }
 
-    @Override
-    public AuthObjCriteria copy() {
-        return new AuthObjCriteria(this);
-    }
+  public void setId(StringFilter id) {
+    this.id = id;
+  }
 
-    public StringFilter getId() {
-        return id;
-    }
+  public LongFilter getUserId() {
+    return userId;
+  }
 
-    public Optional<StringFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<LongFilter> optionalUserId() {
+    return Optional.ofNullable(userId);
+  }
 
-    public StringFilter id() {
-        if (id == null) {
-            setId(new StringFilter());
-        }
-        return id;
+  public LongFilter userId() {
+    if (userId == null) {
+      setUserId(new LongFilter());
     }
+    return userId;
+  }
 
-    public void setId(StringFilter id) {
-        this.id = id;
-    }
+  public void setUserId(LongFilter userId) {
+    this.userId = userId;
+  }
 
-    public LongFilter getUserId() {
-        return userId;
-    }
+  public StringFilter getResCode() {
+    return resCode;
+  }
 
-    public Optional<LongFilter> optionalUserId() {
-        return Optional.ofNullable(userId);
-    }
+  public Optional<StringFilter> optionalResCode() {
+    return Optional.ofNullable(resCode);
+  }
 
-    public LongFilter userId() {
-        if (userId == null) {
-            setUserId(new LongFilter());
-        }
-        return userId;
+  public StringFilter resCode() {
+    if (resCode == null) {
+      setResCode(new StringFilter());
     }
+    return resCode;
+  }
 
-    public void setUserId(LongFilter userId) {
-        this.userId = userId;
-    }
+  public void setResCode(StringFilter resCode) {
+    this.resCode = resCode;
+  }
 
-    public StringFilter getResCode() {
-        return resCode;
-    }
+  public StringFilter getLogin() {
+    return login;
+  }
 
-    public Optional<StringFilter> optionalResCode() {
-        return Optional.ofNullable(resCode);
-    }
+  public Optional<StringFilter> optionalLogin() {
+    return Optional.ofNullable(login);
+  }
 
-    public StringFilter resCode() {
-        if (resCode == null) {
-            setResCode(new StringFilter());
-        }
-        return resCode;
+  public StringFilter login() {
+    if (login == null) {
+      setLogin(new StringFilter());
     }
+    return login;
+  }
 
-    public void setResCode(StringFilter resCode) {
-        this.resCode = resCode;
-    }
+  public void setLogin(StringFilter login) {
+    this.login = login;
+  }
 
-    public StringFilter getLogin() {
-        return login;
-    }
+  public LongFilter getRoleId() {
+    return roleId;
+  }
 
-    public Optional<StringFilter> optionalLogin() {
-        return Optional.ofNullable(login);
-    }
+  public Optional<LongFilter> optionalRoleId() {
+    return Optional.ofNullable(roleId);
+  }
 
-    public StringFilter login() {
-        if (login == null) {
-            setLogin(new StringFilter());
-        }
-        return login;
+  public LongFilter roleId() {
+    if (roleId == null) {
+      setRoleId(new LongFilter());
     }
+    return roleId;
+  }
 
-    public void setLogin(StringFilter login) {
-        this.login = login;
-    }
+  public void setRoleId(LongFilter roleId) {
+    this.roleId = roleId;
+  }
 
-    public LongFilter getRoleId() {
-        return roleId;
-    }
+  public StringFilter getRoleCode() {
+    return roleCode;
+  }
 
-    public Optional<LongFilter> optionalRoleId() {
-        return Optional.ofNullable(roleId);
-    }
+  public Optional<StringFilter> optionalRoleCode() {
+    return Optional.ofNullable(roleCode);
+  }
 
-    public LongFilter roleId() {
-        if (roleId == null) {
-            setRoleId(new LongFilter());
-        }
-        return roleId;
+  public StringFilter roleCode() {
+    if (roleCode == null) {
+      setRoleCode(new StringFilter());
     }
+    return roleCode;
+  }
 
-    public void setRoleId(LongFilter roleId) {
-        this.roleId = roleId;
-    }
+  public void setRoleCode(StringFilter roleCode) {
+    this.roleCode = roleCode;
+  }
 
-    public StringFilter getRoleCode() {
-        return roleCode;
-    }
+  public StringFilter getRoleName() {
+    return roleName;
+  }
 
-    public Optional<StringFilter> optionalRoleCode() {
-        return Optional.ofNullable(roleCode);
-    }
+  public Optional<StringFilter> optionalRoleName() {
+    return Optional.ofNullable(roleName);
+  }
 
-    public StringFilter roleCode() {
-        if (roleCode == null) {
-            setRoleCode(new StringFilter());
-        }
-        return roleCode;
+  public StringFilter roleName() {
+    if (roleName == null) {
+      setRoleName(new StringFilter());
     }
+    return roleName;
+  }
 
-    public void setRoleCode(StringFilter roleCode) {
-        this.roleCode = roleCode;
-    }
+  public void setRoleName(StringFilter roleName) {
+    this.roleName = roleName;
+  }
 
-    public StringFilter getRoleName() {
-        return roleName;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<StringFilter> optionalRoleName() {
-        return Optional.ofNullable(roleName);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public StringFilter roleName() {
-        if (roleName == null) {
-            setRoleName(new StringFilter());
-        }
-        return roleName;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setRoleName(StringFilter roleName) {
-        this.roleName = roleName;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final AuthObjCriteria that = (AuthObjCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(userId, that.userId)
+        && Objects.equals(resCode, that.resCode)
+        && Objects.equals(login, that.login)
+        && Objects.equals(roleId, that.roleId)
+        && Objects.equals(roleCode, that.roleCode)
+        && Objects.equals(roleName, that.roleName)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, userId, resCode, login, roleId, roleCode, roleName, distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final AuthObjCriteria that = (AuthObjCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(userId, that.userId) &&
-            Objects.equals(resCode, that.resCode) &&
-            Objects.equals(login, that.login) &&
-            Objects.equals(roleId, that.roleId) &&
-            Objects.equals(roleCode, that.roleCode) &&
-            Objects.equals(roleName, that.roleName) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, userId, resCode, login, roleId, roleCode, roleName, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "AuthObjCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalUserId().map(f -> "userId=" + f + ", ").orElse("") +
-            optionalResCode().map(f -> "resCode=" + f + ", ").orElse("") +
-            optionalLogin().map(f -> "login=" + f + ", ").orElse("") +
-            optionalRoleId().map(f -> "roleId=" + f + ", ").orElse("") +
-            optionalRoleCode().map(f -> "roleCode=" + f + ", ").orElse("") +
-            optionalRoleName().map(f -> "roleName=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "AuthObjCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalUserId().map(f -> "userId=" + f + ", ").orElse("")
+        + optionalResCode().map(f -> "resCode=" + f + ", ").orElse("")
+        + optionalLogin().map(f -> "login=" + f + ", ").orElse("")
+        + optionalRoleId().map(f -> "roleId=" + f + ", ").orElse("")
+        + optionalRoleCode().map(f -> "roleCode=" + f + ", ").orElse("")
+        + optionalRoleName().map(f -> "roleName=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

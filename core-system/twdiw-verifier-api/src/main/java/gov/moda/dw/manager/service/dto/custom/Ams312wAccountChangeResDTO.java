@@ -1,9 +1,9 @@
 package gov.moda.dw.manager.service.dto.custom;
 
-import java.util.List;
-import lombok.Data;
 import gov.moda.dw.manager.service.dto.ExtendedUserLogDTO;
 import gov.moda.dw.manager.type.StatusCode;
+import java.util.List;
+import lombok.Data;
 import org.springframework.http.HttpHeaders;
 
 @Data

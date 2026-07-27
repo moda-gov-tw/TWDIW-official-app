@@ -14,8 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "jhi_user_authority")
 public class UserAuthority implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    @EmbeddedId
-    private UserAuthorityId id;
+  @EmbeddedId private UserAuthorityId id;
 }

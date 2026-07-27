@@ -14,160 +14,158 @@ import tech.jhipster.service.filter.StringFilter;
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class LoginCountCriteria implements Serializable, Criteria {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private LongFilter id;
+  private LongFilter id;
 
-    private StringFilter userId;
+  private StringFilter userId;
 
-    private IntegerFilter failCount;
+  private IntegerFilter failCount;
 
-    private InstantFilter updateTime;
+  private InstantFilter updateTime;
 
-    private Boolean distinct;
+  private Boolean distinct;
 
-    public LoginCountCriteria() {}
+  public LoginCountCriteria() {}
 
-    public LoginCountCriteria(LoginCountCriteria other) {
-        this.id = other.optionalId().map(LongFilter::copy).orElse(null);
-        this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
-        this.failCount = other.optionalFailCount().map(IntegerFilter::copy).orElse(null);
-        this.updateTime = other.optionalUpdateTime().map(InstantFilter::copy).orElse(null);
-        this.distinct = other.distinct;
+  public LoginCountCriteria(LoginCountCriteria other) {
+    this.id = other.optionalId().map(LongFilter::copy).orElse(null);
+    this.userId = other.optionalUserId().map(StringFilter::copy).orElse(null);
+    this.failCount = other.optionalFailCount().map(IntegerFilter::copy).orElse(null);
+    this.updateTime = other.optionalUpdateTime().map(InstantFilter::copy).orElse(null);
+    this.distinct = other.distinct;
+  }
+
+  @Override
+  public LoginCountCriteria copy() {
+    return new LoginCountCriteria(this);
+  }
+
+  public LongFilter getId() {
+    return id;
+  }
+
+  public Optional<LongFilter> optionalId() {
+    return Optional.ofNullable(id);
+  }
+
+  public LongFilter id() {
+    if (id == null) {
+      setId(new LongFilter());
     }
+    return id;
+  }
 
-    @Override
-    public LoginCountCriteria copy() {
-        return new LoginCountCriteria(this);
-    }
+  public void setId(LongFilter id) {
+    this.id = id;
+  }
 
-    public LongFilter getId() {
-        return id;
-    }
+  public StringFilter getUserId() {
+    return userId;
+  }
 
-    public Optional<LongFilter> optionalId() {
-        return Optional.ofNullable(id);
-    }
+  public Optional<StringFilter> optionalUserId() {
+    return Optional.ofNullable(userId);
+  }
 
-    public LongFilter id() {
-        if (id == null) {
-            setId(new LongFilter());
-        }
-        return id;
+  public StringFilter userId() {
+    if (userId == null) {
+      setUserId(new StringFilter());
     }
+    return userId;
+  }
 
-    public void setId(LongFilter id) {
-        this.id = id;
-    }
+  public void setUserId(StringFilter userId) {
+    this.userId = userId;
+  }
 
-    public StringFilter getUserId() {
-        return userId;
-    }
+  public IntegerFilter getFailCount() {
+    return failCount;
+  }
 
-    public Optional<StringFilter> optionalUserId() {
-        return Optional.ofNullable(userId);
-    }
+  public Optional<IntegerFilter> optionalFailCount() {
+    return Optional.ofNullable(failCount);
+  }
 
-    public StringFilter userId() {
-        if (userId == null) {
-            setUserId(new StringFilter());
-        }
-        return userId;
+  public IntegerFilter failCount() {
+    if (failCount == null) {
+      setFailCount(new IntegerFilter());
     }
+    return failCount;
+  }
 
-    public void setUserId(StringFilter userId) {
-        this.userId = userId;
-    }
+  public void setFailCount(IntegerFilter failCount) {
+    this.failCount = failCount;
+  }
 
-    public IntegerFilter getFailCount() {
-        return failCount;
-    }
+  public InstantFilter getUpdateTime() {
+    return updateTime;
+  }
 
-    public Optional<IntegerFilter> optionalFailCount() {
-        return Optional.ofNullable(failCount);
-    }
+  public Optional<InstantFilter> optionalUpdateTime() {
+    return Optional.ofNullable(updateTime);
+  }
 
-    public IntegerFilter failCount() {
-        if (failCount == null) {
-            setFailCount(new IntegerFilter());
-        }
-        return failCount;
+  public InstantFilter updateTime() {
+    if (updateTime == null) {
+      setUpdateTime(new InstantFilter());
     }
+    return updateTime;
+  }
 
-    public void setFailCount(IntegerFilter failCount) {
-        this.failCount = failCount;
-    }
+  public void setUpdateTime(InstantFilter updateTime) {
+    this.updateTime = updateTime;
+  }
 
-    public InstantFilter getUpdateTime() {
-        return updateTime;
-    }
+  public Boolean getDistinct() {
+    return distinct;
+  }
 
-    public Optional<InstantFilter> optionalUpdateTime() {
-        return Optional.ofNullable(updateTime);
-    }
+  public Optional<Boolean> optionalDistinct() {
+    return Optional.ofNullable(distinct);
+  }
 
-    public InstantFilter updateTime() {
-        if (updateTime == null) {
-            setUpdateTime(new InstantFilter());
-        }
-        return updateTime;
+  public Boolean distinct() {
+    if (distinct == null) {
+      setDistinct(true);
     }
+    return distinct;
+  }
 
-    public void setUpdateTime(InstantFilter updateTime) {
-        this.updateTime = updateTime;
-    }
+  public void setDistinct(Boolean distinct) {
+    this.distinct = distinct;
+  }
 
-    public Boolean getDistinct() {
-        return distinct;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    final LoginCountCriteria that = (LoginCountCriteria) o;
+    return (Objects.equals(id, that.id)
+        && Objects.equals(userId, that.userId)
+        && Objects.equals(failCount, that.failCount)
+        && Objects.equals(updateTime, that.updateTime)
+        && Objects.equals(distinct, that.distinct));
+  }
 
-    public Optional<Boolean> optionalDistinct() {
-        return Optional.ofNullable(distinct);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, userId, failCount, updateTime, distinct);
+  }
 
-    public Boolean distinct() {
-        if (distinct == null) {
-            setDistinct(true);
-        }
-        return distinct;
-    }
-
-    public void setDistinct(Boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final LoginCountCriteria that = (LoginCountCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(userId, that.userId) &&
-            Objects.equals(failCount, that.failCount) &&
-            Objects.equals(updateTime, that.updateTime) &&
-            Objects.equals(distinct, that.distinct)
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, userId, failCount, updateTime, distinct);
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "LoginCountCriteria{" +
-            optionalId().map(f -> "id=" + f + ", ").orElse("") +
-            optionalUserId().map(f -> "userId=" + f + ", ").orElse("") +
-            optionalFailCount().map(f -> "failCount=" + f + ", ").orElse("") +
-            optionalUpdateTime().map(f -> "updateTime=" + f + ", ").orElse("") +
-            optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
-            "}";
-    }
+  // prettier-ignore
+  @Override
+  public String toString() {
+    return "LoginCountCriteria{"
+        + optionalId().map(f -> "id=" + f + ", ").orElse("")
+        + optionalUserId().map(f -> "userId=" + f + ", ").orElse("")
+        + optionalFailCount().map(f -> "failCount=" + f + ", ").orElse("")
+        + optionalUpdateTime().map(f -> "updateTime=" + f + ", ").orElse("")
+        + optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("")
+        + "}";
+  }
 }

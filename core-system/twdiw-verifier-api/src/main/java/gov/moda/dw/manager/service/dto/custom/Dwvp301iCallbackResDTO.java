@@ -8,10 +8,9 @@ import lombok.Setter;
 @Setter
 public class Dwvp301iCallbackResDTO {
 
-    @JsonProperty("code")
-    private String code;
+  @JsonProperty("code")
+  private String code;
 
-    @JsonProperty("message")
-    private String message;
-
+  @JsonProperty("message")
+  private String message;
 }

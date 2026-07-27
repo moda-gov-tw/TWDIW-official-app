@@ -15,29 +15,29 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class CustomAccessTokenQueryService extends AccessTokenQueryService {
 
-    private final Logger log = LoggerFactory.getLogger(CustomAccessTokenQueryService.class);
+  private final Logger log = LoggerFactory.getLogger(CustomAccessTokenQueryService.class);
 
-    private final AccessTokenRepository accessTokenRepository;
+  private final AccessTokenRepository accessTokenRepository;
 
-    private final AccessTokenMapper accessTokenMapper;
+  private final AccessTokenMapper accessTokenMapper;
 
-    public CustomAccessTokenQueryService(AccessTokenRepository accessTokenRepository, AccessTokenMapper accessTokenMapper) {
-        super(accessTokenRepository, accessTokenMapper);
-        this.accessTokenRepository = accessTokenRepository;
-        this.accessTokenMapper = accessTokenMapper;
-    }
+  public CustomAccessTokenQueryService(
+      AccessTokenRepository accessTokenRepository, AccessTokenMapper accessTokenMapper) {
+    super(accessTokenRepository, accessTokenMapper);
+    this.accessTokenRepository = accessTokenRepository;
+    this.accessTokenMapper = accessTokenMapper;
+  }
 
-    /**
-     * Return the number of matching entities in the database.
-     *
-     * @param criteria The object which holds all the filters, which the entities should match.
-     * @return the number of matching entities.
-     */
-    @Transactional
-    public long countByCriteria(AccessTokenCriteria criteria) {
-        log.debug("count by criteria : {}", criteria);
-        final Specification<AccessToken> specification = createSpecification(criteria);
-        return this.accessTokenRepository.count(specification);
-    }
-
+  /**
+   * Return the number of matching entities in the database.
+   *
+   * @param criteria The object which holds all the filters, which the entities should match.
+   * @return the number of matching entities.
+   */
+  @Transactional
+  public long countByCriteria(AccessTokenCriteria criteria) {
+    log.debug("count by criteria : {}", criteria);
+    final Specification<AccessToken> specification = createSpecification(criteria);
+    return this.accessTokenRepository.count(specification);
+  }
 }

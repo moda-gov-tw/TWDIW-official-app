@@ -4,38 +4,37 @@ import java.time.Instant;
 
 public interface VCCredentialRevokeVcItemDataDTO {
 
-    String getCid();
+  String getCid();
 
-    Instant getLastUpdateTime();
+  Instant getLastUpdateTime();
 
-    Long getId();
+  Long getId();
 
-    String getContent();
+  String getContent();
 
-    String getPureContent();
+  String getPureContent();
 
-    Long getCrUser();
+  Long getCrUser();
 
-    Instant getCrDatetime();
+  Instant getCrDatetime();
 
-    Integer getValid();
+  Integer getValid();
 
-    Long getClearScheduleId();
+  Long getClearScheduleId();
 
-    Instant getClearScheduleDatetime();
+  Instant getClearScheduleDatetime();
 
-    String getVcCid();
+  String getVcCid();
 
-    String getTransactionId();
+  String getTransactionId();
 
-    String getBusinessId();
+  String getBusinessId();
 
-    String getVcItemName();
+  String getVcItemName();
 
-    String getQrCode();
+  String getQrCode();
 
-    Instant getExpired();
+  Instant getExpired();
 
-    String getScheduleRevokeMessage();
-
+  String getScheduleRevokeMessage();
 }

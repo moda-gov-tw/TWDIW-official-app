@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link Role} entity.
- */
+/** A DTO for the {@link Role} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class RoleDTO implements Serializable {
 
@@ -113,9 +111,13 @@ public class RoleDTO implements Serializable {
     this.createTime = createTime;
   }
 
-  public Instant getAuthChangeTime() { return authChangeTime; }
+  public Instant getAuthChangeTime() {
+    return authChangeTime;
+  }
 
-  public void setAuthChangeTime(Instant authChangeTime) { this.authChangeTime = authChangeTime; }
+  public void setAuthChangeTime(Instant authChangeTime) {
+    this.authChangeTime = authChangeTime;
+  }
 
   @Override
   public boolean equals(Object o) {
@@ -139,18 +141,35 @@ public class RoleDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "RoleDTO{" +
-            "id=" + getId() +
-            ", roleId='" + getRoleId() + "'" +
-            ", roleName='" + getRoleName() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", state='" + getState() + "'" +
-            ", dataRole1='" + getDataRole1() + "'" +
-            ", dataRole2='" + getDataRole2() + "'" +
-            ", createTime='" + getCreateTime() + "'" +
-            ", authChangeTime='" + getAuthChangeTime() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "RoleDTO{"
+        + "id="
+        + getId()
+        + ", roleId='"
+        + getRoleId()
+        + "'"
+        + ", roleName='"
+        + getRoleName()
+        + "'"
+        + ", description='"
+        + getDescription()
+        + "'"
+        + ", state='"
+        + getState()
+        + "'"
+        + ", dataRole1='"
+        + getDataRole1()
+        + "'"
+        + ", dataRole2='"
+        + getDataRole2()
+        + "'"
+        + ", createTime='"
+        + getCreateTime()
+        + "'"
+        + ", authChangeTime='"
+        + getAuthChangeTime()
+        + "'"
+        + "}";
+  }
 }

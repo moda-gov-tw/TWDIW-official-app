@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SelectCategoryVCItemReq extends SelectCategoryReq{
+public class SelectCategoryVCItemReq extends SelectCategoryReq {
 
-    @JsonProperty("serialNo")
-    String serialNo;
+  @JsonProperty("serialNo")
+  String serialNo;
 }

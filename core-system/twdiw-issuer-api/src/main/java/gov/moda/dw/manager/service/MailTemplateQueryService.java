@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
 
 /**
- * Service for executing complex queries for {@link MailTemplate} entities in the database.
- * The main input is a {@link MailTemplateCriteria} which gets converted to {@link Specification},
- * in a way that all the filters must apply.
- * It returns a {@link Page} of {@link MailTemplateDTO} which fulfills the criteria.
+ * Service for executing complex queries for {@link MailTemplate} entities in the database. The main
+ * input is a {@link MailTemplateCriteria} which gets converted to {@link Specification}, in a way
+ * that all the filters must apply. It returns a {@link Page} of {@link MailTemplateDTO} which
+ * fulfills the criteria.
  */
 @Service
 @Transactional(readOnly = true)
@@ -31,13 +31,15 @@ public class MailTemplateQueryService extends QueryService<MailTemplate> {
 
   private final MailTemplateMapper mailTemplateMapper;
 
-  public MailTemplateQueryService(MailTemplateRepository mailTemplateRepository, MailTemplateMapper mailTemplateMapper) {
+  public MailTemplateQueryService(
+      MailTemplateRepository mailTemplateRepository, MailTemplateMapper mailTemplateMapper) {
     this.mailTemplateRepository = mailTemplateRepository;
     this.mailTemplateMapper = mailTemplateMapper;
   }
 
   /**
    * Return a {@link Page} of {@link MailTemplateDTO} which matches the criteria from the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @param page The page, which should be returned.
    * @return the matching entities.
@@ -51,6 +53,7 @@ public class MailTemplateQueryService extends QueryService<MailTemplate> {
 
   /**
    * Return the number of matching entities in the database.
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the number of matching entities.
    */
@@ -63,6 +66,7 @@ public class MailTemplateQueryService extends QueryService<MailTemplate> {
 
   /**
    * Function to convert {@link MailTemplateCriteria} to a {@link Specification}
+   *
    * @param criteria The object which holds all the filters, which the entities should match.
    * @return the matching {@link Specification} of the entity.
    */
@@ -74,28 +78,43 @@ public class MailTemplateQueryService extends QueryService<MailTemplate> {
         specification = specification.and(distinct(criteria.getDistinct()));
       }
       if (criteria.getId() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getId(), MailTemplate_.id));
+        specification =
+            specification.and(buildRangeSpecification(criteria.getId(), MailTemplate_.id));
       }
       if (criteria.getMailType() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getMailType(), MailTemplate_.mailType));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getMailType(), MailTemplate_.mailType));
       }
       if (criteria.getDescription() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getDescription(), MailTemplate_.description));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getDescription(), MailTemplate_.description));
       }
       if (criteria.getRecipientRole() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getRecipientRole(), MailTemplate_.recipientRole));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getRecipientRole(), MailTemplate_.recipientRole));
       }
       if (criteria.getSubject() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getSubject(), MailTemplate_.subject));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getSubject(), MailTemplate_.subject));
       }
       if (criteria.getHtmlState() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getHtmlState(), MailTemplate_.htmlState));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getHtmlState(), MailTemplate_.htmlState));
       }
       if (criteria.getActivated() != null) {
-        specification = specification.and(buildStringSpecification(criteria.getActivated(), MailTemplate_.activated));
+        specification =
+            specification.and(
+                buildStringSpecification(criteria.getActivated(), MailTemplate_.activated));
       }
       if (criteria.getCreateTime() != null) {
-        specification = specification.and(buildRangeSpecification(criteria.getCreateTime(), MailTemplate_.createTime));
+        specification =
+            specification.and(
+                buildRangeSpecification(criteria.getCreateTime(), MailTemplate_.createTime));
       }
     }
     return specification;

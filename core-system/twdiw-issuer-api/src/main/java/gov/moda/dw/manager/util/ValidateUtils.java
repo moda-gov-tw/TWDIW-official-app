@@ -6,9 +6,9 @@ package gov.moda.dw.manager.util;
  * @description
  */
 public interface ValidateUtils {
-    boolean isPhone(String s);
+  boolean isPhone(String s);
 
-    boolean isEmail(String s);
+  boolean isEmail(String s);
 
-    boolean isCellPhone(String s);
+  boolean isCellPhone(String s);
 }

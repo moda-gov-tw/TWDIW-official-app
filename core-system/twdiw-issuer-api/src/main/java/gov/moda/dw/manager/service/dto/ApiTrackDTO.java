@@ -8,9 +8,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-/**
- * A DTO for the {@link ApiTrack} entity.
- */
+/** A DTO for the {@link ApiTrack} entity. */
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class ApiTrackDTO implements Serializable {
 
@@ -298,31 +296,74 @@ public class ApiTrackDTO implements Serializable {
   }
 
   // prettier-ignore
-    @Override
-    public String toString() {
-        return "ApiTrackDTO{" +
-            "id=" + getId() +
-            ", uuid='" + getUuid() + "'" +
-            ", timestamp='" + getTimestamp() + "'" +
-            ", source='" + getSource() + "'" +
-            ", serviceId='" + getServiceId() + "'" +
-            ", uri='" + getUri() + "'" +
-            ", url='" + getUrl() + "'" +
-            ", statusCode='" + getStatusCode() + "'" +
-            ", rtt='" + getRtt() + "'" +
-            ", requestHeader='" + getRequestHeader() + "'" +
-            ", requestParam='" + getRequestParam() + "'" +
-            ", requestBody='" + getRequestBody() + "'" +
-            ", requestMethod='" + getRequestMethod() + "'" +
-            ", responseHeader='" + getResponseHeader() + "'" +
-            ", responseBody='" + getResponseBody() + "'" +
-            ", accessToken1='" + getAccessToken1() + "'" +
-            ", accessToken2='" + getAccessToken2() + "'" +
-            ", jhiFrom='" + getJhiFrom() + "'" +
-            ", jhiTo='" + getJhiTo() + "'" +
-            ", cost='" + getCost() + "'" +
-            ", charged='" + getCharged() + "'" +
-            ", synced='" + getSynced() + "'" +
-            "}";
-    }
+  @Override
+  public String toString() {
+    return "ApiTrackDTO{"
+        + "id="
+        + getId()
+        + ", uuid='"
+        + getUuid()
+        + "'"
+        + ", timestamp='"
+        + getTimestamp()
+        + "'"
+        + ", source='"
+        + getSource()
+        + "'"
+        + ", serviceId='"
+        + getServiceId()
+        + "'"
+        + ", uri='"
+        + getUri()
+        + "'"
+        + ", url='"
+        + getUrl()
+        + "'"
+        + ", statusCode='"
+        + getStatusCode()
+        + "'"
+        + ", rtt='"
+        + getRtt()
+        + "'"
+        + ", requestHeader='"
+        + getRequestHeader()
+        + "'"
+        + ", requestParam='"
+        + getRequestParam()
+        + "'"
+        + ", requestBody='"
+        + getRequestBody()
+        + "'"
+        + ", requestMethod='"
+        + getRequestMethod()
+        + "'"
+        + ", responseHeader='"
+        + getResponseHeader()
+        + "'"
+        + ", responseBody='"
+        + getResponseBody()
+        + "'"
+        + ", accessToken1='"
+        + getAccessToken1()
+        + "'"
+        + ", accessToken2='"
+        + getAccessToken2()
+        + "'"
+        + ", jhiFrom='"
+        + getJhiFrom()
+        + "'"
+        + ", jhiTo='"
+        + getJhiTo()
+        + "'"
+        + ", cost='"
+        + getCost()
+        + "'"
+        + ", charged='"
+        + getCharged()
+        + "'"
+        + ", synced='"
+        + getSynced()
+        + "'"
+        + "}";
+  }
 }
