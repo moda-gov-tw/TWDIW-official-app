@@ -1,5 +1,7 @@
 package gov.moda.dw.manager.service.custom;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -88,7 +90,10 @@ public class Dwvp404iService {
             // 4. 驗證 HMAC 值
             String calculatedHmac = hmacService.calculateHMAC(orgData, orgKeySetting.getHmacKey());
 
-            if (!calculatedHmac.equals(request.getHmac())) {
+            // 以常數時間比對 HMAC，避免逐字元短路比對洩漏比對進度（時序側通道）
+            // request.getHmac() 為呼叫端可控值，故不可使用 String.equals
+            if (!MessageDigest.isEqual(calculatedHmac.getBytes(StandardCharsets.UTF_8),
+                    request.getHmac().getBytes(StandardCharsets.UTF_8))) {
                 log.error("HMAC 驗證失敗");
                 throw new DWException(StatusCode.DWVP_HMAC_VERIFICATION_FAILED);
             }

@@ -47,6 +47,13 @@ public class ECCService {
     private static final String KDF_ALGO = "SHA-256";
     private static final int SYMMETRIC_KEY_SIZE = 32; // 256 bits
 
+    // 封包前綴中記錄 ephemeral 公鑰長度的欄位大小（4 bytes）
+    private static final int KEY_LENGTH_FIELD_SIZE = 4;
+    // X25519 公鑰以 X.509 SubjectPublicKeyInfo 封裝後的固定長度（44 bytes）
+    private static final int X25519_SPKI_LENGTH = 44;
+    // ChaCha20-Poly1305 認證標籤長度（16 bytes），密文至少須包含此標籤
+    private static final int POLY1305_TAG_LENGTH = 16;
+
     /**
      * 產生 ECC 金鑰對
      * 
@@ -168,12 +175,20 @@ public class ECCService {
      * @param encryptedBase64 Base64 編碼的加密資料，格式為：[ephemeral 公鑰長度(4 bytes) + ephemeral 公鑰 + nonce + 加密資料]
      * @param privateKeyBase64 Base64 編碼的私鑰
      * @return 解密後的明文
-     * @throws Exception 當解密過程發生錯誤時拋出
+     * @throws IllegalArgumentException 當加密資料長度不足或 ephemeral 公鑰長度欄位不正確時拋出
+     * @throws SecurityException MAC 驗證失敗（資料遭竄改）時拋出
+     * @throws Exception 當解密過程發生其他錯誤時拋出
      */
     public String decrypt(String encryptedBase64, String privateKeyBase64) throws Exception {
         try {
             // 1. Base64 解碼取得原始加密資料
             byte[] input = Base64.getDecoder().decode(encryptedBase64);
+
+            // 檢核封包總長度是否足以容納「長度欄位 + ephemeral 公鑰 + nonce + 最小密文（僅認證標籤）」
+            if (input.length < KEY_LENGTH_FIELD_SIZE + X25519_SPKI_LENGTH + NONCE_LENGTH + POLY1305_TAG_LENGTH) {
+                // 長度不足代表資料非本格式或已遭截斷，直接拒絕
+                throw new IllegalArgumentException("加密資料長度不足，無法解析");
+            }
 
             // 2. 載入私鑰（Base64 解碼 → PKCS8EncodedKeySpec → PrivateKey）
             KeyFactory kf = KeyFactory.getInstance(KEY_AGREEMENT_ALGO);
@@ -181,15 +196,23 @@ public class ECCService {
                     new java.security.spec.PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKeyBase64)));
 
             // 3. 分離 ephemeral 公鑰長度、公鑰、nonce、密文
-            byte[] keyLengthBytes = new byte[4];
-            System.arraycopy(input, 0, keyLengthBytes, 0, 4);
+            byte[] keyLengthBytes = new byte[KEY_LENGTH_FIELD_SIZE];
+            System.arraycopy(input, 0, keyLengthBytes, 0, KEY_LENGTH_FIELD_SIZE);
             int ephemeralPubKeyLength = bytesToInt(keyLengthBytes);
+
+            // 檢核長度欄位是否為 X25519 公鑰的固定長度
+            // 此欄位完全由輸入方控制，未檢核時可指定極大值造成過量記憶體配置（OutOfMemoryError）
+            if (ephemeralPubKeyLength != X25519_SPKI_LENGTH) {
+                // 長度不符即代表資料格式錯誤，於配置記憶體前先行拒絕
+                throw new IllegalArgumentException("ephemeral 公鑰長度不正確");
+            }
 
             byte[] ephemeralPubKeyBytes = new byte[ephemeralPubKeyLength];
             byte[] nonce = new byte[NONCE_LENGTH];
-            byte[] ciphertext = new byte[input.length - 4 - ephemeralPubKeyLength - NONCE_LENGTH];
+            // 密文長度為總長扣除長度欄位、公鑰與 nonce；上方檢核已確保此值不為負
+            byte[] ciphertext = new byte[input.length - KEY_LENGTH_FIELD_SIZE - ephemeralPubKeyLength - NONCE_LENGTH];
 
-            int offset = 4;
+            int offset = KEY_LENGTH_FIELD_SIZE;
             System.arraycopy(input, offset, ephemeralPubKeyBytes, 0, ephemeralPubKeyLength);
             offset += ephemeralPubKeyLength;
             System.arraycopy(input, offset, nonce, 0, NONCE_LENGTH);
