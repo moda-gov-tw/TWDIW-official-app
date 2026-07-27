@@ -68,8 +68,9 @@ public class HMACService {
      */
     public String calculateHMAC(String data, String key) throws Exception {
         // 記錄開始計算的日誌
-        logger.info("開始計算(calculateHMAC) HMAC:{},{}", data, key);
-        
+        // 注意：嚴禁將 data（可能含個資）與 key（HMAC 金鑰）寫入日誌，金鑰外洩即可偽造任意通過驗證的 QR Code
+        logger.info("開始計算(calculateHMAC)");
+
         // 將 Base64 格式的金鑰轉換為位元組陣列
         byte[] keyBytes = Base64.getDecoder().decode(key);
         
