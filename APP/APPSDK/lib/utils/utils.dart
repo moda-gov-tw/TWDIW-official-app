@@ -42,16 +42,8 @@ class Utils {
         continue;
       }
 
-      // 修正 Base64URL 格式並補齊 padding
-      String base64Url = part.replaceAll('-', '+').replaceAll('_', '/');
-      int padding = 4 - (base64Url.length % 4);
-      if (padding < 4) {
-        base64Url += '=' * padding;
-      }
-
       try {
-        // Base64 Decode
-        String decoded = utf8.decode(base64.decode(base64Url));
+        String decoded = utf8.decode(base64.decode(base64Url.normalize(part)));
         List<String> decodedList = List<String>.from(json.decode(decoded));
 
         if (decodedList.length == 3) {
@@ -106,15 +98,7 @@ class Utils {
           continue;
         }
 
-        // 修正 Base64URL 格式並補齊 padding
-        String base64Url = part.replaceAll('-', '+').replaceAll('_', '/');
-        int padding = 4 - (base64Url.length % 4);
-        if (padding < 4) {
-          base64Url += '=' * padding;
-        }
-
-        // Base64 Decode
-        String decoded = utf8.decode(base64.decode(base64Url));
+        String decoded = utf8.decode(base64.decode(base64Url.normalize(part)));
 
         // 僅保留包含指定欄位的部分
         for (var field in fields) {
