@@ -6,24 +6,24 @@
 
 此儲存庫預計包含以下元件，並陸續釋出程式碼：
 
-| 項次 | 元件名稱 | 內容摘要 | 子目錄 / 文件 |
-|------|----------|----------|----------------|
-| 1 | 數位憑證皮夾 Android 持有端應用程式 | 原生 Android 持有端 App，整合持有端 SDK，支援 VC 與 VP。 | `APP/moda-digitalwallet-holder-androidapp/README.md` |
-| 2 | 數位憑證皮夾 iOS 持有端應用程式 | 原生 iOS 持有端 App，整合持有端 SDK，支援 VC 與 VP。 | `APP/moda-digitalwallet-holder-iosapp/README.md` |
-| 3 | Android 持有端 SDK | 金鑰管理、簽章與 NFC 通訊。 | `APP/APPSDK/moda-digitalwallet-holder-androidapp-token-sdk/README.md` |
-| 4 | iOS 持有端 SDK | Secure Enclave 之 DID 金鑰管理。 | `APP/APPSDK/moda-digitalwallet-holder-iosapp-token-sdk/README.md` |
-| 5 | 行動端 App SDK (Flutter) | 已釋出的 APPSDK，可產出 Android AAR / iOS Framework。 | `APP/APPSDK/README.md` |
-| 6 | 數位憑證皮夾核心系統 Parent POM | 提供所有核心模組共用的 Maven Parent 設定、版本治理與品質規則。 | `core-system/moda-digitalwallet-parent-pom/README.md` |
-| 7 | 數位憑證皮夾共用函式庫 | 提供 Actuator 建置資訊輸出與日誌記錄的共用 Spring Boot 套件。 | `core-system/moda-digitalwallet-common/README.md` |
-| 8 | 發行端管理服務 | 部署於發行機關，提供 DID、憑證模板、狀態與對外 API。 | `core-system/twdiw-issuer-api/README.md` |
-| 9 | 發行端前端管理介面 | 部署於發行機關，憑證發行之視覺化管理介面。 | `core-system/twdiw-issuer-web/README.md` |
-| 10 | 驗證端管理服務 | 部署於驗證機關，提供 VP 模板、授權 QR 與驗證結果等 API。 | `core-system/twdiw-verifier-api/README.md` |
-| 11 | 驗證端前端管理介面 | 部署於驗證機關，驗證模組管理之前端介面。 | `core-system/twdiw-verifier-web/README.md` |
-| 12 | 發行端 OID4VCI 服務 | 部署於發行機關，處理 OID4VCI 發卡與驗證流程。 | `core-system/twdiw-oid4vci-handler/README.md` |
-| 13 | 驗證端 OID4VP 服務 | 部署於驗證機關，支援 OID4VP 流程與 Presentation 驗證。 | `core-system/twdiw-oid4vp-handler/README.md` |
-| 14 | 發證機關 VC 服務 | 提供 VC 簽發、狀態清冊、DID 管理等功能。 | `core-system/twdiw-vc-handler/README.md` |
-| 15 | 驗證端 VP 服務 | 驗證 VP/VC 與 SD-JWT，支援選擇性揭露。 | `core-system/twdiw-vp-handler/README.md` |
-| 16 | 共用服務與工具 | 共用函式庫、範例資料與文件。 | 依子目錄說明，例如 `Docs/`、`doctemplate/`、`SampleCode/` |
+| 項次 | 元件名稱 | 內容摘要                                         | 子目錄 / 文件                                                             |
+|----|----------|----------------------------------------------|----------------------------------------------------------------------|
+| 1  | 數位憑證皮夾 Android 持有端應用程式 | 原生 Android 持有端 App，整合持有端 SDK，支援 VC 與 VP。     | `APP/moda-digitalwallet-holder-androidapp/README.md`                 |
+| 2  | 數位憑證皮夾 iOS 持有端應用程式 | 原生 iOS 持有端 App，整合持有端 SDK，支援 VC 與 VP。         | `APP/moda-digitalwallet-holder-iosapp/README.md`                     |
+| 3  | Android 持有端 SDK | 金鑰管理、簽章與 NFC 通訊。                             | `APP/APPSDK/moda-digitalwallet-holder-androidapp-token-sdk/README.md` |
+| 4  | iOS 持有端 SDK | Secure Enclave 之 DID 金鑰管理。                   | `APP/APPSDK/moda-digitalwallet-holder-iosapp-token-sdk/README.md`    |
+| 5  | 行動端 App SDK (Flutter) | 已釋出的 APPSDK，可產出 Android AAR / iOS Framework。 | `APP/APPSDK/README.md`                                               |
+| 6  | 數位憑證皮夾核心系統 Parent POM | 提供所有核心模組共用的 Maven Parent 設定、版本治理與品質規則。       | `core-system/moda-digitalwallet-parent-pom/README.md`                |
+| 7  | 數位憑證皮夾共用函式庫 | 提供 Actuator 建置資訊輸出與日誌記錄的共用 Spring Boot 套件。   | `core-system/moda-digitalwallet-common/README.md`                    |
+| 8  | 發行端管理服務 | 部署於發行機關，提供 DID、憑證模板、狀態與對外 API。               | `core-system/twdiw-issuer-api/README.md`                             |
+| 9  | 發行端前端管理介面 | 部署於發行機關，憑證發行之視覺化管理介面。                        | `core-system/twdiw-issuer-web/README.md`                             |
+| 10 | 驗證端管理服務 | 部署於驗證機關，提供 VP 模板、授權 QR 與驗證結果等 API。           | `core-system/twdiw-verifier-api/README.md`                           |
+| 11 | 驗證端前端管理介面 | 部署於驗證機關，驗證模組管理之前端介面。                         | `core-system/twdiw-verifier-web/README.md`                           |
+| 12 | 發行端 OID4VCI 服務 | 部署於發行機關，處理 OID4VCI 發卡與驗證流程。                  | `core-system/twdiw-oid4vci-handler/README.md`                        |
+| 13 | 驗證端 OID4VP 服務 | 部署於驗證機關，支援 OID4VP 流程與 Presentation 驗證。       | `core-system/twdiw-oid4vp-handler/README.md`                         |
+| 14 | 發證機關 VC 服務 | 提供 VC 簽發、狀態清冊、DID 管理等功能。                     | `core-system/twdiw-vc-handler/README.md`                             |
+| 15 | 驗證端 VP 服務 | 驗證 VP/VC 與 SD-JWT，支援選擇性揭露。                   | `core-system/twdiw-vp-handler/README.md`                             |
+| 16 | 共用服務與工具 | 共用函式庫、範例資料與文件、門禁讀卡機解密範例實作。                              | 依子目錄說明，例如 `Docs/`、`doctemplate/`、`SampleCode/`、                      |
 
 
 > 各子專案的詳細使用方式請直接閱讀對應目錄下的 `README.md`。本檔案僅保留高層級資訊與合規指引。
